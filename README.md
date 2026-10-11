@@ -64,15 +64,6 @@ python -m pytest -q
 
 打开 `analysis.ipynb`，选择 py311_env，重启内核后 Run All。默认一次评价 AAPL、GOOGL、AMZN，不再选择单个 SPLIT。参数仅保留股票列表 `TICKERS`、真实 Agent 文件 `AGENT_CSV`、展示名称 `AGENT_NAME`、`RETURN_TYPE` 和 `NAV_MODE`；日期、成本和指标窗口集中在 config.json。表格直接返回变量，不用 display/HTML。
 
-## 测试到底在哪里运行
-
-这里的 **test 有两个含义**：
-
-- `tests/` 是计算与数据检查。手动运行 `python -m pytest -q` 调用，不由 Notebook 自动运行；它直接读取 Notebook 函数核对信号延迟、0/1 仓位、成本和边界。
-- `test` 是市场数据中的纯测试期。Notebook 的 `periods["test"]` 定义日期，`select_period()` 切出数据；“全部股票与范围的策略指标”单元格对 `position_tables` 的每个键调用 `run_backtest()`，所以纯训练、纯测试、全时段都会运行。
-
-Notebook 末尾分别列出 `train_metrics`、`test_metrics`、`full_period_metrics`，每只股票也各画三张图。独立测试结果在 `results/metrics.csv` 的 `period=test` 行，逐期文件在 `results/{股票}/test/{策略}/daily.csv`。当前规则没有模型拟合步骤；未来 Agent／学习模型需要由 A、C 单独实现，不能把“训练范围回测”理解成已经训练了一个模型。
-
 ## Notebook 流程与回测范围
 
 完整行情 → 训练／测试切分 → 信号先保存 CSV → 读取并映射 0/1 仓位 → 分范围回测 → 策略比较与导出。
@@ -115,42 +106,6 @@ net_values = 1 + strategy_ret.cumsum()       # additive，默认
 统一接口为 `decision_tables[(股票, 策略ID)]` 和 `strategy_names[策略ID]`。新增策略先保存、读取并校验 CSV，再加入这两个字典，共用 `prepare_backtest → select_period → run_backtest → evaluate_backtest`。不为 Agent 复制另一套收益公式。
 
 `results/metrics.csv` 汇总股票／范围／策略的指标，`monthly_returns.csv` 汇总对应月收益。各股票目录保存三个范围的净值回撤图；`results/{股票}/{范围}/{策略}/` 保存逐期收益和仓位变化，各策略完整决策保存在股票目录。run.json 记录股票、日期范围、策略名称、收益口径、费率与来源哈希。重新运行更新生成结果。
-
-## 生成数据怎样单独上传 GitHub
-
-在仓库根目录运行：
-
-```bash
-python package_data.py
-```
-
-得到 `dist/trading-data.zip` 与 `dist/trading-data.zip.sha256`。在仓库 **Releases → Draft a new release** 中创建数据版本（首版 data-v1，后续例如 data-v2），把这两个文件作为附件上传。数据更新时发布新版本，并在说明中记录数据日期和来源变化。代码、data/ 实体文件、dist/ 压缩包不会重复提交到 Git 历史；接收方按上面的下载／校验／解压步骤使用。细节见 [data/README.md](data/README.md)。
-
-results/ 是运行生成的回测输出，默认不进 Git；如需共享某次结果，可另外压缩 results/ 作为 Release 附件。Notebook 已保留当前基线的执行输出，仓库浏览即可查看。
-
-## 数据给组员怎么用
-
-组员只需读取固定 data/ 中的文件，但必须按模拟时点过滤，不能把未来行一起传给 LLM。也可调用辅助函数：
-
-```python
-from data import data_asof
-prices = data_asof("AAPL", "prices", "2024-01-02T16:00:00-05:00")
-facts = data_asof("AAPL", "financials", "2024-01-02T16:00:00-05:00")
-```
-
-日线在实际正式收盘后可见；财报按 `accepted_at` 的公开时间，对同一个科目、单位和期间选择当时最新版本，不按财报期末日期判断。交易日使用 XNYS，包括节假日、特别休市、夏令时和提前收市。
-
-行情包含实际每股 OHLCV、split 和 dividend。总收益指数只作为技术指标输入；原价用于成交与估值，不使用 Adj Close。财报保留各 fiscal span，不伪造缺失科目或单季值。
-
-已有缓存直接读取，不联网。需要显式采集或更新时：
-
-```python
-from data import collect
-from settings import load_config
-collect(load_config(), kind="free", transport="curl", overwrite=True)
-```
-
-kind 可为 prices/sec/free/news；已有数据默认拒绝覆盖，更新须显式 overwrite=True。直接写固定目录，不再创建快照。失败在 sources.json 标记，拒绝将部分更新数据用于回测，不自动换源或补齐。SEC 联系人从本地 `.sec_user_agent` 或 `SEC_EDGAR_USER_AGENT` 读取。news 当前明确报错，不返回假空表。更新前请与组员协调；若使用可选冻结工具，后续数据变化会使冻结校验失败。
 
 ## Agent CSV 接口
 
