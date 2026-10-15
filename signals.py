@@ -5,6 +5,13 @@ import pandas as pd
 from data import aware, schedule
 
 REQUIRED = ["ticker","decision_time","information_cutoff","action","strategy_version","source"]
+RATING_TO_ACTION = {
+    "BUY": "BUY",
+    "OVERWEIGHT": "BUY",
+    "HOLD": "HOLD",
+    "UNDERWEIGHT": "SELL",
+    "SELL": "SELL",
+}
 
 
 def load_decisions(path):
@@ -44,7 +51,7 @@ def validate_decisions(d,ticker,start,end,source="portfolio_manager"):
     return d.sort_values("session").reset_index(drop=True)
 
 
-def from_final_state(state):
+def final_rating(state):
     text=state.get("final_trade_decision")
     if not isinstance(text,str) or not text.strip(): raise ValueError("Missing final Portfolio Manager decision")
     ratings=re.findall(r"^\*\*Rating\*\*:\s*(\w+)\s*$",text,re.M)
@@ -52,6 +59,10 @@ def from_final_state(state):
     if ratings and (len(ratings)!=1 or (rating and rating.upper()!=ratings[0].upper())):
         raise ValueError("Ambiguous/inconsistent final manager rating")
     rating=rating or (ratings[0] if len(ratings)==1 else None)
-    if not isinstance(rating,str) or rating.upper() not in ["BUY","SELL","HOLD"]:
-        raise ValueError("Unsupported/absent final rating; Overweight/Underweight/REVIEW require explicit upstream policy")
+    if not isinstance(rating,str) or rating.upper() not in RATING_TO_ACTION:
+        raise ValueError("Unsupported/absent final Portfolio Manager rating")
     return rating.upper()
+
+
+def from_final_state(state):
+    return RATING_TO_ACTION[final_rating(state)]

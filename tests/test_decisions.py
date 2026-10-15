@@ -32,10 +32,12 @@ def test_reject_invalid_decisions(kind):
     with pytest.raises(ValueError): validate_decisions(d,"AAPL","2024-01-02","2024-01-03")
 
 
-def test_final_manager_only_no_five_tier_implicit_mapping():
+def test_final_manager_five_tier_to_binary_position_mapping():
     assert from_final_state({"final_rating":"Buy","final_trade_decision":"**Rating**: Buy"})=="BUY"
     assert from_final_state({"final_trade_decision":"**Rating**: Hold"})=="HOLD"
-    for s in [{"trader_investment_plan":"BUY"},{"final_rating":"Overweight","final_trade_decision":"x"},{"final_rating":"REVIEW","final_trade_decision":"x"},{"final_rating":"Buy","final_trade_decision":"**Rating**: Sell"}]:
+    assert from_final_state({"final_rating":"Overweight","final_trade_decision":"**Rating**: Overweight"})=="BUY"
+    assert from_final_state({"final_rating":"Underweight","final_trade_decision":"**Rating**: Underweight"})=="SELL"
+    for s in [{"trader_investment_plan":"BUY"},{"final_rating":"REVIEW","final_trade_decision":"x"},{"final_rating":"Buy","final_trade_decision":"**Rating**: Sell"}]:
         with pytest.raises(ValueError): from_final_state(s)
 
 

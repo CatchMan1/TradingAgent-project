@@ -2,22 +2,24 @@
 
 课程项目流程：**共享 data/ → 组员 Agent → 最终经理 CSV → analysis.ipynb → 收益风险与图表**。
 
-真实 Yahoo 行情、公司行动与 SEC 财报已取得。当前评价全部股票训练、测试和全时段的免费基线；真实 Agent CSV 待组员提供，历史新闻待合格来源。没有调用 LLM 或付费服务。
+真实 Yahoo 行情、公司行动与 SEC 财报已取得，免费基线已有 Notebook 输出。A 已交付官方 TradingAgents 接入代码；首次真实 DeepSeek 运行据成员记录完成模型调用，但因评级适配失败未生成决策 CSV，原始状态与日志尚未随包交付。历史新闻仍待合格来源，正式批量实验尚未完成。
+
+最新交付与验收状态见 [项目进度（2026-10-15）](PROGRESS.md)，首次运行详情见 [DeepSeek 失败记录](reports/DeepSeek首次真实决策失败记录.md)。
 
 ## 小组分工与开发位置
 
-按 [plan.md](plan.md) 的四人分工，本仓库目前实现了 B 的数据与回测。A、C、D 的入口已预留，内部 README 写明建议文件名、输入和交接位置；这些部分尚未实现，不代表已经接入 TradingAgents 或完成付费实验。
+按 [plan.md](plan.md) 的四人分工，本仓库已实现 B 的数据与回测，以及 A 的官方 TradingAgents 接入、批量运行和日志。C 的实验汇总和 D 的结果分析仍待交付；已收录首次付费运行的文字记录，尚无可回测的真实 Agent CSV。
 
 | 角色 | 职责 | 开发位置 | 交付给其他组员 |
 |---|---|---|---|
-| A：工程 | 环境、Agent 接入、批量运行、日志 | [agents/](agents/README.md)，建议实现 run_agents.py、batch_run.py | 最终经理 CSV → data/decisions/；阶段日志 → agents/logs/ |
+| A：工程 | 环境、Agent 接入、批量运行、日志 | [agents/](agents/README.md)、`agents/run_agents.py`、`agents/batch_run.py` | 最终经理 CSV → data/decisions/；阶段日志 → agents/logs/ |
 | B：数据 | 数据源、历史过滤、回测、收益与风险指标 | [data.py](data.py)、[signals.py](signals.py)、[analysis.ipynb](analysis.ipynb)、[config.json](config.json) | 共享数据包；results/metrics.csv、逐期收益与图表 |
 | C：实验 | 实验调度、消融、运行记录、token 与费用 | [experiments/](experiments/README.md)，建议实现 run_experiments.py | runs.csv、costs.csv；各策略版本的真实决策 CSV |
 | D：分析 | 错误分析、选优化方向、报告与展示 | [reports/](reports/README.md)，建议维护 analysis.md、cases.csv、report.tex | 失败案例、优化方案、最终报告与 slides |
 
 数据流：**B 共享数据 → A 生成真实经理决策 → C 按实验版本运行并记成本 → B 回测 → D 分析**。各组员在自己的目录开发；新增 Python 依赖统一加到根目录 requirements.txt，模型密钥放本地环境变量，不能提交。
 
-计划日期与当前演示范围分开：plan.md 提出 2024 年 1–3 月复现、2026 年 7–8 月主实验；当前 Notebook 展示更长的训练／测试基线。正式论文实验前由全组统一 config.json 的日期与留出方案。计划提到四条免费基线，目前实际实现三条；历史新闻、真实 Agent、成本记录与优化尚未完成。
+计划日期与当前演示范围分开：plan.md 提出 2024 年 1–3 月复现、2026 年 7–8 月主实验；当前 Notebook 展示更长的训练／测试基线。正式论文实验前由全组统一 config.json 的日期与留出方案。计划提到四条免费基线，目前实际实现三条；历史新闻、真实 Agent 的付费运行、C 的实际费用汇总与优化仍待完成。
 
 ## 目录与运行
 
@@ -30,9 +32,9 @@ analysis.ipynb       唯一回测实现，逐格检查数据、信号、仓位�
  requirements.txt    conda 环境内安装的依赖
  package_data.py     将本地 data/ 打包为独立 Release 附件
  plan.md             小组计划与分工依据
- agents/             A 的 Agent 与运行入口（待开发）
+ agents/             A 的 Agent 单次／批量运行、冻结数据 vendor 与环境检查
  experiments/        C 的实验与成本记录入口（待开发）
- reports/            D 的分析与报告入口（待开发）
+ reports/            D 的分析与报告入口；含首次真实运行失败记录
  tests/              关键小样本测试，复用 Notebook 中的公式
  data/
    prices/           AAPL、GOOGL、AMZN 日频行情（各 946 行）
@@ -146,7 +148,7 @@ AMZN,2024-01-02T16:30:00-05:00,2024-01-02T16:00:00-05:00,SELL,agent-v1,portfolio
 
 CSV 放 data/decisions/，设置 `AGENT_CSV=ROOT/"data/decisions/agent.csv"`，即可将真实 Agent 加入全部股票、全部范围的比较；`AGENT_NAME` 设置展示名称。文件应覆盖完整训练和测试期间，同一实验保持统一策略版本。未提供文件时只评价规则基线。
 
-`signals.from_final_state()` 可适配官方 `final_rating` / `final_trade_decision`；只接受 Buy/Hold/Sell，拒绝 Overweight/Underweight/REVIEW、冲突评级与仅有中间意见的结果。组员负责 Agent，不在本项目中投票或融合分析师意见。
+`signals.from_final_state()` 只读取最终 Portfolio Manager 评级。由于本回测只有全仓与空仓，固定映射为 Buy/Overweight → BUY、Hold → HOLD、Underweight/Sell → SELL。Overweight 和 Underweight 在这里不代表真实权重大小；日志保留原始 `final_rating`，报告必须说明这一二元化假设。REVIEW、冲突评级与仅有中间意见的结果仍直接报错。组员负责 Agent，不在本项目中投票或融合分析师意见。
 
 ## 样本外解释与核对
 
