@@ -4,7 +4,9 @@
 
 真实 Yahoo 行情、公司行动与 SEC 财报已取得，免费基线已有 Notebook 输出。A 已交付官方 TradingAgents 接入代码；首次真实 DeepSeek 运行据成员记录完成模型调用，但因评级适配失败未生成决策 CSV，原始状态与日志尚未随包交付。历史新闻仍待合格来源，正式批量实验尚未完成。
 
-最新交付与验收状态见 [项目进度（2026-10-15）](PROGRESS.md)，首次运行详情见 [DeepSeek 失败记录](reports/DeepSeek首次真实决策失败记录.md)。
+最新交付与验收状态见 [项目进度](PROGRESS.md)，首次运行详情见 [DeepSeek 失败记录](reports/DeepSeek首次真实决策失败记录.md)。
+
+提交材料：[一页英文 proposal（含 Agent 信息流图）](output/pdf/MSBD5018_Proposal_Submission.pdf)、[可编辑正文](proposal.md)。团队交接统一记录在 [项目协作表](docs/TradingAgents项目协作表.xlsx)，填写规则见 [协作说明](docs/COLLABORATION.md)。
 
 正式研究范围已确定为四类分析师、历史新闻文本情绪，总API预算80美元；见 [实施前验收协议](protocol.md) 和 [修订proposal](proposal.md)。当前工程默认仍是两分析师，历史新闻与四角色接入验收完成后再启动正式批跑；旧两分析师先导结果不混入正式比较。
 
@@ -21,7 +23,7 @@
 
 数据流：**B 共享数据 → A 生成真实经理决策 → C 按实验版本运行并记成本 → B 回测 → D 分析**。各组员在自己的目录开发；新增 Python 依赖统一加到根目录 requirements.txt，模型密钥放本地环境变量，不能提交。
 
-计划日期与当前演示范围分开：plan.md 提出 2024 年 1–3 月复现、2026 年 7–8 月主实验；当前 Notebook 展示更长的训练／测试基线。正式论文实验前由全组统一 config.json 的日期与留出方案。计划提到四条免费基线，目前实际实现三条；历史新闻、真实 Agent 的付费运行、C 的实际费用汇总与优化仍待完成。
+研究方案与当前演示配置分开：10月16日提交版集中于2026年连续40–60个交易日，先按新闻覆盖和试跑成本确定日期，再固定前60%开发、后40%评测；2024年复现不列本轮必做。plan.md中的旧日期仅作历史计划。当前Notebook仍展示更长的训练／测试基线，config.json尚未切换为正式窗口。目前实际实现三条免费基线；历史新闻、真实Agent批量实验、C的费用汇总与优化仍待完成。
 
 ## 目录与运行
 
@@ -37,6 +39,11 @@ analysis.ipynb       唯一回测实现，逐格检查数据、信号、仓位�
  agents/             A 的 Agent 单次／批量运行、冻结数据 vendor 与环境检查
  experiments/        C 的实验与成本记录入口（待开发）
  reports/            D 的分析与报告入口；含首次真实运行失败记录
+ docs/               团队协作工作表与交接填写规则
+ proposal.md         最新研究方案正文
+ protocol.md         实验协议；顶部注明最新范围及待冻结事项
+ output/pdf/         提交版PDF；旧修订版仅保留历史记录
+ scripts/            proposal PDF及矢量框架图生成脚本
  tests/              关键小样本测试，复用 Notebook 中的公式
  data/
    prices/           AAPL、GOOGL、AMZN 日频行情（各 946 行）
@@ -166,6 +173,6 @@ settings.py 的 freeze/check_evaluation 是可选实验冻结工具，Notebook �
 
 数据参考：[SEC API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)、[SEC 开发者说明](https://www.sec.gov/about/developer-resources)、[Alpha Vantage 新闻](https://www.alphavantage.co/documentation/#news-sentiment)。SEC 使用实际 acceptance 时间，旧分片缺时间则读取原始申报 header，同来源下仍无法核实就报错。
 
-历史新闻未取得，Yahoo 近期样本不覆盖实验，Alpha Vantage 对应接口为付费，未调用。SEC companyfacts 不保证全部自定义标签或完整财报。供应商可能修订历史数据，保存原始响应也不能证明当年首次发布原貌。
+历史新闻尚未验收，Yahoo近期样本不覆盖候选实验窗口。Alpha Vantage历史新闻已进行一次权限探测，返回Premium提示、没有新闻feed，未购买订阅；详见[官方新闻可行性记录](reports/official-news-feasibility/README.md)。SEC companyfacts不保证全部自定义标签或完整财报。供应商可能修订历史数据，保存原始响应也不能证明当年首次发布原貌。
 
 当代 LLM 可能已知道历史事件；输入时间过滤无法消除预训练知识风险。组员应记录模型、提示词、运行时间，隔离未来记忆与检索。比例收益模型不模拟税款、分红真实支付延迟或成交容量。人工数据仅用于测试。

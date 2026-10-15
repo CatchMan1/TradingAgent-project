@@ -22,7 +22,9 @@
 
 ### 授权和覆盖尚未实测
 
-官方适配器已有NEWS_SENTIMENT请求，支持time_from/time_to，供应商文档标注premium。当前环境未设置ALPHA_VANTAGE_API_KEY，项目不存在.env；没有测试用户真实账号的历史权限和三股样本覆盖，也没有购买订阅。不能把文档支持历史查询写为“已验证能用”。
+官方适配器已有NEWS_SENTIMENT请求，支持time_from/time_to，供应商文档标注premium。初步核验时未配置密钥；后续用户提供密钥，已仅保存至Git忽略的本地.env（权限0600，未跟踪）。没有在报告或日志中记录密钥值。
+
+2026-10-15使用该凭据向官方端点请求AAPL、2026-07-01至07-02历史新闻，HTTP 200但正文只有Information，明确提示NEWS_SENTIMENT需要Premium，没有返回feed。证据为alpha-historical-probe.json与alpha-historical-summary.json（不含密钥）。因此该次凭据下没有取得历史新闻，不能称覆盖已验收；也不能据此判定密钥无效。未购买订阅。
 
 下一步优先由B确认团队是否已有具备NEWS_SENTIMENT历史权限的账号，提供符合时间/文本/覆盖要求的样本；A复用现有适配器完成本地缓存和模拟收盘时点过滤。若官方路径可用，就不引入GDELT。只有官方历史数据/预算无法满足时，再评估其他来源。
 

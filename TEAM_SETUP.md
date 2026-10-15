@@ -1,5 +1,26 @@
 # 组员环境安装与运行
 
+## 从GitHub的side分支开始
+
+本仓库不内嵌上游TradingAgents副本。首次安装时，两个仓库放在同一个父目录，固定上游版本后在同一虚拟环境安装：
+
+```bash
+git clone --branch side https://github.com/CatchMan1/TradingAgent-project.git
+git clone https://github.com/TauricResearch/TradingAgents.git
+cd TradingAgents
+git checkout 1394a3f72aa4393e1a98f51b382434c4b4c2d972
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+cd ../TradingAgent-project
+python -m pip install -r requirements.txt
+cp .env.example .env
+```
+
+随后按README从data-v1 Release下载并校验数据包，再执行下方验证。四分析师是研究目标；当前默认仅启用技术和基本面，正式新闻/情绪流程须先完成数据验收。下文保留原团队压缩包安装方式。
+
+## 从原团队包开始
+
 压缩包包含两个并列目录：
 
 ```text
