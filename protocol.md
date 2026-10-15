@@ -93,6 +93,8 @@ C：先做pilot和账单核对，创建实验清单和成本表；只按冻结�
 
 ## 9. 依据
 
+2026-10-15补充：[市场状态核对](reports/market-period-comparison/README.md)表明两个时期不能视为相似行情；现阶段保留“2024复现/2026跨环境比较”的用途，不用两时期绝对收益直接证明改进。已查看留出期价格描述性统计，须披露，不能再称完全盲测；本次未运行Agent或据其结果更改日期/规则。
+
 - 本地groupProposal5018.pdf（2026-10-09）及MSBD 5018 Group Project Guideline Fall 2026.docx：一页PDF proposal，10月17日23:59；主要结果11月17日；8页ACL报告/代码数据12月9日。
 - 本地团队包、首次DeepSeek失败记录、PROGRESS.md及当前代码。
 - DeepSeek模型/价格：https://api-docs.deepseek.com/quick_start/pricing/ （核对于2026-10-15）
