@@ -7,11 +7,28 @@
 
 ## 1. Task Introduction
 
-We investigate whether organizing large language model (LLM) agents into specialized roles improves trading decisions relative to a single agent receiving the same historical evidence. We adapt TradingAgents (Xiao et al., 2025), retaining four analysts (technical, fundamental, news, and sentiment), bull/bear researchers, a trader, risk discussion, and a final manager. Agents use a shared LLM API with role-specific prompts and a staged workflow; no model training is required. The news analyst examines events and business implications, while the sentiment analyst assesses the tone of the same historical news texts. We explicitly distinguish this news-derived sentiment from social-media sentiment.
+We test whether specialized large language model (LLM) agents improve trading decisions over a single agent receiving the same historical evidence. Adapting TradingAgents (Xiao et al., 2025), we use a shared LLM API, role-specific prompts, and the workflow in Figure 1; no model training is required. The news analyst examines events and business implications; the sentiment analyst assesses the tone of the same news texts, explicitly using news-derived rather than social-media sentiment.
+
+<!-- FRAMEWORK_FIGURE -->
+
+```mermaid
+flowchart LR
+    D[Historical evidence available by decision cutoff] --> T[Technical analyst]
+    D --> F[Fundamental analyst]
+    D --> N[News analyst]
+    D --> S[News-sentiment analyst]
+    T & F & N & S --> R[Bull/bear debate and research manager]
+    R --> TR[Trader proposal]
+    TR --> RK[Risk discussion]
+    RK --> M[Final manager rating]
+    M --> B[Position mapping, next-open execution and backtest]
+```
+
+*Figure 1. Proposed information flow; news and sentiment roles share historical news inputs.*
 
 ## 2. Why This Task Is Important
 
-Multi-agent collaboration is a central NLP research problem: specialized agents may identify complementary evidence and challenge unsupported conclusions, but discussion can also propagate shared errors and increase inference cost. Trading offers measurable downstream decisions for examining these trade-offs. Our research question is whether the staged organization improves risk-adjusted performance enough to justify its additional computation. A same-evidence single-agent control and a debate ablation help interpret observed gains, while explicit cost reporting avoids treating additional LLM calls as free. The project contributes a controlled, reproducible evaluation rather than assuming that a more elaborate agent system is necessarily better.
+Specialized agents may identify complementary evidence and challenge unsupported conclusions, but discussion can also propagate shared errors and increase inference cost. Trading provides measurable decisions for studying these trade-offs. We ask whether staged collaboration improves risk-adjusted performance enough to justify its cost. A same-evidence single-agent control, a debate ablation, and explicit cost reporting support a controlled evaluation without presuming that a more elaborate workflow is better.
 
 ## 3. Proposed Methodology
 
