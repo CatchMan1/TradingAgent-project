@@ -8,6 +8,8 @@
 
 提交材料：[一页英文 proposal（含 Agent 信息流图）](output/pdf/MSBD5018_Proposal_Submission.pdf)、[可编辑正文](proposal.md)。团队交接统一记录在 [项目协作表](docs/TradingAgents项目协作表.xlsx)，填写规则见 [协作说明](docs/COLLABORATION.md)。
 
+周晓杨负责项目统筹、方案与proposal整合、团队进度核对及协作交接组织；各成员已有交付及职责见[项目贡献记录](docs/CONTRIBUTIONS.md)。文稿和仓库整理由Codex辅助，工程与数据实现按实际组员交付归属。
+
 正式研究范围已确定为四类分析师、历史新闻文本情绪，总API预算80美元；见 [实施前验收协议](protocol.md) 和 [修订proposal](proposal.md)。当前工程默认仍是两分析师，历史新闻与四角色接入验收完成后再启动正式批跑；旧两分析师先导结果不混入正式比较。
 
 ## 小组分工与开发位置
