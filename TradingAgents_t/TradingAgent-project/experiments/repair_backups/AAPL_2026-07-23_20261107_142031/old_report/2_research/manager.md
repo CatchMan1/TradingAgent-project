@@ -1,0 +1,14 @@
+**Recommendation**: Underweight
+
+**Rationale**:  
+The bear case is stronger at the current **AAPL** price of **$321.66**, but not strong enough to justify **Sell**. The bull is correct that AAPL’s primary trend remains intact: price is above the rising 50 SMA at **305.47** and 200 SMA at **275.60**, RSI is still above 50 at **58.11**, and MACD remains above signal at **8.107 vs 7.312**. That argues against exiting entirely.
+
+However, the near-term risk/reward has deteriorated. AAPL has four consecutive lower closes after a **+21.3% rally in 15 sessions**, closed below the 10 EMA at **322.66**, and sits only about **28 cents above VWMA at 321.376**. A normal ATR move could quickly break **321.38**, then **319.35**, **317.32**, and the bull’s own **315.20–317.40** buy zone. The MACD is still positive but rolling toward a bearish cross, and RSI has compressed rapidly. The bull’s own instruction to “not chase” and wait for **315–317** concedes that current price is not attractive.
+
+The news catalysts are also not yet quantified in the provided evidence. China AI/Qwen is a positive headline but lacks Apple-specific financial numbers; Klarna leasing is single-source, Apple-unconfirmed, and carries revenue-recognition/margin-optics risk; Mac refresh is small and “reportedly” coming; IDC’s memory commentary is mixed because premium scale helps relative positioning but component costs pressure margins. Valuation headlines are sentiment rather than a fundamental model, but they add multiple-compression risk into Q3. With no fundamentals model supplied, neither side can quantify these catalysts, which supports caution rather than aggressive accumulation.
+
+**Strategic Actions**:  
+- For a standard **AAPL** allocation, trim **20–30%** of the position into current strength or rallies into **322.66–327.74**, retaining a **70–80%** core position given the intact long-term uptrend.  
+- Do not initiate new **AAPL** exposure at **321.66**. Require proof before adding: either a pullback to **315.20–317.40** that stabilizes on below-average volume with RSI above ~45, or a daily close above **334.99** on volume above ~60M with MACD re-accelerating.  
+- Tighten risk: if **AAPL** closes below **321.38** and fails to recover within 1–2 sessions, trim further. A daily close below **317.32** should cut tactical exposure; a daily close below **305.47** exits the swing position. Downside watch levels are **311.49** and **305.47**; upside resistance is **322.66**, then **325.89–327.74**, then **333.74–334.99**.  
+- Reassess around the July 28 Klarna event and Q3: upgrade to Hold/Overweight only if Apple-specific monetization or leasing details confirm upside and **AAPL** reclaims the 10 EMA with volume. Stay Underweight if lease-accounting optics, margin pressure, or momentum deterioration worsen.

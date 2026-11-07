@@ -1,5 +1,11 @@
 # 项目交付进度 — 2026-10-15
 
+## 2026-11-08 TradingAgents_t目录交付
+
+按周晓杨要求，将本地TradingAgents_t作为独立目录收录side，保留其中并列的TradingAgent-project课程项目、修改后的TradingAgents框架（含原LICENSE）和ROLE_C_HANDOFF.md。根目录既有项目与此前贡献记录保留；本次是目录交付，不表示两个代码树已合并为单一实现。
+
+收录代码、文档、实验清单及目录内未被忽略的成本/运行汇总；排除本地.env、原始数据（包括约1GB的FinAtlas parquet）、缓存、环境与agents/logs。未调用付费模型。208个Python源码文件通过AST语法检查，选定文件未发现源目录.env中的密钥值。当前可用的旧验证环境缺少pytest，本次未重新执行功能测试；交接文档中的既往测试/运行描述不作为本次复核结果。
+
 ## 2026-10-16 side分支整合准备
 
 周晓杨已确认整合结构并授权推送side，要求记录本人工作；已补充[贡献记录](docs/CONTRIBUTIONS.md)，说明其方案统筹、成果核对、proposal与框架图整合、协作表和交接组织，以及Codex辅助情况。推送结果以实际远程回执为准。

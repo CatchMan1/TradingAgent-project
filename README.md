@@ -1,5 +1,7 @@
 # TradingAgents：数据与量化回测
 
+2026-11-08新增：[TradingAgents_t团队交付目录](TradingAgents_t/ROLE_C_HANDOFF.md)，其中包含并列的课程项目与修改后的TradingAgents框架（含Finnhub新闻接入）。本次按原目录结构收录代码与文档，未覆盖根目录已有项目；两个版本的运行说明分别适用于各自目录。该交付包的本地密钥、原始数据、缓存和运行日志未上传，不能将交接文档中的运行描述视为本次已核验的完整实验结果。
+
 课程项目流程：**共享 data/ → 组员 Agent → 最终经理 CSV → analysis.ipynb → 收益风险与图表**。
 
 真实 Yahoo 行情、公司行动与 SEC 财报已取得，免费基线已有 Notebook 输出。A 已交付官方 TradingAgents 接入代码；首次真实 DeepSeek 运行据成员记录完成模型调用，但因评级适配失败未生成决策 CSV，原始状态与日志尚未随包交付。历史新闻仍待合格来源，正式批量实验尚未完成。

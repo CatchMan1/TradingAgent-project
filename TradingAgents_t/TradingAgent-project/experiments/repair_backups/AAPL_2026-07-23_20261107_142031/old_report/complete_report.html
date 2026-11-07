@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>AAPL 2026-07-23 Underweight: TradingAgents report</title>
+<style>
+:root {
+  --paper: #fbfbfa; --ink: #1c2126; --muted: #5d6670; --rule: #e2e5e8; --wash: #f2f4f5;
+  --accent: #087a59; --up: #087a59; --down: #b4372f; --level: #5d6670; --edge: #d3d8dc; --mark: #878f97;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131a1f; --ink: #e4e8eb; --muted: #9aa6af; --rule: #263239; --wash: #1a242a;
+    --accent: #14c290; --up: #14c290; --down: #ef6f63; --level: #9aa6af; --edge: #3d4c55; --mark: #66737c;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .masthead .logo [stroke="#363636"] { stroke: var(--muted); }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.62 var(--serif); font-kerning: normal;
+}
+.page { max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.5rem 6rem; }
+main h2, main h3 { scroll-margin-top: 1rem; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+h1, h2, h3, h4 { text-wrap: balance; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.masthead { padding-bottom: 1.75rem; border-bottom: 1px solid var(--rule); }
+/* The logo leads at the top left, where readers look for it, 24px tall (the usual
+   on-screen floor for a wordmark) with at least its height clear below. */
+.masthead .logo { display: block; width: fit-content; margin: 0 0 2.25rem; }
+.masthead .logo svg { display: block; height: 1.5rem; width: auto; }
+.masthead h1 {
+  margin: 0; font: 600 2.6rem/1.1 var(--sans); letter-spacing: -0.02em;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.5em;
+}
+.masthead .rating { font-weight: 500; }
+.rating.up { color: var(--up); } .rating.down { color: var(--down); } .rating.level { color: var(--level); }
+.rating.review { color: var(--muted); font-style: italic; }
+.masthead .date { margin: 0.55rem 0 1.5rem; font: 1rem/1.4 var(--sans); color: var(--muted); }
+.run { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.45rem 1.25rem;
+  font: 0.85rem/1.5 var(--sans); }
+.run > div { display: contents; }
+.run dt { color: var(--muted); }
+.run dd { margin: 0; overflow-wrap: anywhere; }
+.run .note dd { color: var(--down); }
+.field { display: inline-block; margin: 0 0.15rem 0.15rem 0; padding: 0 0.4rem; border: 1px solid var(--edge);
+  border-radius: 4px; background: var(--wash); font: 0.8rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.run .group { display: inline-block; margin-right: 0.9rem; white-space: nowrap; }
+.run .group > .name { color: var(--muted); margin-right: 0.3rem; }
+.run .then { color: var(--muted); margin: 0 0.2rem; }
+
+/* The sections: listed under the header on narrow screens. On wide ones, a
+   quiet rail centred on the left edge (numerals for the sections, short bars
+   for their agents) that opens into the full list when pointed at or focused. */
+.contents { margin: 2.25rem 0 0; font: 0.9rem/1.45 var(--sans); }
+.contents ul { margin: 0; padding: 0; list-style: none; }
+.contents > ul > li { margin: 0 0 0.75rem; }
+.contents ul ul { margin-top: 0.2rem; padding-left: 1.6rem; font-size: 0.85rem; }
+.contents ul ul li { margin: 0.1rem 0; }
+.contents a { display: flex; align-items: center; gap: 0.6rem; color: var(--muted); text-decoration: none; }
+.contents > ul > li > a { color: var(--ink); }
+.contents .num { min-width: 1.6rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.contents .bar { display: none; }
+.contents a:hover .label, .contents a:focus-visible .label { color: var(--accent); text-decoration: underline; }
+.to-top { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom));
+  padding: 0.25rem 0.6rem; border: 1px solid var(--edge); border-radius: 4px; background: var(--paper);
+  color: var(--muted); font: 0.8rem/1.4 var(--sans); text-decoration: none; }
+
+@media (min-width: 60rem) {
+  .contents { position: fixed; left: 1rem; top: 50%; transform: translateY(-50%); z-index: 1;
+    max-height: 86vh; overflow-y: auto; overscroll-behavior: contain; margin: 0;
+    padding: 0.7rem 0.9rem; border: 1px solid transparent; border-radius: 6px;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s; }
+  .contents > ul > li { margin: 0 0 0.35rem; }
+  .contents ul ul { margin-top: 0; padding-left: 0; }
+  .contents ul ul li { margin: 0; }
+  /* Marks reach 3:1 contrast and rows 24px, the WCAG 2.2 floors for a control's
+     visual cue and its pointer target. */
+  .contents a { min-height: 1.5rem; }
+  .contents .num { min-width: 1.4rem; }
+  .contents .bar { display: block; flex: none; width: 1.25rem; height: 2px; margin-left: 0.2rem;
+    border-radius: 1px; background: var(--mark); }
+  .contents .label { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+    transition: opacity 0.15s, max-width 0.2s; }
+  .contents:hover, .contents:focus-within { background: var(--paper); border-color: var(--rule);
+    box-shadow: 0 6px 24px rgb(0 0 0 / 0.08); }
+  .contents:hover .label, .contents:focus-within .label { max-width: 18rem; opacity: 1; }
+  .contents a:hover .bar, .contents a:focus-visible .bar { background: var(--accent); }
+  .to-top { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contents, .contents .label { transition: none; }
+}
+
+/* The maker's credit: one quiet line at the foot. */
+.credit { margin-top: 4.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
+  color: var(--muted); font: 0.8rem/1.4 var(--sans); }
+.credit a { color: inherit; text-decoration: none; }
+.credit a.brand { color: var(--accent); }
+.credit a:hover, .credit a:focus-visible { text-decoration: underline; }
+
+/* Three levels of separation: the five groups, the agents within a group, and
+   breaks an agent draws inside its own text. */
+main h2 {
+  margin: 4.5rem 0 0.25rem; padding-top: 1.5rem; border-top: 2px solid var(--ink);
+  font: 600 1.45rem/1.3 var(--sans); letter-spacing: -0.01em;
+}
+main section:first-child h2 { margin-top: 3rem; }
+main h3 { margin: 2.75rem 0 0.75rem; padding-top: 1.1rem; border-top: 1px solid var(--rule);
+  font: 600 1.15rem/1.35 var(--sans); color: var(--accent); }
+main h2 + h3 { margin-top: 1.25rem; padding-top: 0; border-top: 0; }
+main h4, main h5, main h6 { margin: 1.75rem 0 0.5rem; font: 600 1rem/1.4 var(--sans); }
+main h5, main h6 { color: var(--muted); }
+main p, main ul, main ol { margin: 0 0 1rem; }
+main li { margin: 0.25rem 0; }
+main strong { font-weight: 650; }
+main blockquote { margin: 1.25rem 0; padding: 0.1rem 0 0.1rem 1rem; border-left: 3px solid var(--rule);
+  color: var(--muted); }
+main code { font: 0.88em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--wash); padding: 0.1em 0.3em; border-radius: 3px; }
+main pre { background: var(--wash); padding: 0.9rem 1rem; border-radius: 4px; overflow-x: auto; }
+main pre code { background: none; padding: 0; }
+main hr { width: 3rem; margin: 2rem auto; border: 0; border-top: 1px solid var(--rule); }
+
+.table { overflow-x: auto; margin: 0 0 1.25rem; }
+table { border-collapse: collapse; width: 100%; font: 0.86rem/1.45 var(--sans);
+  font-variant-numeric: tabular-nums; }
+th, td { padding: 0.45rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; border-bottom-color: var(--muted); }
+tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 34rem) {
+  body { font-size: 16px; }
+  .page { padding: 2rem 1rem 3rem; }
+  .masthead h1 { font-size: 2rem; }
+  .masthead .logo svg { height: 1.25rem; }
+  .run { grid-template-columns: 1fr; gap: 0 0; }
+  .run dd { margin-bottom: 0.45rem; }
+  .run .group { white-space: normal; }
+}
+@media print {
+  :root { --paper: #fff; --ink: #000; --muted: #444; --rule: #bbb; --accent: #000; --wash: #f2f2f2;
+    --edge: #bbb; --up: #087a59; --down: #b4372f; --level: #444; }
+  body { font-size: 11pt; }
+  .table { overflow: visible; }
+  .page { max-width: none; padding: 0; }
+  .contents, .to-top { display: none; }
+  main h2 { break-before: page; border-top: 0; margin-top: 0; }
+  main section:first-child h2 { break-before: auto; }
+  main h3, main h4 { break-after: avoid; }
+  a { color: inherit; text-decoration: none; }
+  table { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page" id="top">
+<header class="masthead">
+<a class="logo" href="https://tauric.ai" rel="noopener" aria-label="Tauric Research"><svg width="993" height="115" viewBox="0 0 993 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M189.86 95.0459V37.9779H165.924V29.9259H223.74V37.9779H199.804V95.0459H189.86ZM251.026 46.4259C256.071 46.4259 260.178 47.0272 263.345 48.2299C266.514 49.4032 268.89 51.3686 270.474 54.1259C272.058 56.8832 272.85 60.6379 272.85 65.3899V95.0459H264.666L263.961 89.8979H263.434C261.644 91.7752 259.386 93.2419 256.657 94.2979C253.929 95.3246 251.025 95.8379 247.946 95.8379C244.426 95.8379 241.419 95.2952 238.925 94.2099C236.432 93.0952 234.54 91.5406 233.249 89.5459C231.959 87.5512 231.313 85.2046 231.313 82.5059C231.313 78.2526 232.897 74.9672 236.065 72.6499C239.263 70.3032 244.337 68.8219 251.29 68.2059L263.258 67.0179V64.7299C263.258 61.9139 262.774 59.7139 261.806 58.1299C260.838 56.5459 259.371 55.4312 257.406 54.7859C255.47 54.1406 252.888 53.8179 249.662 53.8179C247.432 53.8179 245.012 54.0086 242.401 54.3899C239.82 54.7712 237.341 55.3432 234.965 56.1059V48.8019C237.312 48.0392 239.908 47.4526 242.754 47.0419C245.628 46.6312 248.386 46.4259 251.026 46.4259ZM250.541 89.0619C252.888 89.0619 255.162 88.6512 257.362 87.8299C259.562 86.9792 261.527 85.7179 263.258 84.0459V72.8259L252.038 73.9259C248.136 74.3659 245.35 75.2166 243.678 76.4779C242.005 77.7099 241.169 79.4699 241.169 81.7579C241.169 84.0752 241.947 85.8792 243.501 87.1699C245.056 88.4312 247.403 89.0619 250.541 89.0619ZM313.339 95.8379C307.59 95.8379 303.087 94.2979 299.831 91.2179C296.575 88.1086 294.947 83.2686 294.947 76.6979V47.1739H304.715V76.1699C304.715 80.1886 305.624 83.0779 307.443 84.8379C309.291 86.5979 311.916 87.4779 315.319 87.4779C317.871 87.4779 320.379 86.9939 322.843 86.0259C325.336 85.0286 327.492 83.5766 329.311 81.6699V47.1739H339.079V95.0459H330.983L330.367 89.9419H329.883C327.624 91.8486 325.072 93.3152 322.227 94.3419C319.382 95.3392 316.419 95.8379 313.339 95.8379ZM362.371 47.1739H370.423L371.171 53.2899H371.743C373.474 51.2072 375.703 49.5792 378.431 48.4059C381.188 47.2326 384.063 46.6459 387.055 46.6459C388.756 46.6459 390.355 46.7926 391.851 47.0859V55.8419C390.414 55.5779 388.654 55.4459 386.571 55.4459C383.99 55.4459 381.364 55.9446 378.695 56.9419C376.026 57.9392 373.84 59.4206 372.139 61.3859V95.0459H362.371V47.1739ZM409.069 95.0459V47.1739H418.837V95.0459H409.069ZM413.953 37.8459C411.871 37.8459 410.287 37.3912 409.201 36.4819C408.145 35.5726 407.617 34.2672 407.617 32.5659C407.617 30.8352 408.145 29.5152 409.201 28.6059C410.287 27.6672 411.871 27.1979 413.953 27.1979C416.036 27.1979 417.605 27.6672 418.661 28.6059C419.747 29.5152 420.289 30.8352 420.289 32.5659C420.289 34.2672 419.747 35.5726 418.661 36.4819C417.605 37.3912 416.036 37.8459 413.953 37.8459ZM464.85 95.9259C456.607 95.9259 450.315 93.8432 445.974 89.6779C441.662 85.5126 439.506 79.3526 439.506 71.1979C439.506 63.0139 441.779 56.8392 446.326 52.6739C450.902 48.5086 457.575 46.4259 466.346 46.4259C470.716 46.4259 474.735 46.9246 478.402 47.9219V55.7099C476.378 55.2406 474.486 54.8886 472.726 54.6539C470.966 54.4192 469.118 54.3019 467.182 54.3019C461.168 54.3019 456.71 55.6512 453.806 58.3499C450.931 61.0486 449.494 65.2872 449.494 71.0659C449.494 76.8739 450.858 81.1566 453.586 83.9139C456.343 86.6712 460.42 88.0499 465.818 88.0499C467.695 88.0499 469.616 87.8886 471.582 87.5659C473.547 87.2139 475.82 86.6712 478.402 85.9379V93.7259C474.236 95.1926 469.719 95.9259 464.85 95.9259ZM574.428 95.0459L553.704 69.0859C553.176 69.1152 552.37 69.1299 551.284 69.1299C548.38 69.1299 544.978 68.9832 541.076 68.6899V95.0459H531.308V31.4659C537.967 29.9699 544.846 29.2219 551.944 29.2219C561.595 29.2219 568.752 30.8059 573.416 33.9739C578.08 37.1126 580.412 42.1286 580.412 49.0219C580.412 54.0086 579.004 58.0859 576.188 61.2539C573.402 64.4219 569.266 66.6366 563.78 67.8979L585.648 95.0459H574.428ZM541.076 61.2099C543.071 61.4152 544.816 61.5619 546.312 61.6499C547.838 61.7379 549.627 61.7819 551.68 61.7819C558.427 61.7819 563.34 60.7699 566.42 58.7459C569.5 56.6926 571.04 53.4952 571.04 49.1539C571.04 46.0739 570.395 43.6099 569.104 41.7619C567.843 39.9139 565.863 38.5792 563.164 37.7579C560.495 36.9366 556.975 36.5259 552.604 36.5259C550.404 36.5259 548.424 36.6139 546.664 36.7899C544.904 36.9659 543.042 37.2299 541.076 37.5819V61.2099ZM642.947 74.0139H608.231C608.407 77.4752 609.155 80.2766 610.475 82.4179C611.795 84.5299 613.775 86.0846 616.415 87.0819C619.055 88.0792 622.443 88.5779 626.579 88.5779C630.686 88.5779 635.233 87.9472 640.219 86.6859V93.9459C635.027 95.2659 630.026 95.9259 625.215 95.9259C616.298 95.9259 609.61 93.9166 605.151 89.8979C600.722 85.8499 598.507 79.6166 598.507 71.1979C598.507 65.9179 599.402 61.4299 601.191 57.7339C602.981 54.0379 605.562 51.2366 608.935 49.3299C612.338 47.3939 616.43 46.4259 621.211 46.4259C628.251 46.4259 633.634 48.5819 637.359 52.8939C641.085 57.1766 642.947 63.3659 642.947 71.4619V74.0139ZM621.079 52.8939C616.973 52.8939 613.834 54.1406 611.663 56.6339C609.493 59.0979 608.334 62.9259 608.187 68.1179H633.751C633.634 62.9259 632.519 59.0979 630.407 56.6339C628.295 54.1406 625.186 52.8939 621.079 52.8939ZM677.365 95.9259C671.352 95.9259 665.896 95.2219 660.997 93.8139V86.7299C666.248 88.1966 671.718 88.9299 677.409 88.9299C681.809 88.9299 684.977 88.3432 686.913 87.1699C688.849 85.9672 689.817 84.2219 689.817 81.9339C689.817 80.7019 689.597 79.6899 689.157 78.8979C688.717 78.0766 687.969 77.4019 686.913 76.8739C685.857 76.3166 684.405 75.8912 682.557 75.5979L674.065 74.2779C669.137 73.4859 665.573 71.9899 663.373 69.7899C661.202 67.5899 660.117 64.6419 660.117 60.9459C660.117 56.4579 661.965 52.9232 665.661 50.3419C669.386 47.7312 675.062 46.4259 682.689 46.4259C685.094 46.4259 687.485 46.5872 689.861 46.9099C692.266 47.2032 694.481 47.6432 696.505 48.2299V55.2699C692.046 54.0379 687.456 53.4219 682.733 53.4219C677.893 53.4219 674.476 54.0526 672.481 55.3139C670.486 56.5752 669.489 58.3206 669.489 60.5499C669.489 62.2219 670.002 63.5859 671.029 64.6419C672.056 65.6686 673.889 66.4166 676.529 66.8859L685.021 68.2059C689.92 68.9686 693.513 70.3766 695.801 72.4299C698.089 74.4832 699.233 77.4606 699.233 81.3619C699.233 84.3832 698.412 86.9792 696.769 89.1499C695.156 91.3206 692.706 92.9926 689.421 94.1659C686.165 95.3392 682.146 95.9259 677.365 95.9259ZM760.579 74.0139H725.863C726.039 77.4752 726.787 80.2766 728.107 82.4179C729.427 84.5299 731.407 86.0846 734.047 87.0819C736.687 88.0792 740.075 88.5779 744.211 88.5779C748.317 88.5779 752.864 87.9472 757.851 86.6859V93.9459C752.659 95.2659 747.657 95.9259 742.847 95.9259C733.929 95.9259 727.241 93.9166 722.783 89.8979C718.353 85.8499 716.139 79.6166 716.139 71.1979C716.139 65.9179 717.033 61.4299 718.823 57.7339C720.612 54.0379 723.193 51.2366 726.567 49.3299C729.969 47.3939 734.061 46.4259 738.843 46.4259C745.883 46.4259 751.265 48.5819 754.991 52.8939C758.716 57.1766 760.579 63.3659 760.579 71.4619V74.0139ZM738.711 52.8939C734.604 52.8939 731.465 54.1406 729.295 56.6339C727.124 59.0979 725.965 62.9259 725.819 68.1179H751.383C751.265 62.9259 750.151 59.0979 748.039 56.6339C745.927 54.1406 742.817 52.8939 738.711 52.8939ZM796.986 46.4259C802.032 46.4259 806.138 47.0272 809.306 48.2299C812.474 49.4032 814.85 51.3686 816.434 54.1259C818.018 56.8832 818.81 60.6379 818.81 65.3899V95.0459H810.626L809.922 89.8979H809.394C807.605 91.7752 805.346 93.2419 802.618 94.2979C799.89 95.3246 796.986 95.8379 793.906 95.8379C790.386 95.8379 787.38 95.2952 784.886 94.2099C782.393 93.0952 780.501 91.5406 779.21 89.5459C777.92 87.5512 777.274 85.2046 777.274 82.5059C777.274 78.2526 778.858 74.9672 782.026 72.6499C785.224 70.3032 790.298 68.8219 797.25 68.2059L809.218 67.0179V64.7299C809.218 61.9139 808.734 59.7139 807.766 58.1299C806.798 56.5459 805.332 55.4312 803.366 54.7859C801.43 54.1406 798.849 53.8179 795.622 53.8179C793.393 53.8179 790.973 54.0086 788.362 54.3899C785.781 54.7712 783.302 55.3432 780.926 56.1059V48.8019C783.273 48.0392 785.869 47.4526 788.714 47.0419C791.589 46.6312 794.346 46.4259 796.986 46.4259ZM796.502 89.0619C798.849 89.0619 801.122 88.6512 803.322 87.8299C805.522 86.9792 807.488 85.7179 809.218 84.0459V72.8259L797.998 73.9259C794.097 74.3659 791.31 75.2166 789.638 76.4779C787.966 77.7099 787.13 79.4699 787.13 81.7579C787.13 84.0752 787.908 85.8792 789.462 87.1699C791.017 88.4312 793.364 89.0619 796.502 89.0619ZM841.524 47.1739H849.576L850.324 53.2899H850.896C852.627 51.2072 854.856 49.5792 857.584 48.4059C860.341 47.2326 863.216 46.6459 866.208 46.6459C867.909 46.6459 869.508 46.7926 871.004 47.0859V55.8419C869.567 55.5779 867.807 55.4459 865.724 55.4459C863.143 55.4459 860.517 55.9446 857.848 56.9419C855.179 57.9392 852.993 59.4206 851.292 61.3859V95.0459H841.524V47.1739ZM909.164 95.9259C900.921 95.9259 894.629 93.8432 890.288 89.6779C885.976 85.5126 883.82 79.3526 883.82 71.1979C883.82 63.0139 886.093 56.8392 890.64 52.6739C895.216 48.5086 901.889 46.4259 910.66 46.4259C915.03 46.4259 919.049 46.9246 922.716 47.9219V55.7099C920.692 55.2406 918.8 54.8886 917.04 54.6539C915.28 54.4192 913.432 54.3019 911.496 54.3019C905.482 54.3019 901.024 55.6512 898.12 58.3499C895.245 61.0486 893.808 65.2872 893.808 71.0659C893.808 76.8739 895.172 81.1566 897.9 83.9139C900.657 86.6712 904.734 88.0499 910.132 88.0499C912.009 88.0499 913.93 87.8886 915.896 87.5659C917.861 87.2139 920.134 86.6712 922.716 85.9379V93.7259C918.55 95.1926 914.033 95.9259 909.164 95.9259ZM941.796 23.9419H951.564V52.2779H952.048C954.248 50.3712 956.756 48.9192 959.572 47.9219C962.417 46.9246 965.395 46.4259 968.504 46.4259C974.019 46.4259 978.375 47.9952 981.572 51.1339C984.769 54.2432 986.368 59.0686 986.368 65.6099V95.0459H976.6V66.0939C976.6 62.0459 975.661 59.1566 973.784 57.4259C971.936 55.6952 969.237 54.8299 965.688 54.8299C963.048 54.8299 960.481 55.3286 957.988 56.3259C955.524 57.2939 953.383 58.7312 951.564 60.6379V95.0459H941.796V23.9419Z" fill="#14C290"/>
+<rect x="0.205322" y="14.873" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="14.679" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="14.679" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="86.6055" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="86.6055" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="101.284" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="58.7158" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="58.7158" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="87.1592" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="87.1592" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="73.0205" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="73.0205" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="87.3262" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="87.3262" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="101.631" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="101.631" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="101.284" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="15.0187" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.2668" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.2668" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.445" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.7506" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="100.716" y="14.873" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+</svg></a>
+<h1><span class="ticker">AAPL</span> <span class="rating down">Underweight</span></h1>
+<p class="date">Analysis of 2026-07-23</p>
+<dl class="run"><div class="detail"><dt>Generated</dt><dd>2026-11-05 19:20</dd></div><div class="detail"><dt>Deep model</dt><dd><span class="field">deepseek</span> <span class="field">deepseek-flash</span></dd></div><div class="detail"><dt>Quick model</dt><dd><span class="field">deepseek</span> <span class="field">deepseek-flash</span></dd></div><div class="detail"><dt>Analysts</dt><dd><span class="field">market</span> <span class="field">news</span> <span class="field">fundamentals</span></dd></div><div class="detail"><dt>Debate rounds</dt><dd><span class="group"><span class="name">research</span><span class="field">1</span></span> <span class="group"><span class="name">risk</span><span class="field">1</span></span></dd></div><div class="detail"><dt>Data vendors</dt><dd><span class="group"><span class="name">Prices</span><span class="field">course_project</span></span> <span class="group"><span class="name">Indicators</span><span class="field">course_project</span></span> <span class="group"><span class="name">Fundamentals</span><span class="field">course_project</span></span> <span class="group"><span class="name">News</span><span class="field">finnhub</span></span> <span class="group"><span class="name">Macro</span><span class="field">fred</span></span> <span class="group"><span class="name">Prediction markets</span><span class="field">polymarket</span></span> <span class="group"><span class="name">get_insider_transactions</span><span class="field">course_project</span></span> <span class="group"><span class="name">get_news</span><span class="field">finnhub</span></span></dd></div><div class="detail"><dt>Version</dt><dd>TradingAgents 0.6.0</dd></div></dl>
+</header>
+<nav class="contents" aria-label="Sections"><ul><li><a href="#s1"><span class="num">I</span> <span class="label">Analyst Team Reports</span></a><ul><li><a href="#s1-1"><span class="bar"></span> <span class="label">Market Analyst</span></a></li><li><a href="#s1-2"><span class="bar"></span> <span class="label">News Analyst</span></a></li></ul></li><li><a href="#s2"><span class="num">II</span> <span class="label">Research Team Decision</span></a><ul><li><a href="#s2-1"><span class="bar"></span> <span class="label">Bull Researcher</span></a></li><li><a href="#s2-2"><span class="bar"></span> <span class="label">Bear Researcher</span></a></li><li><a href="#s2-3"><span class="bar"></span> <span class="label">Research Manager</span></a></li></ul></li><li><a href="#s3"><span class="num">III</span> <span class="label">Trading Team Plan</span></a><ul><li><a href="#s3-1"><span class="bar"></span> <span class="label">Trader</span></a></li></ul></li><li><a href="#s4"><span class="num">IV</span> <span class="label">Risk Management Team Decision</span></a><ul><li><a href="#s4-1"><span class="bar"></span> <span class="label">Aggressive Analyst</span></a></li><li><a href="#s4-2"><span class="bar"></span> <span class="label">Conservative Analyst</span></a></li><li><a href="#s4-3"><span class="bar"></span> <span class="label">Neutral Analyst</span></a></li></ul></li><li><a href="#s5"><span class="num">V</span> <span class="label">Portfolio Manager Decision</span></a><ul><li><a href="#s5-1"><span class="bar"></span> <span class="label">Portfolio Manager</span></a></li></ul></li></ul></nav>
+<main>
+<section id="s1"><h2>I. Analyst Team Reports</h2><h3 id="s1-1">Market Analyst</h3>
+<h4>AAPL — Multi-Timeframe Technical Report</h4>
+<p><strong>Analysis date: 2026-07-23 (close) · Instrument: AAPL (Apple Inc.)</strong></p>
+<hr />
+<h5>1. Verified snapshot (source of truth)</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value (2026-07-23)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open</td>
+<td>321.73</td>
+</tr>
+<tr>
+<td>High</td>
+<td>323.30</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>319.35</td>
+</tr>
+<tr>
+<td><strong>Close</strong></td>
+<td><strong>321.66</strong></td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>40,840,800</td>
+</tr>
+<tr>
+<td>10 EMA</td>
+<td>322.655</td>
+</tr>
+<tr>
+<td>50 SMA</td>
+<td>305.467</td>
+</tr>
+<tr>
+<td>200 SMA</td>
+<td>275.599</td>
+</tr>
+<tr>
+<td>MACD / Signal / Hist</td>
+<td>8.107 / 7.312 / +0.795</td>
+</tr>
+<tr>
+<td>RSI(14)</td>
+<td>58.11</td>
+</tr>
+<tr>
+<td>Bollinger mid / upper / lower</td>
+<td>311.492 / 346.677 / 276.307</td>
+</tr>
+<tr>
+<td>ATR(14)</td>
+<td>7.918 (~2.46% of price)</td>
+</tr>
+<tr>
+<td>VWMA</td>
+<td>321.376</td>
+</tr>
+</tbody>
+</table></div>
+<p>All figures below come from the frozen OHLCV rows and the indicator calls above; every level cited has a concrete date attached.</p>
+<hr />
+<h5>2. Why these 8 indicators (complementary, non-redundant)</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Role in this specific context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>close_200_sma</strong> (275.60)</td>
+<td>Strategic trend anchor. AAPL is a bull-market structure; 200 SMA is rising ~0.3/day — the primary filter for &quot;trade with the trend.&quot;</td>
+</tr>
+<tr>
+<td><strong>close_50_sma</strong> (305.47)</td>
+<td>Medium-term trend + rising dynamic support, 5.3% below price. Defines the &quot;trend is intact&quot; line.</td>
+</tr>
+<tr>
+<td><strong>close_10_ema</strong> (322.66)</td>
+<td>Short-term momentum trigger. Price closed <strong>below</strong> it on 7/23 for the first time since 6/30 — the earliest, cleanest warning of a momentum shift.</td>
+</tr>
+<tr>
+<td><strong>macd</strong> (8.11)</td>
+<td>Confirms trend/momentum regime change. Line is still above signal (7.31) but is rolling over from 8.93 on 7/21.</td>
+</tr>
+<tr>
+<td><strong>rsi</strong> (58.11)</td>
+<td>Overbought/oversold reset gauge. 71.65 (7/17) → 58.11 = mechanical reset <strong>without</strong> price damage.</td>
+</tr>
+<tr>
+<td><strong>boll_ub</strong> (346.68)</td>
+<td>Extension/volatility-expansion gauge; distinguishes &quot;riding the band&quot; (healthy trend) from &quot;failed extension.&quot;</td>
+</tr>
+<tr>
+<td><strong>atr</strong> (7.92)</td>
+<td>Pure risk tool: stop placement and position sizing in a fast tape.</td>
+</tr>
+<tr>
+<td><strong>vwma</strong> (321.38)</td>
+<td>Volume-weighted truth of where recent buyers actually own stock — currently <em>at</em> price, the key line in the sand.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Deliberately excluded: <code>macds</code>/<code>macdh</code> (duplicative of <code>macd</code>; signal cross is already derivable from the verified snapshot), <code>boll</code>/<code>boll_lb</code> (the 50/200 SMAs already cover the mean-reversion/rubber-band function and the 20-period mid is quoted above), and <code>stochrsi</code> (redundant with RSI).</p>
+<hr />
+<h5>3. Trend structure — three timeframes, one direction</h5>
+<p><strong>Long-term (200 SMA): strongly bullish and still steepening.</strong>
+The 200 SMA rose from 261.99 (5/26) to 275.60 (7/23). Price at 321.66 sits <strong>+16.7% above</strong> it. The 50 SMA has been above the 200 SMA throughout the sample; the spread today is +29.87 points, i.e. the 50 SMA is <strong>10.8% above</strong> the 200 SMA — a wide, mature golden-cross configuration. This is late-stage-but-intact trend, not a top formation. Note the 200 SMA is the <em>only</em> downside level that would require a genuine trend break (a ~14% drawdown from here), so it is a strategic, not tactical, reference.</p>
+<p><strong>Medium-term (50 SMA): the load-bearing support.</strong> The 50 SMA has risen every single session from 271.72 (5/26) to 305.467 (7/23), gaining roughly 0.6–0.9 points per day. Critically, it is <em>rising into</em> price rather than price falling to a flat line — a textbook healthy configuration. Price is +5.3% above it.</p>
+<p><strong>Short-term (10 EMA): the first crack.</strong> The 10 EMA accelerated from 290.25 (7/1) to 322.66 (7/23) — a 32-point climb in three weeks, mirroring a near-vertical July advance. On 7/23 the close of 321.66 printed <strong>below</strong> the 10 EMA (322.66) for the first time since 6/30. That is a legitimate short-term momentum break, but note the magnitude: only −0.31%. One marginal close is a yellow flag, not a red one; a second consecutive close below would make it meaningful.</p>
+<p><strong>The path that produced this setup (all from tool data):</strong></p>
+<ul>
+<li>6/24 close 293.08 → 6/25 close <strong>275.15</strong> (−6.12%), intraday low 273.75 (−6.59%), on 107.0M shares — an unexplained gap-down in the data (no news available from these tools).</li>
+<li>6/26 printed 261.8M volume — a massive outlier, roughly 4–5× the July average, consistent with an index/rebalance-type event. Treat this bar as mechanically distorted, not as a directional signal.</li>
+<li>V-shaped recovery: 275.15 (6/25) → <strong>333.74</strong> (7/17) = <strong>+21.3% in 15 sessions</strong>, a ~1.3%/day advance. This is the definition of a parabolic leg.</li>
+<li>The breakout that matters: 7/15 close 327.50 (<strong>+4.01%</strong> vs 7/14's 314.86) on 61.0M shares, 7/16 and 7/17 both ~63M shares at new highs (333.26 / 333.74). This cleared the entire <strong>May–June consolidation ceiling of roughly 315.20–317.40</strong> (5/29 high 315.00; 6/2 close-highs 315.20 / 316.94; 6/8 high 317.40) on expanding volume — a high-quality breakout.</li>
+<li>Since 7/17 the tape has gone <strong>four consecutive lower closes</strong>: 333.74 → 326.59 → 327.74 → 325.89 → <strong>321.66</strong> (−3.62% from the record close, high-water mark 334.99 on 7/17).</li>
+</ul>
+<hr />
+<h5>4. Momentum: resetting, not reversing</h5>
+<ul>
+<li><strong>RSI:</strong> 71.65 on 7/17 → 58.11 on 7/23. That peak was the highest since 79.79 (5/28). The important detail: <strong>the RSI peak and the price peak coincide on 7/17</strong>, so there is no bearish RSI divergence at the high. This pattern — RSI falling ~13.5 points while price falls only ~3.6% — is characteristic of momentum <em>digestion</em>, not distribution. The RSI low in the 6/25 flush was 32.20; RSI has since held a higher-low sequence (32.2 → 39.9 → 46.9 → 50.97 → 60.26 → 71.65 → 58.11). Watch 50 as the dividing line between &quot;healthy pullback&quot; and &quot;momentum failure.&quot;</li>
+<li><strong>MACD:</strong> Line 8.107, signal 7.312, histogram <strong>+0.795</strong> — still bullish, but the histogram has now contracted from the 7/21 peak, and the MACD line peaked at 8.927 (7/21) and has ticked down two sessions. The June episode is the relevant template: in June the MACD fell from 10.09 (5/26) to a trough of −2.92 (6/29) <em>during the consolidation</em>, then re-accelerated. MACD's job now is binary: does it cross below 7.31 (bearish cross, confirming the pullback extends) or curl back up above ~8.9 (trend continuation)?</li>
+</ul>
+<hr />
+<h5>5. Volume: the pullback is quiet, which is constructive</h5>
+<ul>
+<li><strong>VWMA = 321.376 vs close 321.66 (+0.09%).</strong> This is the single most important number in the report. The VWMA has exploded higher — 296.42 (7/15) → 321.38 (7/23), a 25-point jump in six sessions — because the breakout was transacted on heavy volume. Price now sits <em>exactly</em> on the volume-weighted cost basis of recent buyers. Bull case: the VWMA acts as a rising floor and the average July buyer is still green. Bear case: any close decisively below ~321.4 puts the entire recent buyer cohort underwater, which typically invites supply.</li>
+<li><strong>Volume character:</strong> breakout days 7/15 (61.0M), 7/16 (63.0M), 7/17 (63.4M) averaged ~62.4M. The four pullback sessions averaged ~43.6M (53.5M, 41.3M, 38.8M, 40.8M), with 7/22's 38.8M the lightest of the group. <strong>Rising volume on the advance, contracting volume on the decline</strong> = accumulation pattern, i.e. supply is not aggressive.</li>
+</ul>
+<hr />
+<h5>6. Volatility and the Bollinger extension</h5>
+<ul>
+<li><strong>Bollinger upper band: 312.68 (7/1) → 346.68 (7/23), +10.9%.</strong> The band has expanded violently upward, and price is now <strong>7.2% below</strong> the upper band (321.66 vs 346.68) while sitting <strong>+3.3% above</strong> the mid-band (311.49). In the 7/15–7/17 thrust, price was pressing toward the upper-band envelope; it has now stepped back inside. Band expansion of this magnitude is a volatility-regime warning: the ranges available in <em>either</em> direction are now much larger than they were in early July.</li>
+<li><strong>ATR = 7.918 (2.46% of price).</strong> ATR crept from 5.81 (5/26) to a peak of 8.74 (7/2), and has eased to 7.92 — still elevated. Practical translation:
+<ul>
+<li>1×ATR stop from 321.66 = <strong>313.74</strong></li>
+<li>1.5×ATR = <strong>309.78</strong></li>
+<li>2×ATR = <strong>305.82</strong> (which lands almost exactly on the 50 SMA at 305.47)
+This is why the 50 SMA is the natural invalidation line for a swing position: a 2-ATR stop and the medium-term trend line coincide.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h5>7. The level map (all levels derived from tool output)</h5>
+<p><strong>Resistance</strong></p>
+<ol>
+<li><strong>322.66</strong> — 10 EMA (immediate, lost on 7/23)</li>
+<li><strong>325.89–327.74</strong> — 7/21–7/22 closes, the underside of the last three sessions</li>
+<li><strong>333.74 / 334.99</strong> — 7/17 record close and record intraday high</li>
+<li><strong>346.68</strong> — Bollinger upper band (dynamic; a price reaching it would be a re-acceleration)</li>
+</ol>
+<p><strong>Support</strong></p>
+<ol>
+<li><strong>321.38</strong> — VWMA (price is sitting on it <em>today</em>); confluence with 319.35 (7/23 low) makes <strong>319.35–321.40</strong> the immediate decision zone</li>
+<li><strong>317.32</strong> — 7/15 breakout candle low (never violated since the breakout)</li>
+<li><strong>315.20–317.40</strong> — the old May–June ceiling, now the primary retest zone; this is the highest-probability dip-buy area</li>
+<li><strong>311.49</strong> — Bollinger mid (20 SMA), rising fast; watch it converge toward the breakout zone over the next week</li>
+<li><strong>305.47</strong> — 50 SMA (medium-term trend invalidation; also 2×ATR)</li>
+<li><strong>275.60</strong> — 200 SMA (strategic trend invalidation)</li>
+</ol>
+<p>Note the structure of the levels: price has held 319.35 &gt; 317.32 &gt; 315.20. <strong>No support has been broken.</strong> The pullback so far is a three-and-a-half percent retrace of a 21% leg (only ~15% retracement of the move), which is exceptionally shallow.</p>
+<hr />
+<h5>8. Nuanced assessment &amp; actionable plan</h5>
+<p><strong>Base case (highest probability): bull-market consolidation before a retest of 334–335.</strong> Supporting evidence: price above a rising 50 SMA and a rising 200 SMA; MACD still above signal; VWMA rising and untested; volume contracting into the pullback; RSI reset from 71.7 to 58.1 with no divergence at the high; the breakout zone (315–317) never given back. The parabolic character of the 7/1–7/17 leg (+21.3% in 15 sessions) argues for several more sessions of chop or a deeper flush toward 315–317 before continuation.</p>
+<p><strong>Actionable ideas</strong></p>
+<ol>
+<li><strong>For existing longs:</strong> Keep the position, but tighten the trail. Two valid trailing stops:</li>
+</ol>
+<ul>
+<li><em>Tactical:</em> daily close below <strong>317.32</strong> (7/15 breakout low) = reduce 1/3 to 1/2.</li>
+<li><em>Strategic:</em> daily close below the <strong>50 SMA (305.47)</strong> = exit the swing position. Using 2×ATR (7.92) that is a ~5% risk distance — size accordingly (e.g., risk 1% of equity → notional ≈ 20% of equity if you use the full 15.8-point stop distance).</li>
+</ul>
+<ol start="2">
+<li><strong>For new entries (do not chase):</strong> Wait for one of two setups:</li>
+</ol>
+<ul>
+<li><em>Pullback buy:</em> a tag of <strong>315.20–317.40</strong> that holds on <em>below-average</em> volume, with RSI remaining above ~45. Stop below 311.49 (Boll mid) initially, move to below 305.47 if held. First target 333.74, then 346.68 (Boll upper).</li>
+<li><em>Breakout buy:</em> a daily close above <strong>334.99</strong> on volume &gt;~60M (matching the 7/15–7/17 breakout days). Stop 1×ATR (7.9) below the breakout close.</li>
+</ul>
+<ol start="3">
+<li><strong>What would flip the bias to bearish (all must be confirmed by tool data, not assumed):</strong></li>
+</ol>
+<ul>
+<li>Daily close below <strong>321.38 (VWMA)</strong> that is <em>not</em> recovered within 1–2 sessions → recent buyers underwater.</li>
+<li><strong>MACD crossing below its signal (7.31)</strong> — currently 8.11 vs 7.31, so a further ~10% erosion of MACD is required.</li>
+<li><strong>RSI breaking and holding below 50</strong> (currently 58.1).</li>
+<li>Two consecutive closes below the 10 EMA (already one on 7/23).
+In that scenario, the 311.49 (Boll mid) → 305.47 (50 SMA) zone becomes the measured downside objective.</li>
+</ul>
+<p><strong>Discrepancies / data caveats I want to flag rather than reconcile:</strong></p>
+<ul>
+<li>The verified snapshot lists <code>mfi = 0.618</code> — an unusual scale for Money Flow Index (normally 0–100). I have deliberately <strong>not</strong> used it in the analysis because its scaling is ambiguous.</li>
+<li>The 6/25 −6.12% gap and the 6/26 volume of 261.8M (≈6× the July mean) are unexplained by the available data tools; I am treating them as event/mechanical distortions and not as technical signals. No fundamental or earnings information is available from these tools, so no event-risk date is asserted here.</li>
+<li>AAPL went ex-dividend 2026-02-09 ($0.26) and 2026-05-11 ($0.27); the technical total-return index (327.09) exceeds the raw close (321.66), so total-return based metrics are marginally higher than price-based ones.</li>
+</ul>
+<hr />
+<h5>9. Summary table</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Reading (2026-07-23)</th>
+<th>Interpretation</th>
+<th>Level / Trigger to watch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary trend (200 SMA)</strong></td>
+<td>275.60, rising; price +16.7% above</td>
+<td>Bullish, mature</td>
+<td>Close below 275.60 = structural break</td>
+</tr>
+<tr>
+<td><strong>Medium trend (50 SMA)</strong></td>
+<td>305.47, rising ~0.6–0.9/day; price +5.3% above</td>
+<td>Bullish, support rising into price</td>
+<td>305.47 = swing invalidation</td>
+</tr>
+<tr>
+<td><strong>Short-term (10 EMA)</strong></td>
+<td>322.66; close 321.66 <strong>just below</strong> (first since 6/30)</td>
+<td>Early momentum crack, minor (−0.31%)</td>
+<td>2nd close below = caution</td>
+</tr>
+<tr>
+<td><strong>MACD</strong></td>
+<td>8.11 vs signal 7.31, hist +0.80, rolling over from 8.93 (7/21)</td>
+<td>Bullish but decelerating</td>
+<td>Cross below 7.31 = extension of pullback</td>
+</tr>
+<tr>
+<td><strong>RSI</strong></td>
+<td>58.11 (from 71.65 on 7/17)</td>
+<td>Overbought reset, <strong>no bearish divergence</strong></td>
+<td>Hold &gt;50 = bullish; &lt;50 = caution</td>
+</tr>
+<tr>
+<td><strong>Bollinger upper</strong></td>
+<td>346.68, +10.9% in 22 sessions; price 7.2% below it</td>
+<td>Volatility expansion; price stepped back inside bands</td>
+<td>346.68 = re-acceleration target</td>
+</tr>
+<tr>
+<td><strong>ATR</strong></td>
+<td>7.92 (2.46%); 1×=313.7, 2×=305.8</td>
+<td>Elevated; warrants smaller size / wider stops</td>
+<td>2×ATR ≈ 50 SMA ⇒ clean risk line</td>
+</tr>
+<tr>
+<td><strong>VWMA</strong></td>
+<td>321.38; close +0.09% above</td>
+<td>Price exactly at recent buyers' cost basis</td>
+<td>Losing 321.38 = supply risk</td>
+</tr>
+<tr>
+<td><strong>Volume behavior</strong></td>
+<td>Breakout days ~62.4M vs pullback days ~43.6M</td>
+<td>Accumulation pattern; quiet pullback</td>
+<td>Need &gt;60M on a new-high thrust</td>
+</tr>
+<tr>
+<td><strong>Structure</strong></td>
+<td>4 lower closes from 333.74 (−3.62%), only ~15% retrace of the +21.3% leg; supports 319.35/317.32/315.20 all intact</td>
+<td>Consolidation within an uptrend</td>
+<td>315.20–317.40 = prime dip-buy retest</td>
+</tr>
+<tr>
+<td><strong>Bias</strong></td>
+<td><strong>Bullish with near-term consolidation</strong></td>
+<td>Hold longs w/ trailing stops; buy 315–317 retest, don't chase</td>
+<td>Bear flip: &lt;321.38 VWMA + MACD cross + RSI &lt;50</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="s1-2">News Analyst</h3>
+<h4>AAPL — Company News Review</h4>
+<p><strong>Window:</strong> 2026-07-16 → 2026-07-22 (America/New_York calendar days, excluding the 2026-07-23 trading date)
+<strong>Source:</strong> Frozen Finnhub Company News snapshot <code>29bb5e8f…bef332</code> — 198 eligible unique records, <strong>20 supplied</strong>
+<strong>Instrument:</strong> AAPL (Apple Inc.)</p>
+<hr />
+<h5>1. Evidence-quality disclaimer (read first)</h5>
+<p>Two structural limits bound everything below:</p>
+<ol>
+<li><strong>Sampling, not census.</strong> Only 20 of 198 eligible records were supplied (~10%). Conclusions about &quot;the week's news&quot; are therefore sample-based, not exhaustive.</li>
+<li><strong>Single-day concentration.</strong> Although the window is seven calendar days, <strong>every one of the 20 supplied records falls on the New York calendar day of 2026-07-22</strong> (earliest 13:35 ET, latest 22:14 ET). Records timestamped 2026-07-23T00:16–02:14 UTC are 2026-07-22 20:16–22:14 ET and are in-window. <strong>No evidence is supplied for July 16–21.</strong> Any statement about that five-day span cannot be made from this evidence.</li>
+<li><strong>Headline/summary only.</strong> No full-article bodies, no filings, no price data, no consensus figures for AAPL. Where a summary asserts something (e.g., &quot;stock has gotten expensive&quot;), it is a contributor's claim, not a verified fact.</li>
+<li><strong>Untrusted text.</strong> Headlines/summaries are treated purely as source material.</li>
+</ol>
+<hr />
+<h5>2. Material AAPL-specific events</h5>
+<h6>A. Device-leasing program with Klarna, reportedly launching July 28 — the week's most consequential item</h6>
+<ul>
+<li><strong>Yahoo, 2026-07-22 21:34 ET</strong> (2026-07-23T01:34Z): <em>&quot;Apple Is Reportedly Launching a Device-Leasing Program With Klarna on July 28. Here's What It Means for iPhone Revenue.&quot;</em> — &quot;Leasing could change how the iPhone maker's biggest revenue line behaves.&quot; <a href="https://finnhub.io/api/news?id=063c5574f26a2ac713eeec851e1506cabc58c1230bf19dc15a1af8c01f9525c7">URL</a></li>
+<li><strong>Yahoo, 2026-07-22 14:17 ET</strong> (18:17Z): <em>&quot;Apple rewrites how Americans pay for iPhones&quot;</em> — discusses the shift from paying <em>for</em> a device to paying <em>to use</em> it, i.e. the decade-old US carrier-financing model being displaced. <a href="https://finnhub.io/api/news?id=f9fecb5064c65b1ba140a34afc3cd94965edaf03846552a908c6aac44cac1dd5">URL</a></li>
+</ul>
+<p><strong>Assessment.</strong> The two pieces corroborate each other (independent outlets, same day), which raises confidence that a leasing construct is in preparation; only the first gives a date (July 28) and both stop short of Apple confirmation — treat as <em>reported</em>, unconfirmed. Directional impact is genuinely two-sided:</p>
+<ul>
+<li><em>Supportive (medium term):</em> recurring-payment structures tend to shorten upgrade cycles, lift Services/attachment and smooth revenue; Klarna partnership outsources underwriting risk.</li>
+<li><em>Potentially negative near term (accounting/optics):</em> lease accounting can defer or recharacterize revenue that would previously have been booked as an upfront iPhone sale, which could complicate the headline iPhone revenue line and gross-margin optics in the first quarters after launch.</li>
+</ul>
+<p>Horizon: <strong>event risk on/around July 28</strong>; P&amp;L effects only visible in subsequent quarters. Confidence in <em>direction of stock reaction</em>: low-to-moderate.</p>
+<h6>B. Alibaba's Qwen to power Apple Intelligence in China, following regulatory approval</h6>
+<ul>
+<li><strong>Yahoo, 2026-07-22 20:16 ET</strong> (2026-07-23T00:16Z): Alibaba &quot;confirmed its Qwen large language model will power Apple Intelligence features on Apple devices in China, following regulatory approval that clears a key AI commercialization milestone.&quot; <a href="https://finnhub.io/api/news?id=c5352e9cbedbc3050cc1d9117ef1436e2161cf9163502022bd3d3b6e1505561f">URL</a></li>
+</ul>
+<p><strong>Assessment.</strong> The most cleanly <em>positive</em> AAPL item in the set. A regulatory green light removes the principal blocker to monetizing Apple Intelligence in China — Apple's most price-sensitive large market — and is a prospective upgrade-cycle catalyst. Caveat: the article is framed as a <strong>BABA</strong> investment thesis; the Apple side is background detail and the summary gives no Apple-specific financial quantum. Horizon: <strong>weeks-to-quarters</strong>, incremental rather than step-change. Confidence: moderate on direction, low on magnitude.</p>
+<h6>C. Mac lineup refresh reportedly coming</h6>
+<ul>
+<li><strong>Yahoo, 2026-07-22 17:04 ET</strong> (21:04Z): <em>&quot;Apple Eyes AI Demand With Mac Updates&quot;</em> — &quot;New MacBook Pro, Air and desktop models are reportedly coming.&quot; <a href="https://finnhub.io/api/news?id=860b96ea10147303acd601e206df4d001162f6ab5d35a205aeb51356c9228a25">URL</a></li>
+</ul>
+<p><strong>Assessment.</strong> Product-cycle filler: mildly supportive for sentiment and for the &quot;AI-driven hardware refresh&quot; narrative that the bull case leans on, but Mac is a small share of revenue and the item is unconfirmed (&quot;reportedly&quot;). Horizon: days-to-weeks. Confidence: low materiality.</p>
+<h6>D. $634 million Masimo patent verdict stands; separate trade-secret case heading to appeal</h6>
+<ul>
+<li><strong>Yahoo, 2026-07-22 14:12 ET</strong> (18:12Z): <em>&quot;Apple Fails to Overturn $634 Million Masimo Verdict&quot;</em> — &quot;The ruling keeps a major patent judgment in place while a separate trade-secret dispute moves to appeal.&quot; <a href="https://finnhub.io/api/news?id=26ac5c70ade1dcc2b150e4fdd59c777f3abe258343b1d0a1eec44fe196037309">URL</a></li>
+</ul>
+<p><strong>Assessment.</strong> Negative but <strong>financially immaterial at Apple's scale</strong> — a one-time judgment of this size is well under 0.5% of annual revenue and does not change earnings power. The real (tail) risk is the <em>separate, still-open</em> trade-secret dispute, whose remedy could touch health-sensor functionality — that is where optionality sits. Horizon: headline hit on the day; litigation tail over quarters. Confidence: high on direction, high that magnitude is small.</p>
+<h6>E. Valuation pushback — two independent bearish contributions</h6>
+<ul>
+<li><strong>SeekingAlpha, 2026-07-22 14:14 ET</strong> (18:14Z): <em>&quot;Apple: Sell Before Q3&quot;</em> — &quot;rated a Sell, as its valuation is highly stretched despite recent momentum and new product initiatives.&quot; <a href="https://finnhub.io/api/news?id=7114516f5ba9ba75d769971692c2aa6453fc4ae63ba3e368eba3c62e4b04c7cc">URL</a></li>
+<li><strong>Yahoo, 2026-07-22 17:04 ET</strong> (21:04Z): <em>&quot;The Risk in Apple's Stock That Nobody Is Talking About&quot;</em> — &quot;The iPhone maker's stock has gotten expensive.&quot; <a href="https://finnhub.io/api/news?id=93afc0317a5b0b8f817735b359bc8175f86749cb0b85cf619e0d3ec0f4bd6408">URL</a></li>
+</ul>
+<p><strong>Assessment.</strong> Opinion, not event risk — but the <em>convergence</em> of two independent outlets on &quot;valuation is stretched&quot; on the same afternoon is itself a sentiment signal. Both implicitly frame an <strong>imminent fiscal Q3 print</strong> (titles reference &quot;before Q3&quot;; the evidence does not state Apple's report date, so none is asserted here). Expect this framing to cap multiple expansion into the print and to amplify any guidance disappointment. Horizon: days to ~1–2 weeks. Confidence: moderate on sentiment drag, low on tradable magnitude.</p>
+<h6>F. Sector read-through: memory crunch favors premium OEMs</h6>
+<ul>
+<li><strong>CNBC, 2026-07-22 20:17 ET</strong> (2026-07-23T00:17Z): IDC's Kiranjeet Kaur — &quot;Large-scale, premium smartphone makers are better positioned for growth amid memory crunch&quot;; impact of the memory chip shortage on global smartphone makers &quot;is not uniform.&quot; <a href="https://finnhub.io/api/news?id=83bc6ee6f8e775f64a7280e8729c7cd63dfd34829ba3fd2a53f2c9af8cf6f928">URL</a></li>
+</ul>
+<p><strong>Assessment.</strong> A <strong>relative</strong> positive for Apple (scale, procurement leverage, premium mix) versus sub-scale Android OEMs — but note the internal tension: the same shortage is a <strong>BOM/gross-margin headwind</strong> for Apple itself. Net read: share gainer, margin risk. Horizon: next 1–2 quarters. Confidence: moderate (third-party analyst commentary, not Apple data).</p>
+<h6>G. Backdrop only (not AAPL catalysts)</h6>
+<ul>
+<li><strong>Alphabet Q2</strong> beat on adjusted EPS but fell on raised capex; <strong>Tesla</strong> mixed with negative cash flow — both sold off, keeping megacap tech on edge. <strong>CNBC Daily Open, 2026-07-22 22:14 ET</strong> (2026-07-23T02:14Z) <a href="https://finnhub.io/api/news?id=eac3b7f470db0e4ea59035e459191b22c3a2cccf171aba79f9fbadfe53239887">URL</a>; <strong>Yahoo, 21:30 ET</strong> on GOOGL <a href="https://finnhub.io/api/news?id=3267226100aa23228c480a529cf298e0b879b8f0fb289fedd2daa6d627786b2f">URL</a>; <strong>Yahoo, 21:08 ET</strong> on TSLA <a href="https://finnhub.io/api/news?id=c0caf67d5214868a9460d30ce8f62ac69385702c4173daa99031219caedf27ae">URL</a>; <strong>&quot;Can Alphabet Set the Tone for Mag 7 Earnings?&quot;</strong>, Yahoo, 18:38 ET <a href="https://finnhub.io/api/news?id=e2561a736427451772d42f6276ae14094092c916df6ea79268e8380713671b9b">URL</a></li>
+</ul>
+<p><strong>Assessment.</strong> The relevant signal is <strong>contagion, not fundamentals</strong>: the market penalized GOOGL for <em>spending increases</em> even on a large beat. That is a caution for Apple's own AI/leasing investment narrative — incremental opex/capex disclosure may be read negatively regardless of strategic merit. Beta-level drag on AAPL of low magnitude. Horizon: 1–5 sessions. Confidence: moderate on direction.</p>
+<h6>H. Screened out as immaterial to AAPL</h6>
+<p>Dividend-ETF and CEF pieces (Yahoo 22:32 ET; SeekingAlpha 21:37 ET; Yahoo 17:35 ET), Intel earnings previews (Yahoo 21:03 ET, 18:05 ET), Vanguard growth-ETF note (Yahoo 21:02 ET), Dow movers (ChartMill 19:10 ET), and the Berkshire/Buffett Apple-stake retrospective (Yahoo 18:09 ET). The Buffett piece is pure hindsight commentary with no forward cash-flow information. Sources for completeness: <a href="https://finnhub.io/api/news?id=5afbca660a71ac38443ab27bfd992f205d6ee1cbc11e9f6c217f570babec2b83">Yahoo 22:32</a>, <a href="https://finnhub.io/api/news?id=c55f0a1898fc8ec1aee87dc3756cd4357910a3191c38b25338ae6c9defc415da">SA 21:37</a>, <a href="https://finnhub.io/api/news?id=b393f7a81a35f74ee34e22cbc1d3576ed3174a38395435c3d845cc8a0a29355c">Yahoo 17:35</a>, <a href="https://finnhub.io/api/news?id=ac84178370275a17be7f637851d191a89717238d584ff943530c3dbf64a9156b">Yahoo 21:03</a>, <a href="https://finnhub.io/api/news?id=f54ed60b35d5447d2b8b9e4d51d6a44216dfbf68880c1f8b78854ecb16a96234">Yahoo 18:05</a>, <a href="https://finnhub.io/api/news?id=be503855ab24e806291590eed486d6335f2fedc1957adc43a3152faea511cd3b">Yahoo 21:02</a>, <a href="https://finnhub.io/api/news?id=4dd21184d1462d0068ff987aa2f82ff81b64ca5662220094fa95e645bdec6773">ChartMill 19:10</a>, <a href="https://finnhub.io/api/news?id=ab9c332e2389857ac2663c20b2418573c6ae3e58bb004b606f1983563726571a">Yahoo 18:09</a>.</p>
+<hr />
+<h5>3. Net synthesis for the 2026-07-23 session</h5>
+<p><strong>Directional tilt: modestly constructive, low conviction.</strong> The two genuinely new fundamental items are both positive and both <em>forward</em> catalysts: (i) China AI enablement via Qwen clears a regulatory blocker, and (ii) a Klarna leasing structure plus a Mac refresh point to an upgrade-and-recurring-revenue push, with a dated catalyst on July 28. These are offset by (iii) two same-day valuation-bearish pieces that frame AAPL as expensive into an imminent Q3 print, (iv) a $634M affirmed judgment, and (v) a megacap tape that just punished Alphabet for raising capex — the read-through being that <em>spending</em> narratives are currently out of favour, whatever their strategic logic.</p>
+<p><strong>Most likely single-session outcome:</strong> small absolute move, with the news flow insufficient on its own to break the stock out of the prevailing megacap-tech beta. <strong>Asymmetry:</strong> downside from a soft Q3 guide or from lease-accounting confusion would likely be larger than upside from the China/leasing headlines, given the &quot;stretched valuation&quot; framing already in print.</p>
+<p><strong>Conflicts to hold in view:</strong></p>
+<ol>
+<li><em>Valuation bears vs. product/AI bulls</em> — same afternoon, same outlets class. Unresolved by this evidence.</li>
+<li><em>Memory crunch</em> — share-gain tailwind for a premium OEM and a margin headwind simultaneously.</li>
+<li><em>Leasing</em> — recurring-revenue positive long term, possible revenue-recognition and margin-optics negative short term.</li>
+<li><em>Megacap capex</em> — Alphabet's selloff on higher spending cuts both ways for Apple's own AI investment disclosure.</li>
+</ol>
+<p><strong>Explicit uncertainty register:</strong> no July 16–21 evidence at all (a five-day blind spot in a seven-day window); 90% of eligible records unsupplied; no full articles; no Apple financial data, consensus estimates, or price series in evidence; the July 28 date and the Klarna arrangement are single-source and unconfirmed by Apple; the Masimo appeal's scope is described only in one clause. Nothing here should be read as a quantified earnings or price forecast.</p>
+<hr />
+<h5>4. Event table</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Event</th>
+<th>Evidence (source · pub. time ET · type)</th>
+<th>URL</th>
+<th>Expected impact (direction / magnitude / horizon)</th>
+<th>Uncertainty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Klarna device-leasing program reported for July 28; changes iPhone revenue mechanics</td>
+<td>Yahoo · 2026-07-22 21:34 · headline+summary</td>
+<td><a href="https://finnhub.io/api/news?id=063c5574f26a2ac713eeec851e1506cabc58c1230bf19dc15a1af8c01f9525c7">link</a></td>
+<td>Mildly + (medium term, upgrade cycle/recurring rev); possible − near term on revenue-recognition optics; dated event ~Jul 28</td>
+<td>High — single source, Apple-unconfirmed, no financials</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Same theme: shift from device financing to device leasing in US</td>
+<td>Yahoo · 2026-07-22 14:17 · summary</td>
+<td><a href="https://finnhub.io/api/news?id=f9fecb5064c65b1ba140a34afc3cd94965edaf03846552a908c6aac44cac1dd5">link</a></td>
+<td>Corroborates #1; + sentiment, low magnitude</td>
+<td>Medium — thematic, no numbers</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Alibaba Qwen to power Apple Intelligence in China after regulatory approval</td>
+<td>Yahoo · 2026-07-22 20:16 · headline+summary</td>
+<td><a href="https://finnhub.io/api/news?id=c5352e9cbedbc3050cc1d9117ef1436e2161cf9163502022bd3d3b6e1505561f">link</a></td>
+<td>+ (weeks–quarters); removes key China AI blocker, supports upgrade cycle</td>
+<td>Medium — BABA-framed article; no Apple-specific quantum</td>
+</tr>
+<tr>
+<td>4</td>
+<td>New MacBook Pro / Air / desktops reportedly coming, framed around AI demand</td>
+<td>Yahoo · 2026-07-22 17:04 · headline+summary</td>
+<td><a href="https://finnhub.io/api/news?id=860b96ea10147303acd601e206df4d001162f6ab5d35a205aeb51356c9228a25">link</a></td>
+<td>Slightly + (days–weeks); narrative support, small revenue weight</td>
+<td>Medium-high — &quot;reportedly,&quot; no specs/date</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$634M Masimo patent verdict not overturned; separate trade-secret case to appeal</td>
+<td>Yahoo · 2026-07-22 14:12 · headline+summary</td>
+<td><a href="https://finnhub.io/api/news?id=26ac5c70ade1dcc2b150e4fdd59c777f3abe258343b1d0a1eec44fe196037309">link</a></td>
+<td>− headline/sentiment; immaterial to earnings (&lt;0.5% of revenue); tail risk from open dispute</td>
+<td>Low on direction; high that size is small</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&quot;Apple: Sell Before Q3&quot; — valuation stretched despite momentum</td>
+<td>SeekingAlpha · 2026-07-22 14:14 · opinion headline+summary</td>
+<td><a href="https://finnhub.io/api/news?id=7114516f5ba9ba75d769971692c2aa6453fc4ae63ba3e368eba3c62e4b04c7cc">link</a></td>
+<td>− sentiment/multiple; caps upside into the print</td>
+<td>High — opinion, no model detail supplied</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&quot;The Risk in Apple's Stock That Nobody Is Talking About&quot; — stock has gotten expensive</td>
+<td>Yahoo · 2026-07-22 17:04 · opinion headline+summary</td>
+<td><a href="https://finnhub.io/api/news?id=93afc0317a5b0b8f817735b359bc8175f86749cb0b85cf619e0d3ec0f4bd6408">link</a></td>
+<td>− sentiment; reinforces #6 (convergence is itself a signal)</td>
+<td>High — one-line summary only</td>
+</tr>
+<tr>
+<td>8</td>
+<td>IDC: premium/large-scale smartphone makers better positioned amid memory crunch</td>
+<td>CNBC · 2026-07-22 20:17 · analyst commentary</td>
+<td><a href="https://finnhub.io/api/news?id=83bc6ee6f8e775f64a7280e8729c7cd63dfd34829ba3fd2a53f2c9af8cf6f928">link</a></td>
+<td>Relative + (share, 1–2 qtrs) vs. − (BOM/gross-margin pressure)</td>
+<td>Medium — third-party view; no Apple data</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Megacap tape: Alphabet − on raised capex despite beat; Tesla mixed; &quot;Mag 7 tone&quot; framing</td>
+<td>CNBC/Yahoo · 2026-07-22 18:38–22:14 · summaries</td>
+<td><a href="https://finnhub.io/api/news?id=eac3b7f470db0e4ea59035e459191b22c3a2cccf171aba79f9fbadfe53239887">1</a> · <a href="https://finnhub.io/api/news?id=3267226100aa23228c480a529cf298e0b879b8f0fb289fedd2daa6d627786b2f">2</a> · <a href="https://finnhub.io/api/news?id=c0caf67d5214868a9460d30ce8f62ac69385702c4173daa99031219caedf27ae">3</a> · <a href="https://finnhub.io/api/news?id=e2561a736427451772d42f6276ae14094092c916df6ea79268e8380713671b9b">4</a></td>
+<td>Slightly − via beta/contagion (1–5 sessions); caution on any capex/spend narrative</td>
+<td>Medium — indirect, sector-level</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Buffett/Berkshire Apple stake retrospective; ETF/CEF, Intel, Dow-mover items</td>
+<td>Yahoo/SA/ChartMill · 2026-07-22 17:35–22:32 · commentary</td>
+<td><a href="https://finnhub.io/api/news?id=ab9c332e2389857ac2663c20b2418573c6ae3e58bb004b606f1983563726571a">sample</a></td>
+<td>Neutral — no forward cash-flow information</td>
+<td>—</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Coverage gap:</strong> no records supplied for 2026-07-16 → 07-21 (5 of 7 days); 178/198 eligible records unsupplied</td>
+<td>Snapshot metadata · —</td>
+<td>—</td>
+<td>Unknown — cannot be assessed</td>
+<td><strong>Very high</strong> — treat as missing evidence, not as quiet news flow</td>
+</tr>
+</tbody>
+</table></div>
+</section><section id="s2"><h2>II. Research Team Decision</h2><h3 id="s2-1">Bull Researcher</h3>
+<p>Bull Analyst: ## Bull Opening Statement — AAPL</p>
+<p>Let me start with the punchline: <strong>AAPL at $321.66 is not a broken momentum trade. It is an intact primary uptrend digesting a parabolic July advance, with a fresh stack of forward catalysts that the bear case is underestimating.</strong></p>
+<p>The bear will look at four consecutive lower closes from the $333.74 record close and call it distribution. I look at the same tape and see a <strong>3.6% pullback after a 21.3% rally in 15 sessions</strong> — only about a 15% retracement of the leg — on <strong>contracting volume</strong>, with every meaningful support still intact. That is not distribution. That is digestion.</p>
+<p>And the fundamental news flow from July 22 gives AAPL real upside optionality: China AI enablement, a reported Klarna leasing launch on July 28, a Mac refresh cycle, and an IDC read-through that premium-scale OEMs are better positioned amid the memory crunch.</p>
+<p>My stance: <strong>constructive/overweight AAPL, hold existing longs, and accumulate on a controlled retest of 315–317. Don’t chase. Use the 50 SMA as the strategic line.</strong></p>
+<hr />
+<h5>1. Growth potential: three forward catalysts the bear has to explain away</h5>
+<p>I can’t fabricate revenue projections because the supplied research does not include a fundamentals model. But I can identify where the growth optionality is coming from — and it is not trivial.</p>
+<h6>A. China AI is the cleanest positive in the news flow</h6>
+<p>The report says Alibaba confirmed its <strong>Qwen</strong> model will power Apple Intelligence features on Apple devices in China <strong>following regulatory approval</strong>. That matters because China is one of AAPL’s most important large markets, and regulatory clearance removes a key blocker to commercializing Apple Intelligence there.</p>
+<p>The bear may say: “It’s a BABA-framed article with no Apple-specific numbers.” Fair. But that cuts both ways: the market does not need a quantified revenue number to re-rate an upgrade-cycle story. It needs the blocker removed. And that is what happened.</p>
+<h6>B. Klarna device leasing — reported for July 28</h6>
+<p>Two outlets on July 22 discussed AAPL moving from device financing toward device leasing, with one reporting a <strong>July 28 launch with Klarna</strong>. The strategic logic is strong:</p>
+<ul>
+<li>recurring payment structure,</li>
+<li>potentially shorter upgrade cycles,</li>
+<li>deeper Services/attachment,</li>
+<li>Klarna taking underwriting risk.</li>
+</ul>
+<p>The bear will say leasing can defer or recharacterize iPhone revenue and muddy gross-margin optics. That is a legitimate near-term accounting concern. But it is not a reason to reject the strategic shift. If AAPL can convert more of the iPhone installed base into a subscription-like upgrade rhythm, that is a long-duration positive. And if the stock wobbles on lease-accounting confusion around July 28, I would treat that as an opportunity, not a thesis-breaker.</p>
+<h6>C. Mac refresh + AI demand narrative</h6>
+<p>The report flags new MacBook Pro, Air, and desktop models “reportedly” coming, framed around AI demand. Mac is not the biggest revenue line, so I won’t oversell it. But it supports the broader “AI-driven hardware refresh” narrative and keeps product-cycle momentum alive.</p>
+<h6>D. IDC: premium scale wins in a memory crunch</h6>
+<p>IDC’s commentary says large-scale premium smartphone makers are better positioned amid the memory shortage. That is a relative positive for AAPL: procurement leverage, premium mix, and the ability to absorb component pressure better than sub-scale Android OEMs. Yes, the same shortage is a BOM headwind. But the bear has to explain why AAPL is not a share gainer in that environment.</p>
+<hr />
+<h5>2. Competitive advantages: the moat is showing up in the news, not just the chart</h5>
+<p>The bear case often leans on “Apple is expensive and the product cycle is mature.” But the evidence here shows the moat in action:</p>
+<ul>
+<li><strong>Regulatory clearance for Apple Intelligence in China</strong> — AAPL’s ecosystem is valuable enough that AI monetization is a regulatory and platform question, not just a hardware spec question.</li>
+<li><strong>Klarna leasing</strong> — AAPL can reshape how consumers pay for iPhones, which strengthens the ecosystem lock-in and Services attach.</li>
+<li><strong>Premium-scale advantage</strong> — IDC explicitly says large premium OEMs are better positioned during the memory crunch. That is scale and procurement power.</li>
+<li><strong>Brand and installed base</strong> — the market is still willing to pay for AAPL’s ecosystem, as shown by the 200 SMA at 275.60 and price 16.7% above it.</li>
+</ul>
+<p>The bear may call valuation stretched. I’ll address that directly. But let’s not pretend AAPL is a commoditized hardware vendor. The news flow supports a company that is still shaping the payment model, the AI feature layer, and the premium device refresh cycle.</p>
+<hr />
+<h5>3. Positive technical indicators: the trend is intact, and the pullback is quiet</h5>
+<p>This is where the bull case is strongest, because the technical evidence is specific.</p>
+<h6>Primary trend: bullish and mature, not broken</h6>
+<ul>
+<li><strong>200 SMA: 275.60, rising.</strong> AAPL is <strong>+16.7% above</strong> it.</li>
+<li><strong>50 SMA: 305.47, rising every session</strong> from 271.72 on 5/26.</li>
+<li>The 50 SMA is <strong>10.8% above</strong> the 200 SMA — a wide, mature golden-cross structure.</li>
+</ul>
+<p>That is not a stock rolling over. That is a long-term uptrend.</p>
+<h6>Medium-term support is rising into price</h6>
+<p>The 50 SMA has gained roughly 0.6–0.9 points per day and sits only <strong>5.3% below</strong> the current price. A rising 50 SMA underneath price is textbook healthy trend structure. The bear has to explain why a 3.6% pullback invalidates a trend where the medium-term support is still climbing.</p>
+<h6>Short-term crack? Yes. Reversal? No.</h6>
+<p>AAPL closed at <strong>321.66</strong>, just <strong>0.31% below</strong> the 10 EMA at <strong>322.66</strong> — the first close below that line since June 30. That is a yellow flag. But one marginal close is not a trend break. The technical report itself says a second consecutive close below would make it meaningful. The bear is treating a 0.31% miss as a verdict. That is too aggressive.</p>
+<h6>Momentum is resetting, not reversing</h6>
+<ul>
+<li><strong>RSI: 58.11</strong>, down from <strong>71.65</strong> on July 17.</li>
+<li>Crucially, the RSI peak and price peak coincided on July 17 — <strong>no bearish divergence</strong> at the high.</li>
+<li>RSI falling ~13.5 points while price falls only ~3.6% is momentum digestion, not distribution.</li>
+<li><strong>MACD: 8.107 vs signal 7.312, histogram +0.795.</strong> Still bullish. Rolling over, yes, but not crossed.</li>
+</ul>
+<p>The bear’s momentum case requires more than “the 10 EMA was lost by 0.31%.” It requires a MACD cross below 7.31, RSI below 50, and two consecutive closes below the 10 EMA. None of that has happened.</p>
+<h6>VWMA: price is sitting exactly on recent buyers’ cost basis</h6>
+<p><strong>VWMA = 321.376; close = 321.66.</strong> AAPL is <strong>+0.09% above</strong> the volume-weighted average price of recent buyers. That is a key line. The VWMA exploded from 296.42 on July 15 to 321.38 on July 23 because the breakout was transacted on heavy volume.</p>
+<p>The bear will say: “If price loses 321.38, recent buyers go underwater.” Correct. That is why I am not dismissing the VWMA. But right now, AAPL is holding it. The burden of proof is on the bear to show a decisive break, not a 0.09% buffer.</p>
+<h6>Volume pattern: accumulation, not distribution</h6>
+<ul>
+<li>Breakout days July 15–17: roughly <strong>62.4M shares average</strong>.</li>
+<li>Pullback days: roughly <strong>43.6M shares average</strong>, with July 22 at 38.8M — the lightest of the group.</li>
+</ul>
+<p>Rising volume on the advance and contracting volume on the decline is constructive. The bear is looking at four red candles and calling it supply. I’m looking at the volume and saying the sellers are not aggressive.</p>
+<h6>Support structure is intact</h6>
+<p>AAPL has held:</p>
+<ul>
+<li><strong>319.35</strong> — July 23 low,</li>
+<li><strong>317.32</strong> — July 15 breakout low,</li>
+<li><strong>315.20–317.40</strong> — the old May–June ceiling, now support.</li>
+</ul>
+<p>No support has been broken. The pullback is shallow. The breakout zone has not been given back. That is a bull-market consolidation until proven otherwise.</p>
+<hr />
+<h5>4. Bear counterpoints — let’s debate them directly</h5>
+<h6>Bear point: “AAPL is stretched; sell before Q3.”</h6>
+<p>I take valuation seriously. But the supplied evidence gives me two same-day <strong>opinion</strong> headlines — “Sell Before Q3” and “The Risk in Apple’s Stock That Nobody Is Talking About” — with no models, no consensus figures, and no Apple financial data in the report. That is a sentiment signal, not a thesis.</p>
+<p>And here’s the key: <strong>valuation alone is not a catalyst.</strong> The bear needs something to force multiple compression. The news flow actually gives AAPL positive forward catalysts: China AI clearance, a dated Klarna event on July 28, and a product refresh narrative. If the bear wants to argue “sell before Q3,” they need to show me deteriorating fundamentals or a broken chart. The chart is not broken. The 50 SMA is rising. The VWMA is holding. RSI is above 50. MACD is above signal.</p>
+<p>So no — I’m not ignoring valuation. I’m saying the bear has not met the burden of proof.</p>
+<h6>Bear point: “Four consecutive lower closes = momentum failure.”</h6>
+<p>Four lower closes from 333.74 to 321.66 is <strong>−3.62%</strong>. That is a 15% retracement of a 21.3% move. The 10 EMA was lost by <strong>0.31%</strong>. The MACD is still above signal. RSI is still above 50. Supports at 319.35, 317.32, and 315.20 are intact.</p>
+<p>If this is momentum failure, it is remarkably orderly. And the volume is drying up, not expanding. That is not what distribution usually looks like.</p>
+<h6>Bear point: “Masimo verdict is a negative.”</h6>
+<p>The <strong>$634 million</strong> judgment is negative headline-wise, but the report itself says it is well under 0.5% of annual revenue and does not change earnings power. The real tail risk is the separate trade-secret dispute, but that is a tail, not the base case. The bear is trying to turn a sub-0.5%-of-revenue item into a thesis. That does not hold.</p>
+<h6>Bear point: “Memory crunch pressures margins.”</h6>
+<p>True — but IDC says the impact is <strong>not uniform</strong>, and large premium OEMs are better positioned. AAPL has scale, procurement leverage, and premium mix. The bear is treating a sector headwind as an AAPL-specific problem. It is more likely a relative share-gain opportunity, with some margin noise.</p>
+<h6>Bear point: “Leasing could defer revenue and hurt optics.”</h6>
+<p>That is the strongest near-term bear point on the news flow. But it is a timing/accounting issue, not a demand issue. The strategic direction — recurring payments, upgrade cycles, Services attach — is positive. I would rather own AAPL through a lease-accounting wobble than sell the ecosystem story because of revenue-recognition optics.</p>
+<h6>Bear point: “Alphabet sold off on capex; AAPL could get punished for spending.”</h6>
+<p>That is a fair contagion risk. But AAPL’s near-term catalysts are not a hyperscaler capex arms race. They are China AI enablement, device leasing, and product refresh. The GOOGL reaction is a warning about sentiment toward spending, not a refutation of AAPL’s setup.</p>
+<hr />
+<h5>5. My actionable bull plan for AAPL</h5>
+<p>I am not saying “buy blindly at 321.66.” I am saying <strong>own the trend, buy the retest, and define the risk.</strong></p>
+<h6>For existing longs</h6>
+<ul>
+<li><strong>Hold AAPL.</strong></li>
+<li>Tactical trail: a daily close below <strong>317.32</strong> — the July 15 breakout low — reduces one-third to one-half.</li>
+<li>Strategic invalidation: a daily close below the <strong>50 SMA at 305.47</strong> exits the swing position. That level also lines up with a 2×ATR stop around <strong>305.82</strong>, which makes it a clean risk line.</li>
+</ul>
+<h6>For new entries</h6>
+<p><strong>Do not chase.</strong> Wait for one of two setups:</p>
+<ol>
+<li><strong>Pullback buy:</strong> a tag of <strong>315.20–317.40</strong> that holds on below-average volume, with RSI still above ~45. Stop initially below <strong>311.49</strong> (Bollinger mid), then move to below <strong>305.47</strong>. First target <strong>333.74</strong>, then <strong>346.68</strong>.</li>
+<li><strong>Breakout buy:</strong> a daily close above <strong>334.99</strong> on volume above ~60M, matching the July 15–17 breakout days. Stop 1×ATR below the breakout close.</li>
+</ol>
+<h6>What would make me wrong?</h6>
+<p>I am bullish, but I am not dogmatic. The bear flip requires confirmation:</p>
+<ul>
+<li>a daily close below <strong>321.38 VWMA</strong> that is not recovered within 1–2 sessions,</li>
+<li><strong>MACD crossing below 7.31</strong>,</li>
+<li><strong>RSI breaking and holding below 50</strong>,</li>
+<li>and a second consecutive close below the 10 EMA.</li>
+</ul>
+<p>If that happens, the 311.49 → 305.47 zone becomes the downside target. Until then, the bull case has the stronger evidence.</p>
+<hr />
+<h5>Bottom line</h5>
+<p>AAPL is a <strong>rising-200-SMA, rising-50-SMA, MACD-positive, RSI-reset, VWMA-supported uptrend</strong> with a shallow, low-volume pullback and a news flow that includes real forward catalysts: China AI clearance, a dated Klarna leasing event, Mac refresh optionality, and a premium-scale advantage in a memory-constrained market.</p>
+<p>The bear’s best argument is valuation. But valuation headlines are not a catalyst, and the tape has not confirmed a breakdown. My call: <strong>stay long AAPL, buy the 315–317 retest if it holds, and respect 305.47 as the strategic line.</strong></p>
+<h3 id="s2-2">Bear Researcher</h3>
+<p>Bear Analyst: <strong>Bear Opening — AAPL</strong></p>
+<p>Bull, I’ll grant you the big trend: <strong>AAPL</strong> is above a rising 50 SMA at <strong>305.47</strong> and a rising 200 SMA at <strong>275.60</strong>. That is a real uptrend. But that is also the least useful part of the debate at <strong>$321.66</strong>. At this price, you are not buying “an intact uptrend.” You are buying the back end of a <strong>+21.3% move in 15 sessions</strong>, after the stock has already lost its 10 EMA, with a <strong>0.09% cushion</strong> above the VWMA, and with a stack of unconfirmed catalysts and valuation pushback directly in front of it.</p>
+<p>That is not a margin of safety. That is a hope trade dressed up as consolidation.</p>
+<hr />
+<h5>1. The technicals say “momentum fatigue,” not “all clear”</h5>
+<p>The bull keeps saying “no support has broken.” True. But look at where AAPL is standing.</p>
+<ul>
+<li>Close: <strong>321.66</strong></li>
+<li>10 EMA: <strong>322.66</strong> — AAPL closed <strong>below</strong> it on 7/23 for the first time since 6/30</li>
+<li>VWMA: <strong>321.376</strong> — AAPL is above it by <strong>0.09%</strong>, or roughly 28 cents</li>
+<li>50 SMA: <strong>305.47</strong></li>
+<li>200 SMA: <strong>275.60</strong></li>
+<li>ATR: <strong>7.918</strong>, or <strong>2.46%</strong> of price</li>
+<li>Bollinger mid: <strong>311.49</strong></li>
+<li>Bollinger upper: <strong>346.68</strong></li>
+<li>RSI: <strong>58.11</strong>, down from <strong>71.65</strong> on 7/17</li>
+<li>MACD: <strong>8.107</strong> vs signal <strong>7.312</strong>, histogram <strong>+0.795</strong></li>
+<li>Four consecutive lower closes: <strong>333.74 → 326.59 → 327.74 → 325.89 → 321.66</strong></li>
+</ul>
+<p>The bull says the 10 EMA loss is “only 0.31%.” Technically true. But after a parabolic leg, the first close below the 10 EMA is exactly when you tighten risk, not when you add. And the VWMA “support” is not a cushion — it is a tripwire. If AAPL closes below <strong>321.38</strong>, the entire July breakout cohort is underwater. Those buyers transacted <strong>61–63 million shares per day</strong> on 7/15–7/17. They are not going to be comfortable.</p>
+<p>The bull says volume contraction on the pullback is constructive. It can be. But it can also mean <strong>buyers are absent</strong>. Accumulation shows up as buyers defending dips with volume. Here we have lower closes on lighter volume, with no upside follow-through. That is a vacuum, not a floor. One normal ATR day from 321.66 takes AAPL to <strong>313.74</strong> — below the bull’s entire <strong>315.20–317.40</strong> “prime dip-buy” zone. So the support stack is not wide. It is compressed.</p>
+<p>And the MACD warning is closer than the bull admits. The MACD line fell from <strong>8.927 on 7/21 to 8.107 on 7/23</strong> — a drop of <strong>0.82 points in two sessions</strong>. It only needs to fall <strong>0.795 points</strong> to cross below the signal at 7.312. One more similar two-session erosion and the bearish cross is here. By then, AAPL has likely already tested <strong>319.35, 317.32, and 315.20</strong>.</p>
+<p>The RSI point is similar. The bull says “no bearish divergence at the high.” Fine — but that is not a bullish merit. It simply means there is no extra bearish signal. What we do have is RSI collapsing <strong>13.5 points in four sessions</strong> while price fell only <strong>3.6%</strong>. That is rapid momentum compression. If it continues, RSI breaks 50 right as price tests the bull’s “buy zone.” That turns the buy zone into a warning zone.</p>
+<hr />
+<h5>2. The news flow is event risk, not a safety net</h5>
+<p>The bull is leaning hard on China AI, Klarna leasing, Mac refresh, and IDC’s memory-crunch commentary. Let’s be precise about what the evidence actually supports.</p>
+<p><strong>China AI / Qwen:</strong> The report says Alibaba confirmed Qwen will power Apple Intelligence in China after regulatory approval. That is a positive headline. But it is framed as a <strong>BABA</strong> story, with <strong>no Apple-specific financial quantum</strong>. Regulatory approval removes a blocker; it does not guarantee monetization, upgrade-cycle acceleration, or a revenue number. And after a <strong>+21.3%</strong> move, some of that good news may already be in the price.</p>
+<p><strong>Klarna leasing — July 28:</strong> This is the most interesting catalyst, but also the most dangerous near-term. It is <strong>single-source</strong>, <strong>Apple-unconfirmed</strong>, and it cuts both ways. Leasing can support recurring payments and upgrade cycles, but it can also <strong>defer or recharacterize iPhone revenue</strong> and muddy gross-margin optics. In a market already framing AAPL as “expensive” into Q3, lease-accounting confusion is not a small risk. The bull says he would “buy the wobble.” That is faith, not analysis — especially with no fundamentals report to quantify the impact.</p>
+<p><strong>Mac refresh:</strong> “Reportedly” coming. No specs, no date, small revenue weight. It supports narrative, not earnings.</p>
+<p><strong>IDC / memory crunch:</strong> The bull treats this as a relative positive. It is — but the same report notes the memory shortage is a <strong>BOM/gross-margin headwind</strong> for AAPL itself. Share gain does not automatically offset margin pressure in a mature hardware market.</p>
+<p><strong>Masimo:</strong> The <strong>$634 million</strong> verdict is financially immaterial at AAPL’s scale — I agree with the bull there. But the separate trade-secret dispute is still open, and the remedy could touch health-sensor functionality. It is a headline overhang, not a thesis-breaker. It simply does not help.</p>
+<p><strong>Valuation pushback:</strong> The bull dismisses “Sell Before Q3” and “The Risk in Apple’s Stock That Nobody Is Talking About” as opinions. Correct — they are opinions. But two independent outlets converging on “AAPL is expensive” on the same afternoon is a sentiment signal. And with no fundamentals report in evidence, the bull cannot rebut them with numbers. Valuation alone is not a catalyst, but <strong>multiple compression is</strong>. Into a Q3 print, a premium multiple leaves less room for error on leasing, margins, or AI spending.</p>
+<p>That last point matters. The market just punished Alphabet for raising capex despite an earnings beat. AAPL’s AI and leasing narrative may also require spend. In a tape that is currently hostile to spending disclosures, that is a beta-level headwind, not a tailwind.</p>
+<hr />
+<h5>3. Competitive weaknesses the bull glosses over</h5>
+<p>The bull says the moat is showing up in the news. I’d say the news shows a strong ecosystem — and several dependencies.</p>
+<ul>
+<li>In China, Apple Intelligence will be powered by <strong>Alibaba’s Qwen</strong>, per the report. That is a partner-dependent AI layer, not a fully proprietary model advantage. It may be the right regulatory strategy, but it weakens the “Apple controls the AI stack” argument.</li>
+<li>Klarna leasing outsources underwriting, but it also makes AAPL’s payment innovation partner-dependent. It changes how consumers pay; it does not prove a unit-demand inflection.</li>
+<li>The Mac refresh is “reportedly” coming, with no specs or date. Mac is not the revenue line that moves AAPL.</li>
+<li>The iPhone business is mature. Leasing changes payment mechanics; it does not create a new device category. The report gives no evidence of a demand acceleration — only a financing structure change and a product-refresh narrative.</li>
+<li>The memory crunch is a double-edged sword: premium scale may help share, but component costs pressure gross margin. The bull is treating the share-gain side as free optionality. It isn’t.</li>
+</ul>
+<p>AAPL is still a great company. But “great company” is not the same as “great entry point at $321.66 after a vertical move.”</p>
+<hr />
+<h5>4. Direct rebuttals to the bull</h5>
+<p><strong>Bull: “This is digestion, not distribution.”</strong><br />
+It can be both. A <strong>3.6% pullback after a 21.3% rally</strong> is shallow, yes. But shallow pullbacks after parabolic moves often precede deeper mean reversion. The issue is not the size of the pullback; it is the <strong>location</strong>: AAPL is sitting exactly on the VWMA, below the 10 EMA, with overhead resistance at <strong>322.66</strong>, then <strong>325.89–327.74</strong>, then <strong>333.74–334.99</strong>. The path of least resistance near term is not obviously higher.</p>
+<p><strong>Bull: “Volume contraction means sellers aren’t aggressive.”</strong><br />
+It also means buyers aren’t stepping up. If this were accumulation, we’d see demand defending the VWMA and reclaiming the 10 EMA. Instead, we got four lower closes and no follow-through bid. Thin volume cuts both ways — it can also mean a vacuum below the market.</p>
+<p><strong>Bull: “The MACD hasn’t crossed.”</strong><br />
+The MACD line dropped <strong>0.82 points in two sessions</strong>. It needs <strong>0.795</strong> to cross the signal. The bull is hanging his case on a lagging indicator that is one normal two-session move away from confirming the pullback. Waiting for the cross means waiting until AAPL has likely already broken <strong>321.38</strong> and tested <strong>319/317</strong>.</p>
+<p><strong>Bull: “No support has broken.”</strong><br />
+True — but the nearest support is <strong>321.38</strong>, and AAPL is <strong>0.09%</strong> above it. That is not a support zone; that is a decision point. A single ATR day takes AAPL to <strong>313.74</strong>, slicing through <strong>319.35, 317.32, and 315.20–317.40</strong>. The bull’s “prime dip-buy area” is less than one ATR below the current price. That is not a deep cushion; it is the next stop on a normal down day.</p>
+<p><strong>Bull: “Valuation headlines are not a catalyst.”</strong><br />
+Valuation headlines are not a fundamental catalyst, but they are a <strong>multiple ceiling</strong> and a sentiment catalyst into Q3. The bull’s own plan says “don’t chase, buy 315–317.” That is an admission that the risk/reward at <strong>321.66</strong> is not attractive. If the setup is so strong, why wait for a 2% lower entry? Because the buyer knows the current price is too close to the tripwire.</p>
+<p><strong>Bull: “China AI and Klarna are real forward catalysts.”</strong><br />
+They are headlines, not numbers. China approval is a blocker removal, not a revenue guide. Klarna is unconfirmed, single-source, and carries accounting/optics risk. Mac is small. IDC is a mixed read. None of that is enough to underwrite a premium multiple at the top of a parabolic run.</p>
+<hr />
+<h5>5. Bear action plan for AAPL</h5>
+<p><strong>Stance: Underweight / avoid new purchases at $321.66. Existing longs should harvest partial profits and tighten risk.</strong></p>
+<ul>
+<li><strong>Tactical warning line:</strong> daily close below <strong>321.38</strong> that is not recovered within 1–2 sessions. That puts the July breakout buyers underwater.</li>
+<li><strong>Immediate support:</strong> <strong>319.35</strong>, then <strong>317.32</strong>, then <strong>315.20–317.40</strong>.</li>
+<li><strong>Downside targets if the VWMA fails:</strong> <strong>311.49</strong> (Bollinger mid), then <strong>305.47</strong> (50 SMA).</li>
+<li><strong>Strategic invalidation:</strong> daily close below <strong>305.47</strong>. But note: from 321.66, that is a <strong>~5% loss</strong>, and the 200 SMA at <strong>275.60</strong> is another <strong>~9.8%</strong> below that. The bull calls 305.47 a “clean risk line.” It is clean, but it is not tight.</li>
+<li><strong>What would make me step aside bearish?</strong> A confirmed breakout above <strong>334.99</strong> on volume above <strong>~60M</strong>, with MACD re-accelerating and RSI holding above 50. Until then, rallies into <strong>322.66–327.74</strong> are suspect.</li>
+</ul>
+<p>I am not calling for a collapse. AAPL’s primary trend is still up. But the bear case is not “the trend is broken.” The bear case is: <strong>at $321.66, AAPL is priced for good news, sitting on a tripwire, facing unconfirmed catalysts and valuation pushback, with momentum already decelerating. The risk/reward for new money is poor, and the bull’s own “wait for 315–317” plan proves it.</strong></p>
+<p><strong>Bottom line for AAPL: avoid new money here; tighten stops, take partial profits, and make the stock prove itself either by reclaiming 322.66 with volume or by flushing to 311–317 and stabilizing. Until then, the bull is asking investors to pay full price for a consolidation that has not yet resolved.</strong></p>
+<h3 id="s2-3">Research Manager</h3>
+<p><strong>Recommendation</strong>: Underweight</p>
+<p><strong>Rationale</strong>:<br />
+The bear case is stronger at the current <strong>AAPL</strong> price of <strong>$321.66</strong>, but not strong enough to justify <strong>Sell</strong>. The bull is correct that AAPL’s primary trend remains intact: price is above the rising 50 SMA at <strong>305.47</strong> and 200 SMA at <strong>275.60</strong>, RSI is still above 50 at <strong>58.11</strong>, and MACD remains above signal at <strong>8.107 vs 7.312</strong>. That argues against exiting entirely.</p>
+<p>However, the near-term risk/reward has deteriorated. AAPL has four consecutive lower closes after a <strong>+21.3% rally in 15 sessions</strong>, closed below the 10 EMA at <strong>322.66</strong>, and sits only about <strong>28 cents above VWMA at 321.376</strong>. A normal ATR move could quickly break <strong>321.38</strong>, then <strong>319.35</strong>, <strong>317.32</strong>, and the bull’s own <strong>315.20–317.40</strong> buy zone. The MACD is still positive but rolling toward a bearish cross, and RSI has compressed rapidly. The bull’s own instruction to “not chase” and wait for <strong>315–317</strong> concedes that current price is not attractive.</p>
+<p>The news catalysts are also not yet quantified in the provided evidence. China AI/Qwen is a positive headline but lacks Apple-specific financial numbers; Klarna leasing is single-source, Apple-unconfirmed, and carries revenue-recognition/margin-optics risk; Mac refresh is small and “reportedly” coming; IDC’s memory commentary is mixed because premium scale helps relative positioning but component costs pressure margins. Valuation headlines are sentiment rather than a fundamental model, but they add multiple-compression risk into Q3. With no fundamentals model supplied, neither side can quantify these catalysts, which supports caution rather than aggressive accumulation.</p>
+<p><strong>Strategic Actions</strong>:</p>
+<ul>
+<li>For a standard <strong>AAPL</strong> allocation, trim <strong>20–30%</strong> of the position into current strength or rallies into <strong>322.66–327.74</strong>, retaining a <strong>70–80%</strong> core position given the intact long-term uptrend.</li>
+<li>Do not initiate new <strong>AAPL</strong> exposure at <strong>321.66</strong>. Require proof before adding: either a pullback to <strong>315.20–317.40</strong> that stabilizes on below-average volume with RSI above ~45, or a daily close above <strong>334.99</strong> on volume above ~60M with MACD re-accelerating.</li>
+<li>Tighten risk: if <strong>AAPL</strong> closes below <strong>321.38</strong> and fails to recover within 1–2 sessions, trim further. A daily close below <strong>317.32</strong> should cut tactical exposure; a daily close below <strong>305.47</strong> exits the swing position. Downside watch levels are <strong>311.49</strong> and <strong>305.47</strong>; upside resistance is <strong>322.66</strong>, then <strong>325.89–327.74</strong>, then <strong>333.74–334.99</strong>.</li>
+<li>Reassess around the July 28 Klarna event and Q3: upgrade to Hold/Overweight only if Apple-specific monetization or leasing details confirm upside and <strong>AAPL</strong> reclaims the 10 EMA with volume. Stay Underweight if lease-accounting optics, margin pressure, or momentum deterioration worsen.</li>
+</ul>
+</section><section id="s3"><h2>III. Trading Team Plan</h2><h3 id="s3-1">Trader</h3>
+<p><strong>Action</strong>: Sell</p>
+<p><strong>Reasoning</strong>: The plan's Underweight stance maps to a partial Sell: AAPL's primary trend is intact (price above rising 50 SMA 305.47 and 200 SMA 275.60, RSI 58.11, MACD 8.107 &gt; signal 7.312), so a full exit is unwarranted — but the near-term reward/risk has clearly deteriorated after a +21.3% parabolic leg in 15 sessions. Price closed at 321.66 below the 10 EMA (322.66) for the first time since 6/30 and sits just $0.28 above the VWMA (321.376), so a single normal ATR move (7.92) would put the entire recent buyer cohort underwater and open 319.35 → 317.32 → 315.20–317.40 in quick succession. MACD is rolling over from 8.927 with the histogram contracting, and the bull's own &quot;do not chase, wait for 315–317&quot; instruction concedes current price is unattractive. With catalysts unquantified (Klarna leasing, China AI/Qwen, memory cost pressure), trimming into strength is the highest-expectancy action rather than adding at 321.66.</p>
+<p><strong>Entry Price</strong>: 321.66</p>
+<p><strong>Stop Loss</strong>: 334.99</p>
+<p><strong>Position Sizing</strong>: Trim 20–30% of the existing AAPL position now or into 322.66–327.74; retain a 70–80% core given the intact long-term uptrend. Scale to the small end (20%) if the book is already underweight tech; use 30% if position sizing is above target.</p>
+<p>FINAL TRANSACTION PROPOSAL: <strong>SELL</strong></p>
+</section><section id="s4"><h2>IV. Risk Management Team Decision</h2><h3 id="s4-1">Aggressive Analyst</h3>
+<p>Aggressive Analyst: Let me open this because the other two desks haven't said a word yet, and I'd rather plant a flag than wait for consensus to form around a mistake.</p>
+<p>First, let me deal with the obvious objection to my own position: how does the aggressive risk seat argue for a sell? It's simple. Selling twenty to thirty percent of AAPL at 321.66 is not defensiveness, it's monetization. The trader isn't running from AAPL; the trader is refusing to donate back a 21.3% gain in fifteen sessions — a move that annualizes to something absurd — for the privilege of finding out what happens next. That's the difference between aggression and recklessness, and the conservative desk confuses the two constantly.</p>
+<p>Here's the setup, and it's ugly in a very specific way. Close 321.66. Ten EMA 322.66. That's the first close below the short-term trigger since June 30th. VWMA 321.376 — price is a grand total of twenty-eight cents above the volume-weighted cost basis of everyone who bought the July breakout on sixty-plus million shares a day. ATR is 7.92. One perfectly ordinary day of range takes AAPL from 321.66 to 313.74, which is below 317.32, below 315.20, below the entire May–June ceiling that the bull case calls its prime buy zone. One normal day. That's not a tail risk, that's the median outcome of a single session in a 2.46% ATR tape. Four consecutive lower closes already, MACD rolling off 8.927 with the histogram contracting, Bollinger upper band blown out 10.9% in twenty-two sessions. This is a volatility regime that has already changed, and the entire July buyer cohort is one good shake from being underwater at the exact moment the tape gets thin.</p>
+<p>So let me preempt the conservative desk directly, because I can hear the argument forming: the 50 SMA is rising, the 200 SMA is rising, price is 16.7% above the 200 and 5.3% above the 50, no support has broken, therefore hold everything. That's not analysis, that's a description of where we've already been. Of course the trend is intact — that's precisely why we can sell a fifth to a third of the position and still own the majority of a structural bull market. The conservative framing treats a rising 50 SMA as a reason to hold maximum exposure into a parabolic exhaustion print. It isn't. A rising 50 SMA at 305.47 is sixteen points of air below us, and &quot;no support broken yet&quot; is the most expensive sentence in a parabolic unwind, because support breaks sequentially and fast: 319.35, then 317.32, then the 315.20–317.40 shelf — that's the whole buyer cohort's pain threshold in a 2% window. Does the conservative desk have a plan for that, or does it just have a feeling that holding is safer? Holding is a decision too. It's a decision to accept full mark-to-market on a 5% drawdown to the 50 SMA — and to do it with the MACD histogram contracting and RSI having bled 13.5 points on only 3.6% of price. That reset is a warning, not a comfort. It means a large amount of momentum was consumed without corresponding price damage, so there's less energy left to cushion the next leg down.</p>
+<p>Now, the neutral desk — the one that's going to tell us to &quot;wait for confirmation.&quot; Confirmation of what, at what cost? The trader's own stop is 334.99, which is the record intraday high. That's a 4.1% invalidation — if AAPL closes above 334.99, the trim thesis is simply wrong, we re-add, and we've paid thirteen points to learn that. That is a cheap, honorable, pre-defined way to be wrong. Compare that to the neutral alternative: do nothing, and if the crack turns into a break, you're trimming at 311 or 305 because that's when the data &quot;confirms.&quot; Waiting for confirmation is not neutrality. It's a full-size directional bet that the confirmation never comes, and it pays for that bet with five percent of the position. The neutral chair is also ignoring something the neutral chair can't see: the news file has a five-day blind spot, ninety percent of eligible records were never supplied, and no fundamentals report exists at all. If you are sitting at full size in AAPL in a 2.46% ATR regime with incomplete information, on a report that explicitly says the downside asymmetry from a soft Q3 guide or lease-accounting confusion is larger than the upside from the positive headlines — you are not being neutral, you are being levered to ignorance.</p>
+<p>And let me be clear that I'm not abandoning the upside. That's the whole point of keeping seventy to eighty percent. The long-term structure is legitimate: 200 SMA at 275.60 rising 0.3 a day, the 50 SMA climbing 0.6 to 0.9 points every session, the 7/15 breakout validated on 61 to 63 million shares. The catalysts are real — Alibaba's Qwen clearing regulatory approval for Apple Intelligence in China is a genuine upgrade-cycle unlock, the Klarna device-leasing program lands around July 28, and IDC is telling you premium OEMs with Apple's procurement leverage win share in a memory crunch. Those are weeks-to-quarters payoffs, and they are exactly why the core stays. But here's the aggressive read: the July 28 event is a two-sided coin. Lease accounting can defer or recharacterize iPhone revenue right as two separate outlets spent the same afternoon calling AAPL expensive into Q3, and as the tape just punished Alphabet for raising capex on a beat. I want dry powder for that coin flip, not full exposure to it. Trimming at 321.66 funds a reload at 315.20–317.40 — the bull's own stated buy zone — or a re-add above 334.99 on volume, whichever comes first. That's not reducing risk, that's buying optionality with someone else's money. The aggressive seat's job is to convert a realized 21% pop into a better entry on the next leg, and that's exactly what this trade does.</p>
+<p>So the number: trim at the small end at 20% only if the book is genuinely underweight tech. If the position is at or above target — and after a 21% run it almost certainly is — take the 30%. Sell into the 322.66–327.74 bounce zone, not into weakness. If AAPL reclaims 334.99 on volume, the thesis is dead and we buy it back with a smile. If it loses 321.38 and doesn't recover in a session or two, the trim looks conservative, not aggressive. That's the asymmetry I want: small, defined cost to be wrong; real, bankable gain to be right; and a seventy to eighty percent core that keeps us long a bull market. The conservative desk will call that cautious. The neutral desk will call it premature. I call it the only version of this trade where we get paid either way.</p>
+<h3 id="s4-2">Conservative Analyst</h3>
+<p>Conservative Analyst: I’ll take the aggressive desk head-on, and I’ll also address the neutral position before it’s even stated, because the conservative mandate here is not to wait for everyone to agree that AAPL has already become riskier.</p>
+<p>The aggressive desk is right about the facts and wrong about how much comfort those facts should give us. Yes, AAPL closed at 321.66, below the 10 EMA at 322.66 for the first time since June 30. Yes, it is sitting only twenty-eight cents above the VWMA at 321.376. Yes, ATR is 7.92, the MACD histogram is contracting, and the Bollinger upper band has expanded violently. But the aggressive conclusion—trim 20 to 30 percent, keep 70 to 80 percent, and pre-commit to reloading either at 315.20–317.40 or above 334.99—is not a conservative risk plan. It’s a trading plan dressed up as risk reduction. The firm’s objective is not to “get paid either way” on a tactical round trip. It’s to protect capital when the volatility regime has changed and the information set is incomplete.</p>
+<p>The aggressive desk says selling a fifth to a third of AAPL is “monetization,” not defensiveness. Fine. But then it should be honest about the residual exposure. If the setup is as ugly as the aggressive desk describes—four lower closes, price on the VWMA, a single ATR move opening 319.35, 317.32, and 315.20–317.40—then retaining 70 to 80 percent of the position is not a small residual risk. In a 2.46 percent ATR tape, that core position is still fully exposed to the exact sequence the aggressive desk says is plausible. You cannot call the tape parabolic and exhausted, and then argue that keeping four-fifths of the position is the cautious version. The cautious version is to reduce enough that a normal shakeout does not force a worse decision later, and to define hard downside controls for whatever remains.</p>
+<p>I also want to correct one analytical point. The aggressive desk says one ordinary ATR day takes AAPL to 313.74, “below the entire May–June ceiling,” and calls that the median outcome of a single session. That is not what ATR means. ATR is average true range, not a directional forecast. A 7.92 ATR does not tell us AAPL is more likely to fall 7.92 than to rise 7.92. But the aggressive desk’s broader point still stands: in this volatility regime, stop distances and position sizing matter more than they did in early July. The conservative response is not to overstate the probability of a down day; it is to size the position so that a down day, an up day, or a gap does not impair the portfolio. That argues for using the high end of the trader’s trim range when the position is at or above target, and for setting explicit downside triggers on the core.</p>
+<p>The aggressive desk’s stop at 334.99 is also being misused. As an invalidation level for the trim thesis, it is reasonable: if AAPL closes above the record high, the pullback thesis was wrong, and the desk can reassess. But 334.99 is 4.1 percent above the current price. It tells us when the trim was premature. It does not protect the remaining 70 to 80 percent of the position from a decline to 317.32, 315.20, or the 50 SMA at 305.47. The aggressive desk says holding is a decision too. I agree. So let’s make the holding decision explicit: if the core is retained, the conservative approach is a layered risk plan—first reduce further on a decisive close below the VWMA at 321.38 that is not recovered within one to two sessions, second reduce below 317.32, and treat a close below the 50 SMA near 305.47 as a strategic trend warning. That is not “waiting for confirmation” in the neutral sense. That is pre-defining the cost of being wrong.</p>
+<p>Now to the neutral desk, which has not spoken yet but whose argument is predictable: wait for confirmation. Wait for a second close below the 10 EMA. Wait for MACD to cross below its signal at 7.31. Wait for RSI to break 50. Wait for a close below the VWMA. My objection is that by the time all of those confirmations align, AAPL may already be at 311.49 or 305.47, and the firm will have absorbed the drawdown the conservative mandate is supposed to avoid. The neutral approach sounds balanced, but in practice it is a full-size directional bet that the confirmation never comes. If the position is at or above target after a 21.3 percent move in fifteen sessions, the conservative desk does not need every confirmation to trim. We have enough: price has lost the 10 EMA, sits on the VWMA, has printed four consecutive lower closes, MACD is rolling over, ATR is elevated, and the news file has a five-day blind spot with no fundamentals report. That is not a reason to liquidate AAPL. It is a reason to reduce exposure now and keep the proceeds in cash or short-duration instruments until the risk/reward improves.</p>
+<p>The aggressive desk says it wants dry powder for the July 28 Klarna leasing event and the China AI/Qwen catalyst. I understand the logic, but the conservative desk should not pre-commit that dry powder to a dip-buy at 315.20–317.40. That zone is the bull’s own stated buy area, but if the VWMA breaks and MACD crosses down, that same zone can become resistance. A tag of 315–317 is not automatically a low-risk entry. It is only low-risk if the tape stabilizes—if AAPL reclaims 321.38, if the 10 EMA flattens, if volume dries up on the pullback rather than expanding. The aggressive plan to reload at 315–317 risks catching a falling knife in a parabolic unwind. The conservative alternative is to sell into the 322.66–327.74 bounce zone, keep the proceeds uncommitted, and require either a confirmed higher low above 317.32 or a breakout above 334.99 on volume greater than roughly 60 million shares with follow-through before re-adding. That is slower, but it is safer.</p>
+<p>The news backdrop also does not justify full exposure. The Klarna leasing program is reported and Apple-unconfirmed, and lease accounting can defer or recharacterize iPhone revenue right as two separate outlets spent the same afternoon calling AAPL expensive into the next print. The China Qwen approval is genuinely positive, but it is a weeks-to-quarters upgrade-cycle catalyst, not a reason to hold maximum exposure through a near-term volatility event. The memory crunch is a relative share gain for premium OEMs but also a bill-of-materials and gross-margin headwind. The Masimo judgment is financially immaterial but adds headline noise, and the separate trade-secret dispute is a tail risk. And the megacap tape just punished Alphabet for raising capex on a beat—that is a warning that spending narratives are not being rewarded. None of that says AAPL is broken. It says the near-term asymmetry is not attractive enough to justify a large, unhedged core.</p>
+<p>So my adjustment to the trader’s decision is this: support the sell, but make it a conservative sell. If the AAPL position is at or above target, take the 30 percent trim rather than the 20 percent end, preferably into strength in the 322.66–327.74 zone rather than into a breakdown. For the retained core, do not rely on 334.99 as the only stop—that is an upside invalidation, not downside protection. Use the VWMA at 321.38 and the 319.35 low as the first warning, 317.32 as the second, and the 50 SMA near 305.47 as the strategic trend line. Keep the proceeds in cash or short duration, not as a pre-committed dip-buy. Re-add only on evidence of stabilization or on a high-volume breakout above 334.99 with follow-through. The aggressive desk calls that cautious. I call it consistent with the mandate: protect assets, minimize volatility, and ensure that if AAPL does break down, the firm is not learning the lesson at 311 or 305 with a full-size position.</p>
+<h3 id="s4-3">Neutral Analyst</h3>
+<p>Neutral Analyst: I’ll take the neutral chair and say plainly that I support the trader’s SELL proposal on AAPL only as a partial trim. The aggressive desk is right to monetize some of the parabolic move, but it is too optimistic that the round trip will be available on its terms. The conservative desk is right that 334.99 is not downside protection, but it risks over-correcting into a slow liquidation of a still-intact AAPL uptrend.</p>
+<p>The aggressive desk’s strongest point is that holding is also a decision. AAPL closed at 321.66 below the 10 EMA at 322.66, is sitting only about twenty-eight cents above the VWMA at 321.376, has printed four lower closes, has MACD rolling over from 8.927, and is in a 2.46% ATR regime. That absolutely justifies reducing exposure. But its weakest point is the confidence that the sale proceeds can be reliably reloaded at 315.20–317.40. That zone is attractive only if AAPL stabilizes there. If AAPL loses 321.38 and MACD crosses below 7.31, the same 315–317 shelf can turn into resistance. The aggressive plan also overstates ATR: 7.92 is average range, not a directional forecast that a down move is the median outcome. ATR argues for smaller size and wider risk bands, not for pretending a fall is more likely than a rise. And “paid either way” is too neat. The trim can be right and the re-entry can still be early, late, or badly timed.</p>
+<p>The conservative desk’s strongest point is that 334.99 above the market is an invalidation stop for the trim thesis, not a protective stop for the retained core. That correction is important. But the conservative desk is too cautious in treating every short-term crack and every missing news item as a reason to lean harder into cash. For AAPL, the base-case data is not broken: price is still above the rising 50 SMA at 305.47 and the rising 200 SMA at 275.60, the pullback volume is contracting, RSI has reset without bearish divergence, and the support levels at 319.35, 317.32, and 315.20–317.40 have not been decisively violated. Missing news from July 16–21 is uncertainty, not automatically bearish evidence. The conservative plan of taking 30% if at target and then layering further reductions on 321.38, 317.32, and 305.47 risks turning a measured trim into a disguised cascade if AAPL merely chops sideways. It is also too rigid to require a confirmed higher low above 317.32 or a greater-than-60-million-share breakout above 334.99 before any re-add; that can leave the caller underweight a valid continuation in a structurally bullish AAPL trend.</p>
+<p>So the moderate adjustment is this. For AAPL, I would execute a base trim of 20% now or into the 322.66–327.74 bounce zone, not into weakness. If the AAPL position is above target or tech is overweight, take 25–30%. If the position is already underweight, keep closer to 20% or even less and do not force the sale. Retain the 70–80% core, because the primary uptrend and the medium-term catalysts are still legitimate. Keep 334.99 as the invalidation level for the trim thesis: if AAPL closes above that on strong volume, re-add the trimmed portion or reassess. For the retained core, treat 321.38 and 319.35 as the first warning zone, 317.32 as the breakout-retest failure trigger, and 305.47 as the swing-trend invalidation line, but do not pre-program so many automatic reductions that the plan becomes a liquidation.</p>
+<p>For the sale proceeds, do not pre-commit them to the aggressive desk’s 315.20–317.40 reload. That zone becomes a buy only if AAPL stabilizes there, holds the shelf, reclaims 321.38, and shows no MACD cross below 7.31 with no expansion in downside volume. Otherwise keep the proceeds in cash or short duration and wait for either evidence of stabilization or a high-volume breakout above 334.99. That gives the aggressive desk its near-term monetization, gives the conservative desk its downside controls, and avoids both the aggressive desk’s heroic round-trip assumption and the conservative desk’s overcautious cash drag.</p>
+<p>My final stance is partial SELL on AAPL, not full exit. The trader’s FINAL TRANSACTION PROPOSAL of SELL is reasonable if it is executed as a disciplined trim into strength, with a 70–80% core retained and conditional re-entry rules, rather than as a bearish abandonment of AAPL.</p>
+</section><section id="s5"><h2>V. Portfolio Manager Decision</h2><h3 id="s5-1">Portfolio Manager</h3>
+<p><strong>Rating</strong>: Underweight</p>
+<p><strong>Executive Summary</strong>: Trim AAPL 20% now (25–30% only if the position is at/above target weight or tech is already overweight), selling into strength at $322.66–$327.74 rather than into weakness, and retain a 70–80% core because the primary uptrend is intact. Do not add at $321.66 and do not pre-commit the proceeds to a $315.20–$317.40 dip-buy; that shelf only becomes a buy if AAPL stabilizes on contracting volume, reclaims $321.38, and MACD holds above its 7.31 signal. Invalidation is symmetric: a close above $334.99 on &gt;60M shares with MACD re-accelerating re-adds the trimmed portion, while a daily close below $305.47 (50 SMA) cuts the tactical remainder and $275.60 (200 SMA) is full-thesis invalidation. Horizon 1–3 months, re-underwritten at the late-July Q3 print and the ~July 28 Klarna event.</p>
+<p><strong>Investment Thesis</strong>: All three risk desks converge on a partial trim, so the only contested questions are the label, the size, and the proceeds. On the provided scale Sell means exit or avoid entry, which no desk advocates — the trader's own reasoning says &quot;a full exit is unwarranted&quot; — so the correct rating is Underweight: reduce exposure, take partial profits, keep the core.</p>
+<p>Direction is decided by the fact that the bear/neutral evidence is an actual rejection, not proximity to resistance. AAPL closed at $321.66 below the 10 EMA at $322.66 (first such close since 6/30) after four consecutive lower closes off a +21.3% move in fifteen sessions, with MACD rolling off 8.927 on a contracting histogram and price just $0.28 above the VWMA at $321.376 — the entire July breakout cohort is at breakeven. That gate matters because of my own record: the 2026-07-13 Underweight (+3.9% alpha against me) and the 2026-07-10 Hold both failed by treating a nearby technical level inside one ATR as a rejection rather than a probable break. Those lessons required an actual rejection signal before trimming; that gate is now satisfied. The 2026-07-16 Overweight near $333, made into the parabolic extension, cost -1.8% alpha in five days — the freshest datapoint supports the trim.</p>
+<p>Size is capped at a modest trim, not the conservative desk's cascade, because structure is unbroken: price remains above a rising 50 SMA at $305.47 and rising 200 SMA at $275.60, RSI 58.11 is still above 50 and reset without bearish divergence, MACD 8.107 remains above its 7.312 signal, and none of $319.35, $317.32 or $315.20–$317.40 has been decisively violated. The bull's own &quot;do not chase, wait for $315–$317&quot; concedes today's price is unattractive — which argues for trimming, not exiting a structural uptrend. The conservative schedule (30% plus further cuts at $321.38, $317.32 and $305.47) risks becoming a disguised liquidation on a sideways chop, and this desk's history of over-trimming confirmed uptrends is why I reject it.</p>
+<p>I adopt the neutral desk's framework with two corrections. First, I reject the aggressive &quot;paid either way&quot; framing: the $315.20–$317.40 reload is not free optionality — if $321.38 fails and MACD crosses below 7.31, that shelf becomes resistance. Proceeds sit in cash/short duration until stabilization is demonstrated. Second, I reject the aggressive misuse of ATR: 7.92 is a sizing input, not a directional forecast that a down day is the median outcome. It argues for smaller size and wider bands, which is precisely what a 20–30% trim with a retained 70–80% core delivers. The aggressive 334.99 stop is likewise an invalidation of the trim thesis, not downside protection for the retained core — that protection comes from the $305.47/$275.60 levels.</p>
+<p>What would change the call: a daily close above $334.99 on &gt;60M shares with MACD re-accelerating upgrades to Hold/Overweight and the trimmed portion is re-added; a $315.20–$317.40 pullback that holds on below-average volume with RSI above ~45 is a legitimate accumulation entry and also upgrades. A close below $321.38 unrecovered in 1–2 sessions justifies a further small trim; below $317.32 removes tactical exposure; below $305.47 moves toward Sell; a break of $275.60 invalidates the thesis.</p>
+<p>Explicit gaps, not papered over: no fundamentals model, no valuation multiple, no consensus or estimate revisions, no insider data, and a five-day news blind spot (July 16–21) with ~90% of records unsupplied. Klarna leasing is single-source and Apple-unconfirmed with revenue-recognition and margin-optics risk into Q3; China Qwen approval lacks Apple-specific financials; IDC's memory commentary is two-sided. Because none of it is quantified, no price target is issued — any number would be technical guesswork rather than a thesis.</p>
+<p><strong>Price Target</strong>: not provided</p>
+<p><strong>Time Horizon</strong>: 1–3 months tactical (re-underwritten at the late-July Q3 print and the ~July 28 Klarna event)</p>
+</section>
+</main>
+<footer class="credit"><a href="https://github.com/TauricResearch/TradingAgents" rel="noopener">TradingAgents</a> powered by <a class="brand" href="https://github.com/TauricResearch" rel="noopener">Tauric Research</a></footer>
+</div>
+<a class="to-top" href="#top">Top</a>
+</body>
+</html>
