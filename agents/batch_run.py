@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import os
 from pathlib import Path
 
 import pandas as pd
@@ -91,7 +90,8 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--tickers", default="AAPL,GOOGL,AMZN")
     parser.add_argument("--start", required=True, help="First evaluation session, YYYY-MM-DD")
     parser.add_argument("--end", required=True, help="Last evaluation session, YYYY-MM-DD")
-    parser.add_argument("--analysts", default=os.getenv("TRADINGAGENTS_ANALYSTS", "market,fundamentals"))
+    # Let run_one load .env before selecting analysts, just like single runs.
+    parser.add_argument("--analysts", default=None, help="Default from .env, otherwise market,news,fundamentals")
     parser.add_argument("--strategy-version", default=DEFAULT_STRATEGY)
     parser.add_argument("--output", default=None)
     parser.add_argument("--logs-dir", default=None)

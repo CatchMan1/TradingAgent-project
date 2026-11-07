@@ -7,9 +7,9 @@ Trader, and debate opinions remain in the saved report/state logs.
 
 Run from the B-project root:
 
-    python -m agents.run_agents --ticker AAPL --date 2024-01-02
+    python -m agents.run_agents --ticker AAPL --date 2026-07-01
 
-The official package must be installed separately (see agents/README.md).
+The local framework is installed through the root requirements.txt.
 """
 
 from __future__ import annotations
@@ -22,17 +22,100 @@ import json
 import os
 import subprocess
 import sys
+import threading
 import time
 from datetime import timedelta
 from pathlib import Path
 from typing import Any
 
+from langchain_core.callbacks import BaseCallbackHandler
+
 from data import DATA_DIR, ROOT, data_asof, schedule
 
 
 NY_TZ = "America/New_York"
-DEFAULT_ANALYSTS = ("market", "fundamentals")
-DEFAULT_STRATEGY = "ta-v0.6.0-deepseek-flash-market-fundamentals-v1"
+DEFAULT_ANALYSTS = ("market", "news", "fundamentals")
+DEFAULT_STRATEGY = "ta-v0.6.0-deepseek-flash-market-news-fundamentals-v1"
+
+
+class ConsoleProgressCallbackHandler(BaseCallbackHandler):
+    """Show compact per-decision LLM progress without printing model content."""
+
+    def __init__(self, decision_label: str, heartbeat_seconds: float = 30.0) -> None:
+        super().__init__()
+        self.decision_label = decision_label
+        self.heartbeat_seconds = heartbeat_seconds
+        self._lock = threading.Lock()
+        self._calls = 0
+        self._active: dict[Any, tuple[int, float, str]] = {}
+        self._stop = threading.Event()
+        self._thread = threading.Thread(target=self._heartbeat, daemon=True)
+        self._thread.start()
+
+    @staticmethod
+    def _stage(kwargs: dict[str, Any]) -> str:
+        metadata = kwargs.get("metadata") or {}
+        return str(metadata.get("langgraph_node") or kwargs.get("name") or "LLM")
+
+    def _start(self, kwargs: dict[str, Any]) -> None:
+        run_id = kwargs.get("run_id") or object()
+        with self._lock:
+            self._calls += 1
+            number = self._calls
+            stage = self._stage(kwargs)
+            self._active[run_id] = (number, time.monotonic(), stage)
+        print(
+            f"[decision {self.decision_label}] [LLM step {number}] START {stage}",
+            flush=True,
+        )
+
+    def on_llm_start(self, serialized, prompts, **kwargs) -> None:
+        self._start(kwargs)
+
+    def on_chat_model_start(self, serialized, messages, **kwargs) -> None:
+        self._start(kwargs)
+
+    def _finish(self, kwargs: dict[str, Any], status: str) -> None:
+        run_id = kwargs.get("run_id")
+        with self._lock:
+            item = self._active.pop(run_id, None)
+        if item is None:
+            return
+        number, started, stage = item
+        elapsed = time.monotonic() - started
+        print(
+            f"[decision {self.decision_label}] [LLM step {number}] {status} "
+            f"{stage} ({elapsed:.1f}s)",
+            flush=True,
+        )
+
+    def on_llm_end(self, response, **kwargs) -> None:
+        self._finish(kwargs, "DONE")
+
+    def on_llm_error(self, error, **kwargs) -> None:
+        self._finish(kwargs, f"FAILED {type(error).__name__}")
+
+    def on_tool_start(self, serialized, input_str, **kwargs) -> None:
+        name = serialized.get("name", "tool") if isinstance(serialized, dict) else "tool"
+        print(f"[decision {self.decision_label}] TOOL START {name}", flush=True)
+
+    def on_tool_end(self, output, **kwargs) -> None:
+        print(f"[decision {self.decision_label}] TOOL DONE", flush=True)
+
+    def _heartbeat(self) -> None:
+        while not self._stop.wait(self.heartbeat_seconds):
+            now = time.monotonic()
+            with self._lock:
+                active = list(self._active.values())
+            for number, started, stage in active:
+                print(
+                    f"[decision {self.decision_label}] [LLM step {number}] WAITING "
+                    f"{stage} ({now - started:.0f}s)",
+                    flush=True,
+                )
+
+    def close(self) -> None:
+        self._stop.set()
 
 
 def _safe_analysts(value: str | list[str] | tuple[str, ...] | None) -> list[str]:
@@ -58,7 +141,7 @@ def _import_official():
     except ImportError as exc:
         raise RuntimeError(
             "Official TradingAgents is not installed in this Python environment. "
-            "Install the pinned v0.6.0 checkout described in agents/README.md, "
+            "Install this project's requirements.txt (including ./framework), "
             "then rerun the command."
         ) from exc
     return tradingagents, StatsCallbackHandler, is_review, TradingAgentsGraph, DEFAULT_CONFIG
@@ -76,21 +159,29 @@ def _build_runtime_config(default_config: dict[str, Any], analysts: list[str], l
         max_risk_discuss_rounds=int(os.getenv("TRADINGAGENTS_MAX_RISK_ROUNDS", "1")),
         checkpoint_enabled=os.getenv("TRADINGAGENTS_CHECKPOINT_ENABLED", "true").lower() in {"1", "true", "yes", "on"},
         temperature=float(os.getenv("TRADINGAGENTS_TEMPERATURE", "0.0")),
-        llm_max_retries=int(os.getenv("TRADINGAGENTS_LLM_MAX_RETRIES", "6")),
+        llm_max_retries=int(os.getenv("TRADINGAGENTS_LLM_MAX_RETRIES", "2")),
+        llm_timeout=float(os.getenv("TRADINGAGENTS_LLM_TIMEOUT_SECONDS", "120")),
         max_tokens=int(os.getenv("TRADINGAGENTS_MAX_TOKENS", "8192")),
         results_dir=str(logs_dir / "results"),
         data_cache_dir=str(logs_dir / "cache"),
         memory_log_path=str(logs_dir / "memory" / "trading_memory.md"),
+        news_previous_days_only=True,
+        news_company_only=True,
+        news_timezone=NY_TZ,
     )
     config["data_vendors"] = {
         **config.get("data_vendors", {}),
         "core_stock_apis": "course_project",
         "technical_indicators": "course_project",
         "fundamental_data": "course_project",
+        # Finnhub Company News is the historical company-news source.
+        "news_data": "finnhub",
     }
     config["tool_vendors"] = {
         **config.get("tool_vendors", {}),
         "get_insider_transactions": "course_project",
+        # Pin the exact source, even if an upstream tool override exists.
+        "get_news": "finnhub",
     }
     return config
 
@@ -156,6 +247,7 @@ def run_one(
     logs_dir: str | Path | None = None,
     data_dir: str | Path = DATA_DIR,
     dry_run: bool = False,
+    progress_label: str | None = None,
 ) -> dict[str, Any]:
     """Run one `(ticker, trade_date)` cell and return its B-compatible row.
 
@@ -188,6 +280,7 @@ def run_one(
         "course_project_git": _git_state(ROOT),
     }
     stats = None
+    progress = None
     try:
         cutoff, decision_time = _session_cutoff(trade_date)
         # This is the important B/A boundary: if local point-in-time data is
@@ -199,8 +292,25 @@ def run_one(
             _append_jsonl(logs / "runs.jsonl", record)
             return record
 
+        if "news" in selected:
+            if not os.getenv("FINNHUB_API_KEY", "").strip():
+                raise ValueError("FINNHUB_API_KEY is empty; set it in the local .env before enabling news")
+            if (os.getenv("TRADINGAGENTS_NEWS_VENDOR") or "finnhub").strip().lower() != "finnhub":
+                raise ValueError("This experiment requires TRADINGAGENTS_NEWS_VENDOR=finnhub")
+
         tradingagents, StatsCallbackHandler, is_review, TradingAgentsGraph, default_config = _import_official()
         config = _build_runtime_config(default_config, selected, logs)
+        config["news_trade_date"] = trade_date
+        if "news" in selected:
+            from tradingagents.dataflows.config import run_config
+            from tradingagents.dataflows.vendors.finnhub.news import prepare_news_snapshot
+
+            # Fetch and validate before constructing the LLM graph. Tool calls
+            # later read this frozen response, including narrower 1-7 day queries.
+            with run_config(config):
+                snapshot = prepare_news_snapshot(ticker, trade_date)
+            config["finnhub_news_snapshot"] = snapshot
+            record["data_snapshot"]["sources"]["news"] = snapshot
         official_root = Path(tradingagents.__file__).resolve().parents[1]
         record.update(
             tradingagents_version=tradingagents.__version__,
@@ -213,10 +323,13 @@ def run_one(
             temperature=config.get("temperature"),
         )
         stats = StatsCallbackHandler()
+        if progress_label:
+            progress = ConsoleProgressCallbackHandler(progress_label)
         from agents.local_data_vendor import install as install_local_data_vendor
 
         install_local_data_vendor(Path(data_dir))
-        graph = TradingAgentsGraph(selected, config=config, debug=False, callbacks=[stats])
+        callbacks = [stats] + ([progress] if progress is not None else [])
+        graph = TradingAgentsGraph(selected, config=config, debug=False, callbacks=callbacks)
         final_state, signal = graph.propagate(ticker, trade_date, asset_type="stock")
         _record_stats(record, stats)
         if is_review(signal):
@@ -260,6 +373,9 @@ def run_one(
         )
         _append_jsonl(logs / "runs.jsonl", record)
         raise
+    finally:
+        if progress is not None:
+            progress.close()
 
 
 def append_decision(path: str | Path, row: dict[str, str]) -> None:
@@ -279,7 +395,7 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one TradingAgents decision for B's CSV interface")
     parser.add_argument("--ticker", required=True)
     parser.add_argument("--date", required=True, dest="trade_date")
-    parser.add_argument("--analysts", default=None, help="Comma-separated; default: market,fundamentals")
+    parser.add_argument("--analysts", default=None, help="Comma-separated; default: market,news,fundamentals")
     parser.add_argument("--strategy-version", default=DEFAULT_STRATEGY)
     parser.add_argument("--output", default=None, help="Optional B decision CSV to append on success")
     parser.add_argument("--dry-run", action="store_true", help="Validate date and local as-of data without calling an LLM")

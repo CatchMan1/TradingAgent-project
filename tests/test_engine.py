@@ -31,7 +31,7 @@ def test_compound_and_log_input_use_same_long_only_cost_formula():
                                return_type="log", nav_mode="compound")
     np.testing.assert_allclose(log_nav, nav)
     np.testing.assert_allclose(log_ret, ret)
-    with pytest.raises(AssertionError, match="0/1"):
+    with pytest.raises(ValueError, match="0/1"):
         function([1, -1], [.1, .2])
 
 
@@ -79,7 +79,7 @@ def test_all_strategies_including_agent_share_evaluation_path():
     scope = dict(namespace, cfg={"commission_bps": 5, "slippage_bps": 5,
                                  "annualization": 252, "risk_free_rate": 0.},
                  position_tables=frames, strategy_names={key[2]: key[2].upper() for key in frames},
-                 RETURN_TYPE="simple", NAV_MODE="additive")
+                 RETURN_TYPE="simple", NAV_MODE="additive", EXCLUDE_PERIODS=[])
     cell = next(c for c in notebook["cells"] if "strategy-evaluation" in c.get("metadata", {}).get("tags", []))
     exec("".join(cell["source"]), scope)
     assert scope["metrics_table"].index.tolist() == list(frames)
@@ -106,3 +106,27 @@ def test_independent_test_restarts_nav_but_full_period_keeps_boundary_return():
     assert full.net_values.iloc[-1] == pytest.approx(1.599)
     assert full.cost.sum() == pytest.approx(.001)
     assert test.cost.sum() == pytest.approx(.001)
+
+
+@pytest.mark.parametrize('nav_mode, expected', [('additive', [1.04, 1.03]),
+                                                ('compound', [1.04, 1.0296])])
+def test_excluded_intervals_preserve_original_costs_and_do_not_bridge_prices(nav_mode, expected):
+    dates = pd.DatetimeIndex(['2026-07-29', '2026-07-30', '2026-07-31', '2026-08-03', '2026-08-04'], tz='America/New_York') + pd.Timedelta(hours=9, minutes=30)
+    ends = pd.DatetimeIndex(['2026-07-30', '2026-07-31', '2026-08-03', '2026-08-04', '2026-08-05'], tz='America/New_York') + pd.Timedelta(hours=9, minutes=30)
+    frame = pd.DataFrame({'position': [1., 0., 1., 1., 0.],
+                          'pct': [.1, .2, .3, .04, .05], 'return_end': ends}, index=dates)
+    result = namespace['run_backtest'](frame, .01, nav_mode=nav_mode,
+                                       exclude_periods=[('2026-07-30', '2026-07-31')])
+    assert result.index.tolist() == dates[-2:].tolist()
+    np.testing.assert_allclose(result.strategy_ret, [.04, -.01])
+    np.testing.assert_allclose(result.cost, [0., .01])
+    np.testing.assert_allclose(result.net_values, expected)
+
+
+def test_excluding_weekend_removes_interval_spanning_it():
+    dates = pd.DatetimeIndex(['2026-07-30 09:30', '2026-07-31 09:30', '2026-08-03 09:30'], tz='America/New_York')
+    ends = pd.DatetimeIndex(['2026-07-31 09:30', '2026-08-03 09:30', '2026-08-04 09:30'], tz='America/New_York')
+    frame = pd.DataFrame({'position': 1., 'pct': [.01, .2, -.01], 'return_end': ends}, index=dates)
+    result = namespace['run_backtest'](frame, 0, exclude_periods=[('2026-08-01', '2026-08-02')])
+    assert result.index.tolist() == dates[[0, 2]].tolist()
+    np.testing.assert_allclose(result.strategy_ret, [.01, -.01])

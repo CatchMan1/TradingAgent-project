@@ -35,6 +35,12 @@ def main() -> int:
     except ImportError:
         errors.append("official TradingAgents is not importable; install pinned v0.6.0")
 
+    selected_analysts = {item.strip().lower() for item in os.getenv("TRADINGAGENTS_ANALYSTS", "market,news,fundamentals").split(",")}
+    if "news" in selected_analysts and not os.getenv("FINNHUB_API_KEY", "").strip():
+        errors.append("FINNHUB_API_KEY is empty; required when the news analyst is enabled")
+    if "news" in selected_analysts and (os.getenv("TRADINGAGENTS_NEWS_VENDOR") or "finnhub").strip().lower() != "finnhub":
+        errors.append("This experiment requires TRADINGAGENTS_NEWS_VENDOR=finnhub")
+
     provider = os.getenv("TRADINGAGENTS_LLM_PROVIDER", "deepseek")
     key_name = {"deepseek": "DEEPSEEK_API_KEY", "openai": "OPENAI_API_KEY"}.get(provider)
     if key_name and not os.getenv(key_name):

@@ -7,16 +7,18 @@ from data import ROOT
 from settings import check_evaluation, code_hash, load_config
 
 
-def test_notebook_defaults_load_all_stocks_and_two_periods():
+def test_notebook_uses_complete_agent_signal_period():
     import pandas as pd
     notebook = json.loads((ROOT / "analysis.ipynb").read_text())
     cell = next(c for c in notebook["cells"] if "parameters" in c.get("metadata", {}).get("tags", []))
-    scope = dict(pd=pd, load_config=load_config)
+    scope = dict(pd=pd, load_config=load_config, ROOT=ROOT)
     exec("".join(cell["source"]), scope)
     assert scope["TICKERS"] == ["AAPL", "GOOGL", "AMZN"]
-    assert scope["periods"] == {"train": ("2024-01-01", "2026-05-31"),
-                                "test": ("2026-06-01", "2026-10-09"),
-                                "train_test": ("2024-01-01", "2026-10-09")}
+    assert scope["AGENT_CSV"].is_file()
+    assert scope["periods"] == {"agent_period": ("2026-07-01", "2026-10-09")}
+    assert scope["seed_date"] == "2026-06-30"
+    assert (scope["backtest_start"], scope["backtest_end"]) == ("2026-07-01", "2026-10-09")
+
 
 
 def test_runtime_parameters_can_change_without_invalidating_code_hash(monkeypatch, tmp_path):
@@ -59,7 +61,7 @@ def test_baseline_csv_is_the_input_to_backtest(tmp_path):
              strategy_version="buy_hold-v1", source="baseline", session=day)
         for day in ["2023-12-29", "2024-01-02"]
     ])
-    namespace = dict(ROOT=tmp_path, train_start="2024-01-02", test_end="2024-01-02",
+    namespace = dict(ROOT=tmp_path, backtest_start="2024-01-02", backtest_end="2024-01-02",
                      pd=pd, load_decisions=load_decisions,
                      validate_decisions=validate_decisions, decision_sessions=decision_sessions,
                      df_eval=pd.DataFrame(index=pd.DatetimeIndex(["2024-01-02T09:30:00-05:00"])),
@@ -69,7 +71,7 @@ def test_baseline_csv_is_the_input_to_backtest(tmp_path):
     for cell in notebook["cells"]:
         if "signals-export" in cell.get("metadata", {}).get("tags", []):
             exec("".join(cell["source"]), namespace)
-    path = tmp_path / "data/decisions/baseline_AAPL_train_test.csv"
+    path = tmp_path / "data/decisions/baseline_AAPL_agent_period.csv"
     assert path.exists(), "基线信号必须先保存 CSV"
     saved = pd.read_csv(path)
     saved.loc[0, "action"] = "SELL"
@@ -94,7 +96,7 @@ def test_baseline_csv_requires_every_stock_strategy_account(tmp_path):
     ]).to_csv(path, index=False)
     notebook = json.loads((ROOT / "analysis.ipynb").read_text())
     namespace = dict(pd=pd, load_decisions=load_decisions, validate_decisions=validate_decisions,
-                     baseline_paths={"AAPL": path}, train_start="2024-01-02", test_end="2024-01-02")
+                     baseline_paths={"AAPL": path}, backtest_start="2024-01-02", backtest_end="2024-01-02")
     with pytest.raises(ValueError, match="strategies"):
         for cell in notebook["cells"]:
             if "signals-read" in cell.get("metadata", {}).get("tags", []):
