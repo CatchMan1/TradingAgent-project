@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The research plan's Underweight call is supported by the price structure: AAPL at 331.34 is pressed directly into the 333.43–336.22 supply band (the 07-30 close/top of the unfilled −7.37% gap and the 09-11 swing high), a zone it has now been rejected from twice (333.08 close 09-14, 331.34 close 09-15), while the qualifying breakout trigger — a daily close above 336.22 on ≥50M shares — has not fired and volume has faded to 39.3M then 31.7M versus a ~42M average. Momentum that is re-accelerating but below its July thrust (MACD histogram 1.597 vs 3.337 on 07-17) plus a valuation of ~36x annualized EPS and a ~3.0% FCF yield means the margin of safety is thin exactly where overhead supply is thickest, so downside asymmetry into the 322.15 VWMA, 319.27/318.84 mid-band and 50-SMA, and 309.90 structural low dominates. This is a trim/underweight, not an outright short: the 200-SMA at 285.51 rising, price +16% above it, and a 12-session hold above the 50-SMA keep the primary trend intact, so a core position should be retained. Trim into strength rather than at market, and treat a volume-confirmed close above 336.22 as the level at which the bearish thesis is wrong and exposure should be rebuilt.
+
+**Entry Price**: 333.43
+
+**Stop Loss**: 336.5
+
+**Position Sizing**: Sell into 333.43–336.22, not at market; if price stalls below 333, trim at least 20–25% immediately. Target ~60–70% of a standard AAPL allocation (i.e. trim ~30–40% of a full-weight position). On the remaining core, trim another 10–15% on a daily close below the 10-EMA at 325.38, again below the VWMA at 322.15, and cut to a small residual on a daily close below 318.84 with a negative MACD histogram (downside references 309.90, then 303.29). The 336.50 stop is thesis invalidation: a daily close above 336.22 on ≥50M shares means rebuilding toward neutral in stages (with FQ4 gross-margin guide ≥49%). Any tactical re-add near 318.84–309.90 is capped at 0.5% of portfolio per tranche with a stop under 315.30 (about two ATRs below spot). Do not add ahead of the October 1 Apple-OpenAI hearing or the late-October FQ4 print.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

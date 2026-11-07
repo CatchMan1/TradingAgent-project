@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>GOOGL 2026-07-13 Underweight: TradingAgents report</title>
+<style>
+:root {
+  --paper: #fbfbfa; --ink: #1c2126; --muted: #5d6670; --rule: #e2e5e8; --wash: #f2f4f5;
+  --accent: #087a59; --up: #087a59; --down: #b4372f; --level: #5d6670; --edge: #d3d8dc; --mark: #878f97;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131a1f; --ink: #e4e8eb; --muted: #9aa6af; --rule: #263239; --wash: #1a242a;
+    --accent: #14c290; --up: #14c290; --down: #ef6f63; --level: #9aa6af; --edge: #3d4c55; --mark: #66737c;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .masthead .logo [stroke="#363636"] { stroke: var(--muted); }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.62 var(--serif); font-kerning: normal;
+}
+.page { max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.5rem 6rem; }
+main h2, main h3 { scroll-margin-top: 1rem; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+h1, h2, h3, h4 { text-wrap: balance; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.masthead { padding-bottom: 1.75rem; border-bottom: 1px solid var(--rule); }
+/* The logo leads at the top left, where readers look for it, 24px tall (the usual
+   on-screen floor for a wordmark) with at least its height clear below. */
+.masthead .logo { display: block; width: fit-content; margin: 0 0 2.25rem; }
+.masthead .logo svg { display: block; height: 1.5rem; width: auto; }
+.masthead h1 {
+  margin: 0; font: 600 2.6rem/1.1 var(--sans); letter-spacing: -0.02em;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.5em;
+}
+.masthead .rating { font-weight: 500; }
+.rating.up { color: var(--up); } .rating.down { color: var(--down); } .rating.level { color: var(--level); }
+.rating.review { color: var(--muted); font-style: italic; }
+.masthead .date { margin: 0.55rem 0 1.5rem; font: 1rem/1.4 var(--sans); color: var(--muted); }
+.run { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.45rem 1.25rem;
+  font: 0.85rem/1.5 var(--sans); }
+.run > div { display: contents; }
+.run dt { color: var(--muted); }
+.run dd { margin: 0; overflow-wrap: anywhere; }
+.run .note dd { color: var(--down); }
+.field { display: inline-block; margin: 0 0.15rem 0.15rem 0; padding: 0 0.4rem; border: 1px solid var(--edge);
+  border-radius: 4px; background: var(--wash); font: 0.8rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.run .group { display: inline-block; margin-right: 0.9rem; white-space: nowrap; }
+.run .group > .name { color: var(--muted); margin-right: 0.3rem; }
+.run .then { color: var(--muted); margin: 0 0.2rem; }
+
+/* The sections: listed under the header on narrow screens. On wide ones, a
+   quiet rail centred on the left edge (numerals for the sections, short bars
+   for their agents) that opens into the full list when pointed at or focused. */
+.contents { margin: 2.25rem 0 0; font: 0.9rem/1.45 var(--sans); }
+.contents ul { margin: 0; padding: 0; list-style: none; }
+.contents > ul > li { margin: 0 0 0.75rem; }
+.contents ul ul { margin-top: 0.2rem; padding-left: 1.6rem; font-size: 0.85rem; }
+.contents ul ul li { margin: 0.1rem 0; }
+.contents a { display: flex; align-items: center; gap: 0.6rem; color: var(--muted); text-decoration: none; }
+.contents > ul > li > a { color: var(--ink); }
+.contents .num { min-width: 1.6rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.contents .bar { display: none; }
+.contents a:hover .label, .contents a:focus-visible .label { color: var(--accent); text-decoration: underline; }
+.to-top { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom));
+  padding: 0.25rem 0.6rem; border: 1px solid var(--edge); border-radius: 4px; background: var(--paper);
+  color: var(--muted); font: 0.8rem/1.4 var(--sans); text-decoration: none; }
+
+@media (min-width: 60rem) {
+  .contents { position: fixed; left: 1rem; top: 50%; transform: translateY(-50%); z-index: 1;
+    max-height: 86vh; overflow-y: auto; overscroll-behavior: contain; margin: 0;
+    padding: 0.7rem 0.9rem; border: 1px solid transparent; border-radius: 6px;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s; }
+  .contents > ul > li { margin: 0 0 0.35rem; }
+  .contents ul ul { margin-top: 0; padding-left: 0; }
+  .contents ul ul li { margin: 0; }
+  /* Marks reach 3:1 contrast and rows 24px, the WCAG 2.2 floors for a control's
+     visual cue and its pointer target. */
+  .contents a { min-height: 1.5rem; }
+  .contents .num { min-width: 1.4rem; }
+  .contents .bar { display: block; flex: none; width: 1.25rem; height: 2px; margin-left: 0.2rem;
+    border-radius: 1px; background: var(--mark); }
+  .contents .label { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+    transition: opacity 0.15s, max-width 0.2s; }
+  .contents:hover, .contents:focus-within { background: var(--paper); border-color: var(--rule);
+    box-shadow: 0 6px 24px rgb(0 0 0 / 0.08); }
+  .contents:hover .label, .contents:focus-within .label { max-width: 18rem; opacity: 1; }
+  .contents a:hover .bar, .contents a:focus-visible .bar { background: var(--accent); }
+  .to-top { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contents, .contents .label { transition: none; }
+}
+
+/* The maker's credit: one quiet line at the foot. */
+.credit { margin-top: 4.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
+  color: var(--muted); font: 0.8rem/1.4 var(--sans); }
+.credit a { color: inherit; text-decoration: none; }
+.credit a.brand { color: var(--accent); }
+.credit a:hover, .credit a:focus-visible { text-decoration: underline; }
+
+/* Three levels of separation: the five groups, the agents within a group, and
+   breaks an agent draws inside its own text. */
+main h2 {
+  margin: 4.5rem 0 0.25rem; padding-top: 1.5rem; border-top: 2px solid var(--ink);
+  font: 600 1.45rem/1.3 var(--sans); letter-spacing: -0.01em;
+}
+main section:first-child h2 { margin-top: 3rem; }
+main h3 { margin: 2.75rem 0 0.75rem; padding-top: 1.1rem; border-top: 1px solid var(--rule);
+  font: 600 1.15rem/1.35 var(--sans); color: var(--accent); }
+main h2 + h3 { margin-top: 1.25rem; padding-top: 0; border-top: 0; }
+main h4, main h5, main h6 { margin: 1.75rem 0 0.5rem; font: 600 1rem/1.4 var(--sans); }
+main h5, main h6 { color: var(--muted); }
+main p, main ul, main ol { margin: 0 0 1rem; }
+main li { margin: 0.25rem 0; }
+main strong { font-weight: 650; }
+main blockquote { margin: 1.25rem 0; padding: 0.1rem 0 0.1rem 1rem; border-left: 3px solid var(--rule);
+  color: var(--muted); }
+main code { font: 0.88em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--wash); padding: 0.1em 0.3em; border-radius: 3px; }
+main pre { background: var(--wash); padding: 0.9rem 1rem; border-radius: 4px; overflow-x: auto; }
+main pre code { background: none; padding: 0; }
+main hr { width: 3rem; margin: 2rem auto; border: 0; border-top: 1px solid var(--rule); }
+
+.table { overflow-x: auto; margin: 0 0 1.25rem; }
+table { border-collapse: collapse; width: 100%; font: 0.86rem/1.45 var(--sans);
+  font-variant-numeric: tabular-nums; }
+th, td { padding: 0.45rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; border-bottom-color: var(--muted); }
+tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 34rem) {
+  body { font-size: 16px; }
+  .page { padding: 2rem 1rem 3rem; }
+  .masthead h1 { font-size: 2rem; }
+  .masthead .logo svg { height: 1.25rem; }
+  .run { grid-template-columns: 1fr; gap: 0 0; }
+  .run dd { margin-bottom: 0.45rem; }
+  .run .group { white-space: normal; }
+}
+@media print {
+  :root { --paper: #fff; --ink: #000; --muted: #444; --rule: #bbb; --accent: #000; --wash: #f2f2f2;
+    --edge: #bbb; --up: #087a59; --down: #b4372f; --level: #444; }
+  body { font-size: 11pt; }
+  .table { overflow: visible; }
+  .page { max-width: none; padding: 0; }
+  .contents, .to-top { display: none; }
+  main h2 { break-before: page; border-top: 0; margin-top: 0; }
+  main section:first-child h2 { break-before: auto; }
+  main h3, main h4 { break-after: avoid; }
+  a { color: inherit; text-decoration: none; }
+  table { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page" id="top">
+<header class="masthead">
+<a class="logo" href="https://tauric.ai" rel="noopener" aria-label="Tauric Research"><svg width="993" height="115" viewBox="0 0 993 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M189.86 95.0459V37.9779H165.924V29.9259H223.74V37.9779H199.804V95.0459H189.86ZM251.026 46.4259C256.071 46.4259 260.178 47.0272 263.345 48.2299C266.514 49.4032 268.89 51.3686 270.474 54.1259C272.058 56.8832 272.85 60.6379 272.85 65.3899V95.0459H264.666L263.961 89.8979H263.434C261.644 91.7752 259.386 93.2419 256.657 94.2979C253.929 95.3246 251.025 95.8379 247.946 95.8379C244.426 95.8379 241.419 95.2952 238.925 94.2099C236.432 93.0952 234.54 91.5406 233.249 89.5459C231.959 87.5512 231.313 85.2046 231.313 82.5059C231.313 78.2526 232.897 74.9672 236.065 72.6499C239.263 70.3032 244.337 68.8219 251.29 68.2059L263.258 67.0179V64.7299C263.258 61.9139 262.774 59.7139 261.806 58.1299C260.838 56.5459 259.371 55.4312 257.406 54.7859C255.47 54.1406 252.888 53.8179 249.662 53.8179C247.432 53.8179 245.012 54.0086 242.401 54.3899C239.82 54.7712 237.341 55.3432 234.965 56.1059V48.8019C237.312 48.0392 239.908 47.4526 242.754 47.0419C245.628 46.6312 248.386 46.4259 251.026 46.4259ZM250.541 89.0619C252.888 89.0619 255.162 88.6512 257.362 87.8299C259.562 86.9792 261.527 85.7179 263.258 84.0459V72.8259L252.038 73.9259C248.136 74.3659 245.35 75.2166 243.678 76.4779C242.005 77.7099 241.169 79.4699 241.169 81.7579C241.169 84.0752 241.947 85.8792 243.501 87.1699C245.056 88.4312 247.403 89.0619 250.541 89.0619ZM313.339 95.8379C307.59 95.8379 303.087 94.2979 299.831 91.2179C296.575 88.1086 294.947 83.2686 294.947 76.6979V47.1739H304.715V76.1699C304.715 80.1886 305.624 83.0779 307.443 84.8379C309.291 86.5979 311.916 87.4779 315.319 87.4779C317.871 87.4779 320.379 86.9939 322.843 86.0259C325.336 85.0286 327.492 83.5766 329.311 81.6699V47.1739H339.079V95.0459H330.983L330.367 89.9419H329.883C327.624 91.8486 325.072 93.3152 322.227 94.3419C319.382 95.3392 316.419 95.8379 313.339 95.8379ZM362.371 47.1739H370.423L371.171 53.2899H371.743C373.474 51.2072 375.703 49.5792 378.431 48.4059C381.188 47.2326 384.063 46.6459 387.055 46.6459C388.756 46.6459 390.355 46.7926 391.851 47.0859V55.8419C390.414 55.5779 388.654 55.4459 386.571 55.4459C383.99 55.4459 381.364 55.9446 378.695 56.9419C376.026 57.9392 373.84 59.4206 372.139 61.3859V95.0459H362.371V47.1739ZM409.069 95.0459V47.1739H418.837V95.0459H409.069ZM413.953 37.8459C411.871 37.8459 410.287 37.3912 409.201 36.4819C408.145 35.5726 407.617 34.2672 407.617 32.5659C407.617 30.8352 408.145 29.5152 409.201 28.6059C410.287 27.6672 411.871 27.1979 413.953 27.1979C416.036 27.1979 417.605 27.6672 418.661 28.6059C419.747 29.5152 420.289 30.8352 420.289 32.5659C420.289 34.2672 419.747 35.5726 418.661 36.4819C417.605 37.3912 416.036 37.8459 413.953 37.8459ZM464.85 95.9259C456.607 95.9259 450.315 93.8432 445.974 89.6779C441.662 85.5126 439.506 79.3526 439.506 71.1979C439.506 63.0139 441.779 56.8392 446.326 52.6739C450.902 48.5086 457.575 46.4259 466.346 46.4259C470.716 46.4259 474.735 46.9246 478.402 47.9219V55.7099C476.378 55.2406 474.486 54.8886 472.726 54.6539C470.966 54.4192 469.118 54.3019 467.182 54.3019C461.168 54.3019 456.71 55.6512 453.806 58.3499C450.931 61.0486 449.494 65.2872 449.494 71.0659C449.494 76.8739 450.858 81.1566 453.586 83.9139C456.343 86.6712 460.42 88.0499 465.818 88.0499C467.695 88.0499 469.616 87.8886 471.582 87.5659C473.547 87.2139 475.82 86.6712 478.402 85.9379V93.7259C474.236 95.1926 469.719 95.9259 464.85 95.9259ZM574.428 95.0459L553.704 69.0859C553.176 69.1152 552.37 69.1299 551.284 69.1299C548.38 69.1299 544.978 68.9832 541.076 68.6899V95.0459H531.308V31.4659C537.967 29.9699 544.846 29.2219 551.944 29.2219C561.595 29.2219 568.752 30.8059 573.416 33.9739C578.08 37.1126 580.412 42.1286 580.412 49.0219C580.412 54.0086 579.004 58.0859 576.188 61.2539C573.402 64.4219 569.266 66.6366 563.78 67.8979L585.648 95.0459H574.428ZM541.076 61.2099C543.071 61.4152 544.816 61.5619 546.312 61.6499C547.838 61.7379 549.627 61.7819 551.68 61.7819C558.427 61.7819 563.34 60.7699 566.42 58.7459C569.5 56.6926 571.04 53.4952 571.04 49.1539C571.04 46.0739 570.395 43.6099 569.104 41.7619C567.843 39.9139 565.863 38.5792 563.164 37.7579C560.495 36.9366 556.975 36.5259 552.604 36.5259C550.404 36.5259 548.424 36.6139 546.664 36.7899C544.904 36.9659 543.042 37.2299 541.076 37.5819V61.2099ZM642.947 74.0139H608.231C608.407 77.4752 609.155 80.2766 610.475 82.4179C611.795 84.5299 613.775 86.0846 616.415 87.0819C619.055 88.0792 622.443 88.5779 626.579 88.5779C630.686 88.5779 635.233 87.9472 640.219 86.6859V93.9459C635.027 95.2659 630.026 95.9259 625.215 95.9259C616.298 95.9259 609.61 93.9166 605.151 89.8979C600.722 85.8499 598.507 79.6166 598.507 71.1979C598.507 65.9179 599.402 61.4299 601.191 57.7339C602.981 54.0379 605.562 51.2366 608.935 49.3299C612.338 47.3939 616.43 46.4259 621.211 46.4259C628.251 46.4259 633.634 48.5819 637.359 52.8939C641.085 57.1766 642.947 63.3659 642.947 71.4619V74.0139ZM621.079 52.8939C616.973 52.8939 613.834 54.1406 611.663 56.6339C609.493 59.0979 608.334 62.9259 608.187 68.1179H633.751C633.634 62.9259 632.519 59.0979 630.407 56.6339C628.295 54.1406 625.186 52.8939 621.079 52.8939ZM677.365 95.9259C671.352 95.9259 665.896 95.2219 660.997 93.8139V86.7299C666.248 88.1966 671.718 88.9299 677.409 88.9299C681.809 88.9299 684.977 88.3432 686.913 87.1699C688.849 85.9672 689.817 84.2219 689.817 81.9339C689.817 80.7019 689.597 79.6899 689.157 78.8979C688.717 78.0766 687.969 77.4019 686.913 76.8739C685.857 76.3166 684.405 75.8912 682.557 75.5979L674.065 74.2779C669.137 73.4859 665.573 71.9899 663.373 69.7899C661.202 67.5899 660.117 64.6419 660.117 60.9459C660.117 56.4579 661.965 52.9232 665.661 50.3419C669.386 47.7312 675.062 46.4259 682.689 46.4259C685.094 46.4259 687.485 46.5872 689.861 46.9099C692.266 47.2032 694.481 47.6432 696.505 48.2299V55.2699C692.046 54.0379 687.456 53.4219 682.733 53.4219C677.893 53.4219 674.476 54.0526 672.481 55.3139C670.486 56.5752 669.489 58.3206 669.489 60.5499C669.489 62.2219 670.002 63.5859 671.029 64.6419C672.056 65.6686 673.889 66.4166 676.529 66.8859L685.021 68.2059C689.92 68.9686 693.513 70.3766 695.801 72.4299C698.089 74.4832 699.233 77.4606 699.233 81.3619C699.233 84.3832 698.412 86.9792 696.769 89.1499C695.156 91.3206 692.706 92.9926 689.421 94.1659C686.165 95.3392 682.146 95.9259 677.365 95.9259ZM760.579 74.0139H725.863C726.039 77.4752 726.787 80.2766 728.107 82.4179C729.427 84.5299 731.407 86.0846 734.047 87.0819C736.687 88.0792 740.075 88.5779 744.211 88.5779C748.317 88.5779 752.864 87.9472 757.851 86.6859V93.9459C752.659 95.2659 747.657 95.9259 742.847 95.9259C733.929 95.9259 727.241 93.9166 722.783 89.8979C718.353 85.8499 716.139 79.6166 716.139 71.1979C716.139 65.9179 717.033 61.4299 718.823 57.7339C720.612 54.0379 723.193 51.2366 726.567 49.3299C729.969 47.3939 734.061 46.4259 738.843 46.4259C745.883 46.4259 751.265 48.5819 754.991 52.8939C758.716 57.1766 760.579 63.3659 760.579 71.4619V74.0139ZM738.711 52.8939C734.604 52.8939 731.465 54.1406 729.295 56.6339C727.124 59.0979 725.965 62.9259 725.819 68.1179H751.383C751.265 62.9259 750.151 59.0979 748.039 56.6339C745.927 54.1406 742.817 52.8939 738.711 52.8939ZM796.986 46.4259C802.032 46.4259 806.138 47.0272 809.306 48.2299C812.474 49.4032 814.85 51.3686 816.434 54.1259C818.018 56.8832 818.81 60.6379 818.81 65.3899V95.0459H810.626L809.922 89.8979H809.394C807.605 91.7752 805.346 93.2419 802.618 94.2979C799.89 95.3246 796.986 95.8379 793.906 95.8379C790.386 95.8379 787.38 95.2952 784.886 94.2099C782.393 93.0952 780.501 91.5406 779.21 89.5459C777.92 87.5512 777.274 85.2046 777.274 82.5059C777.274 78.2526 778.858 74.9672 782.026 72.6499C785.224 70.3032 790.298 68.8219 797.25 68.2059L809.218 67.0179V64.7299C809.218 61.9139 808.734 59.7139 807.766 58.1299C806.798 56.5459 805.332 55.4312 803.366 54.7859C801.43 54.1406 798.849 53.8179 795.622 53.8179C793.393 53.8179 790.973 54.0086 788.362 54.3899C785.781 54.7712 783.302 55.3432 780.926 56.1059V48.8019C783.273 48.0392 785.869 47.4526 788.714 47.0419C791.589 46.6312 794.346 46.4259 796.986 46.4259ZM796.502 89.0619C798.849 89.0619 801.122 88.6512 803.322 87.8299C805.522 86.9792 807.488 85.7179 809.218 84.0459V72.8259L797.998 73.9259C794.097 74.3659 791.31 75.2166 789.638 76.4779C787.966 77.7099 787.13 79.4699 787.13 81.7579C787.13 84.0752 787.908 85.8792 789.462 87.1699C791.017 88.4312 793.364 89.0619 796.502 89.0619ZM841.524 47.1739H849.576L850.324 53.2899H850.896C852.627 51.2072 854.856 49.5792 857.584 48.4059C860.341 47.2326 863.216 46.6459 866.208 46.6459C867.909 46.6459 869.508 46.7926 871.004 47.0859V55.8419C869.567 55.5779 867.807 55.4459 865.724 55.4459C863.143 55.4459 860.517 55.9446 857.848 56.9419C855.179 57.9392 852.993 59.4206 851.292 61.3859V95.0459H841.524V47.1739ZM909.164 95.9259C900.921 95.9259 894.629 93.8432 890.288 89.6779C885.976 85.5126 883.82 79.3526 883.82 71.1979C883.82 63.0139 886.093 56.8392 890.64 52.6739C895.216 48.5086 901.889 46.4259 910.66 46.4259C915.03 46.4259 919.049 46.9246 922.716 47.9219V55.7099C920.692 55.2406 918.8 54.8886 917.04 54.6539C915.28 54.4192 913.432 54.3019 911.496 54.3019C905.482 54.3019 901.024 55.6512 898.12 58.3499C895.245 61.0486 893.808 65.2872 893.808 71.0659C893.808 76.8739 895.172 81.1566 897.9 83.9139C900.657 86.6712 904.734 88.0499 910.132 88.0499C912.009 88.0499 913.93 87.8886 915.896 87.5659C917.861 87.2139 920.134 86.6712 922.716 85.9379V93.7259C918.55 95.1926 914.033 95.9259 909.164 95.9259ZM941.796 23.9419H951.564V52.2779H952.048C954.248 50.3712 956.756 48.9192 959.572 47.9219C962.417 46.9246 965.395 46.4259 968.504 46.4259C974.019 46.4259 978.375 47.9952 981.572 51.1339C984.769 54.2432 986.368 59.0686 986.368 65.6099V95.0459H976.6V66.0939C976.6 62.0459 975.661 59.1566 973.784 57.4259C971.936 55.6952 969.237 54.8299 965.688 54.8299C963.048 54.8299 960.481 55.3286 957.988 56.3259C955.524 57.2939 953.383 58.7312 951.564 60.6379V95.0459H941.796V23.9419Z" fill="#14C290"/>
+<rect x="0.205322" y="14.873" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="14.679" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="14.679" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="86.6055" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="86.6055" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="101.284" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="58.7158" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="58.7158" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="87.1592" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="87.1592" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="73.0205" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="73.0205" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="87.3262" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="87.3262" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="101.631" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="101.631" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="101.284" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="15.0187" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.2668" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.2668" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.445" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.7506" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="100.716" y="14.873" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+</svg></a>
+<h1><span class="ticker">GOOGL</span> <span class="rating down">Underweight</span></h1>
+<p class="date">Analysis of 2026-07-13</p>
+<dl class="run"><div class="detail"><dt>Generated</dt><dd>2026-11-05 16:02</dd></div><div class="detail"><dt>Deep model</dt><dd><span class="field">deepseek</span> <span class="field">deepseek-flash</span></dd></div><div class="detail"><dt>Quick model</dt><dd><span class="field">deepseek</span> <span class="field">deepseek-flash</span></dd></div><div class="detail"><dt>Analysts</dt><dd><span class="field">market</span> <span class="field">news</span> <span class="field">fundamentals</span></dd></div><div class="detail"><dt>Debate rounds</dt><dd><span class="group"><span class="name">research</span><span class="field">1</span></span> <span class="group"><span class="name">risk</span><span class="field">1</span></span></dd></div><div class="detail"><dt>Data vendors</dt><dd><span class="group"><span class="name">Prices</span><span class="field">course_project</span></span> <span class="group"><span class="name">Indicators</span><span class="field">course_project</span></span> <span class="group"><span class="name">Fundamentals</span><span class="field">course_project</span></span> <span class="group"><span class="name">News</span><span class="field">finnhub</span></span> <span class="group"><span class="name">Macro</span><span class="field">fred</span></span> <span class="group"><span class="name">Prediction markets</span><span class="field">polymarket</span></span> <span class="group"><span class="name">get_insider_transactions</span><span class="field">course_project</span></span> <span class="group"><span class="name">get_news</span><span class="field">finnhub</span></span></dd></div><div class="detail"><dt>Version</dt><dd>TradingAgents 0.6.0</dd></div></dl>
+</header>
+<nav class="contents" aria-label="Sections"><ul><li><a href="#s1"><span class="num">I</span> <span class="label">Analyst Team Reports</span></a><ul><li><a href="#s1-1"><span class="bar"></span> <span class="label">Market Analyst</span></a></li><li><a href="#s1-2"><span class="bar"></span> <span class="label">News Analyst</span></a></li><li><a href="#s1-3"><span class="bar"></span> <span class="label">Fundamentals Analyst</span></a></li></ul></li><li><a href="#s2"><span class="num">II</span> <span class="label">Research Team Decision</span></a><ul><li><a href="#s2-1"><span class="bar"></span> <span class="label">Bull Researcher</span></a></li><li><a href="#s2-2"><span class="bar"></span> <span class="label">Bear Researcher</span></a></li><li><a href="#s2-3"><span class="bar"></span> <span class="label">Research Manager</span></a></li></ul></li><li><a href="#s3"><span class="num">III</span> <span class="label">Trading Team Plan</span></a><ul><li><a href="#s3-1"><span class="bar"></span> <span class="label">Trader</span></a></li></ul></li><li><a href="#s4"><span class="num">IV</span> <span class="label">Risk Management Team Decision</span></a><ul><li><a href="#s4-1"><span class="bar"></span> <span class="label">Aggressive Analyst</span></a></li><li><a href="#s4-2"><span class="bar"></span> <span class="label">Conservative Analyst</span></a></li><li><a href="#s4-3"><span class="bar"></span> <span class="label">Neutral Analyst</span></a></li></ul></li><li><a href="#s5"><span class="num">V</span> <span class="label">Portfolio Manager Decision</span></a><ul><li><a href="#s5-1"><span class="bar"></span> <span class="label">Portfolio Manager</span></a></li></ul></li></ul></nav>
+<main>
+<section id="s1"><h2>I. Analyst Team Reports</h2><h3 id="s1-1">Market Analyst</h3>
+<p>I now have comprehensive data. Let me verify one cross-check: the MACD signal line value from the snapshot versus computing it (macd − macdh = −2.2038 − 0.5975 = −2.8013, which matches the snapshot's macds of −2.801303). All figures are internally consistent, and the snapshot's 2026-07-13 row exactly matches the raw price data. No discrepancies to flag.</p>
+<hr />
+<h4>GOOGL (Alphabet Inc.) — Technical Analysis Report</h4>
+<p><strong>Analysis date / &quot;now&quot;: 2026-07-13 | Last verified close: $352.51</strong></p>
+<h5>1. Selected Indicators (8) and Why</h5>
+<p>I chose a complementary set spanning <strong>trend (3), momentum (2), volatility (2), and volume (1)</strong> to avoid redundancy while capturing the current inflection zone:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Indicator</th>
+<th>Category</th>
+<th>Role in this setup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>close_50_sma</strong></td>
+<td>Trend (medium)</td>
+<td>Is the multi-week uptrend stalling? Currently the key overhead hurdle.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>close_200_sma</strong></td>
+<td>Trend (long)</td>
+<td>Confirms whether the primary bull trend is still intact.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>close_10_ema</strong></td>
+<td>Trend (short)</td>
+<td>Fast read on immediate momentum / precise entry timing.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>rsi</strong></td>
+<td>Momentum</td>
+<td>Overbought/oversold + divergence; shows momentum fading vs. accelerating.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>macd</strong></td>
+<td>Momentum</td>
+<td>Crossover/trend-change signal (with its signal line and histogram).</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>boll_ub</strong></td>
+<td>Volatility</td>
+<td>Overbought/breakout reference; paired with middle (357.62) and lower band (338.54).</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>atr</strong></td>
+<td>Volatility</td>
+<td>Position sizing &amp; stop placement in a choppy tape.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>vwma</strong></td>
+<td>Volume</td>
+<td>Validates moves with volume-weighting (critical given June's volume climax).</td>
+</tr>
+</tbody>
+</table></div>
+<p>These deliberately mix lags (SMA/EMA) with oscillators (RSI/MACD) and a volume overlay, so a single noisy signal doesn't drive the conclusion.</p>
+<hr />
+<h5>2. Price Action &amp; Trend Structure</h5>
+<p><strong>Big picture (Dec 2025 → Jul 2026, from verified data):</strong></p>
+<ul>
+<li>The stock chopped in the low-to-mid $300s through winter, then suffered a sharp slide that bottomed at a close of <strong>$273.50 on 2026-03-30</strong> (intraday low $272.11).</li>
+<li>From that base it staged a powerful rally, capped by an <strong>earnings-style gap on 2026-04-30</strong> (open $374.07, high $385.84, close $384.80 on 72.0M shares) and an eventual <strong>closing peak of $402.62 on 2026-05-13</strong> (intraday high $408.61 on 2026-05-18).</li>
+<li>It then rolled over into a <strong>corrective decline to $337.39 (close) on 2026-06-26</strong>, bounced to <strong>$367.03 on 2026-07-07</strong>, and has since <strong>faded back to $352.51</strong> — down <strong>−3.96% over the last four sessions</strong> (367.03 → 352.51) and <strong>−12.4% from the 5/13 peak</strong>.</li>
+</ul>
+<p><strong>Moving-average alignment (verified 2026-07-13):</strong></p>
+<ul>
+<li><strong>200-day SMA = $319.42</strong> and rising steadily (from $299.92 on 5/29, +6.5% over ~6 weeks). Price is <strong>+10.4% above</strong> it → <strong>primary uptrend intact.</strong></li>
+<li><strong>50-day SMA = $372.80.</strong> Price is <strong>−5.4% BELOW</strong> it. Critically, the 50-SMA's daily gains are <strong>decelerating sharply</strong>: 371.51 → 372.08 → 372.43 → 372.60 → 372.75 → <strong>372.80</strong> (7/6→7/13). Increments fell from +0.56 to +0.05 — the medium-term line is <strong>flattening/rolling over</strong> near a plateau.</li>
+<li><strong>Golden cross status:</strong> 50-SMA ($372.80) still sits well above 200-SMA ($319.42) — the structural bull signal remains valid, but the widening gap has stopped expanding.</li>
+</ul>
+<p><strong>Short-term:</strong> The <strong>10-day EMA = $357.97</strong> is turning down (359.79 → 359.18 → 357.97 over 7/8→7/13), and price is <strong>−1.5% below it</strong>. Short-term bias is negative.</p>
+<blockquote>
+<p><strong>Net read:</strong> A long-term uptrend that is <strong>pausing/pulling back in the medium term</strong>, with short-term momentum now clearly negative. This is a &quot;bull-trend correction,&quot; not yet a trend reversal — but the burden of proof is on the bulls to reclaim resistance.</p>
+</blockquote>
+<hr />
+<h5>3. Momentum</h5>
+<p><strong>RSI (14) = 43.77</strong> — below the neutral 50 line and <strong>falling</strong> (54.00 → 50.29 → 48.17 → 46.97 → <strong>43.77</strong> over 7/7→7/13). It is <strong>not oversold</strong> (&gt;30), so there is still downside room before a mean-reversion setup. The prior oversold reading was <strong>33.27 on 6/26</strong> — which correctly preceded the early-July bounce. Momentum is deteriorating but has not reached capitulation.</p>
+<p><strong>MACD = −2.20, Signal = −2.80, Histogram = +0.60.</strong></p>
+<ul>
+<li>MACD <strong>remains below zero</strong> the entire time — the rally was a weak, sub-zero advance, confirming medium-term momentum never actually turned bullish.</li>
+<li>The <strong>histogram peaked at +1.83 on 7/7</strong> and has been <strong>shrinking every session since</strong> (1.77 → 1.48 → 1.14 → <strong>0.60</strong>). The gap between MACD and its signal is closing fast.</li>
+<li>MACD line peaked (least negative) at <strong>−1.75 on 7/9</strong> and has rolled back to <strong>−2.20</strong>. A <strong>bearish crossover (histogram flipping negative) looks imminent</strong> — a short-term sell signal if confirmed.</li>
+</ul>
+<hr />
+<h5>4. Volatility (Bollinger + ATR)</h5>
+<ul>
+<li><strong>Bollinger middle = $357.62</strong>, Upper = <strong>$376.70</strong>, Lower = <strong>$338.54</strong>. Price ($352.51) sits in the <strong>lower half of the band, below the middle</strong> → bearish near-term bias. Band width ≈ <strong>10.7% of the mid-line</strong> and has contracted markedly since early June (bands were ~$47 wide around 6/3), signaling <strong>consolidation / volatility compression</strong> after the correction.</li>
+<li><strong>ATR = $10.40</strong> and <strong>falling</strong> (down from $12.25 on 6/29). That's <strong>~2.95% of price</strong> — a moderately active name. Contracting ATR + flat bands = a coiled, range-bound tape; a resolved breakout (either direction) could follow.</li>
+</ul>
+<hr />
+<h5>5. Volume</h5>
+<ul>
+<li><strong>VWMA = $350.15</strong>; price ($352.51) is <strong>only +0.7% above</strong> the volume-weighted average — i.e., price is hovering right at its recent volume-weighted fair value (~$350). VWMA has been <strong>flat between ~$350–352 since late June</strong>, marking a genuine <strong>volume-weighted support shelf near $350</strong>.</li>
+<li><strong>The 6/26 selloff printed 114.7M shares</strong> (vs. the ~25–45M typical) on a <strong>down day</strong> (open 342.55 → close 337.39, low 330.20) — a <strong>selling-climax / capitulation signature</strong> that marked the low.</li>
+<li>Since then, volume has <strong>dried up</strong> — the 7/13 session traded only <strong>15.9M shares</strong>, among the lowest in months. Low volume on the current decline means <strong>selling pressure is not aggressive</strong>, but it also signals <strong>absent buying conviction</strong>. The bounce into 7/7 was likewise not volume-confirmed.</li>
+</ul>
+<hr />
+<h5>6. Actionable Insights</h5>
+<ol>
+<li>
+<p><strong>Resistance wall at $357.6–$358.0</strong> — this is where the <strong>10-EMA ($357.97)</strong> and <strong>Bollinger middle ($357.62)</strong> converge. A daily close <strong>back above ~$358</strong> is the <em>first</em> evidence of short-term stabilization. The next shelf is the <strong>7/7 high close of $367.03</strong>, then the <strong>50-SMA (~$372.80)</strong>.</p>
+</li>
+<li>
+<p><strong>Support stack below:</strong> immediate <strong>VWMA ~$350.15</strong>; then <strong>Bollinger lower $338.54</strong> and the <strong>6/26 low close $337.39</strong> ($330.20 intraday). A decisive break under ~$337 would expose the <strong>200-SMA at $319.42</strong> as the deep structural floor.</p>
+</li>
+<li>
+<p><strong>Risk / stop sizing:</strong> With ATR = $10.40, a common <strong>2×ATR stop from $352.51 ≈ $331.7</strong> (below the 6/26 low zone). Shorter-term traders using a tighter <strong>1×ATR (~$342)</strong> risk getting knocked out by normal noise in this compressed tape.</p>
+</li>
+<li>
+<p><strong>Momentum trigger to watch:</strong> The <strong>MACD histogram is rolling toward zero</strong> and <strong>RSI is drifting to 43.8</strong>. If the histogram flips negative and RSI breaks toward the high-30s, expect a retest of the $350→$338 support band. Conversely, an <strong>RSI turn up from the 40s with a MACD histogram re-expansion</strong> would be the first bullish tell.</p>
+</li>
+<li>
+<p><strong>Bias summary:</strong> <strong>Neutral-to-bearish tactical / bullish strategic.</strong> The structurally rising 200-SMA and intact golden cross argue against shorting into strength; but the flattening 50-SMA, sub-zero MACD, falling RSI, and lower-half band placement argue for patience — favor patience/stop discipline over fresh long entries until <strong>$358 is reclaimed</strong>, and avoid assuming the $350 floor holds until volume confirms.</p>
+</li>
+</ol>
+<hr />
+<h5>7. Key Levels &amp; Signals — Summary Table</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value (2026-07-13, verified)</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Last close</strong></td>
+<td>$352.51 (O 356.19 / H 358.13 / L 351.75)</td>
+<td>Down 1.3% on the day; −3.96% over 4 sessions</td>
+</tr>
+<tr>
+<td><strong>Volume</strong></td>
+<td>15.90M</td>
+<td>Very low — fading participation</td>
+</tr>
+<tr>
+<td><strong>close_200_sma</strong></td>
+<td>$319.42 (rising)</td>
+<td>Price +10.4% above → <strong>long-term bull intact</strong></td>
+</tr>
+<tr>
+<td><strong>close_50_sma</strong></td>
+<td>$372.80 (flattening)</td>
+<td>Price −5.4% below → <strong>medium-term rolling over</strong></td>
+</tr>
+<tr>
+<td><strong>close_10_ema</strong></td>
+<td>$357.97 (falling)</td>
+<td>Price −1.5% below → <strong>short-term negative</strong></td>
+</tr>
+<tr>
+<td><strong>RSI (14)</strong></td>
+<td>43.77 (falling)</td>
+<td>Weak, not oversold; room to 30</td>
+</tr>
+<tr>
+<td><strong>MACD</strong></td>
+<td>−2.20</td>
+<td>Below zero → medium momentum still bearish</td>
+</tr>
+<tr>
+<td><strong>MACD Signal</strong></td>
+<td>−2.80</td>
+<td>Bullish (below line) but narrowing</td>
+</tr>
+<tr>
+<td><strong>MACD Histogram</strong></td>
+<td>+0.60 (shrinking)</td>
+<td>Momentum fading; bearish cross near</td>
+</tr>
+<tr>
+<td><strong>Bollinger Mid / UB / LB</strong></td>
+<td>357.62 / 376.70 / 338.54</td>
+<td>Price in lower half; bands compressed (~10.7% width)</td>
+</tr>
+<tr>
+<td><strong>ATR</strong></td>
+<td>$10.40 (~2.95% of price)</td>
+<td>Volatility contracting</td>
+</tr>
+<tr>
+<td><strong>VWMA</strong></td>
+<td>$350.15</td>
+<td>Volume-weighted support shelf; price barely above</td>
+</tr>
+<tr>
+<td><strong>Key resistance</strong></td>
+<td>$357.6–358.0 → $367.03 → $372.80</td>
+<td>10-EMA + mid-band → 7/7 high → 50-SMA</td>
+</tr>
+<tr>
+<td><strong>Key support</strong></td>
+<td>$350.15 → $338.54/$337.39 → $319.42</td>
+<td>VWMA → lower band / 6-26 low → 200-SMA</td>
+</tr>
+<tr>
+<td><strong>Overall bias</strong></td>
+<td>Neutral-to-bearish tactical / bullish strategic</td>
+<td>Wait for $358 reclaim or support test with volume</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>All OHLCV, price-level, and indicator values above are drawn from the verified market snapshot and the frozen OHLCV series as of 2026-07-13; no forward or unsupported historical claims are made.</em></p>
+<h3 id="s1-2">News Analyst</h3>
+<h4>GOOGL — Company News Analysis</h4>
+<p><strong>Window:</strong> 2026-07-06 through 2026-07-12 (America/New_York, inclusive)
+<strong>Ticker:</strong> GOOGL (Alphabet Inc.)
+<strong>Analyst role:</strong> Company news analyst (historical backtest)</p>
+<h5>Evidence status: Insufficient — no eligible records</h5>
+<p>The frozen Finnhub Company News snapshot for this window (SHA256 <code>7a3029de…f613c24</code>) contains <strong>0 eligible unique records and 0 supplied records</strong>. Finnhub returned no timestamped news items for GOOGL across 2026-07-06 to 2026-07-12.</p>
+<p>This is a <strong>data-availability limitation, not evidence of a quiet news week</strong>. The absence of returned headlines/summaries does <strong>not</strong> establish that no real-world events occurred for GOOGL in this period; it only means the vendor feed supplied nothing usable to this backtest. Per the evidence-handling rules, I will not infer, reconstruct, or import news from outside the supplied snapshot.</p>
+<h5>What I can and cannot say</h5>
+<ul>
+<li><strong>Cannot claim:</strong> any specific product announcement, earnings item, regulatory action, antitrust development, AI-related news, executive change, litigation, or macro event affecting GOOGL during the window — none is present in the evidence.</li>
+<li><strong>Cannot quantify:</strong> sentiment, expected price impact, or event-driven volatility, because there are no dated headlines or summaries to anchor them.</li>
+<li><strong>Headline vs. full-article distinction:</strong> moot here — there are no headlines, summaries, or articles at all. No full-article content was available, and no headline/summary-level evidence either.</li>
+<li><strong>Conflicting evidence:</strong> none to reconcile; the sole &quot;signal&quot; is emptiness.</li>
+</ul>
+<h5>Likely price impact / horizon</h5>
+<p>No news-driven price-impact estimate can be supported by this evidence. Any directional call for GOOGL over the coming sessions would be unsourced speculation and is withheld. In the absence of company-specific news, GOOGL price action over 2026-07-06→07-12 would plausibly have been driven by broad market/sector factors — but those are <strong>outside this evidence set</strong> and I will not fabricate them.</p>
+<h5>Uncertainty</h5>
+<p><strong>High / near-total on the news dimension.</strong> The only firm conclusion is that this backtest window lacks company-news evidence for GOOGL. Confirming whether genuine corporate events occurred would require a different or fuller data source, which is not authorized here.</p>
+<h5>Events table</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Date (published)</th>
+<th>Source / URL</th>
+<th>Event / Evidence</th>
+<th>Expected impact</th>
+<th>Uncertainty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-07-06 → 2026-07-12</td>
+<td>Finnhub Company News (snapshot 7a3029de…f613c24) — no records returned</td>
+<td><strong>No eligible news items supplied</strong> (0 records). No headline, summary, or URL available.</td>
+<td>Indeterminate — no news-based impact can be assessed for GOOGL</td>
+<td>Very high — absence of vendor data, not evidence that no events occurred</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Bottom line:</strong> Insufficient news evidence for GOOGL in 2026-07-06 through 2026-07-12. No material company events can be cited from the supplied frozen evidence; any impact view would be unsupported.</p>
+<h3 id="s1-3">Fundamentals Analyst</h3>
+<h4>GOOGL (Alphabet Inc.) — Fundamental Research Report</h4>
+<p><strong>As of trading date: 2026-07-13 | Most recent filed data: Q1 FY2026 10-Q (period ended 2026-03-31, filed 2026-04-30) &amp; FY2025 10-K (filed 2026-02-05)</strong></p>
+<hr />
+<h5>1. Company Profile &amp; Data Provenance</h5>
+<p><strong>Alphabet Inc. (GOOGL)</strong> is the parent of Google — a global technology leader spanning Search, YouTube, Android, Google Cloud, and a portfolio of &quot;Other Bets&quot; (Waymo, Verily, etc.), and one of the largest owners of a private-technology investment book (the &quot;Other Investments&quot; / non-marketable equity securities line). GOOGL denotes the Class A shares.</p>
+<p><strong>Data note / caveat:</strong> All figures below are drawn from point-in-time SEC facts published and accepted by EDGAR on or before 2026-07-13. The vendor returns the <strong>latest quarter (Q1 FY2026)</strong> and <strong>FY2025</strong> full-year figures plus a 2023–2025 annual cash-flow history. <strong><code>get_insider_transactions</code> returned DATA_UNAVAILABLE</strong> — there is no authorized point-in-time insider archive for GOOGL as of this date, so <strong>no insider buying/selling can be reported or inferred.</strong> (Note: no new filing occurred in the calendar week preceding 2026-07-13; the most recent 10-Q dates to 2026-04-30.)</p>
+<hr />
+<h5>2. Headline Result — Q1 FY2026 Blowout, But Mind the Quality of Earnings</h5>
+<p>The quarter is exceptionally strong at the <strong>top line and operating line</strong>, but GAAP net income and EPS are <strong>heavily inflated by a one-time, non-operating fair-value gain</strong> on the equity-securities book. Traders must separate these.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Q1 FY2026 vs Q1 FY2025</th>
+<th>Q1 2026</th>
+<th>Q1 2025</th>
+<th>YoY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revenue</td>
+<td>$109,896M</td>
+<td>$90,234M</td>
+<td><strong>+21.8%</strong></td>
+</tr>
+<tr>
+<td>Cost of revenue</td>
+<td>$41,271M</td>
+<td>$36,361M</td>
+<td>+13.5%</td>
+</tr>
+<tr>
+<td>Gross profit</td>
+<td>$68,625M</td>
+<td>$53,873M</td>
+<td>+27.4%</td>
+</tr>
+<tr>
+<td><strong>Gross margin</strong></td>
+<td><strong>62.4%</strong></td>
+<td>59.7%</td>
+<td>+270 bps</td>
+</tr>
+<tr>
+<td>R&amp;D</td>
+<td>$17,032M</td>
+<td>$13,556M</td>
+<td>+25.6%</td>
+</tr>
+<tr>
+<td>Sales &amp; Marketing</td>
+<td>$7,606M</td>
+<td>$6,172M</td>
+<td>+23.2%</td>
+</tr>
+<tr>
+<td>G&amp;A</td>
+<td>$4,291M</td>
+<td>$3,539M</td>
+<td>+21.2%</td>
+</tr>
+<tr>
+<td>Total costs &amp; expenses</td>
+<td>$70,200M</td>
+<td>$59,628M</td>
+<td>+17.7%</td>
+</tr>
+<tr>
+<td><strong>Operating income</strong></td>
+<td><strong>$39,696M</strong></td>
+<td>$30,606M</td>
+<td><strong>+29.7%</strong></td>
+</tr>
+<tr>
+<td><strong>Operating margin</strong></td>
+<td><strong>36.1%</strong></td>
+<td>33.9%</td>
+<td>+220 bps</td>
+</tr>
+<tr>
+<td>Non-operating income</td>
+<td><strong>$37,716M</strong></td>
+<td>$11,183M</td>
+<td>+237%</td>
+</tr>
+<tr>
+<td>— <em>of which equity-securities FV gain</em></td>
+<td><em>$36,915M</em></td>
+<td><em>$9,758M</em></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Pre-tax income</td>
+<td>$77,412M</td>
+<td>$41,789M</td>
+<td>+85%</td>
+</tr>
+<tr>
+<td>Income tax</td>
+<td>$14,834M</td>
+<td>$7,249M</td>
+<td>+105%</td>
+</tr>
+<tr>
+<td>Effective tax rate</td>
+<td>19.2%</td>
+<td>17.3%</td>
+<td>+190 bps</td>
+</tr>
+<tr>
+<td><strong>Net income</strong></td>
+<td><strong>$62,578M</strong></td>
+<td>$34,540M</td>
+<td><strong>+81%</strong></td>
+</tr>
+<tr>
+<td>Diluted EPS</td>
+<td><strong>$5.11</strong></td>
+<td>$2.81</td>
+<td>+82%</td>
+</tr>
+<tr>
+<td>Basic EPS</td>
+<td>$5.17</td>
+<td>$2.84</td>
+<td>+82%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>Revenue +21.8% and operating income +29.7% with margin expansion to 36.1%</strong> is a genuinely outstanding operating result — margin <em>rose</em> even as R&amp;D grew 25.6% and capex ballooned (see §5). This suggests AI monetization (Search/Cloud) is scaling faster than cost.</li>
+<li><strong>~$36.9B of the $62.6B net income came from non-operating fair-value marks</strong> on the equity portfolio. Stripping that out, &quot;operating EPS&quot; is roughly <strong>~$2.6/share</strong> (operating income $39.7B taxed at 19.2%, ÷ ~12.25B diluted shares). GAAP EPS of $5.11 <strong>overstates recurring earning power by ~2x</strong> this quarter. The fair-value gains are real (they add to book value) but are <strong>not repeatable cash earnings</strong> — do not annualize them.</li>
+</ul>
+<hr />
+<h5>3. Multi-Year Operating &amp; Cash-Flow History (FY2023–FY2025 10-K)</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>FY2023</th>
+<th>FY2024</th>
+<th>FY2025</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating cash flow</td>
+<td>$101,746M</td>
+<td>$125,299M</td>
+<td><strong>$164,713M</strong></td>
+</tr>
+<tr>
+<td>Capital expenditures (PP&amp;E)</td>
+<td>$32,251M</td>
+<td>$52,535M</td>
+<td><strong>$91,447M</strong></td>
+</tr>
+<tr>
+<td><strong>Free cash flow (OCF − capex)</strong></td>
+<td><strong>$69,495M</strong></td>
+<td><strong>$72,764M</strong></td>
+<td><strong>$73,266M</strong></td>
+</tr>
+<tr>
+<td>Share repurchases</td>
+<td>$61,504M</td>
+<td>$62,222M</td>
+<td>$45,709M</td>
+</tr>
+<tr>
+<td>Dividends paid</td>
+<td>$0</td>
+<td>$7,363M</td>
+<td>$10,049M</td>
+</tr>
+<tr>
+<td>Debt proceeds (net)</td>
+<td>$10,790M</td>
+<td>$13,589M</td>
+<td><strong>$64,564M</strong></td>
+</tr>
+<tr>
+<td>Net financing cash flow</td>
+<td>−$72,093M</td>
+<td>−$79,733M</td>
+<td>−$37,388M</td>
+</tr>
+<tr>
+<td>Net investing cash flow</td>
+<td>−$27,063M</td>
+<td>−$45,536M</td>
+<td>−$120,291M</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Key insight — the &quot;AI capex super-cycle&quot;:</strong> Operating cash flow grew ~62% from 2023→2025, yet <strong>free cash flow has been essentially flat (~$70–73B)</strong> because capex nearly tripled ($32B→$91B). Capital allocation has decisively pivoted from <strong>buybacks (which fell from ~$62B to $46B) toward AI infrastructure and now debt-funded expansion.</strong> This is the single most important structural theme for GOOGL fundamentals right now.</p>
+<hr />
+<h5>4. Balance Sheet — Massive Expansion, Debt-Funded Buildout &amp; Acquisition</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Balance sheet item</th>
+<th>2026-03-31</th>
+<th>2025-12-31</th>
+<th>Change (1 qtr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total assets</td>
+<td><strong>$703,919M</strong></td>
+<td>$595,281M</td>
+<td><strong>+$108,638M</strong></td>
+</tr>
+<tr>
+<td>Cash &amp; equivalents</td>
+<td>$38,063M</td>
+<td>$30,708M</td>
+<td>+$7,355M</td>
+</tr>
+<tr>
+<td>Cash + short-term investments</td>
+<td>$126,840M</td>
+<td>$126,843M</td>
+<td>~flat</td>
+</tr>
+<tr>
+<td>Accounts receivable (net)</td>
+<td>$62,999M</td>
+<td>$62,886M</td>
+<td>+$113M</td>
+</tr>
+<tr>
+<td>Non-marketable equity securities</td>
+<td><strong>$101,346M</strong></td>
+<td>$64,094M</td>
+<td><strong>+$37,252M</strong></td>
+</tr>
+<tr>
+<td>Finite-lived intangibles (gross)</td>
+<td><strong>$10,626M</strong></td>
+<td>$2,467M</td>
+<td><strong>+$8,159M</strong></td>
+</tr>
+<tr>
+<td>Total liabilities</td>
+<td>$225,173M</td>
+<td>$180,016M</td>
+<td>+$45,157M</td>
+</tr>
+<tr>
+<td>Debt carrying amount</td>
+<td><strong>$80,305M</strong></td>
+<td>$49,085M</td>
+<td><strong>+$31,220M</strong></td>
+</tr>
+<tr>
+<td>Accrued liabilities (current)</td>
+<td>$63,019M</td>
+<td>$55,557M</td>
+<td>+$7,462M</td>
+</tr>
+<tr>
+<td><strong>Total equity (A−L)</strong></td>
+<td><strong>~$478,746M</strong></td>
+<td>~$415,265M</td>
+<td><strong>+~$63,481M</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>What the balance sheet tells us:</strong></p>
+<ol>
+<li><strong>~$31B of new debt was raised in a single quarter</strong> (debt up $49B→$80B) — the company is levering up to fund AI infrastructure and deal-making. Even so, debt/equity is only ~17% — leverage remains very low for a mega-cap.</li>
+<li><strong>~$8.2B jump in finite-lived intangible assets (gross $2.5B→$10.6B net $1.3B→$9.4B)</strong> plus the $31B debt raise strongly imply <strong>a sizeable acquisition closed in Q1 2026</strong> (goodwill-driven). This is a fresh capital-allocation signal to track.</li>
+<li><strong>Non-marketable equity securities +$37B</strong> — a revaluation (upward cumulative fair-value adjustment rose from $44.5B to $80.8B) of the private AI/tech stakes (e.g., Anthropic-type holdings). This is the source of the giant non-operating gain and the main driver of the $108B asset jump.</li>
+<li>Liquidity remains fortress-like: <strong>$126.8B cash + short-term investments</strong>, current assets $213.8B.</li>
+</ol>
+<hr />
+<h5>5. Cash Flow — Q1 FY2026: Operating Strength vs. Capex &amp; Buyback Freeze</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Cash flow (Q1)</th>
+<th>Q1 2026</th>
+<th>Q1 2025</th>
+<th>YoY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating cash flow</td>
+<td>$45,790M</td>
+<td>$36,150M</td>
+<td><strong>+26.7%</strong></td>
+</tr>
+<tr>
+<td><strong>Capex (PP&amp;E purchases)</strong></td>
+<td><strong>$35,674M</strong></td>
+<td>$17,197M</td>
+<td><strong>+107%</strong></td>
+</tr>
+<tr>
+<td><strong>Free cash flow</strong></td>
+<td><strong>$10,116M</strong></td>
+<td>$18,953M</td>
+<td><strong>−46.6%</strong></td>
+</tr>
+<tr>
+<td>Share repurchases</td>
+<td><strong>$0</strong></td>
+<td>$15,068M</td>
+<td><strong>Buybacks halted</strong></td>
+</tr>
+<tr>
+<td>Dividends paid</td>
+<td>$2,542M</td>
+<td>$2,434M</td>
+<td>+4.4%</td>
+</tr>
+<tr>
+<td>Debt proceeds</td>
+<td>$31,379M</td>
+<td>$4,532M</td>
+<td>+$26.8B</td>
+</tr>
+<tr>
+<td>Minority-shareholder proceeds</td>
+<td>$3,200M</td>
+<td>$400M</td>
+<td>+$2.8B</td>
+</tr>
+<tr>
+<td>Net investing cash flow</td>
+<td>−$63,389M</td>
+<td>−$16,194M</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Net financing cash flow</td>
+<td><strong>+$25,077M</strong></td>
+<td>−$20,201M</td>
+<td>flipped positive</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Signals:</strong></p>
+<ul>
+<li><strong>Free cash flow halved</strong> YoY in Q1 despite OCF +27%, purely because capex more than doubled to <strong>$35.7B in one quarter (~$140B+ annualized run-rate)</strong>. This is the bull/bear pivot: near-term FCF is being deliberately sacrificed for AI capacity.</li>
+<li><strong>Buybacks paused ($0)</strong> — consistent with capital being redirected to capex/M&amp;A. Also note the lagged-buyback effect: Q1 2026 repurchases were zero, a meaningful change from ~$15B/quarter historically. This reduces one source of EPS support.</li>
+<li>Company is now <strong>net-raising capital</strong> (debt + minority stakes) rather than returning it — a defensive-to-offensive shift.</li>
+<li><strong>Revenue remaining performance obligation (backlog) = $467.6B</strong> — enormous forward revenue visibility, supportive of the growth thesis.</li>
+</ul>
+<hr />
+<h5>6. Actionable Insights for Traders</h5>
+<ol>
+<li><strong>The operating engine is firing on all cylinders</strong> — Revenue +21.8%, operating margin expanding to 36.1%, backlog $467.6B. This is a legitimate fundamental re-acceleration (AI-driven), not accounting optics. Lean positive on the core business trajectory.</li>
+<li><strong>Beware the GAAP EPS trap.</strong> Headline EPS $5.11 is ~2x recurring. ~$36.9B of net income was a non-operating fair-value mark on the private-equity book. <strong>Measure GOOGL on operating income, operating margin, and OCF — not GAAP EPS or net margin (56.9%).</strong> Anyone anchoring valuation to $5.11×4 will grossly overpay.</li>
+<li><strong>Free cash flow is compressed (−47% YoY in Q1) by the AI capex super-cycle.</strong> Capex is running at a ~$140B+ annualized pace. Watch whether management flags capex guidance creep — continued capex escalation is the primary risk to FCF-based valuation.</li>
+<li><strong>Capital-return regime has changed:</strong> buybacks at $0 in Q1 (vs $15B prior), dividend only marginally up. EPS support from buybacks is gone near-term; the dividend is growing but modest. Income/return-of-capital investors get less here.</li>
+<li><strong>Leverage and M&amp;A are new variables.</strong> ~$31B debt raised plus an apparent multi-billion acquisition (intangibles jump) are fresh risks/opportunities. Monitor for follow-on debt and integration execution. Balance sheet can easily absorb it (D/E ~17%, $126.8B liquid).</li>
+<li><strong>The private-markets book (~$101B non-marketable + gains) is now a major, lumpy contributor to reported results.</strong> It added $37B of Q1 net income and $108B of asset growth. It cuts both ways — mark-downs in a risk-off tape would hit reported earnings hard. Treat it as mark-to-model volatility, not operating cash flow.</li>
+</ol>
+<p><strong>Net stance from fundamentals:</strong> Fundamentally bullish on the operating business (accelerating growth, expanding margins, huge backlog, fortress balance sheet), but <strong>earnings-quality-aware</strong> — valuation and any EPS-based screens must be normalized for the non-operating gains and the FCF drag from record capex. The next 10-Q will be critical to confirm that capex is translating into revenue and that the buyback pause/M&amp;A are temporary.</p>
+<hr />
+<h5>Key Points Summary</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Metric</th>
+<th>Value / Observation</th>
+<th>Trader Takeaway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Growth</strong></td>
+<td>Q1 FY26 revenue</td>
+<td>$109.9B, <strong>+21.8% YoY</strong></td>
+<td>Strong re-acceleration</td>
+</tr>
+<tr>
+<td><strong>Profitability</strong></td>
+<td>Operating income</td>
+<td>$39.7B, margin <strong>36.1%</strong> (+220bps)</td>
+<td>Operating leverage intact</td>
+</tr>
+<tr>
+<td><strong>Earnings quality</strong></td>
+<td>Non-operating equity FV gain</td>
+<td><strong>$36.9B</strong> in Q1</td>
+<td>GAAP EPS $5.11 overstated (~2x)</td>
+</tr>
+<tr>
+<td><strong>EPS</strong></td>
+<td>Diluted Q1 FY26</td>
+<td>$5.11 vs $2.81</td>
+<td>Normalize for FV gains (~$2.6 operating)</td>
+</tr>
+<tr>
+<td><strong>Cash generation</strong></td>
+<td>Q1 operating cash flow</td>
+<td>$45.8B, +26.7%</td>
+<td>Core engine healthy</td>
+</tr>
+<tr>
+<td><strong>Capex</strong></td>
+<td>Q1 PP&amp;E purchases</td>
+<td><strong>$35.7B, +107% YoY</strong></td>
+<td>AI capex super-cycle; FCF drag</td>
+</tr>
+<tr>
+<td><strong>Free cash flow</strong></td>
+<td>Q1 FCF</td>
+<td>$10.1B, <strong>−46.6% YoY</strong></td>
+<td>Watch capex guidance</td>
+</tr>
+<tr>
+<td><strong>Capital return</strong></td>
+<td>Buybacks Q1</td>
+<td><strong>$0</strong> (vs $15.1B)</td>
+<td>Support removed near-term</td>
+</tr>
+<tr>
+<td><strong>Dividend</strong></td>
+<td>Quarterly DPS</td>
+<td>$0.21 (from $0.20)</td>
+<td>Modest, growing</td>
+</tr>
+<tr>
+<td><strong>Cash flow history</strong></td>
+<td>OCF 2023→2025</td>
+<td>$101.7B→$164.7B</td>
+<td>Strong compounding</td>
+</tr>
+<tr>
+<td><strong>FCF history</strong></td>
+<td>FY FCF 2023→2025</td>
+<td>~$69.5B→$73.3B (flat)</td>
+<td>Capex offsetting OCF growth</td>
+</tr>
+<tr>
+<td><strong>Balance sheet</strong></td>
+<td>Total assets</td>
+<td><strong>$703.9B</strong> (+$108.6B in 1 qtr)</td>
+<td>Asset revaluation + M&amp;A</td>
+</tr>
+<tr>
+<td><strong>Debt</strong></td>
+<td>Carrying amount</td>
+<td><strong>$80.3B</strong> (+$31.2B in 1 qtr)</td>
+<td>Levering up for buildout/M&amp;A</td>
+</tr>
+<tr>
+<td><strong>Liquidity</strong></td>
+<td>Cash + ST investments</td>
+<td>$126.8B</td>
+<td>Fortress; ample flexibility</td>
+</tr>
+<tr>
+<td><strong>Leverage</strong></td>
+<td>Debt / Equity</td>
+<td>~17%</td>
+<td>Still conservative</td>
+</tr>
+<tr>
+<td><strong>Backlog</strong></td>
+<td>Remaining performance obligations</td>
+<td><strong>$467.6B</strong></td>
+<td>Strong forward visibility</td>
+</tr>
+<tr>
+<td><strong>Investment book</strong></td>
+<td>Non-marketable equity securities</td>
+<td><strong>$101.3B</strong> (+$37.3B)</td>
+<td>Lumpy, mark-to-model volatility</td>
+</tr>
+<tr>
+<td><strong>Insider activity</strong></td>
+<td>—</td>
+<td><strong>DATA UNAVAILABLE</strong></td>
+<td>No authorized archive; not inferred</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>All figures USD, per point-in-time SEC filings accepted on/before 2026-07-13. No insider-transaction data could be retrieved and none has been fabricated.</em></p>
+</section><section id="s2"><h2>II. Research Team Decision</h2><h3 id="s2-1">Bull Researcher</h3>
+<p>Bull Analyst: # BULL CASE: GOOGL — The Pullback Is the Opportunity, Not the Warning</p>
+<p>Alright, since the bear hasn't walked in yet, let me lay down the marker and — more importantly — pre-load the counterarguments I <em>know</em> are coming. Because anyone looking at GOOGL on 2026-07-13 sees a stock that's down ~12% from its May high, below its 50-day, with a MACD under zero and an RSI drifting toward 44. The bears will point at that tape and say &quot;momentum is broken.&quot; My response: <strong>you're looking at the noise and ignoring the machine underneath it.</strong></p>
+<p>Let me make the case across four fronts — growth, moat, financial health, and a direct rebuttal of the three objections I'm certain the bear will raise.</p>
+<hr />
+<h5>1. Growth Potential — This Is a Re-Acceleration, Not a Deceleration</h5>
+<p>The single most important number in the entire research packet is this: <strong>Q1 FY2026 revenue grew 21.8% YoY to $109.9B.</strong> For a company of GOOGL's size — already a ~$400B+ annual revenue base — that is <em>extraordinary</em>. Companies don't grow 22% at this scale unless a genuine new growth engine has switched on, and that engine is AI monetization across Search and Cloud.</p>
+<p>But it gets better on the profit line, which is where bears usually get uncomfortable with mega-caps:</p>
+<ul>
+<li><strong>Operating income +29.7% YoY to $39.7B</strong></li>
+<li><strong>Operating margin expanded to 36.1%, up 220 bps</strong></li>
+<li>This happened <em>while</em> R&amp;D grew 25.6% and capex doubled.</li>
+</ul>
+<p>That's the definition of operating leverage — growth is outrunning reinvestment. And for forward visibility, look at the <strong>remaining performance obligations backlog of $467.6B.</strong> That's contracted future revenue sitting there. The bear can talk about a 4-session pullback all day, but he cannot explain away a backlog that's roughly the size of a G7 country's GDP.</p>
+<p><strong>Scalability is proven, not theoretical.</strong> AI is inflecting across both the advertising (Search/YouTube) and enterprise (Cloud) franchises simultaneously. That's not a one-quarter blip — that's a structural re-rating of the growth trajectory.</p>
+<hr />
+<h5>2. Competitive Advantages — The Moat Is Widening, Not Narrowing</h5>
+<p>Here's where I want to be direct with the bear: <strong>name me a company better positioned to monetize AI at scale than GOOGL.</strong> You can't. The pieces:</p>
+<ul>
+<li><strong>Search</strong> — still the world's default information layer, now being AI-augmented rather than disrupted. The 22% revenue growth is the proof that AI is <em>additive</em> to the core franchise, not cannibalistic.</li>
+<li><strong>YouTube</strong> — dominant video platform with an ad + subscription dual engine.</li>
+<li><strong>Google Cloud</strong> — scaling into the AI infrastructure layer, feeding the backlog.</li>
+<li><strong>Waymo &amp; Other Bets</strong> — embedded optionality the market assigns near-zero value to.</li>
+<li><strong>The private investment book</strong> — ~$101B in non-marketable equity securities, largely AI/tech stakes. This is a call option on the entire AI ecosystem.</li>
+</ul>
+<p>The bear will call the $101B book a &quot;mark-to-model volatility risk.&quot; Fair — <strong>but volatility cuts both ways.</strong> That same book generated a <strong>$36.9B fair-value gain in a single quarter.</strong> In a risk-on tape, that's an appreciating asset that adds to book value and funds future optionality. You don't dismiss $101B of AI-ecosystem stakes as a liability — that's a strategic asset most companies would kill for.</p>
+<hr />
+<h5>3. Positive Indicators — Financial Health That Screams &quot;Fortress&quot;</h5>
+<p>Let's talk balance sheet, because this is where the bull case is bulletproof:</p>
+<ul>
+<li><strong>$126.8B in cash + short-term investments.</strong> That's not a company managing a crisis — that's a company with a war chest.</li>
+<li><strong>Debt/Equity of ~17%.</strong> The bears will scream that debt jumped $49B→$80B in a quarter. Let me put that in context: <strong>17% leverage for a mega-cap with a 36% operating margin is conservative by any institutional standard.</strong> This is a company <em>choosing</em> to lever up to fund the AI buildout — that's confidence, not distress.</li>
+<li><strong>Operating cash flow $45.8B in Q1, +26.7% YoY.</strong> The core cash-generation engine is accelerating.</li>
+</ul>
+<p>And the <strong>technical structure — read correctly — supports the bull, not the bear:</strong></p>
+<ul>
+<li><strong>200-day SMA at $319.42 and rising 6.5% over six weeks.</strong> Price at $352.51 is <strong>+10.4% above it.</strong> The primary uptrend is intact. Full stop.</li>
+<li><strong>Golden cross intact</strong> — 50-SMA ($372.80) still well above the 200-SMA.</li>
+<li><strong>The 6/26 selloff printed 114.7M shares on a down day</strong> — that's a textbook <strong>selling climax / capitulation</strong> that marked the low, exactly like it did on 3/30 at $273.50 before a run to $402.</li>
+<li><strong>Volume has dried up to 15.9M</strong> on the current pullback. The bears will call that &quot;no buying conviction.&quot; I call it <strong>exhausted selling</strong> — you can't have a real distribution phase on the lowest volume in months.</li>
+</ul>
+<p>This is a <strong>bull-trend correction inside a secular uptrend</strong>, and the research report itself concedes the structural read is &quot;bullish strategic.&quot; I'm simply taking that conclusion seriously while the bears stare at the 4-day chart.</p>
+<hr />
+<h5>4. Countering the Bear — Let Me Take the Objections Head-On</h5>
+<p>Because I know exactly where the bear is going:</p>
+<p><strong>Objection #1: &quot;GAAP EPS of $5.11 is fake — it's inflated ~2x by non-operating gains.&quot;</strong>
+<em>I agree, and it doesn't matter.</em> The bull case was <em>never</em> built on $5.11. Strip out the $36.9B fair-value mark and normalize to ~$2.6 operating EPS — <strong>and the business still grew operating income 29.7% with expanding margins.</strong> The bear would have you believe that stripping the gain collapses the thesis. It doesn't — it just proves the <em>operating</em> engine is doing the heavy lifting, which is exactly what a quality investor wants to see. I'll happily value GOOGL on operating income and OCF. Beat me there.</p>
+<p><strong>Objection #2: &quot;Free cash flow halved — capex is eating the business.&quot;</strong>
+<em>This is the most intellectually dishonest bear point available.</em> Q1 capex hit $35.7B — a ~$140B+ annualized run-rate — because GOOGL is <strong>building the AI infrastructure that generates the 22% revenue growth and the $467.6B backlog.</strong> You don't penalize a company for investing in demand it has already contracted. The correct question isn't &quot;why is FCF down?&quot; — it's <strong>&quot;is the capex converting to revenue?&quot;</strong> And the answer is a resounding yes: revenue +21.8%, backlog $467.6B. This is the difference between <em>growth capex</em> and <em>maintenance capex</em>, and the bear conflates the two.</p>
+<p><strong>Objection #3: &quot;Buybacks are at zero and the stock is technically weak — there's no support.&quot;</strong>
+Two responses. First, the buyback pause is a <strong>capital-allocation choice</strong>, not a sign of weakness — the money is being redeployed into higher-return AI capacity and a bolt-on acquisition (the intangibles jump). Second, <strong>there IS price support</strong> — VWMA sits at <strong>$350.15</strong>, a volume-weighted shelf that's held since late June, and the stock closed at $352.51, right on top of it. The lower Bollinger band at $338.54 and the 6/26 low close at $337.39 form a concrete floor. The 200-SMA at $319.42 is the deep structural backstop.</p>
+<p>The bear wants you to believe a 12% pullback in a stock that's up double-digits over its 200-day average is a reason to run. <strong>I say a 12% pullback in a business growing revenue 22% with a fortress balance sheet is a reason to look at the entry.</strong></p>
+<hr />
+<h5>My Bottom Line</h5>
+<p>Tactically, yes — GOOGL is below its 10-EMA and 50-SMA, the MACD histogram is rolling toward a bearish cross, and patience on <em>entry timing</em> is warranted. I'll concede the short-term tape. <strong>But the debate isn't about the next four sessions — it's about owning a franchise with accelerating growth, a widening AI moat, a $126.8B liquidity fortress, a $467.6B backlog, and an intact secular uptrend.</strong></p>
+<p>To the bear: if your thesis is &quot;the stock pulled back 12% and the RSI is 44,&quot; you're trading a chart. My thesis is that <strong>the operating business re-accelerated to 22% growth with expanding margins, and the market is handing you a discount during a normal breather.</strong> I'll take that trade every day of the week.</p>
+<p>Watch the <strong>$358 reclaim</strong> as the near-term trigger and the <strong>$350 VWMA / $338 support</strong> as the risk-defined entry zone. The strategic bull case for GOOGL is not just intact — <strong>it's getting stronger with every quarter of AI-driven revenue growth.</strong></p>
+<p>Let's debate. 🎯</p>
+<h3 id="s2-2">Bear Researcher</h3>
+<p>Bear Analyst: # BEAR CASE: GOOGL — The Bull Is Trading a Story; I'm Trading the Evidence</p>
+<p>Let me start by giving the bull his due: that's a well-constructed piece of salesmanship. But strip away the rhetorical scaffolding — &quot;the machine underneath,&quot; &quot;the moat is widening,&quot; &quot;fortress&quot; — and what's left is a bull making a strategic argument to excuse a tactical breakdown. He wants you to ignore the tape by calling it noise, while simultaneously <em>conceding every single bearish data point on that tape.</em> Let me hold him to that.</p>
+<hr />
+<h5>1. &quot;You're looking at the noise&quot; — No, I'm looking at the leading indicators you keep conceding</h5>
+<p>Read the bull's own closing paragraph. He admits GOOGL is <strong>below the 10-EMA, below the 50-SMA, MACD rolling toward a bearish cross, RSI falling to 44, and &quot;patience on entry timing is warranted.&quot;</strong> That's not a bull case — that's a <em>hold-or-avoid</em> dressed up as a buy.</p>
+<p>And here's the tell the bull glosses over: the <strong>50-SMA is rolling over.</strong> The research report gives us the exact sequence — daily gains of the 50-day decelerating from <strong>+0.56 → +0.16 → +0.05 → +0.001</strong>. That is a medium-term trend <em>flattening into a top</em>, not a healthy consolidation. The 200-SMA way down at $319 isn't &quot;support&quot; — it's a <strong>stale relic of the March→May rally.</strong> It tells you where the stock <em>was</em>, not where it's going. Price leadership is the 50-SMA, and price is <strong>−5.4% below it</strong>.</p>
+<p>Worse for the bull: the early-July bounce <strong>failed at $367.03 — which is below the 50-SMA at $372.80.</strong> That's a <strong>lower high that couldn't even tag the medium-term line</strong>, followed by a fade right back to $352.51. That's the textbook shape of distribution, not accumulation. The &quot;capitulation low&quot; the bull celebrates on 6/26 didn't become a launchpad — it became a ceiling the bounce couldn't clear.</p>
+<hr />
+<h5>2. The &quot;exhausted selling&quot; spin is the most dangerous argument in his deck</h5>
+<p>The bull looks at <strong>15.9M shares — the lowest volume in months — and calls it &quot;exhausted selling.&quot;</strong> I call it what it is: <strong>absent demand.</strong> Low volume on a <em>decline</em> doesn't mean the sellers are gone; it means nobody is stepping up to buy. You don't get a durable bottom on apathy. You get it on <em>accumulation</em>, and there is zero evidence of that here.</p>
+<p>Now look at what he's leaning on for &quot;support&quot;: the <strong>VWMA at $350.15</strong> — a whole <strong>0.7% below the closing price.</strong> That's not a concrete floor; that's a tripwire. One ordinary down day — and ATR is $10.40, ~3% of price — blows straight through it. Below that, the real air pocket is <strong>$338.54 / $337.39</strong>, another <strong>4% lower</strong>, and then the 200-SMA at $319 — a <strong>9% drawdown</strong> from here. The bull's &quot;risk-defined entry&quot; has a stop zone that, at 2×ATR, sits near <strong>$331</strong> — meaning &quot;buy the dip&quot; here risks a <strong>~6% loss</strong> before you even find out if you're right.</p>
+<hr />
+<h5>3. He wants to dismiss EPS <em>and</em> avoid FCF — you don't get both</h5>
+<p>The bull's cleverest move is Objection #1: <em>&quot;Sure, GAAP EPS of $5.11 is inflated ~2x, but I'll value it on operating income and OCF — beat me there.&quot;</em> Fine. Let's actually do that math instead of hand-waving it.</p>
+<p>Normalized operating EPS is <strong>~$2.6/quarter → ~$10.40 annualized.</strong> At $352.51, that's roughly <strong>34× normalized earnings.</strong> Now the metric he <em>doesn't</em> want you to compute: at a market cap of roughly <strong>$4.3 trillion</strong> (352.51 × ~12.25B diluted shares), GOOGL trades at <strong>~59× FY2025 free cash flow of $73B</strong> — and that FCF just <strong>halved in Q1 (−46.6% YoY).</strong> So the bull dismisses the inflated EPS (correct), but then hides from the free-cash-flow-based valuation, which is where the stock looks <em>most</em> expensive, not least. He can pick one mirror or the other. Not both.</p>
+<hr />
+<h5>4. &quot;Growth capex, not maintenance capex&quot; — that's an assertion, not a fact</h5>
+<p>This is where the bull is most intellectually slippery. He says: <em>&quot;You don't penalize a company for investing in demand it has already contracted — is the capex converting to revenue? Resounding yes: +21.8%, $467.6B backlog.&quot;</em></p>
+<p>Two problems:</p>
+<p><strong>First, correlation isn't proof of ROI.</strong> Revenue grew 22% — but you cannot attribute that to <em>this quarter's</em> $35.7B of capex. Those data centers aren't even built. What we <em>can</em> measure is the cash cost: capex nearly <strong>tripled</strong> ($32B in FY23 → $91B in FY25 → <strong>~$140B+ annualized in Q1</strong>), and <strong>free cash flow has been flat-to-down the entire time</strong> — $69.5B → $72.8B → $73.3B across 2023–2025 <em>despite</em> operating cash flow growing 62%. The buildout is consuming every incremental dollar of operating cash and then some. That's not &quot;operating leverage&quot; — that's <strong>capex eating the growth.</strong></p>
+<p><strong>Second, the depreciation bill hasn't arrived yet.</strong> All that AI infrastructure hits the income statement as depreciation for years <em>after</em> the cash leaves. The 36.1% operating margin the bull waves around is flattered by the fact that the capex super-cycle's cost is back-loaded. When depreciation catches up — and when the industry's collective overbuild triggers a price war on cloud/compute — that margin has a long way to fall. The bull is extrapolating <em>today's</em> margin into a future where the cost structure is materially worse.</p>
+<p>And note the bull never answers the real risk: <strong>what if capex guidance creeps higher again?</strong> Every hyperscaler is in the same arms race. Management has <em>not</em> committed to a capex ceiling. That's the single biggest swing factor in GOOGL's valuation, and it's completely unanchored.</p>
+<hr />
+<h5>5. The balance sheet got weaker, and the buyback benching is a signal — not a &quot;choice&quot;</h5>
+<p>The bull calls ~17% debt/equity &quot;conservative&quot; and the buyback pause a &quot;capital-allocation choice.&quot; Let me reframe with the actual numbers:</p>
+<ul>
+<li><strong>Debt jumped $49B → $80B in a single quarter (+$31B).</strong></li>
+<li><strong>Buybacks went to $0</strong> — down from ~$15B/quarter. The <strong>issuer — the single best-informed buyer of GOOGL stock — benched itself entirely</strong>, and the company flipped to being a <strong>net capital raiser</strong> (positive financing cash flow).</li>
+</ul>
+<p>That's not swagger; that's a company telling you it sees better uses for cash than its own shares <em>at these prices.</em> The bull wants to spin the buyback halt as confidence in AI. The bear reads it as: management isn't willing to put money behind the stock at $350+. And on the &quot;no insider data&quot; point — the bull can't claim insider confidence either, because <strong>there's no insider buying data to point to.</strong> That's not a bullish data point; it's a vacuum he's quietly stepping around.</p>
+<hr />
+<h5>6. The $101B investment book cuts BOTH ways — he only counts the up days</h5>
+<p>The bull touts the <strong>$36.9B fair-value gain</strong> as a &quot;call option on the AI ecosystem.&quot; Sure — in a risk-on tape. But that same <strong>$101B mark-to-model book</strong>, with cumulative fair-value adjustments that ballooned from $44.5B to $80.8B in one quarter, is now the <em>single largest driver</em> of reported earnings and book value. What mark-to-model giveth, mark-to-model taketh away. In any risk-off rotation or AI-valuation reset, those marks reverse — and the GAAP earnings collapse <em>harder</em> than the operating business ever would. The bull wants to book the gains as real and dismiss the losses as hypothetical. That's not analysis; that's asymmetric accounting.</p>
+<hr />
+<h5>7. The moat argument ignores the one threat that matters: the core franchise</h5>
+<p><em>&quot;Name a company better positioned to monetize AI than GOOGL,&quot;</em> he challenges. Easy — Microsoft, Amazon, and Meta are all spending at the same scale, which means <strong>no one has a durable margin moat in AI infrastructure; they have a capex arms race.</strong> But here's the deeper risk he waves away in one sentence: <strong>Search disruption.</strong> He asserts AI is &quot;additive, not cannibalistic&quot; — based on <em>one quarter</em> of 22% revenue growth. One quarter is a data point, not a proof of structural immunity. 22% ad growth can be cyclical ad strength, and history is littered with incumbents who looked perfectly healthy right up until the query→click→ad model bent. You don't get to declare a multitrillion-dollar franchise immune to the most disruptive technology of the decade on the back of 90 days of data.</p>
+<hr />
+<h5>My Bottom Line</h5>
+<p>The bull's entire case rests on a <em>strategic</em> story (&quot;accelerating franchise, intact uptrend&quot;) to paper over a <em>tactical</em> reality he keeps conceding: <strong>below the 50-SMA, below the 10-EMA, MACD sub-zero and rolling to a bearish cross, RSI 44 with room to fall, a failed bounce that couldn't reclaim the 50-SMA, a razor-thin $350 support that's 0.7% away, and an FCF-based valuation north of 50× that's shrinking, not growing.</strong></p>
+<ul>
+<li>If you own it: the burden of proof has flipped. <strong>Reclaiming $358 is the <em>minimum</em> for stabilization; $367 and then $372.80 are the real hurdles</strong> — and the bounce already failed at $367.</li>
+<li>If you're buying: you're catching a falling knife into the <em>lowest-volume taper of a declining tape</em>, with real support another 4–9% below at $338/$319. The RSI isn't oversold — <strong>there's no mean-reversion setup yet.</strong></li>
+<li>The next <strong>10-Q is the swing factor</strong> — it must prove capex is converting to <em>profitable</em> revenue and that the buyback pause is temporary. Until then, the bull is asking you to pay 34× normalized earnings and ~59× shrinking free cash flow for a story.</li>
+</ul>
+<p>That's not a discount. <strong>That's a premium multiple on a stock whose momentum, cash generation, and capital-return engine are all deteriorating at the same time.</strong> The bull says he'll &quot;take that trade every day.&quot; I'd say: show me the free cash flow first, and show me $358 reclaimed on real volume — then we'll talk about entry. Until then, this is a stock to <em>wait on</em>, not to cheerlead.</p>
+<h3 id="s2-3">Research Manager</h3>
+<p><strong>Recommendation</strong>: Underweight</p>
+<p><strong>Rationale</strong>: The bear case carries the day on the evidence that matters for sizing GOOGL now. The bull is right on the strategic fundamentals — Q1 FY2026 revenue +21.8% to $109.9B, operating income +29.7% to $39.7B, 36.1% operating margin, $467.6B backlog, $126.8B cash, and price still +10.4% above a rising 200-SMA. But the bull concedes the actionable tape: GOOGL is below the 10-EMA and 50-SMA, MACD is below zero, RSI is 44, and even the bull says entry patience is warranted.</p>
+<p>The bear’s specifics are stronger for near-term capital deployment: the 50-SMA is flattening (+0.56 → +0.16 → +0.05 → +0.001), price is -5.4% below it, the bounce failed at $367.03 below the $372.80 50-SMA, and low volume of 15.9M looks more like absent demand than capitulation. Support at the $350.15 VWMA is only 0.7% below the close; ATR is $10.40; real support sits at $338.54/$337.39 and then $319.42. On cash flow and valuation, the bear is more decisive: normalized EPS of ~$10.40 annualized is ~34x, FY2025 FCF of ~$73B is ~59x market cap, Q1 FCF fell ~46.6% YoY, capex is running ~$140B annualized, and FCF has been flat/down despite operating cash flow growth. Debt rose from $49B to $80B, buybacks went to $0, and GOOGL became a net capital raiser. The bull’s “growth capex” explanation is plausible but unproven until the next 10-Q shows conversion; depreciation is back-loaded, and the $101B mark-to-model book can reverse. No insider-buying data is provided, so it should not be used as support for either side.</p>
+<p>This is not a Sell because the operating franchise, balance sheet, backlog, and primary uptrend remain strong. But it is enough to trim exposure and demand confirmation before adding.</p>
+<p><strong>Strategic Actions</strong>:</p>
+<ul>
+<li>For existing GOOGL exposure, reduce to 50–75% of standard target allocation; concretely trim 25–33% of the current position now. Keep a core position only if the mandate is long-term.</li>
+<li>Do not add at $352.51. Require confirmation: reclaim $358 on above-average volume, then clear $367.03 and the $372.80 50-SMA. Only after those triggers plus 10-Q evidence should the stance move toward Hold/Overweight.</li>
+<li>If GOOGL loses $350.15 and then $338.54/$337.39 on volume, trim further. Next structural support is $319.42. Use the $10.40 ATR for stop/risk sizing and avoid stops tighter than normal volatility.</li>
+<li>For new capital, consider only staged entries near $338–$337 if stabilization appears, or wait for $319–$320. Do not catch the decline solely on price.</li>
+<li>Monitor the next 10-Q for capex conversion, FCF stabilization, capex guidance ceiling, buyback resumption, Search/ad growth, backlog conversion, and fair-value mark reversals. A break below $319.42 with deteriorating FCF would justify moving toward Sell; a confirmed reclaim of $372.80 with improving FCF would justify upgrading.</li>
+</ul>
+</section><section id="s3"><h2>III. Trading Team Plan</h2><h3 id="s3-1">Trader</h3>
+<p><strong>Action</strong>: Sell</p>
+<p><strong>Reasoning</strong>: The research plan resolves to Underweight, which under the directive maps to Sell — but the evidence supports a <em>partial reduction</em>, not a full exit. I am aligning the action to the tape rather than to the strategic narrative, and the tape is decisively weak on every short- and medium-term measure GOOGL shows.</p>
+<p>The bear/plan specifics carry the sizing case for reducing now:</p>
+<ul>
+<li><strong>Trend</strong>: price $352.51 sits below the 10-EMA ($357.97) and −5.4% below the 50-SMA ($372.80), and the 50-SMA is flattening hard (+0.56 → +0.05 per session) — the medium-term line is rolling over, not trending up. The bounce already failed at $367.03, under the $372.80 hurdle.</li>
+<li><strong>Momentum</strong>: MACD is sub-zero (−2.20), the histogram has shrunk for four straight sessions (+1.83 → +0.60) and a bearish crossover is imminent; RSI is 43.77 and falling with room to 30 before oversold. There is no bullish tell yet.</li>
+<li><strong>Position within band</strong>: price is in the lower half of a compressed Bollinger range (mid $357.62, lower $338.54), i.e., bearish near-term bias.</li>
+<li><strong>Support proximity / volume</strong>: the only floor immediately under price is the VWMA shelf at $350.15 — just 0.7% away — and the low 15.9M volume reads as absent demand rather than accumulation. Real support is lower, at $338.54/$337.39, then the 200-SMA at $319.42.</li>
+</ul>
+<p>What keeps this a trim and not a liquidation: the primary uptrend is intact (price +10.4% above a rising 200-SMA $319.42, golden cross valid), the franchise and balance sheet are strong, and a 2×ATR noise band is wide (~$10.40 ATR). So I reduce exposure and demand confirmation before re-engaging — I do not short into structural strength or exit the core.</p>
+<p><strong>Entry Price</strong>: $352.51 — execute the reduction at the current level (last verified close); use any intraday lift toward the $357.62–$357.97 resistance cluster to complete the trim rather than chase it lower.</p>
+<p><strong>Stop Loss</strong>: $336.50 on the retained core (below the 6/26 low close of $337.39 and below the $338.54 lower band). If a wider, volatility-based stop is preferred, 2×ATR from $352.51 = $331.70; a decisive break of $319.42 (200-SMA) would shift the stance toward a full Sell.</p>
+<p><strong>Position Sizing</strong>: Trim 25–33% of the current position now, leaving 67–75% held. Bring overall GOOGL exposure to 50–75% of standard target allocation for a long-term mandate (toward the lower end, 50%, if the mandate is tactical). Do not add at $352.51 — only re-engage toward Hold/Overweight after a reclaim of the $357.62–$357.97 band on above-average volume, followed by $367.03 and the $372.80 50-SMA, ideally with next-10-Q confirmation. Trim further if GOOGL loses $350.15 and then $337.39/$338.54 on volume.</p>
+</section><section id="s4"><h2>IV. Risk Management Team Decision</h2><h3 id="s4-1">Aggressive Analyst</h3>
+<p>Aggressive Analyst: Let me open this debate, because the conservative and neutral analysts haven’t spoken yet but their playbook is predictable: the conservative will lean on the intact 200-SMA, the golden cross, and the fortress balance sheet, while the neutral will say wait for confirmation before doing anything. I think both stances miss the real opportunity in GOOGL right now. The trader’s Sell is not a bearish abandonment of GOOGL; it is a tactical reduction that converts a deteriorating tape into optionality. That is the aggressive, high-reward move here: preserve capital and keep the core, rather than sit fully exposed to a compressed, failed bounce.</p>
+<p>To the conservative analyst: yes, GOOGL is still +10.4% above a rising 200-SMA at $319.42, and the golden cross with the 50-SMA at $372.80 remains valid. But that is a strategic fact, not a tactical shield. The medium-term line is flattening hard, with the 50-SMA’s daily gain collapsing from +0.56 to +0.05, and GOOGL is already −5.4% below it. The bounce failed at $367.03, well under the $372.80 hurdle. If your entire case is “the long-term trend is intact,” you are fighting today’s tape with yesterday’s signal. The trader is not shorting into structural strength and is not liquidating the core. A 25–33% trim with 67–75% retained is exactly how you respect the long-term story while refusing to underwrite near-term drawdown risk. The conservative stance risks confusing a great company with a great entry; GOOGL can be fundamentally strong and still be tactically vulnerable.</p>
+<p>To the neutral analyst: “wait for confirmation” sounds prudent, but it is not a plan. The trader already has a two-sided trigger set. Re-engage only after GOOGL reclaims the $357.62–$357.97 band on above-average volume, then $367.03, then the $372.80 50-SMA. Trim further if GOOGL loses $350.15 and then $337.39/$338.54 on volume. A decisive break of $319.42 shifts to a full Sell. That is not impulsive; it is active risk budgeting. The neutral stance waits for the $358 reclaim but has no downside response until support breaks, and by then GOOGL is already at the $338 area with the stop at $336.50 only about 1.5% away. The trader’s plan is better because it sells into current strength or an intraday lift toward $357.62–$357.97 rather than chasing lower after the shelf breaks.</p>
+<p>The tape is decisively weak on every short- and medium-term measure GOOGL shows. Price at $352.51 is below the 10-EMA at $357.97 and below the 50-SMA at $372.80. MACD is sub-zero at −2.20, the histogram has shrunk for four straight sessions from +1.83 to +0.60, and a bearish crossover is imminent. RSI is 43.77 and falling with room to 30 before oversold. GOOGL sits in the lower half of a compressed Bollinger range, with the mid at $357.62 and the lower band at $338.54. The only immediate floor is the VWMA shelf at $350.15, just 0.7% below the last close, and the 15.9M volume says absent demand, not accumulation. Low volume on a decline is not bullish; it means buyers are missing. If a modest institutional seller arrives, that $350.15 shelf can go quickly, just as the 6/26 session showed when 114.7M shares printed on a down day.</p>
+<p>The fundamentals support keeping a core, not holding the full position. GOOGL’s Q1 FY2026 revenue grew 21.8%, operating margin expanded to 36.1%, and the $467.6B backlog is enormous. That is why the trader leaves 67–75% of the position in place. But the conservative analyst cannot ignore that GAAP EPS of $5.11 was inflated roughly twofold by $36.9B of non-operating fair-value gains, while Q1 free cash flow fell 46.6% on a 107% capex surge, buybacks went to zero, and debt rose by about $31.2B. The market is not ignoring the AI capex super-cycle; it is repricing the near-term FCF drag. A fortress balance sheet with $126.8B of cash and short-term investments answers a long-term solvency question, not a near-term price question. The trader’s trim respects both.</p>
+<p>There is also no sentiment report available in this run, and the frozen company-news window returned zero eligible records for GOOGL. That is not a bullish catalyst; it removes a potential upside trigger and leaves GOOGL hostage to the tape. A stock below its 10-EMA and 50-SMA, with sub-zero MACD, falling RSI, and a failed bounce at $367.03, does not need bad news to drift lower. The absence of news actually strengthens the case for reducing now and demanding confirmation before re-engaging.</p>
+<p>So I challenge the conservative analyst’s “hold because the business is great” and the neutral analyst’s “wait because confirmation is safer.” The high-reward path is not stubborn full exposure or passive waiting. It is the trader’s Sell: trim 25–33% now, use any intraday lift toward $357.62–$357.97 to complete the reduction, keep a 67–75% core, set the retained-core stop at $336.50 below the $337.39 low and $338.54 lower band, and treat a decisive break of $319.42 as a full Sell. That keeps GOOGL upside alive while refusing to pay for the downside with the entire position. That is how you outpace market norms: not by clinging to a strong franchise through a weak tape, but by actively managing risk and preserving dry powder for the next high-conviction entry.</p>
+<h3 id="s4-2">Conservative Analyst</h3>
+<p>Conservative Analyst: I’ll take the other side of the aggressive framing, and I’ll also push back on the neutral wait-and-see instinct, because both still leave the firm more exposed to GOOGL’s near-term tape than a conservative mandate should tolerate. I am not arguing “hold GOOGL because it is a great company.” That is not a risk process. The conservative case is that GOOGL’s immediate asymmetry is poor, the trader’s Sell direction is right, and the aggressive analyst is too optimistic in calling this “high-reward optionality.” This is risk reduction, not a clever upside trade. Retaining 67–75% of GOOGL and waiting for an intraday lift toward $357.62–$357.97 to finish the trim is still an optimistic assumption in a tape this weak.</p>
+<p>To the aggressive analyst: you are right that the 200-SMA at $319.42 and the golden cross are strategic facts, not tactical shields. But then you stop short of the conservative conclusion. GOOGL is at $352.51, only 0.7% above the VWMA shelf at $350.15, while the lower Bollinger band is $338.54 and the 6/26 low close is $337.39. That is roughly 4% of downside to real support, and the 200-SMA is about 9.4% below the current price. The possible intraday lift to the $357.62–$357.97 cluster is only about 1.5%. For a conservative mandate, that asymmetry argues for selling at least the top end of the trim now, not waiting for a better print. You say low volume shows absent demand and the $350.15 shelf can go quickly. I agree, and that is exactly why relying on an intraday bounce to complete the reduction is too hopeful. If liquidity is thin and sellers arrive, GOOGL can gap through the shelf before the full trim is done. The conservative response is to reduce now while the price is still above the volume-weighted shelf, not to wait for a lift that may not come.</p>
+<p>I also have a problem with the stop structure. A $336.50 stop on the retained core sounds disciplined, but it is not real protection in a fast tape. The 6/26 session traded down to $330.20 intraday on 114.7M shares. If GOOGL repeats anything like that, a $336.50 stop can fill well below the trigger. More importantly, the plan says a decisive break of $319.42 shifts to a full Sell, but if there is a hard stop at $336.50, that full-sell trigger is contradictory. Either the stop is real, or we are planning to hold through another 5% of downside below it. For a conservative process, I would resolve that: use a close-based hard stop at $337.39/$338.54 on the retained core, and treat a volume close below $350.15 as a trigger to reduce again rather than waiting for the obvious support break. I am not advocating shorting GOOGL into structural strength, but I am saying the retained position should not be given that much room to fall before risk controls activate.</p>
+<p>On fundamentals, the aggressive analyst is right to flag the earnings-quality issue, but he still underweights it. GOOGL’s Q1 FY2026 revenue growth of 21.8%, operating margin of 36.1%, and $467.6B backlog are genuinely strong. That is why a core position is defensible. But GAAP EPS of $5.11 was inflated by roughly $36.9B of non-operating fair-value gains, Q1 free cash flow fell 46.6% on a 107% capex surge, buybacks went to zero, and debt rose by about $31.2B. The balance sheet is a fortress with $126.8B of cash and short-term investments, but fortress balance sheets answer solvency questions, not near-term price questions. The private-markets book is lumpy and mark-to-model; in a risk-off tape, those marks can reverse. The strong operating business justifies keeping a core, not holding three-quarters of the position through a deteriorating tape. If the mandate is tactical, I would push the trim to 40–50%, not just 25–33%. If the mandate is long-term, take the full 33% now and do not wait for the $357.62–$357.97 lift.</p>
+<p>To the neutral analyst: “wait for confirmation” sounds prudent, but it is not a complete risk plan. Confirmation is useful before adding exposure, not before protecting capital. If you wait for GOOGL to reclaim $358, you may be waiting for a bounce that never arrives. If you wait for $350.15 to break and then wait again for $337.39, you are selling lower after the damage is done. The trader’s two-sided triggers are better than passive waiting, but I would make them more conservative: trim at least 33% now, reduce further on a volume close below $350.15, and require a reclaim of $357.62–$357.97 on above-average volume before even discussing re-engagement. Then $367.03 and $372.80 must be reclaimed before adding. No sentiment report and no company-news records in the window are not bullish catalysts. They are uncertainty, and uncertainty should reduce position size.</p>
+<p>So my adjustment to the trader’s decision is this: I support the Sell direction, but I would not frame it as high-reward optionality. GOOGL is a strong long-term franchise in a weak near-term tape, and the conservative path is to take the trim to the high end immediately, use any bounce toward $357.62–$357.97 only as an opportunistic add to the reduction rather than a condition, and enforce a hard close-based stop at $337.39/$338.54 on the retained core. The safest path is not aggressive optionality and not neutral waiting; it is immediate de-risking, clear triggers, and demanding confirmation before re-engaging GOOGL.</p>
+<h3 id="s4-3">Neutral Analyst</h3>
+<p>Neutral Analyst: I think both of you are directionally right that GOOGL should be reduced, but both are leaning too hard into your preferred narrative. The aggressive case risks turning a sensible risk trim into a market-timing bet that depends on a bounce, while the conservative case risks over-de-risking a structurally strong GOOGL position just because the near-term tape is ugly. The better answer is not the most aggressive trim or the most cautious wait; it is a staged, rules-based partial reduction that respects the weak tape without abandoning the long-term core.</p>
+<p>To the aggressive analyst: I agree with you that the tape is weak and that the trader’s Sell is not a bearish abandonment of GOOGL. Price at $352.51 is below the 10-EMA at $357.97 and well below the 50-SMA at $372.80; MACD is sub-zero at −2.20, the histogram has faded from +1.83 to +0.60, RSI is 43.77 and falling, and GOOGL is in the lower half of the Bollinger range with the mid at $357.62 and lower band at $338.54. The failed bounce at $367.03 matters. The VWMA shelf at $350.15 is close, and the 15.9M volume does suggest absent demand rather than accumulation. But I think you overstate the “high-reward optionality” framing. Selling 25–33% is primarily risk reduction, not a high-reward trade. A trim only becomes optionality if it is actually executed; waiting for an intraday lift toward $357.62–$357.97 to complete the reduction is conditional optimism in a tape where the shelf at $350.15 is only about 0.7% below the last close. Also, absence of news and sentiment data is not a bearish catalyst. It is uncertainty. Low volume cuts both ways: it shows absent demand, but it also shows no confirmed supply wave, and with ATR at $10.40 and Bollinger bands compressed, GOOGL could resolve upward as easily as downward if a catalyst appears. So the aggressive argument is right to reduce, but too confident that the bounce will come and too quick to treat no news as a negative.</p>
+<p>To the conservative analyst: you are right to challenge the aggressive framing and right to flag the stop contradiction. A $336.50 stop on the retained core does not sit comfortably with a separate “full Sell” trigger at $319.42, because that leaves a wide gap where the plan says both “protect capital” and “keep holding through another support break.” You are also right that a fast tape can gap through stops; the 6/26 session traded down to $330.20 intraday on 114.7M shares, so a stop near the $337–$338 zone is not guaranteed execution. But I think your conclusion is too cautious for a long-term mandate. Moving immediately to a 40–50% trim because near-term asymmetry looks poor may be reasonable for a tactical book, but it risks over-de-risking a GOOGL position while the primary uptrend is still intact. GOOGL is still +10.4% above a rising 200-SMA at $319.42, the golden cross is valid, Q1 FY2026 revenue grew 21.8%, operating margin expanded to 36.1%, backlog is $467.6B, and liquidity is $126.8B in cash and short-term investments. The earnings-quality concerns are real: GAAP EPS of $5.11 was inflated by roughly $36.9B of non-operating fair-value gains, free cash flow fell 46.6% on a 107% capex surge, buybacks went to zero, and debt rose by about $31.2B. But that argues for normalizing valuation and not adding, not necessarily for cutting the position by half. Your close-based stop at $337.39/$338.54 is more coherent than the aggressive $336.50 stop, but it also sits right at support; a brief volume close below that zone could shake out the core just before the 200-SMA acts as a floor. The conservative case should not treat “uncertainty” as automatically directional; position size should depend on the mandate and current GOOGL exposure, not just the fear of a gap.</p>
+<p>The balanced adjustment I would make is this. Support the Sell direction, but define it as a staged partial de-risk rather than either a high-reward option or an immediate 40–50% liquidation. Execute 25–30% of the GOOGL position now at the current $352.51 area. Do not make the full trim conditional on a lift to $357.62–$357.97. If an intraday bounce does arrive into that resistance cluster and fails on volume, use it to complete the reduction up to 33%. If GOOGL instead reclaims $357.62–$357.97 on above-average volume, pause further trimming and reassess; do not mechanically sell into a confirmed short-term improvement. On the downside, a volume close below $350.15 should trigger another modest reduction, perhaps bringing the total trim toward the high end of the original 25–33% range, or slightly above it if the mandate is tactical or GOOGL is oversized. A close below $337.39/$338.54 should be treated as a serious warning and should cut the tactical sleeve aggressively, but I would not automatically liquidate the strategic core there. Keep a disaster stop around $331.70, the 2×ATR level from $352.51, for gap protection, and treat a decisive break of the 200-SMA at $319.42 as the full-Sell/reassess trigger. That reconciles the aggressive and conservative stop debate: $350.15 is the first warning, $337–$338 is the tactical hard stop zone, $331.70 is disaster protection, and $319.42 is the structural full-sell line.</p>
+<p>For sizing, I would leave the long-term core at roughly 67–70% of the current position, or 60–65% if the mandate is tactical or if GOOGL is oversized relative to target. Bring overall GOOGL exposure toward the lower half of the 50–75% standard-target range only when the mandate or risk budget calls for it; otherwise do not let a one-week technical weakness force a permanent allocation change. Do not add at $352.51. Re-engage toward Hold or Overweight only after GOOGL reclaims $357.62–$357.97 on above-average volume, then $367.03, then the $372.80 50-SMA, ideally with the next 10-Q confirming that capex is translating into revenue and that free cash flow pressure is temporary. That is the moderate path: it challenges the aggressive analyst’s dependence on a bounce, it challenges the conservative analyst’s impulse to over-trim into structural strength, and it keeps GOOGL risk controlled while preserving upside if the long-term franchise reasserts itself.</p>
+</section><section id="s5"><h2>V. Portfolio Manager Decision</h2><h3 id="s5-1">Portfolio Manager</h3>
+<p><strong>Rating</strong>: Underweight</p>
+<p><strong>Executive Summary</strong>: Reduce GOOGL to roughly 50–70% of a standard target allocation and trim ~33% of the current position now at ~$352.51 — do not make the reduction conditional on an intraday lift toward $357.62–$357.97, which is only ~1.5% away while real support is ~4% lower. Do not add at $352.51; the only re-engagement path is a reclaim of $357.62–$357.97 on above-average volume, then $367.03, then the $372.80 50-SMA, ideally with next-10-Q evidence of FCF stabilization. Downside ladder: volume close below $350.15 = trim again; close below $337.39/$338.54 = cut the tactical sleeve aggressively; $331.70 (2×ATR) = disaster stop; decisive break of the $319.42 200-SMA = move toward full Sell. Horizon 1–3 months, event-driven into the next print.</p>
+<p><strong>Investment Thesis</strong>: All three risk seats converged on reducing GOOGL, so the disagreement is about degree and implementation, not direction — and that convergence, not any single voice, is what carries the rating. The tape evidence is one-sided and was not contested by anyone: price $352.51 sits below the 10-EMA ($357.97) and 5.4% below a flattening 50-SMA ($372.80, daily gain collapsing +0.56 → +0.05), the bounce failed at $367.03, MACD is sub-zero at −2.20 with a histogram fading four straight sessions (+1.83 → +0.60) and a bearish crossover imminent, RSI is 43.77 and falling, and price is in the lower half of a compressed Bollinger range (mid $357.62, lower $338.54). The only floor is the $350.15 VWMA shelf just 0.7% below the close, and 15.9M volume reads as absent demand rather than accumulation. The next real supports are $338.54/$337.39 and then the 200-SMA at $319.42 — roughly 4% and 9.4% of downside against ~1.5% of upside to the $357.62–$357.97 resistance cluster. That asymmetry, for a name already generating no eligible news or sentiment records in this window, is enough to size down now.</p>
+<p>I side with the neutral analyst's framework as the strongest synthesis, with the conservative analyst's two best corrections grafted onto it. The neutral correctly rebuts the aggressive analyst's &quot;high-reward optionality&quot; framing: a 25–33% trim is risk reduction, not a trade, and it only becomes optionality if it is actually executed — conditioning the fill on a bounce to $357.62–$357.97 when the $350.15 shelf is 0.7% away assumes liquidity that the 15.9M session does not evidence. The conservative analyst is right on that point and right that the trader's original plan was internally contradictory: a $336.50 hard stop on the retained core cannot coexist with a separate &quot;full Sell&quot; trigger at $319.42 without planning to hold through another ~5% of decline. The neutral's four-tier ladder resolves it cleanly — $350.15 first warning, $337.39/$338.54 tactical hard-stop zone, $331.70 (2×ATR from $352.51) disaster protection, $319.42 structural full-sell line.</p>
+<p>Where I reject both flanks: the conservative's push to a 40–50% immediate trim over-de-risks a position whose primary uptrend is intact — price +10.4% above a rising 200-SMA at $319.42, golden cross valid, Q1 FY2026 revenue +21.8% to $109.9B, operating income +29.7% to $39.7B at a 36.1% margin, $467.6B backlog, $126.8B cash and short-term investments. That is a core-holding franchise, not a liquidation candidate, and a hard close-based stop sitting exactly at $337.39/$338.54 support risks shaking out the core on a brief break just before the 200-SMA acts as a floor. Conversely the aggressive analyst's claim that low volume is purely bearish cuts both ways: it shows no confirmed supply wave either, and with ATR at $10.40 and compressed Bollinger bands, upward resolution is not excluded. The honest read is that the fundamentals justify keeping a substantial core while the near-term FCF and earnings-quality evidence — FCF −46.6% on a 107% capex surge, buybacks at zero from $15.1B, debt up ~$31.2B, and GAAP EPS of $5.11 resting on ~$36.9B of non-operating fair-value gains (~34x normalized annualized EPS) — justifies paying less, not more. That is Underweight, not Sell: reduce exposure and take partial profits, but do not exit or avoid the name outright.</p>
+<p>Prior lesson applied directly: the July 6 Overweight call produced −3.5% five-day alpha because I gave positive weight to an &quot;immature reversal&quot; that the technical work itself flagged as a rebound rather than a trend change. The rule that follows is to assign zero positive momentum weight until a volume-backed close above the 50-SMA actually prints — which is exactly what keeps this at Underweight rather than Hold, and what sets the upgrade gate at $372.80 rather than at any intermediate bounce.</p>
+<p>What would change the call: upgrade toward Hold/Overweight only on a reclaim of $357.62–$357.97 on above-average volume, followed by $367.03 and the $372.80 50-SMA, ideally with the next 10-Q showing capex converting into revenue and FCF pressure proving temporary. Move toward Sell on a decisive break of $319.42 with deteriorating FCF or a reversal of the mark-to-model equity book. Not provided and therefore not assumed: the caller's current position size, cash, mandate horizon, tax constraints, and any independent valuation or consensus estimates — sizing is expressed as percentages of a standard GOOGL sleeve so the caller can map it to their own book.</p>
+<p><strong>Price Target</strong>: not provided</p>
+<p><strong>Time Horizon</strong>: 1-3 months, event-driven into the next 10-Q</p>
+</section>
+</main>
+<footer class="credit"><a href="https://github.com/TauricResearch/TradingAgents" rel="noopener">TradingAgents</a> powered by <a class="brand" href="https://github.com/TauricResearch" rel="noopener">Tauric Research</a></footer>
+</div>
+<a class="to-top" href="#top">Top</a>
+</body>
+</html>

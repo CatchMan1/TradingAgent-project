@@ -1,0 +1,9 @@
+**Action**: Buy
+
+**Reasoning**: The research plan’s Overweight recommendation maps to Buy, but the technical report argues against chasing. I agree with that staging. The tape is weak: GOOGL closed at 140.52, at only 12.5% of the daily range, below the 50 SMA at 141.47, the 10 EMA at 144.52, the VWMA at 143.95, and the Bollinger mid at 146.23. MACD histogram at −0.809 after failing to recover from −0.239, RSI at 42.60, and down-volume of 37.6M versus up-volume of 26.8M all say supply is in control short term. That is why this is not a full-size chase. But the plan’s investment case and the long-term structure remain intact: price is 6.92% above a rising 200 SMA at 131.42, the 20>50>200 stack is still bullish, and the 02-02 demand bar at 136.50 on 62.5M shares with a close at 96% of range defines the key support reference. I will therefore buy only the first tranche now, add at support only if it holds, and require confirmation above 141.47 then 144.52 before completing the position. Stop is set at 136.40, just below the 136.50 demand low and about 1.28 ATR below entry; a heavy-volume break of 136.50 halts adds, and loss of 131.42 is the long-term thesis invalidation. Missing evidence: portfolio context, Q1 cash-flow data, and news/flow data, so sizing stays capped until confirmation.
+
+**Entry Price**: 140.52
+
+**Stop Loss**: 136.40
+
+**Position Sizing**: Initial 25% of standard GOOGL allocation at 140.52. Add 25% only at 138.29 then 136.50 if support holds; add the final 25% only after a close above 141.47 followed by a close above 144.52 with MACD histogram turning positive. Cap at 75% of standard until the Q1 cash-flow review. With entry at 140.52 and stop at 136.40, per-share risk is 4.12 points, or 1.28 ATR; size the initial tranche so risk to that stop stays within your 1% equity risk budget. If using the full 1% risk budget at this stop, implied notional is about 34% of equity, so keep the 25% tranche inside that ceiling.

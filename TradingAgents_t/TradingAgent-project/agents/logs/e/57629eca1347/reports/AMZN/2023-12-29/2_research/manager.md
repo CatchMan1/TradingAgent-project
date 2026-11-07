@@ -1,0 +1,31 @@
+**Recommendation**: Overweight
+
+**Rationale**: This debate was not really a fight over whether AMZN is a good business — both sides conceded that. It was a fight over whether the near-term tape should stop you from adding. The bull won that fight on the merits, and the bear's strongest argument turned out to be an argument about entry price, not about the value of the position.
+
+What decided it for me:
+
+1. The structural evidence is unambiguous and undisputed. AMZN at 151.94 sits above the 50 SMA at 143.05 (+6.22%) and the 200 SMA at 127.73 (+18.95%), with the stack fully ordered, the 50 SMA rising +4.15 points in ten sessions and sitting 12.0% above a rising 200 SMA. The bear never attacked this — it called it "lagging." That's a fair characterisation of a trend indicator but not a rebuttal. A lagging indicator that is this decisively ordered is still the base case until it breaks, and it hasn't.
+
+2. The fundamental inflection is real and the bear's quality-of-earnings critique, while valid, is a caveat not a thesis-killer. Yes, the 9M net income swing to +$19.8B contains a ~$14.7B nonoperating equity-mark swing — but Q3 operating income of $11.2B vs $2.5B, 9M operating income of $23.6B vs $9.5B, and 9M operating cash flow of $42.5B vs $17.6B are operating and cash lines, not mark-to-market. The bear listed the fixed-cost stack ($54.7B TTM capex, $86.4B leases, $17.7B SBC, interest expense up to $2,469M) competently, but against ~$99.5B cash and securities, positive TTM FCF of ~$16.9B, and debt reduced to $67.5B, that's a leverage/dilution watch item, not a solvency or cash-generation problem.
+
+3. The bear's tactical points are genuinely good and I weighted them — they're the reason this is Overweight rather than Buy. Below the 10 EMA (151.94 vs 152.15), MACD histogram flipping to −0.141, first break of the six-session 153.34–153.84 shelf with a close near the session low, a shallow negative RSI divergence off the 12-20 high, and price only 0.82% above VWMA at 150.70. The risk/reward arithmetic is also honest: ~3.3% to the 146.9 stop against ~2.4% to first resistance at 155.63. I'm not dismissing that.
+
+4. But here is where the bear lost the argument: its own prescription concedes the direction. It says "great company, bad entry," holds out that AMZN "may still be a long-term winner," and then tells you to wait and buy a reclaim of 152.15–153.84 on volume — i.e. buy higher, with worse asymmetry, in the same direction. That is a timing recommendation, not a bear thesis, and it is inferior to the bull's staged plan which buys the same asset at 150.05–150.70 and 147.4–147.9 (VWMA, 12-18 low, Bollinger mid, December congestion shelf) with a defined invalidation at the 143.0 confluence of 50 SMA and lower Bollinger band. The bull's approach captures the bear's caution without paying up for confirmation.
+
+5. I also gave weight to what the bear flagged as missing: no news/sentiment report, no segment revenue or AWS/advertising split in the fundamental package. That's a real data gap and it caps my conviction — it's why I'm building gradually rather than taking a full position at once, and why the confirmation triggers matter.
+
+Net: the bull's case rests on verified, durable evidence (rising primary trend, tripled operating income, positive FCF, deleveraging); the bear's case rests on leading-indicator deterioration that the bull independently factored into its accumulation levels. The bull wins on the strength of the argument; the bear wins on the discipline of the entry — and staged accumulation delivers both. Overweight, not Buy, and not Hold, because the bear's 30% Scenario C probability is a reason to size the entry in tranches, not a reason to sit flat on a franchise in a confirmed uptrend.
+
+**Strategic Actions**: Treat a standard full position in AMZN as the benchmark unit and build toward 1.25x–1.5x standard over the entry window, staged so no single tranche is more than ~1/3 of the intended position.
+
+Tranche 1 — 1/3 of target at 150.05–150.70 (the 12-18 low, VWMA 150.70, Bollinger mid 149.82). Use limit orders; do not chase above 151.50. This is the bull's aggressive zone and the bear's own "trapdoor" line, which is exactly why we size it smaller than a full starter.
+
+Tranche 2 — 1/3 at 147.4–147.9 (December congestion shelf). The technical work assigns roughly 30% probability to a retracement into this area, so plan on getting filled, don't be surprised, and don't treat it as thesis damage.
+
+Tranche 3 — 1/3 held as dry powder, deployed on whichever comes first: (a) a confirmed reclaim of 152.15–153.84 on volume above 45–50M with the MACD histogram back above zero and RSI reclaiming 62–65, or (b) a washout into the 143.0 confluence (50 SMA 143.05 / lower Bollinger 142.99) that holds on a weekly close.
+
+Risk management: hard invalidation on a weekly close below 143.0 — that breaks the medium-term structure and the bull case's own key line; if it triggers, cut back to a standard-weight core and reassess rather than averaging down. For the tranche-1 and tranche-2 entries, the bull's tactical stop below 146.9 is the right line for the trade portion only, not for the whole position — do not let a 146.9 wick exit the core holding.
+
+Do not trim into a bounce to 153.8–155.6. That is the bear's prescription and it is inconsistent with an Overweight stance on a rising primary trend. Instead, at 155.63 and again at the rising 156.66 Bollinger upper band, pause new buying and reassess whether momentum has re-accelerated or the range is simply extending.
+
+Position hygiene: no leverage or short-dated options on this position given MACD 2.782 still positive but the histogram negative — the two signals disagree, so express the view in cash equity. Flag to the desk that this run has no news/sentiment report and no AWS/advertising segment split in the fundamental package; if a headline or antitrust event or an AWS deceleration print arrives before tranche 3 is deployed, halt the remaining tranche and re-run the analysis rather than mechanically filling. SBC dilution (10,330M vs 10,242M basic shares) and the $86.4B lease stack are the two line items to monitor each quarter for deterioration in the Overweight thesis.

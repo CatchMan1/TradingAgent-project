@@ -1,0 +1,11 @@
+**Recommendation**: Overweight
+
+**Rationale**: The bull case wins on the operating evidence, but not decisively enough for a Buy. AMZN’s Q1 2026 revenue growth of +16.6% to $181.5B, operating-income growth of +29.6% to $23.9B, and margin expansion to 13.1% show a high-quality compounder still executing. TTM operating cash flow of $148.5B, $144B in cash/securities, and roughly 30x interest coverage support the idea that the capex build is aggressive but not destabilizing. The bear’s concerns are valid and keep this from Buy: TTM FCF is −$2.5B, Q1 FCF was −$18.2B, capex is $151B TTM, long-term debt rose to $122.6B, and interest expense rose +47.9%. The near-term tape also favors the bear’s caution: AMZN failed at $251.03/Bollinger $251.43, closed $245.34, remains below a falling 50 SMA at $254.03, and the rebound volume has been light. Still, the long-term structure is constructive: AMZN is above the rising 200 SMA at $233.33, the golden-cross structure is intact, MACD has crossed above signal, and RSI at 50.93 is neutral rather than broken. Net: own AMZN gradually, but demand confirmation and respect the bear’s risk levels.
+
+**Strategic Actions**:  
+- Treat a standard AMZN allocation as 100%. Do not chase at $245.34 into the $251–$254 resistance zone.  
+- If already at standard weight, hold the core position and do not exceed standard allocation until confirmation. If underweight, begin with 50–70% of the target standard allocation.  
+- Deploy 15–20% of the intended allocation if AMZN pulls back to $240–$243 and holds, or on a volume-confirmed close above $251.  
+- Add another 15–20% only on a volume-confirmed close above $254 and successful retest, or after Q2 earnings show capex converting into AWS/AI revenue with FCF deterioration stabilizing.  
+- Reserve the final 10–15% for post-Q2 confirmation that the capex cycle is producing measurable returns.  
+- Risk controls: if AMZN breaks $240, pause additions; if it breaks the rising 200 SMA near $233, trim tactical adds and reassess toward benchmark or below. A break below $233 opens the $225.5–$227 June-low area. If Q2 shows capex rising without AWS/AI revenue conversion or FCF worsening, downgrade AMZN to Hold/Underweight.

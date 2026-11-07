@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan is Overweight and directs staged accumulation rather than a full-conviction entry, which matches the technical picture: AMZN closed 249.38 with the 61.8% Fib of the 226.65→284.02 leg (~248.56) holding for a second session and the 9/24 low at 245.60 marginally above the 9/16 low of 244.30, forming a potential double bottom. The strategic trend is intact (200 SMA 240.73 rising, price +3.59% above it, 50 SMA 256.18 above the 200), while the tactical tape is bearish (price below 10 EMA 252.53, VWMA 252.96, 50 SMA 256.18; MACD histogram re-widening to −0.399; VWMA down 16 sessions), so I buy only the first tranche in the 246.50–249.50 compression zone and refuse to chase above 252.50. Risk is sized off ATR 5.97: the plan's own 1.5×ATR closing stop near 240.5 sits just under the rising 200 SMA, honoring the bear's point that a stop under 244.30 is sub-1-ATR and would be whipsawed; a daily close below 244.30 freezes new capital and below 240.73 cuts exposure. Remaining tranches stay gated on a volume-confirmed close above 256.18 then 259.49 (>45M shares, MACD histogram positive) or a 240.73–244.30 flush that reclaims 244.30 on a close. Note the information gaps: no sentiment report and no insider transaction data in this run, so neither side gets that evidence.
+
+**Entry Price**: 249.38
+
+**Stop Loss**: 240.5
+
+**Position Sizing**: Tranche 1 only: ~0.5x the standard AMZN allocation now (40% of the 1.25x Overweight target), scaled limit orders in the 246.50–249.50 band, no adds above 252.50; size so a close at the 240.5 stop costs ≤60 bp of portfolio. Tranche 2 (+0.4x) on a close >256.18 then >259.49 with volume >45M; Tranche 3 (+0.35x) on either a 240.73–244.30 flush that reclaims 244.30 on a close within 1–3 sessions or a clean 265+ hold. Gates: close <244.30 = no new capital, trim to 0.5x; close <240.73 = cut to ~0.35x; close <235.50 = exit the tactical position and re-underwrite at the next print.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

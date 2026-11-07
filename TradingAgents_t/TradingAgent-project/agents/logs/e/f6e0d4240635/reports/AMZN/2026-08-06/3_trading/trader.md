@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan is Overweight and the fundamental case (Q2-2026 operating income +43.2% y/y to $27.46B, margin +226bps to 13.69%, H1 core EPS +25.6%) is a re-rating of earning power that the bear never contested — only the timing. The technical tape agrees on direction but not on price: the 2026-07-31 gap (+15.32% on 129M shares) and the record $284.02 close leave the full stack bullish (272.26 > 10-EMA 260.87 > VWMA 254.95 > 50-SMA 247.45 > 200-SMA 236.25) with volume decaying 129M→30.7M on the pullback, which reads as profit-taking rather than distribution. But at $272.26 the reward to the $284.02 record (+4.3%) does not pay for the ATR-expanded risk (ATR $9.59, 3.52% of price, +39% in six sessions; Bollinger width 27.3% vs 12.9% a week ago) down to $262.01 / $254.95 / $247.45, and the breakout closed back inside the old $274.99–$278.56 ceiling with the MACD histogram cresting (4.62→4.36). So: constructive, buy the structure, but only at the levels where the risk is defined — not at spot.
+
+**Entry Price**: 258.0
+
+**Stop Loss**: 245.0
+
+**Position Sizing**: Accumulate 0.40 standard unit in staged thirds into the $247–$262 confluence (50-SMA 247.45, Bollinger mid 250.14, VWMA 254.95, gap top 262.01, 1×ATR 262.67), first bid ~$258; hard stop on a close below $245. Hold that tranche at a quarter-to-half of normal unit size given 3.52% ATR. Second tranche 0.40 unit only on a close above $278.50 on >60M shares, plus 0.20 unit on a subsequent close above $284.02 that holds two sessions; cap total at 1.0 unit until capex/revenue stops rising, LTM FCF (−$11.6B) stops deteriorating, and one clean GAAP quarter is printed after the $50.5B Q2 markup lap. Do not buy the $262–$278.50 band at $272.26. If already at standard weight, hold and do not trim into a −4% pullback on 76%-decayed volume; trim only the excess above 1.0 unit. Structural invalidation of the whole position: close below the 200-SMA at $236.25, or a full gap fill to $239.82 with no reclaim in five sessions.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

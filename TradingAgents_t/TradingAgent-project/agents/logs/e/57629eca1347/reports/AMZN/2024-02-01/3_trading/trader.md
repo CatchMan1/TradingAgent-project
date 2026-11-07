@@ -1,0 +1,21 @@
+**Action**: Buy
+
+**Reasoning**
+
+The plan's Overweight recommendation maps to a Buy, and the technical structure supports executing it — but on the plan's terms, not at the current print. Three things drive the decision:
+
+1. **Trend is unambiguously up and volume-confirmed.** Price ($159.28) sits above a rising 10 EMA (157.22) > 50 SMA (151.05) > 200 SMA (133.61) stack, with the 50 SMA ~13% above the 200 SMA and both sloping higher. Price is +1.83% above a steeply rising VWMA (156.42) on a 76.54M-share up day — that is genuine accumulation, not a thin drift. There is no trend evidence in this dataset that justifies standing aside.
+
+2. **Momentum and location argue for staging, exactly as the plan says.** MACD histogram is barely positive (+0.166) with a lower high against price's higher high into Jan 29 — a deceleration warning at resistance. RSI at 60.36 has reset from 70.41, which leaves room but does not confirm a new leg. Price at 159.28 is only $2.01 below the Jan 29 swing high (161.29) and $3.82 below the upper band (163.10). Buying full size here means paying up into a resistance band with thinning momentum, which is the single weakest risk/reward available. The plan explicitly forbids chasing, and the technical report agrees.
+
+3. **The bear's fundamental points are real but sizing-level, not thesis-level.** Capex-holiday FCF support, 87% Q4 FCF concentration, a 29.8% cash tax rate, $24B SBC with no buyback, and a sub-2% FCF yield all argue against maximum conviction and for staged entry — not against exposure. The margin and balance-sheet inflection (operating income $36.9B, FCF +$32.2B, OCF at 2.79x net income, contract liabilities +28%) is cash-backed and is the dominant consideration. The absence of AWS segment detail in the dataset is a genuine data gap that caps how far I would lean into the moat argument, but it does not reverse direction.
+
+Net: own AMZN, build it in tranches, and let the price structure set the entry rather than paying the current extended print.
+
+**Entry Price**: $157.00 — a single limit at the 10 EMA ($157.22) / VWMA ($156.42) confluence, i.e., the first tranche (~40% of target) fills on a pullback that holds the level with expanding volume. If AMZN instead clears $161.29 on >50M shares with a re-expanding MACD histogram, the second tranche (~30%) executes on that breakout and the pullback limit is simply left unfilled — the plan is designed to work either way, but I will not enter at $159.28.
+
+**Stop Loss**: $150.68 — $6.32 (2.0x ATR of $3.161) below the $157.00 entry, sitting just under the 50 SMA at $151.05. This aligns two independent invalidation anchors: the ATR-based risk budget and the plan's stated medium-term invalidation line. Risk per share is $6.32, or 4.03% of entry.
+
+**Position Sizing**: Target 1.25–1.5x a standard single-name allocation, entered in three tranches — ~40% at $157.00 now, ~30% on a confirmed break above $161.29, ~30% on a stabilization in the $154.34–$151.05 zone (Bollinger middle / 50 SMA confluence) if a higher low forms and the 50 SMA holds. Size so the initial tranche's full stop-out at $150.68 costs no more than roughly 0.4–0.5% of portfolio value; at $6.32/share of risk that implies the initial tranche be about 6–8% of portfolio value, with the full target position capped in proportion. Because I do not know the caller's book, treat these as multipliers of your own standard allocation and scale accordingly.
+
+**Caveats on this execution**: (a) The $159.28 close is a pre-catalyst print — an after-hours gap can jump the $157.00 limit and invalidate the $150.68 stop in a single session; a resting stop-loss will not protect through a gap, so consider defining risk with options or halving tranche size ahead of a known binary event. (b) A closing break below $151.05 accompanied by MACD below signal and RSI under 45 is the exit trigger regardless of where the stop sits — cut back to market-weight or below and reassess rather than waiting for $150.68 to trade. (c) If the pullback never comes and $161.29 never breaks on volume, the correct outcome is no position; do not lower the entry to force a fill. (d) No AWS segment detail exists in this dataset — segment margins and backlog must be verified from filings before adding to the position beyond the stated target.

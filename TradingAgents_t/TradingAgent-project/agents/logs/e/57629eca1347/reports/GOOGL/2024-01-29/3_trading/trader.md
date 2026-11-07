@@ -1,0 +1,9 @@
+**Action**: Buy
+
+**Reasoning**: The plan’s Overweight recommendation maps to Buy for GOOGL, but the technicals require staged accumulation rather than chasing. GOOGL closed at $153.51, essentially on the $153.83 upper Bollinger Band, with RSI 78.25 and MFI 0.83. The trend is still intact and volume-confirmed: price is above the 10-EMA $148.22, 50-SMA $138.74, and 200-SMA $128.71; MACD is 3.856 versus signal 2.864 with an expanding histogram; and price is above the VWMA $145.94. Q4/FY2023 was still unreported as of 2024-01-29, so gap risk argues for capping exposure until the print. A close below $148.22 with MACD histogram contraction should pause new adds; a loss of $138.74 would break the medium-term structure. News/sentiment/regulatory data is absent, so the overweight should stay modest.
+
+**Entry Price**: $148.22 initial tranche limit at the 10-EMA. Additional staged limits: $145.94 at the VWMA and $143.44 at the 20-SMA, or a confirmed daily close above $153.83 on above-average volume.
+
+**Stop Loss**: $142.78 on the initial tranche, equal to about 2× ATR below $148.22 and just below the $143.44 20-SMA. Full-position structural stop: $138.74 at the 50-SMA.
+
+**Position Sizing**: Build toward 1.1x standard allocation initially, with a maximum of 1.2x only after Q4 confirms. Deploy incremental money in thirds: 1/3 at $148.22, 1/3 at $145.94, and 1/3 at $143.44 or on a confirmed close above $153.83. Cap total exposure at roughly standard allocation until the Q4 print clears. Existing longs should hold the core and trail at $148.22, with wider trail references at $145.94 and $143.44. If GOOGL never pulls back, accept underfill rather than chase at $153.51.

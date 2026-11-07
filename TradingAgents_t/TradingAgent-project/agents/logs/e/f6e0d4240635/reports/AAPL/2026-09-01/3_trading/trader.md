@@ -1,0 +1,9 @@
+**Action**: Buy
+
+**Reasoning**: The plan is Overweight, and the technical tape supports owning AAPL, but not chasing it at 325.13. Price is $2.74 above the upper Bollinger band (322.39) after a +7.6% move in 13 sessions, so spot risk/reward is poor: upside to the first gap target at 333.43 is only +2.6%, while downside to the 311–313 confluence is −4.3%. The bear’s entry critique is therefore adopted, not the bear’s direction. The medium/long trend remains bullish — price above the 10 EMA (315.79), 50 SMA (312.94), and rising 200 SMA (283.07), with MACD histogram positive and expanding for five sessions, RSI at 61.06, and VWMA turning up to 312.49. Fundamentals are also conceded as strong. So the correct expression is a staged Buy into the 316.00–311.30 pullback zone and only add on a confirmed close above 327.30 with volume ≥42M. Do not add in the 322–327 chop zone. A close below 322.39 within 1–3 sessions would flag a failed breakout; a closing break below 311.30 means cut back to the initial tranche; below 300.00 exit entirely.
+
+**Entry Price**: 316.00 for Tranche 1. Tranche 2 is conditional on a close above 327.30 with volume ≥42M.
+
+**Stop Loss**: 305.00, closing basis, for Tranche 1. Size for gap slippage toward 295.00 rather than assuming the stop holds.
+
+**Position Sizing**: Build toward 1.25x a standard AAPL allocation, not a full-conviction position. Tranche 1 = 40% of target weight at 316.00; Tranche 2 = 30% only on the 327.30 volume-confirmed close; retain 30% until either a decisive close above 344.57 or FQ4 confirmation that gross margin holds ≥49%. For Tranche 1, size so a 316.00-to-305.00 stop risks no more than 1% of account equity — shares ≈ 0.01 × equity / 11.00 — and stress-test the same share count against a gap to 295.00 (≈$21/share risk). Dollar position size cannot be stated because portfolio equity and standard allocation were not provided.

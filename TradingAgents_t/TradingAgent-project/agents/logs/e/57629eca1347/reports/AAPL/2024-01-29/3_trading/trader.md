@@ -1,0 +1,11 @@
+**Action**: Hold
+
+**Reasoning**: The evidence is balanced at the decision point, not decisive in either direction: AAPL closed 191.73 on 2024-01-29, only +0.42% above the rising 50-SMA (190.92) and +0.17% above the flattened 10-EMA (191.41) — a cushion smaller than one-third of ATR (3.13) — while the primary trend (close +5.30% above the rising 200-SMA at 182.08, 50>200 spread +4.86%, MACD 0.944 still above signal 0.180, price above VWMA 189.13) remains intact. Neither side of the research plan produced a confirmed trigger: no close above 193.9 on ≥56M volume (01-29 volume was 47.15M vs the ~56.6M 19-session average) and no close below 188.11 on expanding volume, so the tape's own base case is consolidation between ~189.5 and 195.2 with 191–191.4 as the pivot. With the FY24 Q1 earnings catalyst unobservable in this dataset, poor short-term asymmetry (+3.3% to the 198.11 December high vs −5.0% to the 200-SMA) and a ~30x multiple offering no margin of safety, buying at 191.73 is paying up into an unmeasurable binary event; shorting a fortress-balance-sheet compounder in a confirmed golden-cross uptrend is worse. Hold at benchmark weight and let the levels decide.
+
+**Entry Price**: 193.9
+
+**Stop Loss**: 185.5
+
+**Position Sizing**: Maintain the core at standard/market weight (~100% of standard allocation); deploy no new money at 191.73. Keep at most a half-position of dry powder reserved for confirmation. Upside add (up to +25% of standard allocation, in two tranches) only on a daily close above 193.9 with volume ≥56M and an expanding MACD histogram; that add carries the structural stop at 185.5 (~2×ATR below the ~191.7 area, overlapping the 185.6–186.1 gap zone), sized so a 2-ATR adverse move costs ≤1% of capital. For the core, trim ~25–33% only on two consecutive closes below both 190.9 (50-SMA) and 189.1 (VWMA) with MACD crossing below signal and RSI <45. A tactical short is not initiated here; it would require a close below 188.11 on volume >56M, with targets 185.6–186.1 then 182.1.
+
+FINAL TRANSACTION PROPOSAL: **HOLD**

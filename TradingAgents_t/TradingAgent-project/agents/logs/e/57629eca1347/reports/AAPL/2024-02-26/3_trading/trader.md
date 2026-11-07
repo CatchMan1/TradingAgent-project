@@ -1,0 +1,9 @@
+**Action**: Sell
+
+**Reasoning**: The plan is explicitly Underweight, which maps to Sell. This is a trim/underweight call, not an outright exit: AAPL’s balance sheet, FCF quality, net cash, and still-rising 200 SMA argue against going fully negative. But the tape does not support adding. At $181.16, AAPL is below the 10 EMA ($183.59), VWMA ($184.93), 20 SMA ($185.74), 50 SMA ($188.70), and 200 SMA ($183.78). The 2024-02-22 reclaim of the 200 SMA failed, and the lower-high chain remains intact. Momentum is weak, not washed out: RSI 37.44 is not oversold, MACD remains below signal with both negative, and the histogram re-widened to −0.4609 on 02-26. The positive divergence is deceleration, not a confirmed turn. Risk/reward from $181.16 is poor because overhead supply starts at $183.59 and extends through $184.93, while the first real support shelf is $179.25–$181.60. Sell into strength, keep a residual core, and require a volume-confirmed close above $184.93 before turning constructive.
+
+**Entry Price**: $183.59 — trim/sell into strength at the 10 EMA. Do not add in the $179.25–$181.60 support zone; if no bounce occurs, only modest trims at $181.16.
+
+**Stop Loss**: $185.80 for any tactical short/fade; a daily close above $184.93 also invalidates the bearish tactical stance. For the retained core, the hard reduce trigger is a daily close below $179.25 on expanding volume.
+
+**Position Sizing**: Reduce AAPL to roughly 50–60% of a standard allocation; no new money. Cap any tactical short/fade sleeve at 10–15% of a standard allocation and size it so a loss to $185.80 is no more than ~1% of portfolio value. On a daily close below $179.25 on above-average volume, cut the residual core to ~25–30% of a standard allocation.

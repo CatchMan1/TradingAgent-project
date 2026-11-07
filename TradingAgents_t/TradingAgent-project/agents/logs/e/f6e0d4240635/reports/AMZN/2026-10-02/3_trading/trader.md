@@ -1,0 +1,9 @@
+**Action**: Sell
+
+**Reasoning**: The plan’s Underweight recommendation maps to Sell, and the technical structure supports reducing exposure rather than adding. AMZN closed at **$251.52**, essentially pinned to the 20-day mid-band at **$251.64**, below the flat 50-day SMA at **$256.54**. The 10-02 reclaim of the 10-EMA at **$250.00** and VWMA at **$250.65** was a doji on **33.43M** shares versus a ~**35.2M** 20-day average. MACD remains bearish at **-2.1953** below its **-2.1316** signal and below zero; RSI is **48.56**, below 50; Bollinger bandwidth is still compressed at **6.30%**, so the range has not resolved. The fundamental concerns in the plan — negative FCF, releveraging, unverified AWS/capex demand, and the unclear Nvidia chip offload terms — plus late-October earnings gap risk after the last **+15.32%** print argue for de-risking. A clean re-risk signal requires a daily close above **$256.54** with volume above **45M**, MACD histogram positive, and RSI above 50. Until then, the reward-to-risk to the first resistance near **$259.57** is not compelling enough to hold full exposure. This is a trim/reduce instruction, not a chase short into the middle of the coil.
+
+**Entry Price**: $251.52
+
+**Stop Loss**: $256.54
+
+**Position Sizing**: Cap at **0.65x** standard AMZN allocation. If currently at or above full weight, trim to **0.65x**; if already below that level, hold the residual and do not add. On a daily close below **$244.30**, cut further to **0.45x**. Trim an additional **0.10x** standard allocation before late-October earnings. If flat, do not initiate an outright short at $251.52; the Sell is an exposure-reduction instruction.

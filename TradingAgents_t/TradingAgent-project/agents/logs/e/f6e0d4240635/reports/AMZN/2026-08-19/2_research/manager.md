@@ -1,0 +1,21 @@
+**Recommendation**: Underweight
+
+**Rationale**: The bear case wins on the issues that determine position sizing, even though the bull is right about AMZN’s operating momentum. AMZN’s Q2 revenue growth of +19.6%, operating income growth of +43.2%, and +230bp operating-margin expansion are genuine. But the bull’s Overweight call requires accepting four things that the evidence does not support cleanly:
+
+1. **Cash flow and valuation**: AMZN’s TTM FCF is **–$11.6B**, H1 FCF is **–$27.0B**, and the bull’s **$161.4B** OCF is flattered by unusually low cash taxes—**$4.0B H1 cash tax on $120.7B pretax income**. Normalizing taxes leaves OCF closer to **$141–146B**, still below **$173B capex**. On the bull’s own scrubbed core earnings, AMZN trades at roughly **34–36x annualized core earnings**, not the cheap headline multiple. Negative FCF plus a mid-30s core multiple plus no buyback/dividend leaves little margin of safety.
+
+2. **Capex/depreciation lag**: The bear’s most decisive point is that Q2 D&A is only **37% of Q2 capex**, and TTM D&A is only **43% of TTM capex**. Depreciation lags capex by construction. As the **$173B** capex run-rate depreciates, D&A converges toward capex and creates a **1.3–2.0 point annual margin headwind**, potentially reaching the bull’s own tripwire within roughly **5–6 quarters**. The bull’s “Q2 already absorbed it” argument is not sufficient because Q2 D&A reflects prior-year assets, not the current capex surge.
+
+3. **Balance sheet and earnings quality**: The bull’s **+$29.7B net cash** is a selective definition. Lease-adjusted, AMZN carries roughly **–$66.7B net debt**, and net cash fell **$21.8B in six months** while debt ex-finance leases rose **93%**. Leverage near **1.4x EBITDA** is manageable, so this is not a solvency call. But the **$122.3B non-marketable equity book**, up **655% in six months**, drove **$62.8B of H1 pre-tax upward adjustments**. That is a Level-3/vendor-financing risk that can hit earnings, book value, and sentiment together. The bear is right that this is not merely “strategic optionality.”
+
+4. **Technical structure**: The **08-19** reversal is real but unconfirmed. AMZN closed below the **$271.91 VWMA**, below the **08-11** close, and inside a pattern of lower highs—**$287.20 → $280.14 → $266.40**. Volume on the bounce was only about **71% of normal**, the MACD bear cross remains in force, and an unfilled gap from roughly **$231.06 to $265.00** sits beneath price. The bull’s higher-low structure and rising 200-day argue against a Sell, but not for adding exposure.
+
+I am not calling Sell because AMZN is not distressed, operating income is accelerating, leverage is manageable, and the medium-term trend has not structurally failed. But the bull’s case needs AI monetization, benign depreciation timing, and private-AI marks to hold. The bear’s case needs one of those to crack. That asymmetry supports **Underweight**, not Overweight.
+
+**Strategic Actions**:
+- **Reduce AMZN to 50–60% of a standard full single-name allocation.** If a standard full position is 5% of portfolio, target **2.5–3.0%**; trim **40–50%** of current full-weight exposure. Do not initiate a new long here.
+- **Sell/trim into strength at $271.58–$278.09**, the VWMA/supply shelf where prior rallies stalled. Avoid chasing the 08-19 bounce.
+- **For existing longs**: use a daily close below **$257.73 on >40M shares** as the first warning to reduce further; a close below **$249.00** confirms structural failure toward **$238.22**.
+- **Tactical short only for experienced traders**: no short at $265.84. On a confirmed daily close below **$257.73 on >40M shares**, open a small short sized to **≤0.5% portfolio risk**, stop **$266.50**, targets **$249.00** then **$238.22**.
+- **Re-risk/cover triggers**: a daily close above **$272.65 on ≥48M shares** is hard technical invalidation; or Q3 evidence of capex flat/down, operating margin **≥13.7%** with D&A/revenue **≥10.5%**, deferred revenue growing, and non-marketable equity flat/positive. If triggered, move toward Hold before considering adds.
+- **Information gap**: no Form 4/insider data is in the evidence set. Keep AMZN below benchmark weight and do not restore full exposure until that gap is resolved or the Q3 fundamental checks above are met.

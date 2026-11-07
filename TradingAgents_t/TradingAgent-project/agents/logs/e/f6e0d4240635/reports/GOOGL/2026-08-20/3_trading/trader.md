@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The research plan's Underweight case is backed by both sides of the evidence: GOOGL closed at $340.67 on 2026-08-20 below the 10 EMA ($346.03), 50 SMA ($352.00), VWMA ($356.17) and Bollinger middle ($347.14), with MACD at -2.33 vs signal -1.55 and the histogram still expanding negative at -0.78, RSI 44 with no oversold cushion or bullish divergence, and a sequence of lower highs ($408.61 → $384.48). The fundamental inflection — Q2 FCF -$5.86B, H1 FCF -82% YoY, capex +103% YoY, buybacks at zero replaced by $30.5B equity plus $19.1B convertible preferred issuance and debt up to $101.1B — is a cash-flow/capital-allocation deterioration, so the strong operating line (Q2 revenue +24.2%) argues for trimming rather than adding, which is exactly a Sell/Underweight. Critically, the distance to the 200 SMA ($332.72) is only 2.4%, less than one ATR of $9.62, so a fresh aggressive short has ~1:1 reward-to-risk; the correct expression is a reduction of long exposure here plus a small tactical hedge, not a full-size short. I am therefore acting on the plan's trim instruction rather than chasing a breakdown that has not yet triggered below $338.57.
+
+**Entry Price**: 340.67
+
+**Stop Loss**: 350.0
+
+**Position Sizing**: Reduce GOOGL to 50–75% of the standard full target weight, trimming into strength rather than adding in the $338–$342 zone; further trim 10–15% at $346–$352 and 10–15% more if $352–$358 is reached without a high-volume close above the shelf. Any tactical short/hedge overlay sized small at 0.25–0.50x standard allocation (stop $350.00 ≈ 0.97 ATR above spot, risk ~1% of portfolio per 0.1x unit), with sub-targets $332.72 / $330.20 / $318.31. Do not re-add until a daily close above $346.03 on ≥35M shares (or two consecutive closes above it) preferably with a close above $352.00 and MACD histogram turning positive; a weekly close below $332.72 escalates to full exit. Size down for the early-September dividend/ex-div and any scheduled catalyst given the 4/30 +9.9% and 7/23 -7.1% gap history.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan is Overweight on fundamentals that the tape does not contradict at the structural level: $354.30 sits 7.65% above a rising 200-SMA ($329.11), MACD is positive, and price is above the rising VWMA ($345.11), while Q2 revenue +24.2% with gross margin expanding to 62.0% shows the AI capex ramp is not destroying unit economics. The bear's case is an entry-timing and FCF-discipline warning, not a thesis breaker, so I stage in rather than buy at market — the August 5 upper-band rejection at $384.48 on 46.9M shares, the lost 50-SMA reclaim ($354.30 vs $356.51), and the rolling MACD histogram (4.451 to 2.986) mean the mid-range at $354 is a bad price. I therefore place the first tranche as a limit into the $345.11–$348.76 support shelf (Bollinger middle / VWMA) with the hard structural stop at the 200-SMA, which is the level that would actually invalidate the long-term bull regime — not the noise-level $341.44 swing trigger. Confirmation tranches add only on a close above $362.43 on >35M volume, and no short is initiated given counter-trend risk into a rising 200-SMA with 3.63% ATR.
+
+**Entry Price**: 348.75
+
+**Stop Loss**: 329.11
+
+**Position Sizing**: Build toward a maximum of 1.2–1.25x standard weight in three tranches. Tranche 1 = one-third (~7–8% of portfolio notional for a standard-weight book) at the 348.75 limit, filled only if price holds above 345.11 on a closing basis. Tranche 2 = one-third on a daily close above 362.43 with volume >35M (halve if volume <30M). Tranche 3 = one-third only on a close above 384.48 or hard FCF inflection; leave undeployed otherwise. With entry 348.75 and the 329.11 stop, per-share risk is $19.64 (~5.6%); size the full position so a complete stop-out costs no more than 1.0–1.25% of portfolio value (roughly ~20–22% notional for a 1.25% risk budget on a standard book). Intermediate de-risking: cut to standard weight if a close below 348.76 is not recovered within two sessions; cut to half on a break of 345.11 on rising volume; stay at or below standard weight until FCF inflects.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

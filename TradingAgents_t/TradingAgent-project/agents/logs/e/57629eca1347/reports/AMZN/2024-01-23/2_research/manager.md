@@ -1,0 +1,37 @@
+**Recommendation**: Overweight
+
+**Rationale**: Short version: the bull won the medium-term argument and the bear won the entry-timing argument, and the bull's own plan already concedes the second one — so the right output is constructive but staged, not a full-size chase.
+
+Where the bull is clearly stronger. The trend filters are not in dispute on either side: AMZN at 156.02 sits above the 10-EMA (153.69), 50-SMA (148.95) and 200-SMA (131.61), all rising, with the 50-SMA 13.2% above the 200-SMA. Neither analyst argues the chart is broken. The fundamental inflection is likewise conceded rather than contested: revenue +12.6% with total costs +5.9%, operating income $11.2B (+343%), operating margin 7.82% (+583 bp), 9M operating income $23.6B (+149%), TTM operating cash flow $71.7B (+80.6%), and TTM FCF swinging from –$26.3B to +$16.9B. Add $99.5B of cash and securities against $67.1B of debt (net cash +$32.4B) and the downside case is not solvency — the bear says so explicitly. The bear also declined to short, which is telling: his own conclusion is "don't allocate new money at 156.02," not "reduce a confirmed uptrend with net cash and doubling operating income." Directionally, that is not a bear thesis; it is a timing note.
+
+Where the bear is clearly right, and it matters for sizing. The breakout is a close-only event: the 2024-01-23 intraday high of 156.21 is still below the 2024-01-11 high of 157.17. Volume of 37.99M is ~8% under the 20-session average and the second-lowest of the last six sessions — a new closing high on contracting volume. The momentum divergence is real: MACD 1.8647 now versus 3.1186 at a higher price in late December, RSI 61.5 versus 64.1. The upper Bollinger band at 158.48 is only 1.58% above spot against a 2.82% gap down to VWMA (151.62) and 4.53% to the 50-SMA (148.95), so the near-term risk/reward at spot is genuinely poor. And the fundamental slate carries real caveats the bull soft-pedaled: the latest filed data is Q3 2023, so the 7.8% margin has to survive the holiday quarter with no evidence in hand; roughly $1.2B of Q3 net income was an equity mark-to-market gain (core EPS ~$0.85, ~10% below the $0.94 headline); a 17.0% effective tax rate carried a –$4,412M deferred benefit; and the FCF swing leans on capex falling 17.1% to 9.9% of revenue, making 2024 capex guidance the single highest-leverage variable — a one-for-one hit to FCF if AI/cloud spending re-accelerates. The balance sheet is strong but not free: current ratio 0.98x, $284B of contractual obligations (~58% of assets), $88.8B of operating lease commitments with the discount rate up from 2.8% to 3.2%, SBC at 4.4% of revenue with $23.3B unrecognized, diluted count +2.5% YoY, and zero buybacks or dividend in the data. The bull's "un-priced optionality" on a future repurchase is not evidence — that is speculation, and I am not paying for it.
+
+What decided it. The bear's objections are about the quality of one entry price, event risk into the 10-K, and the durability of margins that the dataset cannot fully verify at the segment level — none of them reverse the direction of trend, cash generation, or operating leverage. The bull's trend and margin/FCF evidence is filed data; the bear's case is a set of legitimate tactical and disclosure caveats. So I commit to the constructive side, but I do not pay up: I am expressing Overweight through staged accumulation at the levels the bull himself identified, not by taking a full position at 156.02. The bear wins the timing, the bull wins the thesis, and the plan below prices both.
+
+Explicit gaps: this dataset contains no segment-level AWS versus retail P&L, no Q4/FY23 10-K, and no buyback authorization. I am not assuming any of them. If the 10-K shows operating margin materially below ~7.8% or capex guidance that guts the FCF inflection, the Overweight comes back to Hold fast.
+
+**Strategic Actions**: Instrument: AMZN. Standard allocation assumed to be a full single-name position; the actions below are expressed as fractions of that standard allocation.
+
+1) Target exposure: build toward roughly 60–75% of a standard allocation, not a full one, until the Q4/FY23 10-K is in hand. The remaining 25–40% is held back specifically for post-print confirmation. Do not short AMZN and do not use leverage to chase.
+
+2) Tranche structure (split the 60–75% into three roughly equal slices):
+- Tranche 1 (now): 1/4 of the target exposure at market only if currently at or near zero. This is a starter position to establish the view; it acknowledges the unconfirmed breakout. If a position already exists at or above a standard allocation, skip to step 5 (hold and trail).
+- Tranche 2: limit orders into 152.00–153.70 (10-EMA/VWMA zone). This is the preferred entry and the bull's own level — it converts the bear's "poor risk/reward at 156.02" objection into an acceptable one.
+- Tranche 3: only on a daily close above 157.17 with volume of at least 45–50M shares. No add on a close above 157.17 on light volume — that is exactly the unconfirmed-breakout trap the bear identified.
+
+3) Stops and risk budget:
+- Trading tranche stop: 151.50 (just under VWMA 151.62, ~1.5x ATR of 2.946). Honor it mechanically.
+- Core/swing stop: 148.95 (50-SMA, ~2.5x ATR). A close below this is medium-term trend damage, not noise.
+- Cap loss on the full position at roughly 2.5x ATR (~7.4 points) from the weighted average cost.
+- Below 151.62 the next reference is 149.91; below 145.74/144.05 the multi-month structure is broken — if that prints, cut to a minimum residual position and revisit the thesis from scratch.
+
+4) Partial profit discipline: take partials (roughly 20–25% of the position) into 157.20–158.50, the zone capped by the upper Bollinger band at 158.48. Re-add only on the volume-confirmed close described in Tranche 3.
+
+5) Management of an existing position: maintain the core, trail a stop under the 10-EMA/VWMA (151.62 area) for the trading portion while using 148.95 for the core, and take the partials in step 4. Do not add at spot.
+
+6) Event-risk protocol into the 10-K: reduce gross exposure by roughly one-third of the target allocation before the print if the position has been built out via Tranches 1–3. Variables that must be checked in the filing, and the response to each:
+- Q4 operating margin at or near 7.82% and capex guidance that does not step up sharply -> complete the position toward a full standard allocation (the Overweight thesis is confirmed).
+- Operating margin materially below ~7.8% OR capex guidance that compresses FCF -> downgrade to Hold, stop adding, and keep only the core tranche.
+- Evidence of AWS margin deterioration or retail margin reliant on non-repeating cost cuts -> downgrade to Hold/Underweight; the moat claim was never verifiable in this dataset, so a negative print on it is disqualifying.
+
+7) What would change the call: a volume-confirmed break above 157.17 (upgrade path, complete sizing) versus a close below 148.95 (trend damage, cut to core) versus a 10-K that breaks the margin/FCF story (downgrade to Hold or below). Note explicitly that the dataset contains no segment-level AWS P&L, no Q4/FY23 filing, and no buyback authorization — none of those are assumed anywhere in this plan.

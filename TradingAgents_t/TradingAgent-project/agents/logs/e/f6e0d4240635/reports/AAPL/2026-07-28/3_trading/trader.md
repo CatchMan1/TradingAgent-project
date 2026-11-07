@@ -1,0 +1,22 @@
+**Action**: Sell
+
+**Reasoning**
+
+The research plan is an Underweight, and I am executing it as a Sell — specifically a trim into strength, not a full exit. The decision rests on the gap between the *trend* and the *price*, and on the event window the caller is standing in.
+
+What the technical report proves and what it does not:
+- The uptrend is real and unbroken: close 340.08 > 10 EMA 329.21 > VWMA 326.48 > 50 SMA 307.83 > 200 SMA 276.79, with rising higher lows (245.51 → 245.70 → 273.75 → 319.35), a fresh window-high close, and no confirmed RSI or MACD divergence. Nothing in the tape has been falsified — which is why this is a trim, not an exit, and why the residual core is retained.
+- But the report's own arithmetic makes the case for selling rather than holding at size: at 340.08 the reward to the 346.71 upper band is ~2.0% against ~6.1% of structural risk to the 319.35 swing low, and the report itself scores that risk/reward at roughly 0.3:1 and explicitly says "do not initiate full size at market here." A setup the technical work refuses to buy is a setup to lighten.
+- The extension is quantifiable: +3.3% above the 10 EMA, +10.5% above the 50 SMA, +22.9% above the 200 SMA, a 10 EMA–50 SMA spread of 6.9% (a momentum thrust, not a grind), MACD line 9.454 at the top of the 8-month window, and %B at 0.876 in a 16.7%-wide band. That is late-stage entry geometry.
+- Two of the report's own bearish flip conditions are partially live: MACD histogram at 1.310 versus the 3.337 peak while price is at a record high, RSI 68.90 versus 71.65 on that record close, and a breakout on thinning participation (5-day average ~45.7M versus 20-day ~50.0M) with price 4.2% above VWMA 326.48. The breakout quality is medium at best.
+- The fundamental side of the plan (revenue +16.1% H1, EPS +19.8%, gross margin 49.27% in Q2, FCF +63.5%) is why a core is kept, but the plan is correct that the additional risk markers — a tax rate stepping to 17.46%, buybacks cut 25.3%, and a $12,777M intangible build with ~$13B of future amortization aimed at the same gross-margin line the thesis depends on — are unquantifiable from this dataset. There are no valuation multiples, no Q3 segment or mix data, and no options chain in the materials, so I cannot price the event or claim the multiple is earned.
+
+Net: reduce exposure into the 338–343 liquidity pocket ahead of the July 28–29 earnings/Fed window, keep a core because the trend structure and fundamental acceleration are intact, and re-risk only on confirmation at 329–332 or on a high-volume close through 342.89 with RSI above 71.65.
+
+Because portfolio context was not provided, I am not assuming a flat book: the sizing below is expressed relative to the caller's own existing AAPL position and the firm's standard mega-cap weight.
+
+**Entry Price**: 340.08 (work the trim with limit orders into the 338.00–343.00 zone; 342.89 is the natural liquidity pocket). If the position is already below ~70% of standard allocation, do a token trim near 340.08 only.
+
+**Stop Loss**: 346.71 — the verified Bollinger upper band, and the level at which the reduction thesis is wrong and the core should be restored rather than cut. Operationally, treat a decisive close above 342.89 accompanied by RSI pushing through 71.65 on volume expanding back above ~50M as the earlier warning that the trim is mistimed. (For the residual core, the downside ladder is close-basis: below 329.21 trim another 20% of remaining exposure; below 319.35 reduce to 40% of standard allocation; below 307.83 cut to a ~20% stub, with 276.79 the next strategic reference.)
+
+**Position Sizing**: Sell 25–35% of the existing AAPL position now, taking post-trade exposure to 60–70% of standard allocation (Underweight versus benchmark). Token ~10% trim only if already underweight. No new capital, no averaging up, no leverage, and no option overlays bought into the event — no options-chain data was supplied, so any hedge must be priced independently and sized for a volatility expansion around a Fed decision plus earnings. Do not carry more than 70% of standard allocation into the July 28–29 print. Re-accumulation is confirmation-based only: back to ~85% of standard on a test of 329–332 (10 EMA 329.21 / 1× ATR 332.00) that holds and closes back above 329.21 on improving volume; back to full standard on a high-volume close above 342.89 with RSI >71.65; above standard only after Q3 evidence of gross margin ≥48.5%, a credible explanation of the $12.8B intangible build and its amortization path, and re-authorized buyback pace.

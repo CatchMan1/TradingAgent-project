@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The research plan lands on Underweight because of price versus return on capital, not a broken franchise: Q2 FCF of −$6.9B, H1 FCF $4.3B versus $24.3B, capex at 35% of revenue and still rising sequentially, a $9.11 Q2 EPS print with ~$6.51/share of mark-to-market gains, and a buyback bid that went to zero while share count rose 1.2%. At $354.97 that is ~33x annualized core EPS for a business with negative quarterly free cash flow — and the technical setup offers no compensation for paying up: GOOGL is $0.23 above its upper Bollinger band (354.735) after a +6.73% seven-session run, still −11.84% below the 5/13 high, with a falling 50-day (366.06 → 345.53), a 50/200 spread compressed from 42.50 to 7.84, and dense supply at 356.13, 358.58–359.44, 362.97 and 367.93–373.65 against a 8.41 ATR. So the trade is a reduction rather than an exit or a short: the 200-day undercut-and-reclaim at 337.7, the higher low above the 7/23 crash low, the MACD crossing −3.905 (9/10) to +0.637 (9/21), the six sessions of expanding histogram and RSI at 58.80 without divergence are real repair signals, and shorting into that configuration with a rising 200-day is a poor setup. Work the trim into strength at 359.00 (one third of the reduction), then 362.50, and if price instead breaks 349.00 before reaching 358.50, reduce the remaining intended amount on that break — the trim is a risk decision, not a price-target trade. Retained core: stop on a close below 345.50 (50-day 345.53 / 10 EMA 345.69), escalate to full exit below 342.20 (VWMA 342.23 / mid-band 342.29), and close the residual unconditionally below the 200-day at 337.70. Do not add at 354.97; no long is authorized until either a retest of 337–342 with FCF stabilization or a daily close above 359.44 on volume materially above 30M with next-session follow-through.
+
+**Entry Price**: 359.0
+
+**Stop Loss**: 345.5
+
+**Position Sizing**: Trim ~40-50% of a full GOOGL position: from 100 standard units down to ~50-60 units, in two tranches (one-third of the reduction at 359.0, one-third at 362.5); move the residual stop to 345.5.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

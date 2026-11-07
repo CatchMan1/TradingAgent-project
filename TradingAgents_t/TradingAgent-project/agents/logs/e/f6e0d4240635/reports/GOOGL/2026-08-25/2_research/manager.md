@@ -1,0 +1,16 @@
+**Recommendation**: Underweight
+
+**Rationale**: The bear case is stronger on the evidence presented, but not strong enough for Sell. The bull’s operating fundamentals are real: Q2’26 revenue +24.2%, 1H operating income +30.0%, gross margin +240bp, operating cash flow +32.8%, and roughly $141B net cash. However, the debate is about whether to add GOOGL now, and the bear won that question.
+
+The bear corrected a material bull error: recent volume was not 71.2M shares; it was 21.2M versus a 26.2M 20-day average. That makes the bounce look volume-starved, not accumulated. GOOGL at 346.96 is below the falling 50-day SMA at 351.32 and below VWMA at 347.84; MACD is below zero and below signal; RSI is neutral; and the 384.48 rebound high has already given back nearly half the move. The squeeze is a decision point, not a confirmed buy signal.
+
+The cash-flow concern is also more than a one-quarter trough. Q2 FCF was -$5.855B, capex was $44.9B, capex/revenue was 37.5%, unpaid capex reached $29.1B, buybacks went to zero, debt more than doubled to $101.1B, and GOOGL raised roughly $109.5B in six months across debt, equity, preferred, and minority interests. Even if capex/revenue stabilizes in the low-30s, FCF is only marginally positive on the bear’s math. At roughly 33x normalized earnings and a near-0.2% FCF yield, GOOGL lacks a valuation cushion while the capex/FCF inflection remains unproven. Reported EPS quality is also weak because $135.8B of securities gains were 62.8% of 1H26 pre-tax income.
+
+The bull’s net-cash position and operating-margin expansion are valid reasons not to turn outright negative, but they do not justify paying for the current binary Q3 capex/FCF setup before the tape confirms. Data limitations also matter: Cloud segment revenue and Verizon contract economics were not provided, so I do not treat those as positive catalysts.
+
+**Strategic Actions**:  
+- Size against a standard GOOGL allocation. If standard is 5% of portfolio, reduce to 2.5%–3.0% of portfolio, or roughly 0.5x–0.6x standard allocation. If no position exists, stay out rather than initiate at 346.96.  
+- If holding GOOGL, trim into the 350–351.5 resistance zone. Hedge residual core exposure if permitted, rather than carrying full beta into the Q3 capex/FCF update.  
+- Do not add in the 338–341 support zone despite the bull’s scale-in plan; that zone has not been confirmed by volume or trend. Do not short the middle of the range here; the bear itself acknowledged limited edge at 346.96.  
+- Risk controls: a daily close below 338.57 should trigger another reduction toward 1.5%–2.0% of portfolio, or roughly 0.25x–0.35x standard allocation. A close below 333.69 would break the 200-day support and justify cutting the core further or adding downside protection; 327.55 is the next reference.  
+- Rebuild toward Hold/Overweight only on a volume-backed close above 351.60 with volume greater than 26M, improved MACD structure, and evidence that capex is plateauing and FCF is inflecting. Until then, GOOGL remains Underweight.

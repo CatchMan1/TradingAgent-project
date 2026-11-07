@@ -1,0 +1,9 @@
+**Action**: Sell
+
+**Reasoning**: The research plan is Underweight, which maps to Sell under the stated instruction; this is a trim/reduce of existing AAPL exposure, not an outright bearish short. The actionable bear case is stronger at 326.59: the stock had already run +21.3% from 281.74 to 333.74 into the catalyst, leaving only ~15.1 points to the Bollinger upper band at 341.70 versus ~14.7 points down to the trend stop at 311.91 — roughly 1:1 reward/risk into a binary FQ3 print. The tape supports lightening: 2026-07-20 was a bearish reversal day (opened 333.51, failed 333.71, closed 326.59 below the prior day’s 329.00 low), MACD histogram has its first decline since the 2026-07-02 crossover (3.34 → 2.72), RSI fell from 71.65 to 63.87 in one session, and price is +7.6% above the 50-SMA at 303.43. The still-stacked uptrend (326.59 > 10-EMA 320.98 > VWMA 314.02 > 50-SMA 303.43 > 200-SMA 274.58) and strong business fundamentals argue against a full exit or short, so the correct expression is to reduce now, add no new capital at 326.59, and rebuild only on a pullback into 320.98/314.02 or after the earnings event clears.
+
+**Entry Price**: 326.59 (sell/trim level at last close; a bounce toward 333.71 could be used to trim, but do not chase above 334.99)
+
+**Stop Loss**: 311.91 for residual long exposure; cut further on a decisive close below that level. If the caller instead expresses Sell as a new short, the invalidation stop is 334.99, but the research plan does not support shorting.
+
+**Position Sizing**: Reduce existing AAPL exposure by roughly one-third, to about 0.65x standard allocation, and hold no more than that into FQ3. No new/incremental capital at 326.59. If flat, remain flat rather than initiate a new long.

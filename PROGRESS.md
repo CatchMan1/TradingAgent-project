@@ -1,5 +1,9 @@
 # 项目交付进度 — 2026-10-15
 
+## 2026-11-08 补充完整数据与运行证据
+
+周晓杨进一步明确要求数据一并推送。因此补充TradingAgents_t课程项目的data和agents/logs，包括价格、财报、决策CSV、原始响应、FinAtlas数据和已有模型运行报告/状态；不重新运行或改写实验结果。此前“数据和日志未上传”的记录仅描述首次代码上传范围，本次已变更为包含数据与证据。约1.21GB补充文件中，六个超过100MiB的Parquet分片使用Git LFS，其余文件直接版本管理。克隆者须安装Git LFS并执行git lfs pull。密钥、虚拟环境、编译/测试缓存不纳入。
+
 ## 2026-11-08 TradingAgents_t目录交付
 
 按周晓杨要求，将本地TradingAgents_t作为独立目录收录side，保留其中并列的TradingAgent-project课程项目、修改后的TradingAgents框架（含原LICENSE）和ROLE_C_HANDOFF.md。根目录既有项目与此前贡献记录保留；本次是目录交付，不表示两个代码树已合并为单一实现。

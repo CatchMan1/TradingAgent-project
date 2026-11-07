@@ -1,0 +1,17 @@
+**Action**: Sell
+
+**Reasoning**
+
+The research plan lands on *Underweight*, which maps to a Sell — but a *partial* one, and that distinction drives the sizing rather than the direction.
+
+Direction is supported by the price structure, not just the fundamentals. At the 192.42 close, the geometry is roughly symmetric-to-worse: ~2.0% up to first resistance (196.27–196.38) versus ~1.7–2.0% down to the 188.21–188.61 confluence (Bollinger mid + VWMA) and ~3.3% to the 186.0 swing stop. Paying a full multiple for a negative-operating-leverage quarter with an unsized binary event one week out (fiscal Q1 print ~2024-02-01) is not a risk the tape compensates you for. The 01-26 candle confirms it: open 194.27, high 194.76, low 191.94, close 192.42 — a lower high and lower low, closing in the bottom third of the range on 44.6M shares, with the MACD histogram rolling from +1.128 (01-25) to +0.962 and up-leg volume fading (78.0M on 01-18 down to 42.4M on 01-23) against an 82.5M down-day on 01-02. Price is still 3.74% below the 199.62 December high, so this is a repair rally, not a breakout.
+
+What stops this from being a full exit is equally concrete: the stack Close 192.42 > 10 EMA 191.33 > 50 SMA 190.84 > 200 SMA 181.92 is intact, the 200 SMA is rising monotonically, RSI's higher low (36.71 on 01-17 vs 28.79 on 01-05) on a retested 180-area support is the best signal in the dataset, and the MACD crossed above signal on 01-19. Nothing has violated a trend level yet. So: reduce into strength, don't add at spot, keep a core, and let price levels — not opinion — decide the rest.
+
+**Entry Price**: 195.00 (trim limit inside the 194–196 supply zone, below the 196.27–196.38 leg cap). If 195.00 does not trade, execute the first partial at spot 192.42 rather than waiting — the plan's whole premise is getting paid for gap risk, and the 01-26 close suggests strength may not be offered.
+
+**Stop Loss**: 196.50 for the underweight/trade thesis — a daily close above 196.27–196.38 on volume ≥60M (with MACD crossing zero) invalidates the trim and upgrades back toward a full position. The retained core uses a separate structural stop at 186.00 (≈2 ATR below spot, beneath the gap top and VWMA), with a hard exit on a daily close below 180.30, which kills the higher-low structure and converts the core to a Sell as well. Intermediate: a close below 190.84 means trim again; a break of 188.21–188.61 opens 185.8, then 182.9.
+
+**Position Sizing**: Scale relative to a standard allocation — bring AAPL to 50–60% of that standard size, i.e. trim roughly one-third to one-half of the existing holding. Work it as: ~1/3 of the trim at spot 192.42, the remainder bid at 195.00. Zero new money at spot; the 188.2–190.9 confluence and 186.0–187.5 tranche are reasonable prices but are pre-event entries into a binary catalyst and should be deferred until a post-print session closes back above the 50 SMA (190.84) on expanding volume. At 1.64% ATR the unit should be sized below a December-volatility basis.
+
+Two caveats I can't close with the data provided: there is no portfolio context, so "50–60% of standard" is expressed relative to allocation rather than shares or dollars; and forward consensus EPS plus segment (Services mix) revenue — both load-bearing for the bull case — are absent from the supplied material, so treat "~29x forward" and "mix-shift re-acceleration" as unverified until the actual print discloses them.

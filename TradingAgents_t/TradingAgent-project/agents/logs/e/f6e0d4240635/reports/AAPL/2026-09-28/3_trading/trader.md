@@ -1,0 +1,22 @@
+**Action**: Sell
+
+**Reasoning**
+
+The research plan resolves to Underweight, and under the mapping rule that is a Sell — the conflict with the technical report's "hold core, add 331–336" posture is what sizes the trade down rather than converting it to a Hold.
+
+The technical report and the plan actually agree on the arithmetic that matters. AAPL closed at 338.40 with resistance stacked at 341.07 (highest close), 342.99 (09-28 high) and 345.34 (window high) — only +0.9% / +1.4% / +2.1% away. Support sits at 335.96 (10-EMA), 334.30 (09-24 low), 330.33 (Bollinger mid) and 321.93 (50-SMA) — −0.7% / −1.2% / −2.4% / −4.9%. The plan's core claim that reward is thin and risk is close is corroborated by the tape's own geometry: roughly 1:2.3 risk/reward against the 50-day, before the 309.90 September higher-low at −8.4% is even considered.
+
+Three pieces of technical evidence reinforce trimming rather than adding at 338.40:
+- **Momentum divergence**: price made a higher closing high (341.07 on 09-25) while MACD printed 6.08 versus 9.61 on the 07-29 close of 338.19, and RSI fell from 71.65 to 65.67. Two independent oscillators decelerating.
+- **Volume decay**: last 10 sessions ~38.8M versus ~45.7M prior 10 (−15%), and the 09-18 86.6M print is expiry noise. The final leg of the advance is on less participation.
+- **Extension**: +17.5% above a 200-SMA that has risen every session since June. The report itself flags this as the primary risk and expects resolution by time or a 5–8% flush.
+
+What the plan asserts on fundamentals — 38.8x TTM EPS, 35.7x EV/FCF, +16.4% Q3 revenue, $62.2B net cash, slowing buybacks, the $13.3B intangible build — I cannot verify from the supplied technical data; only the price structure is verifiable here. I am therefore weighting the decision on the price structure and the plan's risk/reward conclusion, not on the unverifiable fundamental claims. Equally, no portfolio context was provided, so sizing below is expressed relative to a benchmark AAPL weight and must be scaled to the caller's own book.
+
+Why Sell rather than a full exit: the trend is not broken. The 07-31 gap is fully repaired (first close back above 333.44 on 09-17), VWMA at 332.07 is rising nine of ten weeks with price 1.9% above it, and 50 > 200 by 11.8%. That is not a short. It is a reduce-into-strength instruction — trim roughly one-third, hold the rest with hard, objective invalidation levels.
+
+**Entry Price**: 338.40 (trim at the last verified close; use any push into 341.07–345.34 to complete the trim rather than waiting). If 345.34 is reached and rejected, finish the reduction there.
+
+**Stop Loss**: 345.50 — the level at which the bearish stance is wrong. It sits just above the 345.34 window high and essentially on 1 ATR above the close (338.40 + 6.83 = 345.23), and it is only valid as a stop-out on a *closing* basis with volume ≥45M; a low-volume poke through 345.34 is not confirmation and should not force a re-buy. Secondary downside triggers for the residual position: reduce another 10–15% of standard allocation on a close below 330.33 (Bollinger mid, which also breaks the 10-EMA and 334.30 cluster simultaneously — the report notes this support ladder is compressed into a 1.7% band, so slippage is a real execution risk; work limit orders, not stops), and exit the tactical residual on a close below 321.93 (50-SMA).
+
+**Position Sizing**: Target ~60% of a standard benchmark AAPL allocation — i.e. trim about one-third of a benchmark-weight holding now at 338.40, scaling the remaining trim into 341.07–345.34. Do not add new money at 338.40. Maximum risk on the underweight call if stopped at 345.50 is ~2.1% on the trimmed third, or roughly 0.7% of a benchmark-weight book. The residual core position carries the compressed 330–336 support cluster as its risk point; with ATR at 6.83 (2.02% of price), a 2-ATR stop is a 4.0% price risk, so size the residual so a full stop-out stays inside the standard per-trade risk budget (~25% notional exposure for a 1% portfolio risk tolerance). Re-engage only on a close above 345.34 with volume ≥45M and MACD re-expanding, or if the plan's Q4 conditions (EPS ≥$2.20, gross margin ≥49%, double-digit FY2027 growth, buyback reacceleration, credible explanation of the $13.3B intangible additions, legal/regulatory clarity) are met — neither is satisfied by the data in hand.

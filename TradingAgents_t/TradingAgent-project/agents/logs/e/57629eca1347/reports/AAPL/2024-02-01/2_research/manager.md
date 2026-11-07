@@ -1,0 +1,14 @@
+**Recommendation**: Overweight
+
+**Rationale**:  
+The bull case carries the stronger investment weight on business quality and primary trend, but the bear wins the near-term timing and valuation argument. AAPL’s Q1 FY24 print showed real operating leverage—revenue +2.1% but gross profit +9.0%, operating income +12.1%, EPS +16.0%, FCF +24.1%, net cash of $64.6B, and ~87% of TTM FCF returned to shareholders. The primary trend is also intact: the 200-SMA is rising to 182.395, price remains above it, and the higher lows at 180.17 → 180.30 → 183.82 support a correction-inside-uptrend read.  
+
+The bear’s tactical objections are valid enough to prevent a full Buy. The Q1 FY24 10-Q was accepted after the Feb 1 close, so the 64.89M-share Feb 1 candle cannot be treated as confirmation of that print. At 186.86, AAPL is below the 10-EMA at 189.128, VWMA at 189.294, and 50-SMA at 190.762, with MACD at −0.1376, signal at 0.1602, and histogram at −0.2978. The lower momentum high and ~29x TTM multiple on 2.1% revenue growth argue for staged accumulation, not chasing. Therefore, AAPL is **Overweight**, not Buy: constructive and gradually add, but only on confirmation or a defined support retest.
+
+**Strategic Actions**:  
+- Do **not** add AAPL at the current 186.86 no-man’s-land. Treat **184.40–189.30** as a no-add zone unless one of the triggers below fires.  
+- **Primary tranche:** Deploy **50% of the intended AAPL allocation** on a close above **189.30** with volume confirmation and the MACD histogram improving. Stop at **183.50**. Targets: **190.76 → 195.18 → 196.97**; take partial profits at the first two targets and trail the remainder.  
+- **Secondary tranche:** Deploy **25% of the intended AAPL allocation** only if AAPL holds **183.80–184.40** with RSI above ~40. Stop at **182.00**. Targets: **187.96**, then **189.13**.  
+- **Reserve tranche:** Keep **25%** for a confirmed close above **195.18** or a sustained reclaim of the 50-SMA with improving momentum.  
+- **Sizing:** Use the standard 2-ATR stop framework. ATR is 3.241, so a 2-ATR stop is ~6.48 points; at 1% portfolio risk that is roughly 154 shares per $100k per full-sized tranche. Apply the 50/25/25 split to the intended AAPL allocation and cap total tactical portfolio heat for AAPL at roughly 1.5–2%.  
+- **Invalidation/risk control:** A close below **180.17** invalidates the tactical long setup; reduce or exit tactical adds. If already long, reduce tactical exposure below **182.40** if the MACD histogram makes new lows beneath −0.30. Monitor tax-rate risk, SBC of $10.8B/year, margin/capex sustainability, and the 64% foreign pre-tax income exposure as ongoing risks.

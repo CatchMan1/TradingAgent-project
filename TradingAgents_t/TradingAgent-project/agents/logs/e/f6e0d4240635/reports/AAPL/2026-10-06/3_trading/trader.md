@@ -1,0 +1,9 @@
+**Action**: Sell
+
+**Reasoning**: The research plan is Underweight; per the required mapping, Underweight is a Sell, but the evidence supports a partial trim rather than a full exit. The long-term trend is still intact: AAPL at 333.63 is above the 200-day SMA at 289.76, and the 50-day SMA at 322.35 is above the 200-day. Near term, however, the setup favors reducing: price is pinned at the 10-day EMA/Bollinger mid (333.565/333.41), below the VWMA at 335.50, indicating overhead supply at 334–336; MACD is below signal (3.2497 vs 4.2922, histogram −1.0425) after the 2026-09-29 bearish crossover; the 50-day SMA is flattening; volume at 30.45M is below the recent ~39M average; and the ATR/Bollinger squeeze (ATR 6.637, band width 22.49) is unresolved, not automatically bullish. Upside is capped first at 339.75–341.07, then 344.66/345.34; downside supports are 328.70/329.40, then 322.17/322.35. At 333.63, upside to the upper band is roughly 11 points versus roughly 11.3 points to the 50-SMA/lower-band confluence, so initiating new longs here has poor reward/risk. With late-October event/gap risk, trim exposure rather than add.
+
+**Entry Price**: 333.63 for the initial trim; secondary trim at 339.75 if reached.
+
+**Stop Loss**: 341.07 on a daily-close basis. A close above this level would invalidate the near-term bearish/trim bias; do not maintain incremental bearish exposure above it.
+
+**Position Sizing**: Reduce to 75% of the standard allocation, i.e. trim 25% of a normal target position. Execute 10% at 333.63 and 15% at 339.75 if reached; if AAPL closes below 328.70 before the secondary trim fills, complete the trim on that close. Retain the 75% core long-term position, but use half-size or defined-risk structures into the late-October earnings window. Do not add unless AAPL closes above 341.07 on volume of at least 45–50M, or pulls back into 322.17–322.35 and holds on a non-gap move.

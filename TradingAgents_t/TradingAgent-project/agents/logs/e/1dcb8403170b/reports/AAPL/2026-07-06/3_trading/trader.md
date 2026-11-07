@@ -1,0 +1,9 @@
+Action: Buy
+
+Reasoning: The plan is Overweight, which maps to a Buy, but the technical structure says execute it patiently rather than chase. AAPL’s trend is firmly bullish — price 312.66 above the 10 EMA 297.06, 50 SMA 294.31, and 200 SMA 271.06 — with a fresh MACD bullish crossover (0.879 vs. −0.582, histogram +1.461) and RSI 62.43 still short of overbought. The June reversal was volume-confirmed. However, price is pinned at the upper Bollinger band (312.68) and just below 315–317 resistance after a ~13.6% snapback, with ATR elevated at 8.63. That makes the current price a poor fresh entry. I would buy the pullback into the 294–297 support cluster and only add on a volume-confirmed close above 317. The missing valuation anchor and the undisclosed ~$12.8B intangibles/M&A item, plus the binary late-July Q3 print, argue for staying below full overweight. Risk rules: a close below the 290.80–294.90 cluster neutralizes the bullish structure and should trigger a trim; a break of 273.75–275.15 invalidates the thesis and exits the overweight.
+
+Entry Price: 295.50 for the primary pullback tranche. Secondary breakout tranche at 317.50 only on a volume-confirmed close above 317.
+
+Stop Loss: 282.50 for the primary tranche, roughly 1.5× ATR below 295.50. For the breakout tranche, 305.00.
+
+Position Sizing: Build toward 1.15–1.25x standard benchmark in tranches, not at market. Deploy no more than ~1/3 of the intended incremental overweight at 295.50; add another ~1/3 at the 317.50 breakout; keep the final ~1/3 as dry powder for a deeper flush toward 290.80 or post-Q3 confirmation. Keep exposure below full overweight into the late-July Q3 report, and use smaller unit sizes given ATR at 8.63. First trim on a close below 290.80–294.90; exit the overweight on a break of 273.75–275.15.

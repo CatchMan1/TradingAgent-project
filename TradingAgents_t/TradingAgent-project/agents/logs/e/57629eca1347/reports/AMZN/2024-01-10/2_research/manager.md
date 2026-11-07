@@ -1,0 +1,17 @@
+**Recommendation**: Overweight
+
+**Rationale**: The bull wins the medium-term fundamental argument, but the bear wins the near-term entry-quality argument. The deciding evidence is that AMZN’s operating improvement is already measurable and operating-driven: 9M gross margin rose 44.3% → 47.6%, operating margin more than doubled 2.61% → 5.84%, and operating income rose to $23.6B from $9.5B (+148.6%), with costs growing +7.3% versus revenue +11.0%. That is a real margin inflection, not just a narrative.
+
+The bear’s best points are also valid and prevent a Buy rating at $153.73. Reported TTM FCF of $16.9B is lower quality after ~$23.6B SBC, leaving FCF less SBC near −$6.7B; capex/D&A fell to 1.09x from 1.61x, and AI/data-center capex reacceleration is a credible 2024 FCF headwind. Technically, AMZN is in an intact uptrend—price 153.73 > 10 EMA 150.28 > 50 SMA 146.35 > 200 SMA 129.48, all rising—but it is pressing into the 154.42–155.63 December supply shelf on weak rebound volume of 44.42M versus ~47.2M average, with MACD still below signal at 1.153 vs 1.542. Immediate upside to the upper band at 156.81 is only about 2%, while downside to the 150.28–150.77 confluence is similar and to 146.35 is ~4.8%. That supports gradual accumulation on confirmation, not chasing.
+
+The balance sheet is strong enough to keep the bear case from becoming a Sell/Underweight call: net cash of ~$20B and debt/EBITDA of ~1.08x, with lease and contractual obligations noted but not solvency-threatening. The February segment disclosure is a binary catalyst, not a proven positive, but the consolidated margin improvement is already real. Net: constructive on AMZN, but sized and staged.
+
+**Strategic Actions**: Define a standard AMZN allocation as 100% of the normal target weight. Target Overweight exposure at up to 125% of that standard allocation.
+
+1. **Core position**: If no position, initiate 50% of the standard AMZN allocation now or on a pullback into 150.28–150.77. If already long, maintain a core position of 75–100% of standard allocation.
+2. **Breakout add**: Add 25% of standard allocation only on a daily close above 155.63 with volume >50M shares and a confirmed MACD bullish cross. If triggered, first target is 156.81, then the 160 zone.
+3. **Pullback/retest add**: Add another 25% of standard allocation if AMZN holds the 150.28–150.77 confluence on a closing basis, or if it breaks above 155.63 and successfully retests 154.42–155.63 as support. Do not exceed 125% of standard allocation.
+4. **Risk controls**: For tactical adds, reduce exposure on a daily close below 149.10. Hard thesis invalidation is a daily close below 146.35; if that occurs, cut AMZN back to 50% of standard allocation or lower and reassess. Do not average down through 146.35.
+5. **Catalyst handling**: If the Q4/full-year segment disclosure validates AWS/advertising-led margin durability and capex guidance is manageable, complete the Overweight build toward 125%. If segment data show the margin improvement is retail-driven and AWS is decelerating, or if capex guidance materially worsens the FCF outlook, downgrade to Hold and trim toward standard allocation.
+
+Missing from the provided evidence: segment-level revenue and operating income, valuation multiples, forward capex guidance, and any buyback authorization. Those should be confirmed before increasing beyond 125% of standard allocation.

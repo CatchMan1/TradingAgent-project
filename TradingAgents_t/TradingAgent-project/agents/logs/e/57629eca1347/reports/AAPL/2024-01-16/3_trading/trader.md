@@ -1,0 +1,23 @@
+**Action**: Sell (Underweight — a trim, not an exit; size moderately)
+
+**Reasoning**
+
+The plan's verdict is Underweight, and per the mapping rule that is a Sell, sized by conviction rather than taken to zero. The technical report and the fundamental work point the same way on the near-term path, which is what justifies acting now rather than waiting.
+
+Three pieces of price structure carry the decision:
+
+1. **Price is below every short- and medium-term reference.** The 2024-01-16 close of 183.63 sits under the 10-day EMA (185.97), the VWMA (185.98), and the 50-day SMA (189.21). The 10-day EMA crossed below the 50-day on 2024-01-08 and remains there. The confluence of 185.97–185.98 is the exact ceiling the plan says to sell into, and it is only 2.34 points above the close — the stock is already pressed against its own supply zone.
+
+2. **The cushion above strategic support is one ordinary day wide.** The 200-day SMA is 180.81 and the January 16 low was 180.93 — a 0.12-point test. With ATR at 3.083 (1.68% of price), the distance from 183.63 to 180.81 is 2.82 points, *less than one ATR*. The long-term trend is intact only nominally; a single normal-volatility session puts it in question. That asymmetry — roughly 2.8 points to invalidation versus 2.3 points to first resistance and 5.6 to the 50-day — does not pay for holding full size.
+
+3. **Participation confirms distribution, not accumulation.** Heavy volume clustered on down days (82.5M Jan 2, 72.0M Jan 4, 65.6M Jan 16, the last ~20% above the 20-session average), while the bounces came on 59.1M / 46.8M / 40.5M. Momentum agrees: MACD at -1.756 is below zero and below its -1.029 signal, and the less-negative histogram (-0.727) is the signal line converging down, not a turn. RSI at 38.46 is weak without being oversold, so there is no mechanical mean-reversion bid to lean on.
+
+Against that, the case for *not* exiting is genuine: the 200-day SMA is rising (179.49 → 180.81), the 50-day is 4.65% above it, the January 16 close was near 81% of the daily range (buyers defended 181), and the franchise is cash-generative. That is precisely why the action is a reduction to 50–60% of standard allocation rather than a liquidation — and why the plan's own framing ("trim, do not exit") sets the size, not the direction.
+
+Two things I am explicitly treating as gaps rather than evidence: there is no news/sentiment input and no product or geographic split in this run, and the most recent audited fundamentals are FY-end 2023-09-30 with FQ1'24 unreported as of 2024-01-16. The next data point is binary, so the residual should be sized to survive the print, not to bet on it. The $4.5B unrecognized tax benefit and $18.6B of unrecognized SBC are sizing considerations, not exit triggers.
+
+**Entry Price**: 183.63 — execute the initial trim at market on the current quote. Reserve a second tranche at 186.00, the 10-day EMA/VWMA confluence, where the plan expects rallies to stall; if 186.00 trades, complete the reduction there rather than adding on the breakout. A push into 189.21 (50-day SMA) without a fundamental update completes the trim to the 50% target.
+
+**Stop Loss**: 189.50 on a closing basis — above the 50-day SMA at 189.21 and above the 188.44 January 2 high, with roughly a third of an ATR of buffer. A daily close above that level invalidates the underweight thesis per the report's bullish-repair checklist and argues for restoring standard weight. For the residual core long, the invalidation is 180.17 (January 5 low, sitting under the 180.81 200-day SMA) — evaluated on the close, not intraday, precisely because one ATR of 3.08 points would otherwise stop the position on noise.
+
+**Position Sizing**: Reduce from standard allocation to 50–60% of standard — cut existing exposure by roughly one-third to one-half, in two tranches (183.63 now, 186.00 into strength). Hold the residual ~50% as core, given the still-rising 200-day SMA and 50-day above 200-day structure. On a daily close below 180.17, cut the remainder to 25–30% of standard and do not re-add until the 200-day SMA at 180.81 is reclaimed on above-average volume. Do not initiate new money at 183.63; accumulation is deferred to either a two-session hold above 186.00 with confirmation through 189.21, or a decisive reversal off the 180.17–180.81 zone on above-average volume. Size so a 1-ATR (≈3.08 points) adverse day does not force an unplanned decision, and consider a protective put or collar on the residual into the unreported FQ1'24 print.

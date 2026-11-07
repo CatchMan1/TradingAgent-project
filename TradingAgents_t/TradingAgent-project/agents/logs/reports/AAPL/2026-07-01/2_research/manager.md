@@ -1,0 +1,12 @@
+**Recommendation**: Hold
+
+**Rationale**: For AAPL, the bear wins the immediate entry/timing debate, but not enough to justify trimming the core position. The bull’s own tactical trigger—a volume-confirmed break above 296.6—has not occurred. The 50-SMA reclaim at 294.38 came on the lightest bounce volume (50.2M vs. 66.4M/65.1M), the 10-EMA at 290.25 remains below the 50-SMA at 292.67, and MACD remains below zero and below signal (-2.26 vs. -1.01; histogram -1.25). The bull’s stop near 292.67 is only ~0.6% below the close versus ATR of 8.20, meaning normal noise can stop out the trade. The memory/CXMT situation is also unresolved and post-dates the strong reported H1 margins: Cook called the shortage “extreme,” AAPL is raising prices ex-iPhone, and CXMT sourcing is a blacklist/political binary with an unhappy administration. That is not yet an underwritable margin tailwind.
+
+However, the bull still has the stronger fundamental and long-term trend case: Q2 FY2026 revenue +16.6%, EPS +21.8%, gross margin 49.3%, H1 free cash flow ~$78B, ~$62B net cash, and AAPL remains above the rising 200-SMA at 270.33 with the 50-SMA above it. This prevents an Underweight/Sell call absent a trend break or evidence of fundamental deterioration. Net: maintain AAPL exposure, but do not add at this unconfirmed level.
+
+**Strategic Actions**:
+- Keep AAPL at standard/benchmark allocation. Do not add at 294.38 or chase into 296.6 / 301–305 resistance.
+- For new capital, wait for a daily close above 296.6 on volume above the recent bounce—preferably >65M shares—and improving MACD. If confirmed, scale in two tranches, but keep total AAPL exposure at or below standard weight until CXMT/memory clarity improves. If CXMT is resolved favorably and margin evidence confirms, revisit Overweight.
+- Existing holders: use closing-basis risk controls, not tight intraday stops. A close below 292.67 on expanding volume → trim 10–20% or to ~90% of standard weight. A close below 288.94 → trim further. A break of 277–275 or the 270 200-SMA → reduce materially toward Underweight.
+- If initiating a tactical long after confirmation, size to a wider volatility stop near 288.94 or 1.5–2 ATR, not the bull’s knife-edge 50-SMA stop.
+- Monitor the CXMT/blacklist decision, memory pricing, gross-margin commentary, buyback pace/R&D conversion, and volume at support/resistance. No independent outcome data on CXMT or updated memory costs is available in the provided debate; do not assume resolution.

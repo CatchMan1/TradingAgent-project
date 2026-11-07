@@ -1,0 +1,31 @@
+**Recommendation**: Hold
+
+**Rationale**: Both sides agree AMZN is an outstanding operating business — the fight was over price, and that's where it was actually decided.
+
+The bull's numbers are real and the bear conceded them: revenue +19.6% (accelerating from +16.6%), operating income +43.2%, operating margin 13.7% (+230bp), operating cash flow $161.4B TTM (+33%), $176.1B of liquid assets, price above every major moving average with a rising 200-SMA at $237.09 and the golden cross intact. His single strongest analytical point is one the bear never fully neutralized: D&A rose +31.3% y/y and 0.9pt as a share of revenue, and margin still expanded 230bp — that is genuine evidence that prior capex vintages are earning.
+
+But the bear won the actionable question: what happens if you deploy at $272.27. Four things the bull left unanswered. (1) Geometry — with ATR at $9.02, the bull's $265 stop is 0.81 ATR, inside the noise band; his honest 2×ATR stop at $254.24 risks $18.03 to make $14.93 to the 2026 high, 0.83:1, with the target behind three layers of supply at $278.84 / $280.14 / $287.20. (2) Margin durability — roughly $1B of the $8.3B sequential operating income increase came from G&A (-$177M) and SBC (-$496M) shrinking in absolute dollars; that does not repeat, while D&A at 10.0% of revenue rises mechanically as $173B of capex enters service. (3) Revenue quality — $39.8B of acquisitions in 1H versus $1.7B a year ago with no organic/acquired decomposition anywhere in the evidence, AR +30.1% against revenue +19.6%, and OCF flattered by a 44% decline in cash taxes driven by $41.4B of deferred tax tied to the mark-ups. (4) The VWMA claim — a rolling average that rose because the $271–$284 gap days entered the window is arithmetic, not accumulation, and it actually leaves price +5.31% above the volume-weighted cost basis with volume down ~75% from the gap day and a bearish engulfing close below the prior day's low.
+
+The bear also had the better of the balance sheet: lease-adjusted fixed-charge coverage is nearer 5x than 21x, net debt is roughly -$70B once $109.8B of leases are counted, and with FCF of -$27.0B in 1H there is no deleveraging mechanism other than cutting the capex that is the entire thesis. And the tell in the bull's case is that he never put a multiple on AMZN — annualizing 1H core EPS of $3.63 gives ~$7.26, ~37x on the bear's math (Q4 seasonality probably makes 1H an understatement, so call it low-to-mid 30s at best), against negative FCF, ~5.6x book, and zero capital return.
+
+What keeps this at Hold rather than something more bearish is the bear's own constructive case. He is a buyer at $254–$259 with the 200-SMA at $237.09 underneath, he concedes 13.7% margins, +43% operating income, an intact long-term regime and no confirmed bearish RSI divergence. A bear whose downside target is ~5% below spot and who is a buyer there is not arguing the thesis is broken — he is arguing the entry is. Symmetrically, the bull's plan is not a chase: scale in on the $271–$273 shelf with a defined invalidation. Those two plans sit ~5% apart, which for a multi-year position in a business compounding operating income at 43% is close to noise.
+
+So: the bear won the price argument, the bull won the asset argument, and the bear conceded most of the asset argument. That is a maintain-and-be-opportunistic setup, not a directional call — no add at spot, no exit from a compounder in a confirmed primary uptrend. Hence Hold.
+
+**Strategic Actions**: Size against a standard AMZN allocation; treat the existing position as the core and do not add at $272.27.
+
+1. CORE — maintain target weight. No market-order adds at spot. The bear's 0.83:1 reward-to-risk into $278.84 / $280.14 / $287.20 supply is a real constraint, and the bull himself conceded this is "the fourth quartile of a vertical move."
+
+2. REBALANCE ONLY — if the position has drifted above target after the +25.3% three-session repricing, trim back to target weight (no more than 20–25% of the position) and hold the proceeds as a designated add reserve. This is position hygiene, not a directional bet.
+
+3. PRIMARY ADD ZONE $254–$259 — the confluence of the 2×ATR band ($254.24), Bollinger middle ($254.37), VWMA ($258.53) and the July breakout shelf ($254.96), with the 50-SMA at $247.62 and the 200-SMA at $237.09 below. Deploy the reserve in thirds here; on the bear's own arithmetic this is where R/R flips to roughly 1.8:1.
+
+4. MOMENTUM ADD — if AMZN closes above $280.14 on volume >50M with the MACD histogram turning up from +3.17 and the MACD line holding above +8.43, deploy one-third of the reserve. Both sides agreed this is the trigger that flips the tactical picture.
+
+5. INVALIDATION — for any trading add, a close below $265.00 (the gap open) is the stop. A close below $265.00 that is not reclaimed within a few sessions, followed by a break of $247.62, converts the gap-fill scenario into a structural break: cut the trading sleeve fully and re-underwrite the core thesis.
+
+6. SIZING — use ATR $9.02, not fixed percentages. Cap any single tranche at 2×ATR risk; at a $254–$259 entry with a stop near $237.09, that is roughly one-third of the reserve per tranche.
+
+7. RATING TRIGGERS (both sides agreed these are monitorable). Upgrade to Overweight if any two of: Q3-2026 (late October) shows capex flat-to-down with operating margin above 13%; TTM free cash flow turns positive or debt issuance decelerates; or the 10-Q decomposes organic vs acquired revenue and explains the $38.1B six-month AOCI swing and the $122.3B Level 3 book. Downgrade to Underweight if any one of: operating margin below 12% for two consecutive quarters with capex still above $50B/quarter; a rating action or material CDS widening around the $78.1B of obligations due inside twelve months; or a material markdown on the private-equity book (a 20% markdown is ~-$2.20/share, roughly 30% of annual core EPS).
+
+EVIDENCE GAPS — flagging explicitly since I am limited to this prompt: there is no organic-vs-acquired revenue split, no explanation of the $58.1B... correction, $38.1B six-month AOCI move, no company-issued news in the 08-04 to 08-09 window (20 of 222 records), and no disclosed VWMA window length. Any of those could change the call.

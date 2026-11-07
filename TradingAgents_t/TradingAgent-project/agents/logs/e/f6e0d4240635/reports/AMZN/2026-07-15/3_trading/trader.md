@@ -1,0 +1,16 @@
+**Action**: Buy
+
+**Reasoning**:
+The research plan calls AMZN Overweight — effectively a Buy — on a fundamental case (accelerating 16.6% revenue growth with margin expansion, a legitimate moat in AWS/ads/custom silicon) that the bear never actually broke, paired with a technically constructive tape. I'm executing that as a Buy but, as the plan demands, a staged and mechanistically cautious one, because the entry sits at an extended point in the price structure.
+
+The technical picture supports participation: AMZN closed $254.96 (+3.0% on 45.2M shares vs. a 30–40M norm), above all three moving averages (10-EMA $246.40, 50-SMA $253.10 just reclaimed, 200-SMA $233.79 rising +9.1% below price), with a fresh MACD zero-line cross (line +$0.26, signal −$1.86) and RSI at 60.14 — rising but not overbought, leaving runway. That is a momentum-confirmed resolution of the multi-week $238–248 base, and it justifies a long bias.
+
+But the risk side is equally clear: price closed marginally above the upper Bollinger Band ($254.80) after a single sharp +3% pop, right into first resistance at the $256.48 session high, while the 50-SMA is still declining. That is extension, and it argues — exactly as the plan's "Overweight, not Buy" framing does — against a full-size chase. So I translate "Overweight" into a 1.25x-standard staged build rather than a market-load, keeping dry powder for the pullback ($246–248, or $241 mid-band) and for a volume-confirmed breakout above $256.48. The 200-SMA at $233.79 and the $238 VWMA/base low define where the thesis dies; I cap risk there rather than at a tight 1×ATR stop, because the plan asks for staged entries and a wider structural invalidation is the honest level for a position trade sized around a Q2 print catalyst.
+
+I'm flagging, per the plan, that no valuation multiples, Q2 guidance/consensus, or quantified AI-capex returns were supplied — so this is sized as a constructive-but-not-maximal overweight (1.25x), capped at 1.5x, with no more than ~70% of target carried into the Q2 print.
+
+**Entry Price**: $254.96 (Tranche 1 at market, ~40% of the add). Tranche 2 (~30%) at $247.00 on a backtest into the 10-EMA/base top; Tranche 3 (~30%) at $257.00 only on two consecutive closes above $256.48 with volume >40M shares. Blended target entry ≈ $253.
+
+**Stop Loss**: $237.50 (below the $238 base-low / VWMA $238.81 invalidation). Secondary de-risking trigger: cut the add back to standard weight on a decisive loss of $241.38 (mid-band); a close below $238 invalidates the technical thesis and warrants reducing to underweight and re-underwriting.
+
+**Position Sizing**: Target 1.25x a standard single-name allocation, staged across three tranches (40% / 30% / 30%) as above; hard cap 1.5x standard. Do not add on closes above the upper Bollinger Band ($254.80) and do not chase above $256.48 without volume confirmation. Carry no more than ~70% of the target overweight into the Q2 print, holding the final tranche for post-print confirmation. No leverage on this name. Position size inversely to ATR ($7.48, ~2.9% of price) if volatility expands from here.

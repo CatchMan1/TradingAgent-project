@@ -1,0 +1,21 @@
+**Action**: Hold
+
+**Reasoning**
+
+I am aligning with the research plan's Hold, and importantly this is not a "conflict = Hold" cop-out — both the plan and the price structure point to the same conclusion: AMZN's business quality argues against selling, but the current quote offers poor asymmetry, so there is no case to add.
+
+- **Price structure does not support buying at 245.98.** AMZN closed at 245.98, sitting roughly $5 below the $248.9–$250.6 confluence (2026-07-07 high 248.93, 2026-06-29 swing high 249.71, upper Bollinger 250.59) and ~$9 below the falling 50 SMA at 255.01. Downside support is much closer in aggregate but layered: 10 EMA 241.09, Bollinger mid 239.76, VWMA 236.98, then the structural 200 SMA at 233.10. Buying mid-range means paying ~5 points for the first obstacle and risking ~9–13 points to the first real floor — negative reward/risk on a fresh position.
+- **Momentum is early, not confirmed.** MACD histogram is positive and expanding (+1.62, five sessions), but MACD −2.95 and signal −4.57 are both still below zero — an improving-from-oversold cross, not a full bull cross. RSI at 51.72 is neutral, no divergence, ample headroom either way. Short-term trend is bullish (price above rising 10 EMA, reclaimed 6/29), but the medium-term trend (falling 50 SMA above price) has not been reclaimed.
+- **Volume is the tell, and it is unconvincing.** The July rebound has run on ~40M shares versus 248.4M on the 2026-06-26 capitulation. Price is above VWMA (236.98, turning up), which is mildly constructive, but follow-through conviction has not been demonstrated.
+- **Fundamentals support holding the core, not adding.** Q1 revenue $181.5B (+16.6%), operating income $23.85B (+29.6%), 13.1% margin (+130 bps), Q1 OCF $26.0B (+53%), and ~$144B in cash/marketable securities justify the long-term bull case. But TTM FCF ~−$2.5B, FY2025 FCF down to $7.7B from $32.9B, Q1 capex of $44.2B exceeding Q1 OCF of $26.0B, and long-term debt up $53.8B in a quarter to $122.6B mean the capex cycle has not yet converted to owner cash flow. At ~37x illustrative adjusted TTM EPS, that gap in the story is a reason to require confirmation, not to extrapolate.
+- **Why not Sell.** Price is ~$13 above a *rising* 200 SMA (233.10), and the 50 SMA remains above the 200 SMA — the golden-cross alignment is intact, no death cross. Long-term uptrend structure is unbroken, so an outright Sell is too harsh given the operating acceleration. The structural floor at 233 has not been tested.
+
+Net: hold at standard/allocation weight, do not add at 245.98, and keep the three-tranche plan armed pending confirmation or a disciplined pullback.
+
+**Entry Price**: No new entry at 245.98. The two actionable entries are (1) a daily close above **250.6** with volume clearly above the ~40M rebound pace, and (2) a pullback entry at **241.0** (10 EMA 241.09 zone) with fundamentals intact.
+
+**Stop Loss**: For a breakout add at 250.6, stop at **238.8** (≈1.5× ATR of 7.87 below entry, clearing the VWMA/10 EMA noise). For the 241.0 dip entry, stop at **236.5** (below the VWMA at 236.98). Structural invalidation for the existing position: trim below **233.10** (200 SMA); exit the tactical position below **227.01** (June swing-low cluster, 225.55–227.01).
+
+**Position Sizing**: Maintain existing AMZN at standard/allocation weight — no add at 245.98. Split any intended incremental allocation into three equal tranches: tranche 1 on a volume-confirmed close above 250.6; tranche 2 on a reclaim and hold of the 50 SMA near 255.01; tranche 3 on evidence that capex is converting into FCF/ROI, or on a pullback to the 237–233 zone with fundamentals intact. On a daily close below 233.10, trim to below-standard/underweight exposure rather than adding; treat a break of 227.01 as full exit of the tactical position. Because ATR is elevated at 7.87 (~3.2% of price), size each tranche so that the ~12-point stop represents a tolerable loss on the tranche, and keep total exposure at standard weight until confirmation. Note: no holdings or cash data were provided, so these are fractional-allocation instructions to apply to your own book.
+
+**Evidence gaps**: No AI-capex ROI data, no social sentiment report, and a thin 2026-07-06 news tape. These reinforce requiring confirmation before committing incremental capital.

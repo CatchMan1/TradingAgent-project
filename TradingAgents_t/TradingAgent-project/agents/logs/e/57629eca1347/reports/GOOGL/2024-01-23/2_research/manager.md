@@ -1,0 +1,15 @@
+Recommendation: Overweight
+
+Rationale: The bull case is stronger for GOOGL over the medium term. The decisive evidence is the Q3 operating acceleration: revenue +11.0% to $76.69B versus H1 +4.9%, operating income +24.6%, operating margin +300 bp to 27.8%, gross margin up to 56.7% from 54.9%, and cost of revenue growing only +6.6%. GOOGL also generated 9M FCF of $61.6B at a 27.9% FCF margin, funded $45.3B of buybacks, reduced diluted shares by 3.6% year over year, and held $119.9B of cash plus short-term investments. The trend is fully stacked: 147.04 > 10 EMA 143.66 > 50 SMA 137.19 > 200 SMA 127.80, with MACD expanding and no bearish RSI divergence.
+
+The bear’s case is valid on timing and earnings quality: GOOGL is extended at +7.19% above its 50-day SMA, RSI 69.2, pinned to the upper Bollinger band, with a light-volume record close and no reclaim of 148.39. Q3 EPS was tax-inflated by a 7.1% tax rate versus 13.4% for 9M; 9M operating margin was flat at 27.4%; OCF had roughly $10.4B of tax-timing help; capex is reaccelerating; and the $9.14B loss-contingency accrual keeps regulatory risk real. Q4 is unresolved. These concerns prevent a Buy or a full-size chase at 147.04, but they argue for staged entry and risk control rather than abandoning GOOGL. Cloud/YouTube segment data are not available, so AI/Cloud should be treated as optionality, not proven segment-level acceleration. On balance, GOOGL merits a constructive Overweight stance, not an Underweight or Sell.
+
+Strategic Actions:
+- Treat a standard GOOGL allocation as 100% neutral. Target 110–115% of standard allocation, but build only in tranches.
+- If already at or below target, maintain the core position. Do not add at 147.04.
+- Deploy the first tranche—no more than one-third of the intended overweight add—near 143.66 or better in the 141.3–141.9 confluence.
+- Add the second tranche only on a daily close above 148.39 with volume above roughly 30M shares; use smaller size there because the stop distance is wider.
+- Reserve the final tranche for Q4 confirmation of revenue near the +11% exit rate and operating margin holding near 27.8%, or for a deeper pullback to 137–142 if the fundamental thesis remains intact.
+- Hard tactical invalidation for GOOGL: a close below 141.3–141.6, especially if the MACD histogram crosses below zero. A Q4 gap below that zone should not be averaged down; reassess and cut tactical adds back to core/neutral.
+- First tactical target is the 150s. Trim or trail tactical exposure there; if GOOGL exceeds 115% of standard allocation, trim back to target.
+- If Q4 shows revenue decelerating from +11%, operating margin failing to hold 27.8%, normalized tax near 14%, or capex guidance compressing forward FCF, downgrade GOOGL to Hold/Underweight and reduce to standard or below.

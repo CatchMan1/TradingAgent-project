@@ -1,0 +1,16 @@
+**Recommendation**: Overweight
+
+**Rationale**: The bull case wins on the operating fundamentals, but not by enough to justify an outright Buy. AMZN’s Q2 revenue grew +19.6% YoY versus +16.6% in Q1, operating income rose +43.2% to $27.5B, and operating margin expanded 226 bp to 13.7%; H1 operating income was +36.6% with margin expanding to 13.4%. That is genuine operating leverage, supported by lower marketing, G&A, and stock-based comp as a percentage of revenue.
+
+The bear’s concerns are valid but not decisive enough to turn negative. Negative FCF is real—H1 FCF of -$27.0B and TTM FCF of -$11.6B—but it is driven by $98.4B of H1 capex against $161.4B TTM operating cash flow. The capex payback and 2027 guidance are unproven, so I do not want to chase AMZN aggressively. The $62.8B non-cash mark is also a legitimate GAAP risk, though adjusted H1 EPS of ~$4.09 versus ~$3.26 and core operating EPS of ~$3.63 versus ~$2.89 both show ~26% growth. The balance sheet is less fortress-like than the bull claims, with debt up 93% and net cash ex-leases around $29.7B, but gross debt at ~0.91x TTM OCF and $176.1B of cash/securities still leave flexibility.
+
+Technically, AMZN is short-term weak below the 10-EMA, 50-SMA, and VWMA, with MACD re-widening lower. But the long-term trend is intact above the rising 200-SMA at $241.01, and the $241.01 / $239.82 / $238.93 support confluence is close. The bear’s $239.80 invalidation level is clear and makes risk management straightforward. Valuation multiples and 2027 capex guidance are not provided, so the call is sized as constructive rather than high-conviction Buy.
+
+**Strategic Actions**: Treat a standard AMZN allocation as 100 units; target 120–125 units for an Overweight position, built gradually.
+
+- **Tranche 1 — 35 units**: Initiate/add at current $246.67 or in the $244.24–$246.67 support zone.
+- **Tranche 2 — 35 units**: Add in the $241.01–$244.24 confluence only if AMZN holds above $239.80 on a daily close.
+- **Tranche 3 — 50–55 units**: Add only on a daily close above $252.64 with volume confirmation, or after Q3 earnings confirm operating margin near or above 13% and capex/FCF trends stabilize. This brings the position to 120–125 units.
+- **Risk trigger**: A daily close below $239.80 invalidates the setup. Cut tactical adds back to roughly 50 units and reassess. Below $235.50, reduce further to 25 units or exit the tactical overweight. Because ATR is $5.60, size positions so the $239.80 invalidation is tolerable rather than placing stops inside normal daily noise.
+- **Existing holders**: Maintain the core AMZN position; only trim excess above 125 units into the $250.17–$252.64 shelf. Do not chase above $252.64 before confirmation.
+- **Monitor**: Q3 operating margin, 2027 capex guidance, TTM FCF trend, the $122.3B equity-stake mark-to-market, net cash/current ratio, and volume confirmation. Avoid full size immediately ahead of Q3 earnings, given prior report gaps of -5.55% and +15.32% on 3–5x normal volume.

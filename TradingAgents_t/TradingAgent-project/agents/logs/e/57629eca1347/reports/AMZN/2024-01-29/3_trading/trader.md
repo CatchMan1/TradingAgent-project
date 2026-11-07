@@ -1,0 +1,9 @@
+**Action**: Buy
+
+**Reasoning**: The plan’s Overweight maps to Buy, but the case is moderate and the technical setup argues for a staged entry, not chasing. Fundamentals support owning `AMZN`: 9M revenue +11.0%, operating income $23.6B vs $9.5B, Q3 operating margin 7.8% vs 2.0%, TTM FCF improving to +$16.9B, and capex intensity falling to 9.4%. The bear’s valuation/capex concerns are real, but several quality objections are weaker than presented. Technically, `AMZN` at $161.26 is extended: RSI 70.4, %B ≈0.97 near the upper band at $161.77, MACD lower high (3.136 in December vs 2.677 now), and volume only 1.04x average. The trend itself is intact—close above 10 EMA $156.69, above 50 SMA $150.20, above 200 SMA $132.78, with higher lows and VWMA at $155.21. So buy the confluence, not the high. Earnings are a binary event and ATR $2.9443 understates gap risk.
+
+**Entry Price**: 156.69 for the first tranche at the 10 EMA support confluence. Do not execute at the current $161.26. A second tranche is considered at 153.90 only if price first reclaims 154.55.
+
+**Stop Loss**: 154.55 on a close basis for the first tranche; below that the higher-low sequence is broken and new adds should pause.
+
+**Position Sizing**: Treat a standard full `AMZN` allocation as 100%; target an overweight of 110–125% only as the thesis confirms. Deploy 40–50% of the planned overweight add in the first tranche at 156.69, 20–25% in the second tranche at 153.90 only if 154.55 is reclaimed, and reserve 25–30% for post-earnings confirmation: a gap holding above 161.77 on >1.5x average volume, Q4 operating margin at or above 7%, and 2024 capex at or below roughly 10–12% of revenue. Cap first-tranche portfolio risk at ≤0.5% because earnings gap risk is not bounded by ATR. A decisive close below the 50 SMA at 150.20 requires cutting the tactical overweight. Q4 actuals, segment P&L, and insider/sentiment/news data are not provided and are not assumed.

@@ -1,0 +1,9 @@
+**Action**: Sell
+
+**Reasoning**: The research plan is Underweight, which maps to Sell, and the price structure supports reducing exposure rather than adding. At 342.09, GOOGL closed only 0.36 above the 341.36 July low, below the 10-EMA at 352.29, below VWMA at 356.75, and below a 50-SMA that has rolled over to 367.48. MACD is –3.783 with an expanding negative histogram at –1.195, RSI at 40.55 is weak but not oversold, ATR is elevated at 11.07 (3.24% of price), and volume of 39.33M on the decline confirms distribution. Support is sparse below 341.36 until 336.82, then 330.20–337.39, then the 200-SMA at 323.19; resistance is stacked at 349.94, 352.29, 354.77, 356.75 and 367.48. The fundamental case for trimming is also specific: H1 FCF of $4.3B, capex at 35.1% of revenue, a $29.1B incurred-but-unpaid capex accrual that has not flattened, sequential operating margin compression from 36.1% to 34.0%, depreciation rising ahead, zero buybacks, debt at $101.1B with interest expense up sharply, and a valuation near 32x annualized Q2 core EPS with a very low FCF yield. This is not a broken-business Sell, but it is a clear underweight: trim now and sell into strength rather than buy the July low.
+
+**Entry Price**: 342.09
+
+**Stop Loss**: 356.75 for the bearish/reduce stance — a close above VWMA would invalidate the underweight call. For the residual core long, 323.19 is the reassessment line, not a mechanical stop.
+
+**Position Sizing**: Target 50% of a standard GOOGL allocation. If currently at a standard 100% weight, sell half now and retain 50%; complete any remaining trim at 349.94 on a bounce. Do not add at 342.09 and do not initiate a new short at the current breakdown level. Size the residual so a 1× ATR move of 11.07 points and a 6–7% earnings gap are survivable. No specific options hedge is prescribed because options pricing, implied volatility, and a confirmed earnings date were not provided.

@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan's Underweight maps to a Sell order — a trim, not an exit — because the question is owning AMZN at 233.66 into the July 30 print, not the quality of the franchise. The tape corroborates the bear's forward cash-flow and balance-sheet concerns: the close fell 4.57% on a 1.7×ATR expansion day with the close in the bottom quartile of the range, printing the first close below a *rising* 200 SMA (234.53) since 6/26, with a dual MACD cross (line −0.530 vs signal −0.233), RSI at 38.62 still above the 32–34 zone where the last two bottoms formed, and volume at only ~1.07× the ex-outlier average — mild confirmation, no capitulation, so downside is not exhausted. The bull's confluence argument (rising 200 SMA plus the 232.00–232.95 June cluster) is legitimate but unconfirmed; his own repair sequence demands a ~7% climb back through 244.65 (10 EMA) → 246.23 (VWMA) → 249.90 (50 SMA), the exact shelf that just rejected the stock after one session. Asymmetry into a binary catalyst with a raised bar (BofA $24.1B Q2 operating profit, ~flat sequentially) justifies reducing rather than adding. I am deliberately not selling weakness at 233.66 — the trim is staged into a reflex bounce, and the position stays at roughly 40–50% of target weight rather than flat because the business is not deteriorating and the falsification level (close above 244.65 on strong volume) lets us rebuild quickly.
+
+**Entry Price**: 240.0
+
+**Stop Loss**: 245.5
+
+**Position Sizing**: Trim 40–60% of the AMZN position in two tranches — first ~240 (238–241), second ~244 — landing at 40–50% of target weight, and at or below 40% before the July 30 print. If no bounce materializes, still carry no more than half of target weight into the event; do not add at 232–233.66. Invalidation: daily close above 245.5 (just over the 244.65 10 EMA) on >1.5× average volume stops the trim and begins rebuild; daily close below 232.05/230.39 cuts to 25% of target, below 225.55 to flat/minimal. Use a collar or put spread past July 30 for retained exposure rather than an outright short — 30x interest coverage, no buyback and a binary catalyst make leverage or naked shorts a poor expression, and the 2026-02-06 −8.98% open-to-open gap proves this name can gap through any stop, so size for a gap rather than for the 7.50 ATR.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

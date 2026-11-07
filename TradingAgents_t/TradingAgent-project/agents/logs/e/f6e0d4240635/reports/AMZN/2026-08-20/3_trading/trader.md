@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The research plan's Underweight verdict maps to a Sell, expressed as a reduction rather than an exit. The technical work offers no edge at the $260.11 close — price sits on the Bollinger mid-band (260.05), RSI is neutral at 50.92, the MACD histogram has been negative and widening since the 8/17 crossover (now −1.24), the 10 EMA is falling at 263.67, and the 8/19 bounce to 265.84 failed on 8/20 with a close in the bottom ~14% of the range; the 284.02 → 278.09 → 266.40 → 263.84 sequence of lower highs and the full retracement of the 7/31 gap body are distribution, not drift. Overhead supply is triple-confirmed by the 10 EMA (263.67), the 8/19 high (266.40) and VWMA (272.05), which is exactly why the trim should be worked into strength in that band rather than dumped at spot. The fundamental side (capex +60.7% versus OCF +33.3%, FCF −$11.6B TTM, 64% of Q2 net income from a model-marked revaluation of a $122.3B non-marketable stake, debt to $133.0B with interest expense +155%) argues for smaller size, while the intact rising 50 SMA (249.32) and 200 SMA (238.30) with a widening golden cross, plus revenue accelerating to 19.6%, argue against a short or a full exit.
+
+**Entry Price**: 264.5
+
+**Stop Loss**: 249.32
+
+**Position Sizing**: Trim to ~60% of standard allocation (range 55–65%), cap single-name exposure at ~65% of standard while the FCF gap is open. Work the sell orders as limits in the 263.5–266.5 band around the 10 EMA (263.67) and 8/19 high (266.40); if AMZN does not trade into that band within five sessions, complete the trim on a close below 259.45. Residual position: hold with a hard stop on a decisive close below 249.32 (50 SMA) — that cuts the remainder to 30–35% of standard; a close below 238.30 (200 SMA) is trend-structure failure and exits what is left. Re-entry only in two conditional halves: add 20% at 249–252 (stop 244.50), or add 20% on a daily close above 266.40 with volume >45M and the MACD histogram turning positive. Do not add at spot and do not initiate a short.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

@@ -1,0 +1,23 @@
+**Action**: Sell
+
+*(This executes the plan's "Underweight" as a partial reduction — trim GOOGL to roughly half of standard allocation — not a full liquidation and not a short.)*
+
+---
+
+**Reasoning**
+
+The plan's Underweight rating maps to a Sell, and the price structure supports acting on it now rather than waiting: GOOGL at **344.72** is pinned directly on the Bollinger middle / 20-SMA at **345.99**, beneath a *falling* 50-SMA at **352.47** and beneath a *rising* VWMA at **356.34**. That combination — price below a rising volume-weighted average — means the volume-weighted buyer base from the early-August accumulation is underwater and is overhead supply, not support. The MACD thrust that peaked at +1.18 on 8/10 has fully failed and re-crossed bearish (−1.917 vs signal −1.358, histogram −0.559), RSI at **46.52** is dead neutral so there is no oversold bounce to harvest, and ATR has compressed 29% in ten sessions to **9.88** on volume that is 82.8% below the 6/26 spike. That is a coil sitting at the *lower* end of a descending-high sequence (402.62 → 377.65 → 357.52 → 346.73) with no asymmetry on either side at the current print.
+
+The fundamental case is what turns a neutral technical "do nothing" into a decision to reduce. The bull's proof of value creation is gross-margin expansion during a capex doubling — but D&A is only **6.15% of revenue** against capex at **35.1% of revenue**, implying a 220–425bp forward D&A headwind against the +242bp gain being leaned on, while opex (R&D+S&M +26.1%, G&A +22.9%) outgrows revenue. Add **−$5.855B Q2 FCF**, H1 FCF of $4.261B that did not cover $5.231B of dividends, **$0 of buyback**, and $29.1B of incurred-but-unpaid capex, and ~32.6x core earnings is a premium multiple without a cash-flow cushion. The balance sheet (net cash, 44x interest coverage) rules out a solvency argument and rules out a short — but it doesn't make 344.72 attractive.
+
+Why a trim and not an outright exit: revenue acceleration (+24.2% Q2) and gross-margin expansion are real, the rising 200-SMA at **332.42** says the primary uptrend is intact, there is no verified hard negative catalyst in the evidence, and the news sample is incomplete (20 of 200 records, missing Aug 12–17). So the correct size is half, not zero — and the re-entry triggers are specific: a flush into **330.20–332.42** that holds the 200-SMA and reverses on volume, or a daily close above **352.50** on >25M volume with a reclaim of **356.34** and MACD turning positive.
+
+**Execution detail**: Trim into the 345.99–347.23 pivot stack rather than selling at the low of the four-session cluster. Do not chase a break of 347.50 unless volume exceeds 25M. Do not initiate a short at 344.72 — the 340.19–341.93 four-touch cluster and the balance sheet are too strong; a short is only valid on a daily close below **340.19** on >30M volume (targets 332.42, then 330.20), and never into the 314.37–314.90 floor.
+
+**Entry Price**: 344.72 (reference close; work the trim in the 344.72–347.23 band rather than below 344)
+
+**Stop Loss**: 329.90 — protects any residual long at ~1.5×ATR (14.8 pts) below current price and just under the rising 200-SMA at 332.42. The plan's wider core invalidation is a daily close below **314.37**; use 329.90 for tactical sizing and 314.37 only as the thesis-level line. The underweight call itself is invalidated — i.e., stop trimming and reassess back toward Hold — on a daily close above **352.50**.
+
+**Position Sizing**: Cut GOOGL to 50–60% of standard allocation — e.g., a 5% standard single-name weight goes to 2.5–3.0%; a 3% weight goes to ~1.5–1.8%. No new GOOGL exposure at 344.72. For the residual position, the 14.8-point stop implies max notional of ~0.47× account at 2% account risk, but the trendless, high-amplitude range regime (314.4–385.0 box, choppy lows, event-gap risk far exceeding one ATR) argues for running well under that capacity. If the caller is already underweight or has no position, the actionable step is simply: do not add, and treat 352.47–356.34 as supply to sell into rather than a target to chase.
+
+**Caveat on missing inputs**: Portfolio context was not provided, so sizing is expressed as a fraction of standard allocation and of account risk rather than share counts; and the news sample covers only 20 of 200 records with Aug 12–17 absent, so any catalyst-driven repricing in that gap is unverified and cannot be incorporated.

@@ -1,0 +1,14 @@
+**Recommendation**: Underweight
+
+**Rationale**: The bear case carries the day on the evidence that matters for sizing GOOGL now. The bull is right on the strategic fundamentals — Q1 FY2026 revenue +21.8% to $109.9B, operating income +29.7% to $39.7B, 36.1% operating margin, $467.6B backlog, $126.8B cash, and price still +10.4% above a rising 200-SMA. But the bull concedes the actionable tape: GOOGL is below the 10-EMA and 50-SMA, MACD is below zero, RSI is 44, and even the bull says entry patience is warranted.
+
+The bear’s specifics are stronger for near-term capital deployment: the 50-SMA is flattening (+0.56 → +0.16 → +0.05 → +0.001), price is -5.4% below it, the bounce failed at $367.03 below the $372.80 50-SMA, and low volume of 15.9M looks more like absent demand than capitulation. Support at the $350.15 VWMA is only 0.7% below the close; ATR is $10.40; real support sits at $338.54/$337.39 and then $319.42. On cash flow and valuation, the bear is more decisive: normalized EPS of ~$10.40 annualized is ~34x, FY2025 FCF of ~$73B is ~59x market cap, Q1 FCF fell ~46.6% YoY, capex is running ~$140B annualized, and FCF has been flat/down despite operating cash flow growth. Debt rose from $49B to $80B, buybacks went to $0, and GOOGL became a net capital raiser. The bull’s “growth capex” explanation is plausible but unproven until the next 10-Q shows conversion; depreciation is back-loaded, and the $101B mark-to-model book can reverse. No insider-buying data is provided, so it should not be used as support for either side.
+
+This is not a Sell because the operating franchise, balance sheet, backlog, and primary uptrend remain strong. But it is enough to trim exposure and demand confirmation before adding.
+
+**Strategic Actions**:
+- For existing GOOGL exposure, reduce to 50–75% of standard target allocation; concretely trim 25–33% of the current position now. Keep a core position only if the mandate is long-term.
+- Do not add at $352.51. Require confirmation: reclaim $358 on above-average volume, then clear $367.03 and the $372.80 50-SMA. Only after those triggers plus 10-Q evidence should the stance move toward Hold/Overweight.
+- If GOOGL loses $350.15 and then $338.54/$337.39 on volume, trim further. Next structural support is $319.42. Use the $10.40 ATR for stop/risk sizing and avoid stops tighter than normal volatility.
+- For new capital, consider only staged entries near $338–$337 if stabilization appears, or wait for $319–$320. Do not catch the decline solely on price.
+- Monitor the next 10-Q for capex conversion, FCF stabilization, capex guidance ceiling, buyback resumption, Search/ad growth, backlog conversion, and fair-value mark reversals. A break below $319.42 with deteriorating FCF would justify moving toward Sell; a confirmed reclaim of $372.80 with improving FCF would justify upgrading.

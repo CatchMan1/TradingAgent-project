@@ -1,0 +1,14 @@
+**Recommendation**: Underweight
+
+**Rationale**: The bear case wins on current risk/reward, though not enough to justify Sell. The deciding evidence is that the market already saw AAPL’s strongest trailing quarter and sold it: the 2026-07-31 gap from 333.43 to a 304.81 open and 308.91 close, down 7.35% on 132.5M shares (~2.4x average). That directly undercuts the bull’s “market hasn’t repriced the fundamentals” claim.
+
+The tape also supports distribution rather than mere noise: AAPL at 302.25 is below the 10 EMA 311.35, 50 SMA 309.48, VWMA 317.19, and Bollinger mid 321.22; the 50 SMA has rolled over; a 10/50 death cross is ~1.87 points away; MACD is below zero with histogram −3.343; RSI 40.22 is not oversold; and the low-volume bounce failed, leaving overhead supply at 309–317. The bull’s own confirmation trigger is above 311.4, ideally 317.2, so buying at 302.25 is anticipation, not confirmation.
+
+Forward-model risks are also unresolved: gross margin near a ceiling with memory-cost tightness, amortization/tax normalization to $8.90–9.05 EPS, FCF quality flattered by lower cash taxes and working-capital normalization, inventory/DIO and CCC deterioration needing FQ4 proof, and the buyback cut as a possible signal. The long-term fundamentals—16.4% revenue growth, 50.06% gross margin, $110.2B nine-month FCF, $62.2B net cash, rising 200 SMA at 280.09—are strong enough to avoid Sell, but not enough to add before price and forward margin evidence confirm.
+
+**Strategic Actions**: Treat a standard AAPL allocation as 100%; position size, tax status, and risk budget were not provided, so sizes are relative.
+
+- **Existing exposure**: Trim AAPL to **50–75% of standard allocation**. Sell into rallies at **309.5–311.4**, and trim further toward **317.2** if volume does not confirm the move.
+- **New capital**: Do **not** initiate AAPL at 302.25. Rebuild only after a daily close above **311.4** on volume **>55M shares**, ideally above **317.2**. Until then, remain underweight/out.
+- **Risk controls**: A decisive close below **300.00** on volume **>55M** should trigger another reduction; downside levels are **295.18**, then **289**, then **280.09**. A close below **280.09** invalidates the primary uptrend and should prompt exit of the residual core and reassessment.
+- **Optional long-term accumulation**: Only for mandates that explicitly permit staged value entries, a small starter of no more than **25–33% of standard allocation** in the **285–295** zone near the rising 200 SMA could be considered, with ATR **8.55** as the risk unit and invalidation below **280.09**. This is not the base-case action until confirmation.

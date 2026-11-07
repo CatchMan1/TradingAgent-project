@@ -1,6 +1,6 @@
 # TradingAgents：数据与量化回测
 
-2026-11-08新增：[TradingAgents_t团队交付目录](TradingAgents_t/ROLE_C_HANDOFF.md)，其中包含并列的课程项目与修改后的TradingAgents框架（含Finnhub新闻接入）。本次按原目录结构收录代码与文档，未覆盖根目录已有项目；两个版本的运行说明分别适用于各自目录。该交付包的本地密钥、原始数据、缓存和运行日志未上传，不能将交接文档中的运行描述视为本次已核验的完整实验结果。
+2026-11-08新增：[TradingAgents_t团队交付目录](TradingAgents_t/ROLE_C_HANDOFF.md)，其中包含并列的课程项目与修改后的TradingAgents框架（含Finnhub新闻接入）。按原目录结构收录代码、文档、数据和实验日志，未覆盖根目录已有项目；两个版本的运行说明分别适用于各自目录。六个FinAtlas Parquet分片通过Git LFS保存；克隆后需安装Git LFS并执行`git lfs pull`以取得数据实体。本地密钥和运行环境不入库；交接文档中的运行描述不等于本次已复核的实验结论。
 
 课程项目流程：**共享 data/ → 组员 Agent → 最终经理 CSV → analysis.ipynb → 收益风险与图表**。
 

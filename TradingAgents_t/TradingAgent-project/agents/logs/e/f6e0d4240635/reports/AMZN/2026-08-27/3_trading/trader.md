@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The research plan resolves to Overweight, which maps to a Buy, but explicitly as a staged build rather than a single chase: the bull's evidence (revenue growth 16.6%→19.6%, operating income +43.2% YoY, 13.7% margin, core EPS +26%, ~0.37x net debt/EBITDA) is verified and medium-term, while the bear's case is about entry price and earnings composition, not a broken operating engine. The technical structure supports a partial start rather than a full position: AMZN closed 256.26, sitting on the 50% retracement (255.34) of the 226.65→284.02 earnings impulse, above a rising 200 SMA (238.59) and a 50 SMA that has climbed 20 straight sessions to 251.08, yet below the 10 EMA (260.93) and VWMA (264.11) with a confirmed MACD bearish cross since 08-17 (hist −1.683, widening 8 sessions) and RSI 47.23 offering no oversold cushion — i.e. mid-zone asymmetry, not a low. Hence: open Tranche 1 at market (~256.26), keep 246.50 as the hard invalidation (below the 61.8% at 248.57 and roughly 1.5x ATR of 6.709), add 30% into the 251–252 confluence (50 SMA 251.08 / lower Bollinger 251.68) only on a reversal candle with volume under ~30M, and reserve the final 30% for a close above 260.93 on volume >40M. A daily close below 251.08 stops all adds and cuts the position to half-size; the 248.57→235.50 zone is an air pocket to be avoided, not averaged into. ATR is compressing (−33% from 9.998 to 6.709), so stop distances must be re-derived weekly, and gap risk (the 12.5% 07-31 gap) means the ATR stop will not protect through a scheduled catalyst.
+
+**Entry Price**: 256.26
+
+**Stop Loss**: 246.5
+
+**Position Sizing**: Tranche 1 = 40% of a ~1.25x target overweight (~0.5x standard allocation) at market ~256.26; Tranche 2 = 30% at 251–252 on a reversal candle with volume <30M; Tranche 3 = 30% on a daily close >260.93 with volume >40M. Size the 246.50 stop to risk no more than 1% of capital per position (13.4-pt 2-ATR budget ≈ 1% ÷ 13.4 per share). Cut to half-size on a close below 251.08.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

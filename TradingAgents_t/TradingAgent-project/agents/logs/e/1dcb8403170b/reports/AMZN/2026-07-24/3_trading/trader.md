@@ -1,0 +1,19 @@
+**Action**: Sell
+
+**Reasoning**
+
+The research plan lands on Underweight, and that maps to a Sell — but a *partial, staged* Sell rather than an outright exit. Three pieces of evidence make the bear case dominant on the tape, not just on fundamentals:
+
+1. **The regime line broke.** AMZN closed at $232.11, 1.06% below the 200-SMA of $234.59 — its first close beneath that average since late June, and this time with the 50-SMA ($249.22) already rolling over (−$0.21/session) and the 50/200 spread compressing from $22.83 to $14.63. The June bounce template the bull leans on was a dip *above* a rising 200-SMA; this is the opposite configuration.
+2. **The July range floor was destroyed, not tested.** Lows of $232.05 (07/23) and $231.34 (07/24) pierced the prior $233.80 floor after an unfilled gap from $242.45 down to $238.35. Price sits $0.26 above the lower Bollinger Band ($231.85) with ~9.83% bandwidth — that is a volatility-expansion breakdown, which statistically favours band-riding over snap-back.
+3. **No capitulation, so no floor.** RSI 37.49 is still above the June troughs (32.46/33.63); MACD fell from +0.824 to −1.5005 in four sessions and the histogram (-1.0144) is dropping ~−0.4/day versus a June trough of −3.89; 07/24 volume of 35.02M was ~20% *below* the ~44M ex-rebalance 20-day average. Non-climactic selling plus VWMA at $245.52 overhead (trapped longs) means rallies into $238–$245 are supply, not opportunity.
+
+That is why this is a trim and not a full liquidation: AMZN is not broken structurally (50-SMA still above 200-SMA), the immediate panic impulse decelerated on 07/24 (−0.66% vs −4.57%), and the 07/30 catalyst is live and *unsized* — the report explicitly flags no news tool and no confirmed gap catalyst. The reward/risk on a fresh long here is only ~1.43:1 (entry $232.11, stop $224.89, target $242.45), and the same trade improves to ~2.4:1 on a reclaim of $234.59 with a $228.50 stop. Patience is the higher-expectancy path, so the correct action is to de-risk into strength/at market and hold only a residual.
+
+What I cannot do: the portfolio context provided is empty, so I cannot translate this into dollar amounts or share counts, and I cannot verify current holdings. Sizing below is expressed as a fraction of a standard allocation so it can be applied to whatever book the caller actually runs.
+
+**Entry Price**: $232.11 (sell/trim at the 2026-07-24 reference close; do not wait for a bounce into $238–$245, and do not add at this level)
+
+**Stop Loss**: $238.35 — a close above the 07/23 high and lower edge of the unfilled gap ($238.35–$242.45) invalidates the breakdown thesis and sits ~0.87× ATR above the entry; a close above $242.45 (gap fully filled, above the 10-EMA at $242.37) would force abandonment of the Sell stance entirely. Downside risk markers for the residual position: $231.34 (07/24 low) as the first confirmation of continuation, then $225.55–$227.01 (June shelf) — a close below that shelf opens $217.67 and then $198.79–$201.15 and should trigger exit of the remainder.
+
+**Position Sizing**: Reduce AMZN from a standard ~5% of portfolio to ~2.5% — a trim of roughly 250 bp, or 40–50% of the position, executed at/around $232.11. If the caller is already at zero, stay at zero; do not initiate. Volatility guidance: ATR is $7.22 (3.11% of price), so any remaining exposure should be carried at 35–40% below a normal 2%-ATR sizing unit to hold dollar risk constant, and sized down further if ATR expands toward $8.00–$8.60. Rebuild only in two stages: first a confirmed reclaim of $234.59 on volume >44M (restore to ~3.5–4%), then confirmation above the 200-SMA after the 07/30 event with credible capex moderation. Alternative re-entry is capitulation at $225–$227 with RSI in the 32–34 zone and a confirmed higher low. No new leverage.

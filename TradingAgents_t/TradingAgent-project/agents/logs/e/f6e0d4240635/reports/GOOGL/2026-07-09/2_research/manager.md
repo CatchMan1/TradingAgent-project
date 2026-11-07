@@ -1,0 +1,15 @@
+Recommendation: Underweight
+
+**Rationale:** The bear case is stronger on the current investment question for GOOGL. The bull is right that GOOGL’s franchise quality is exceptional: revenue +21.8% YoY, operating income +29.7%, operating margin expanding to 36.1%, $467.6B RPO, $126.8B cash and short-term investments, and a net-cash position after debt. That is why this is not a Sell.
+
+But the bear wins on price, cash conversion, and near-term asymmetry. GOOGL’s Q1 FCF halved to $10.1B from $19.0B while capex more than doubled to $35.7B. FY2025 FCF was roughly flat for a third straight year even as capex jumped from $52.5B to $91.4B. Buybacks paused, debt rose $31.2B QoQ to $80.3B, shares outstanding ticked up, and SBC rose to $7.2B. The bull’s claim that margin expansion proves the AI capex is converting is not sufficient because capex is capitalized and the cash-flow line is deteriorating now. The $467.6B RPO is real demand evidence, but it does not establish margin, timing, or FCF return.
+
+Technically, GOOGL at $358.89 is below the 10-EMA at $359.62 and below the 50-SMA at $372.60. MACD remains below zero at -1.755, and its histogram is already fading from 1.83 to 1.48. RSI has faded to 48.17. Near-term upside to the 50-SMA is only about 3.8%, while downside to the VWMA near $351.06 is about 2.2% and to the $330–$337 June floor is 6–8%. The long-term trend is intact—GOOGL is +12.7% above the rising 200-SMA with a golden-cross structure—so this is not a breakdown call. But the burden of proof for adding new money has not been met. The Berkshire headline is supportive but unverified in size/timing and did not lift GOOGL on July 9. That makes Underweight more appropriate than Hold.
+
+**Strategic Actions:** Assume a standard GOOGL allocation of 1.0x. Trim existing GOOGL exposure by roughly 20–25% of that standard allocation, moving to about 0.75–0.80x. If there is no existing GOOGL position, do not initiate at $358.89.
+
+Use $351.06 as the first risk trigger: a daily close below $351.06 on above-average volume should reduce GOOGL further to roughly 0.50x standard allocation. Do not pre-commit new capital at the $330–$337 June floor unless price stabilizes and future evidence shows improving FCF visibility; price alone is not enough.
+
+Re-risk only on confirmation. If GOOGL reclaims $372.60 on volume, move back toward 0.90–1.0x standard allocation in two steps—e.g., add 10% of standard allocation on the first volume-backed close above $372.60, and another 10% if GOOGL holds above that level. A daily close back below $367 after the reclaim should pause the rebuild.
+
+Missing inputs: exact portfolio size, tax constraints, and live volume/order-book data beyond the debate. Position sizes above are therefore expressed against a standard GOOGL allocation, not a dollar amount.

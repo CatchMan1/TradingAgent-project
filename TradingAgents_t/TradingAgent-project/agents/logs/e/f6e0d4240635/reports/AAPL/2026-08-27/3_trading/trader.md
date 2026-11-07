@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan's Underweight resolves to a Sell on sizing: the bear case won on operating leverage (opex +22.9% vs revenue +16.4%, so essentially all 263 bps of margin expansion is gross margin sitting on a 94% inventory build), on cash-flow quality (the +52.5% FCF is a working-capital and capex-deferral artifact; normalized net income is +20.0%), and decisively on trade construction — the advertised 1.33:1 upside asymmetry requires a >50M-share close over 317.04 while the last five sessions averaged ~34.8M, and 317–320 has already failed twice (319.28 on 8/19 after +2.19% on 50.5M shares, 320.28 on 8/20). Price at 314.58 is 0.78% under the upper band (317.04) inside a 4.99% bandwidth squeeze, +0.98% over a flat 50-SMA (311.52) fused with the 10-EMA (311.53) — a single high-consequence line the plan correctly refuses to use as a stop because 311.50 is only 0.43× ATR (7.10). The 200-SMA at 282.35 rising with an intact golden cross and four defenses of the 300.00–302.79 shelf are why this is a trim of a quality franchise into a dated binary event (Sept 9) at a stretched multiple, not an exit, and why the residual core stays with event hedges.
+
+**Entry Price**: 314.58
+
+**Stop Loss**: 321.7
+
+**Position Sizing**: Reduce AAPL to ~50% of a standard full allocation (trim one-third to one-half of the existing position) in thirds via limit orders at 314.50–317.00, topping up at 319.00–320.50 if the tape gets there; if price closes below 309.10–309.32 before the trim completes, finish the remainder at market on that close. No new longs at 314. Any residual tactical long is capped at 10% of a standard allocation, entered only on a daily close above 317.04 on >50M shares (prefer >60M) followed by a close above 320.28, with a hard stop at 300.37 (2×ATR, just under the 300.00 crash low) and sizing that assumes 7–8% effective gap risk rather than the 4.5% nominal distance. Cover the retained core over Sept 9 and the late-October FQ4/10-K window with a defined-risk put spread (~5–7% OTM long put financed by a further OTM short put) or overwrite with calls at 320–325.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

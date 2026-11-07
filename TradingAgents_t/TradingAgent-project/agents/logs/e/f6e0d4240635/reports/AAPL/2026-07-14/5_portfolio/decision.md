@@ -1,0 +1,9 @@
+**Rating**: Overweight
+
+**Executive Summary**: Own AAPL but earn the overweight in stages rather than taking the full increment at $314.86 into event risk. Build to roughly 1.05-1.10x a standard allocation pre-event: Tranche 1 of the incremental overweight near the 10-EMA ($309.68-$310) on stabilization, Tranche 2 into the $299.58-$300.40 50-SMA/mid-band confluence if it holds, and reserve the final ~0.10x plus any breakout tranche for a decisive close above $325.61 on rising volume, ideally after the late-July Q3/TSMC prints. Because prior AAPL calls show entry-price caution repeatedly cost alpha, pre-commit to at least a partial add on strength if no pullback arrives. A daily close below $300 cuts the incremental overweight back to a standard allocation; core holders keep their core.
+
+**Investment Thesis**: The bull wins the question of whether AAPL is worth owning; the bear wins only the question of how much to pay today — hence a staged Overweight, not a Buy and not a Hold. Substance is decisive: H1 FY2026 revenue +16.1% to $254.94B (Q2 +16.6%), diluted EPS +21.8%, gross margin 48.6%/Q2 49.3%, operating margin 34.0%, ~$78.3B H1 free cash flow (~30.7% margin), ~$61.9B net cash, and record 20% global smartphone share while global Q2 shipments fell 11% — taking share and expanding margins in a shrinking market. The fully stacked trend (price $314.86 above rising 10-EMA $309.68, 50-SMA $299.58, 200-SMA $273.08 with a widening golden cross; MACD 5.474 vs signal 3.145 with expanding histogram; RSI 61.45 not overbought) confirms it, and my own record warns against letting pullback-reflex become underweighting: two prior Underweight AAPL calls (2026-06-30, 2026-07-01) were wrong as price ran straight through the resistance zones.
+
+**Price Target**: not provided
+
+**Time Horizon**: not provided

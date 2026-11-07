@@ -1,0 +1,28 @@
+**Action**: Sell
+
+**Reasoning**
+
+The research plan lands on Underweight, and per the mapping in use, Underweight is a Sell — sized as a partial trim rather than an outright liquidation. The price structure supports acting now rather than waiting.
+
+The decisive evidence is at the current quote. AMZN closed 254.98, *below* both the 20 SMA (255.77) and the 50 SMA (256.26), after opening 255.11, printing a 259.00 high and closing essentially on the session low, down 1.34% on 41.98M shares — roughly 24% above the 20-day average. Two consecutive rejections at the 259 shelf (09-21 high 259.49, 09-22 high 259.00, plus the 09-03 high at 259.50) confirm that level as a ceiling on a closing basis, and today's candle shows supply absorbing the bid on elevated volume. MACD at −1.367 remains below signal (−1.310) and below zero; the histogram compression (−1.539 to −0.057 in four sessions) is a *bottoming* tell, not a reversal, and the crossing has not occurred. Price sits only 0.42% above VWMA (253.92), so the bounce is unvalidated by volume-weighted flow. RSI at 49.22 gives no oversold cushion. The bull's own tactical plan requires a better price — an entry at 250.50 — which is an explicit concession that 254.98 offers no edge.
+
+The coil is unresolved and the distribution of outcomes is skewed against holding full weight: the scenario map puts ~45% on immediate upward resolution versus ~55% on continued coil or a retest of 246–250. Chasing the breakout print has poor asymmetry — a 1.5-ATR stop near 251 risks ~8.5 points to make ~5.6 to the 265.11 upper band — so the correct posture is to lighten at current levels and re-engage either at the 249.50–252.00 shelf or on a confirmed 259.50 close.
+
+The fundamental overlay reinforces trimming rather than adding: 1H26 operating cash flow of $71.4B against capex of $98.4B produces negative free cash flow, roughly $24B of that OCF is tax deferral, long-term debt rose 93% in six months to $133.0B, and $62.8B of the $92.9B 1H26 net income is a private-stake mark-up. Organic revenue cannot be separated from the $24.4B Q2 acquisition, and receivables grew 30% against 18% revenue growth. At ~31x adjusted annualized EPS with negative FCF, valuation is not a support.
+
+What prevents this from being a full Sell is equally concrete: price is +6.01% above a rising 200 SMA (240.53), the 50/200 spread has widened to +15.72, ATR has contracted from 8.54 to 5.97, RSI never reached oversold (39.45 low), the 09-16 low at 244.30 came on below-average volume rather than a capitulation print, and the balance sheet carries ~$29.7B net cash at 24.3x interest coverage. That precludes a high-conviction short. So: cut exposure, retain a smaller core, and hold defined re-entry levels.
+
+**Entry Price**: 254.98 — trim into the 254–256 area now; no new buying at this quote. A tactical short overlay is actionable only on the specified trigger: an intraday push into 258.50–259.50 that closes back below 254.00.
+
+**Stop Loss**: 261.50 (above the 09-04 high of 261.12) — this is the invalidation for any short overlay and caps risk at ~6.52 points, ~1.09 ATR against ATR of 5.97. Separately, the Underweight stance itself is invalidated by a daily close above 259.50 on volume above 40M with MACD above signal; on that event, cover the overlay and begin the upgrade ladder with a buy of the 256–257 retest rather than the breakout print. Note that the bull's proposed 246.80 stop on a 250.50 entry is only ~3.70 points, ~0.62 ATR, and sits inside the noise band the report itself warns about — do not adopt it.
+
+**Position Sizing**
+
+Portfolio context (holdings, cash, account size) was not provided, so sizing is stated against a standard full-weight AMZN allocation. No sentiment report was included in this run, and organic versus acquired revenue is not separable in the fundamentals extract — neither should be treated as evidence in either direction.
+
+- **Trim now**: sell 40–50% of a full-weight position into 254–256, leaving a core at 50–60% of standard allocation. Retained core carries a hard rule: no re-adding while AMZN is below the 50 SMA (256.26) and capped by 259 without confirmation.
+- **Tactical short overlay**: optional, capped at 25–30% of a standard allocation, and only on the failed-retest trigger above. This is an overlay, not a core short. Take partials at 249.50, then 246.40, then 244.30; exit the entire overlay on any daily close back above 259.50.
+- **De-risk trigger**: a daily close below 244.30 breaks the higher-low structure — cut the remaining core to 25–30% of standard allocation and stand aside from the 240.53 / 239.82 confluence, with 226.65 below that. Add to the overlay only if 244.30 breaks on above-average volume, keeping total net short exposure at or below 50% of a standard allocation.
+- **Re-entry ladder**: 249.50–252.00 shelf only on a daily close that holds above it, with risk placed on a daily close below 244.30 or sized so a 1.5–2.0 ATR stop fits the budget; confirmation entry on a daily close above 259.50 on volume above 40M with MACD above signal, buying the 256–257 retest. Each step adds roughly 20–25% of standard allocation; full weight requires a fundamental trigger (capex growth decelerating or TTM FCF turning positive, verified organic high-teens growth, or a stable/marked-down private-stake book with adjusted EPS holding ~$4 per half).
+- **Gap risk**: Q3 reports in late October; prior events in this dataset produced a −9.73% two-day drop and a +15.32% gap. Cap total AMZN gross exposure so a ±15% move stays inside the risk budget, and either trim further into the print or replace naked gap risk with a defined-risk put or put spread.
+- Do not average down while FCF is negative and capex growth has not decelerated.

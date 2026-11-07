@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan is an Underweight, so the correct transaction at spot is a partial sell, not a flip to outright bearish: the long-term structure is intact (324.96 vs. rising 200-SMA 283.33; 50-SMA turned up 309.08 to 313.55; MACD 1.896 over signal 0.137 with five sessions of histogram expansion), which caps how much should be sold. But incremental capital at 324.96 has negative R:R: the 9/02 session stalled at the 61.8% retracement of 327.55 and the 329.59 gap-fill band, closing at 324.96 below both and below the prior 325.13 on 33.8M shares (16% under average) while sitting above the upper Bollinger band (324.65) for a third time in four sessions - expansion into resistance with no volume confirmation. Upside to 334.75 is ~9.8 points against ~11.5 points of risk to the 50-SMA, and the plan's own preferred entry is 317.5-319.5 with an explicit 'do not chase 325-328.5.' That, combined with ~35x pricing an unverified growth acceleration, deferred revenue +8.8% vs. revenue +16.1%, an unproven 50.06% gross margin and the unexplained $25.6B intangibles/other-liability swing, justifies trimming 25-35% into 324-329 and requiring confirmation before rebuilding.
+
+**Entry Price**: 324.96
+
+**Stop Loss**: 333.5
+
+**Position Sizing**: Standard AAPL allocation = 1.0x. Trim 25-35% now into 324.96-329.00, taking exposure to 0.65-0.75x; no new initiation at spot. Second trim of 15-20% (toward ~0.5x) on a close below 322.29 with a rolling MACD histogram; cut to minimal tactical exposure on a close below 313.5 (50-SMA/VWMA). Size each tranche to 0.5-0.75% of portfolio risk against a 1.5xATR (~11.1 point) stop (e.g. ~9 shares of a $10,000 book at 1% risk). Rebuild only to 0.75x on a 317.5-319.5 stabilization (stop 312.00; targets 328.40, 334.00) and toward 1.0x only after a close above 329.59 on >=50M shares (stop 322.20; targets 334.75, 344.57). Unknown current holdings/cash - apply multiples to the caller's own position.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

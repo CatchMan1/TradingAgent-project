@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan is an Underweight, so the transaction is a reduction, not an add: at 191.56 AAPL is +3.34% above VWMA (185.36), +1.80% above the 20-day basis (188.165) and pressing directly into the 191.95 / 192.53 / 193.15–194.83 supply shelf, with MACD still below zero at −1.026 and the 10-day EMA (186.98) still under the 50-day SMA (189.80) — a recovery bounce inside an unresolved range rather than a confirmed breakout. The reward-to-risk is objectively poor here: risk to a technically valid stop under the VWMA/10EMA cluster is ~6.6 points against ~3.2 points to the first target at 194.8, i.e. ~0.5:1, which is why the technical report refuses to chase the quote. Fundamentals reinforce paying-down exposure rather than paying up — revenue −2.8%, operating income −4.3%, FCF −10.6%, FCF coverage 1.08x, ~30.8x trailing EPS and a ~3.4% FCF yield — with the approaching FQ1 print a binary event for which no demand, guidance, China or sentiment data exists in the record. This is not a full Sell/exit because the 200-day SMA (181.154) is rising, price sits +5.75% above it, the gap at 182.68–186.09 is unfilled, and volume has been above average on both up days.
+
+**Entry Price**: 191.56
+
+**Stop Loss**: 194.9
+
+**Position Sizing**: Reduce to 50–75% of a standard AAPL allocation; no new capital at 191.56. Trim in thirds — one third at the current 191.56, further trims into 194.5–197.5 (cap residual before FQ1 to what you can absorb in a binary reaction). If the reduction must be staged on a bounce, a protective put or collar covers the wait. Hard stop on the bearish view: any daily close above 194.9 with volume ≥70M and MACD back above zero — add back only in 25–50% stages. Separate deterioration trigger for the residual: a daily close below 185.00, then next reference zones 182.68–186.09 (gap), 181.15, 180.17. Size so that one 3.34-point ATR move is tolerable; ATR is elevated at 1.74% of price, so do not carry December-era sizing.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

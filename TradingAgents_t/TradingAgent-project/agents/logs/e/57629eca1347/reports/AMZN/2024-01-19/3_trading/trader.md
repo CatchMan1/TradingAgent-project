@@ -1,0 +1,9 @@
+**Action**: Buy
+
+**Reasoning**: The research recommendation is Overweight, which maps to Buy for AMZN, but the tactical evidence says build it in tranches rather than commit full size at 155.34. The primary trend is intact: AMZN closed at 155.34, above the 50-SMA at 148.432 and the 200-SMA at 131.083, with the 50/200 spread widening and the 10-EMA rising for nine sessions. The 2024-01-19 up-day volume of 51.65M was about 25% above the recent average, which supports accumulation. However, the entry-risk case is real: upside to the first target at 160 is only about 3.0%, while a 2-ATR stop at 149.40 is about 3.8% below spot; MACD has only just crossed positive, and both MACD and RSI show lower highs against higher price highs. VWMA near 151.08 is flattening, and the early-February Q4 print is a binary gap risk. That argues for a staged Buy, with the largest adds below current price or on confirmed strength, and total exposure capped before earnings. Portfolio context was not provided, so sizing is expressed as a percentage of a standard single-name allocation the caller can apply to their own book.
+
+**Entry Price**: 155.34 for the initial tranche only.
+
+**Stop Loss**: 149.40, the 2-ATR stop below the 155.34 close, sitting below the 2024-01-17 low at 149.91. Structural invalidation is a daily close below the rising 50-SMA at 148.43.
+
+**Position Sizing**: Target 100% of a standard single-name allocation, staged as follows: 50% initial tranche at 155.34; 25% add at 152.80; remaining 25% only after the early-February Q4 print and only with a volume-confirmed close above 157.89 using at least the 51.65M volume seen on 2024-01-19. Cap total AMZN exposure at 75% of the standard allocation going into earnings. If AMZN breaks 149.40 or closes below the 50-SMA at 148.43 on heavy volume, cut to a tracking position of no more than 25% of the standard allocation rather than averaging down.

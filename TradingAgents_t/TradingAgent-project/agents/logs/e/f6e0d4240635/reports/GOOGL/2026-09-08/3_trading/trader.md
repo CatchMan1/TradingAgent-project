@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan is an evidence-weighted Underweight: the bull's two load-bearing pillars collapse on inspection — clean H1 CFO is roughly $57.4B versus ~$65.5B (contracting ~12%, not +32.8%) once the non-repeating +$27.5B deferred-tax add-back is stripped, and H1 capex of $80.6B has only $13.6B of depreciation against it, so the gross-margin line being capitalized has not yet absorbed the capex base (~+$27B of annual expense on a simple doubling, ~$1.80/share, ~17% of the ~$10.5 normalized EPS that anchors the ~32x multiple). Price structure agrees rather than rescues: close $338.36 sits below the falling 50-SMA ($348.59) since 8/11 and below VWMA ($341.65), MACD is negative since 8/12 (-3.018) with RSI 44.75 and no oversold cushion, lower highs are intact from 402.62 → 377.65 → 351.60 → 344.68 → 339.68, and the 9/8 "defense" of the 200-SMA ($336.21) came on 1.02x average volume versus 1.49x on the 8/31 distribution day. The decisive point is locational: $338.36 is the midpoint of the research's own 336.2-340.5 no-trade zone, so the only defensible monetization is into the 344.68-348.59 supply cluster, with the hard invalidation at the 351.60 structural pivot where the falling-high sequence ends. This is a trim-and-sell-strength call, not an exit or a short — $242.5B cash/investments, ~$141B net cash, 24.2% revenue growth and 34.0% operating margin do not justify liquidation.
+
+**Entry Price**: 344.7
+
+**Stop Loss**: 351.6
+
+**Position Sizing**: Trim 40-50% of a full-weight GOOGL position, taking the core to ~0.5-0.6x standard allocation using a resting ladder at 344.70 / 346.50 / 348.40 (do NOT add or average in the 336.2-340.5 no-trade zone; if flat, do not initiate). Sell-into-strength thesis is invalidated on a daily close above 351.60 (0.86 ATR of risk from the first rung, ATR 8.00) — at that point restore toward 0.8x. Optional tactical short leg only on a daily close below 333.00 with volume >27M, sized 0.2-0.3x standard, stop 340.50 close-basis, targets 330.20 / 321-318 / 314.90 scaling out in thirds.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

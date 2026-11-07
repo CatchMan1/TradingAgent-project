@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan's Underweight call maps to Sell, sized as a trim rather than an exit: the fundamental debate is genuinely two-sided (24.2% revenue growth, 30.4% operating income growth and ~$141B net cash cap the downside, but roughly -$5.9B Q2 FCF, H1 FCF -82.4%, capex at 35.1% of revenue and $29.1B of accrued-but-unpaid capex say Alphabet is now a capital consumer), while the price structure is one-sided. GOOGL closed 319.74 on 2026-07-24 below the 10 EMA (341.22), 50 SMA (364.70) and, for the first time in ~60 sessions, the 200 SMA (323.90); the 7/23 breakdown was -7.13% with a -6.13% gap on ~69.4M shares (~2x average), and the 7/24 stabilisation was rejected at 324.18 on only 31.8M shares — a no-demand bounce inside the prior day's range. MACD (-8.09, histogram -3.80) is more negative than the June low, RSI printed a 60-session low at 31.02 with no bullish divergence, and price sits 1.30% under the lower Bollinger band (323.96) with bandwidth blowing out from 10.1% to 16.0% in two sessions. VWMA at 346.95 means recent buyers are underwater and rally supply is heavy. With no high-volume reclaim of 323.90-324.18, the burden of proof stays with the bulls, so I reduce exposure rather than exit or short the franchise.
+
+**Entry Price**: 319.74
+
+**Stop Loss**: 324.18
+
+**Position Sizing**: Trim to 60-70% of a standard allocation at/around 319.74 (last close) and add no new capital; treat any rally into the 341.22-346.95 zone (10 EMA to VWMA) as a second reduction tranche rather than a chase. Cut further to 30-40% of standard on a daily close below 314.90 on above-average volume, with 296-306 as the next downside reference. The 324.18 stop is the thesis-invalidation level for the underweight: a *high-volume* (greater than 50M shares) daily close back above 324.18 would neutralize the breakdown and warrant moving back toward neutral/sized-up only after follow-through above 341-347 — a low-volume poke through 324 is not sufficient. Any tactical long should be sized at no more than 50-60% of normal given ATR of 11.84 (3.70% of price), with 1-1.5 ATR stops near 308 or 302; that is not the base case here.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

@@ -1,0 +1,19 @@
+**Action**: Buy
+
+**Reasoning**
+
+The research plan is Overweight, and per the mapping rule that is a Buy — sized modestly, staged, and only at a level the price structure actually pays for.
+
+The direction case is won on the tape: close 332.41 > 10 EMA 326.66 > 50 SMA 319.27 > 200 SMA 285.79, with the 50 SMA turned up off 309.08 (8/17) and the 200 SMA rising (274.58 → 285.79). MACD 4.6309 is above its 3.0924 signal after both the signal-line cross (8/26) and the zero-line cross (8/31); RSI 62.10 is constructive without being stretched; price is 2.81% above VWMA 323.32, so the volume-weighted holder of the recovery tape is in profit and the 7/31 gap is effectively repaired (332.41 vs. the 333.43 pre-gap close). None of the bear's points — margin mix, tax-flattered CFO, or the 16.3% extension above the 200 SMA — breaks that structure; they haircut magnitude, not direction.
+
+The entry case, however, belongs to the bear, and that is what governs execution. At 332.41 AAPL sits 0.31% under a full gap-fill, 1.31% under the upper Bollinger band (336.78), and directly beneath a triple-rejection zone (9/11 high 336.22, 9/14 high 335.50, 9/16 high 335.48), with the MACD histogram easing 2.028 (9/3) → 1.625 (9/14) → 1.538 (9/16) and volume fading to 39.3M / 31.7M / 36.0M against a 41.9M 20-session average. Upside to the 344.57 high is +3.66% while a 2×ATR stop is −4.43%. That is negative asymmetry — so no tranche is initiated at market.
+
+Instead I take the preferred side of the trade the plan itself specifies: the pullback into the 326.5–323.3 band (10 EMA 326.66 down to VWMA 323.32). That entry buys the same uptrend with ~3–4% risk against a ~4–5% first-target move to 335.5–336.2, and then 340.08 / 344.57. ATR 7.3538 (2.21%) defines the units; the 50 SMA at 319.27 is the structural floor and the stop sits just beneath it. Because the 7/31 gap (−7.35% on 132.5M shares) proves stops can be gapped through, risk is controlled with tranche size and spacing rather than a tight stop.
+
+This is a Buy rather than a Hold because both the primary trend and the fundamental trajectory (nine-month FCF $110.197B, +52.5%; gross margin +357 bp to 50.06%; EPS +28.7%; $62.2B net cash) point the same way, and the only genuine objection is timing — which staging solves. It is a modest Buy rather than a full one because the entry critique is real, and because data needed to underwrite the margin durability (segment/product mix, valuation multiples, forward estimates) is explicitly absent from this round, as are the caller's holdings and cash.
+
+**Entry Price**: 325.0 (within the 326.5–323.3 pullback band, between the 10 EMA at 326.66 and the VWMA at 323.32). Alternative trigger if no pullback occurs: a daily close above 336.3 on volume above 41.9M, entered as a separate, smaller tranche.
+
+**Stop Loss**: 317.70 (just below the 50 SMA at 319.27 and at the 2×ATR reference of 317.70; ≈2.25% below the 325.0 entry). A daily close below 319.3 pauses all further adds and forces a reassessment rather than averaging down.
+
+**Position Sizing**: Deploy only Tranche 1 at this entry — 40% of the planned 30–50% add to a standard allocation, i.e. roughly 12–20% of a standard allocation, leaving the existing core untouched. At the 2.25% stop distance that tranche risks roughly 0.3–0.45% of portfolio equity. Hold the remaining 60% of the add for the confirmed close above 336.3 on >41.9M volume, split half on the close and half on a retest holding 333–334 — sized smaller than Tranche 1, since the breakout payoff is thin (≈−1.7% to 330.70 vs ≈+1.1% to 340.08). Do not trim the core; the trim case rests on entry timing and unquantified headlines, not on deterioration in trend or cash generation. Size against the caller's own book — portfolio context was not provided, so I am not assuming a flat position or available cash.

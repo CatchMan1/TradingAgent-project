@@ -1,0 +1,9 @@
+**Action**: Buy
+
+**Reasoning**: The research plan is Overweight, and the evidence supports a constructive stance: AMZN at 156.02 is above a rising 10-EMA at 153.69, 50-SMA at 148.95, and 200-SMA at 131.61; RSI at 61.51 is not overbought; and the margin/FCF inflection plus net cash position support the thesis. But the technical report also says not to chase: the 156.21 intraday high is still below 157.17, volume at 37.99M is below the 20-session average, MACD/RSI show a negative divergence, and the upper Bollinger band at 158.48 is only 1.58% above spot. So I would implement the Overweight as a staged Buy, not a full-size purchase at 156.02. The primary accumulation level is 153.69 at the 10-EMA; a 156.02 starter is acceptable only if the caller is at zero/underweight exposure. Add a final slice only on a daily close above 157.17 with volume of at least 45–50M shares. Use 148.95 as the core invalidation level at the 50-SMA; the tactical tranche stop is 151.50 under VWMA. If an existing position is already at or above standard allocation, do not add—hold and trail. Missing from the dataset: current holdings/cash, Q4/FY23 10-K, segment-level AWS P&L, and buyback authorization; none are assumed. If the 10-K shows operating margin materially below ~7.8% or capex guidance that guts the FCF inflection, downgrade to Hold.
+
+**Entry Price**: 153.69 primary accumulation; 156.02 starter only for zero/underweight accounts.
+
+**Stop Loss**: 148.95 core/swing; 151.50 tactical tranche.
+
+**Position Sizing**: Build toward 60–75% of a standard single-name allocation, not a full position. Split into three slices: 1/4 of target at 156.02 only if currently flat; roughly 1/2 of target at 153.69; final slice only on a daily close above 157.17 with volume ≥45–50M. Cap loss on the full position at ~2.5 ATR (~7.4 points) from weighted average cost; take partials at 157.17 and 158.48. For an existing at/above standard position, hold and trail rather than add.

@@ -1,0 +1,12 @@
+**Recommendation**: Overweight
+
+**Rationale**: The bear wins the near-term tactical argument, but not the strategic thesis. At $172.34, AMZN is ~59x FY2023 clean EPS, 11.5% above its 50-SMA, 26.8% above its 200-SMA, and just printed a failed breakout/reversal bar at $175.39 with fading MACD and a lower RSI high. The bear is also right that the $49B FCF swing was helped by a 17.2% capex decline, and that a return to ~12% capex/sales could compress FCF materially; cash taxes at ~30% vs 19% book and $24B of SBC are real residual-cash-flow headwinds. That is why AMZN should not be chased at $172–175, and why the rating is not Buy.
+
+The bull nevertheless wins the core investment case. FY2023 operating income rose 200.9%, operating margin expanded 403bp to 6.41%, revenue re-accelerated to +11.8%, FCF swung from -$16.9B to +$32.2B, OCF rose 81.7% to $84.9B, and AMZN held roughly $74B of net cash before leases. The bear’s capex/FCF concern is valid but argues for staged entry and risk controls, not for exiting a franchise with this margin and cash-generation trajectory. The missing pieces—precise 2024 capex guidance, forward EPS consensus, segment-level AR detail, and quantified legal liability—keep sizing below a full Buy.
+
+**Strategic Actions**:
+- Maintain the existing AMZN core position. If at standard allocation, target ~1.20–1.25x standard allocation, but build only in tranches.
+- Do not add at $172–175. First tranche: 1/3 of the incremental allocation on a pullback to $168–169.20, only if the $169.19 gap shelf holds and there is no high-volume breakdown. Use a tactical stop below $166–167.33.
+- Second tranche: 1/3 on a deeper reset to $165.00 or $161.57, only if price stabilizes and $167.33 is not broken on volume. If $167.33 breaks on volume, cancel pullback adds and hedge/reduce the tactical sleeve.
+- Third tranche: 1/3 on a volume-backed close above $176.88 with MACD histogram re-expanding. If the breakout fails, do not add.
+- If already above target overweight, trim 10–20% of the tactical sleeve or hedge into $175–176.88 strength, but keep the long-term core. Monitor capex/FCF, cash tax rate, SBC, FX, and FTC/EU legal developments; a material adverse change in those items would justify reassessing the Overweight stance.

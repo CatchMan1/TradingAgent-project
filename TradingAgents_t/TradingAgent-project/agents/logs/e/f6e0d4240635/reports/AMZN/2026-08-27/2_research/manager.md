@@ -1,0 +1,31 @@
+**Recommendation**: Overweight
+
+**Rationale**: Weighing this on merits: the bull wins on business quality and operating evidence, the bear wins on earnings quality and near-term timing. Neither side disproved the other's core fact set, so let me be specific about what decided it.
+
+What the bull proved with verified numbers: revenue growth accelerated 16.6%→19.6% on a ~$200B quarterly base; operating income +43.2% YoY with margin up 230bps to 13.7%; core EPS (ex-marks) +26%; SBC down 7.6% in absolute dollars and G&A down 6.0%; net debt/EBITDA ~0.37x with $176B of liquidity. Technically: higher lows (199.14→225.55→226.16), higher highs (264.50→278.56→287.20), price 7.4% above a monotonically rising 200 SMA, the 50 SMA up 20 consecutive sessions, and a pullback that occurred on ~65% of normal volume — light-volume digestion, not distribution. The bear never demonstrated demand deceleration; it explicitly conceded the franchise, the operating momentum and the rising 200 SMA are real.
+
+What the bear proved, and where the bull hand-waved: 81% of Q2 net income ($50.5B of $62.6B) was a non-cash markup of non-marketable equity, taking that book from $16.2B to $122.3B — 11.2% of assets, self-marked, no observable price. At ~$7.80 annualized core EPS the stock is ~33x with TTM FCF of −$11.6B, debt +93% to $133B in six months, net interest flipped from +$569M to −$19M, capex at 27% of revenue, and pure depreciation compounding +42% against a margin tailwind the bear fairly characterizes as partly discretionary (marketing +2.5%, G&A −6.0%, one-time SBC step-down). That is a legitimate valuation constraint and a real tail risk that the bull priced at zero. The bear's momentum read is also correct in the near term: MACD crossed below signal on 08-17 with a widening negative histogram and a zero-line cross days away, price below the 10 EMA (260.93) and VWMA (264.11), RSI 47.23 with no oversold cushion, −9.8% from the 284.02 peak, and an open 12.5% gap to 235.50. Decisively, AMZN closed down 1.54% on 08-27 on rising volume (35.9M vs 21.5M) in the bottom third of the range — the post-NVDA "unpriced catalyst" did not lift the tape, which undercuts the bull's near-term catalyst timing claim.
+
+Two points left genuinely unanswered and I am flagging them rather than resolving them: (1) the bear's claim that Anthropic is paying Nscale ~$45B for compute on Vera Rubin rather than AWS — an equity stake that marks up while your most important AI customer multi-sources away is a business signal, and the bull had no rebuttal because he spoke first; (2) the $109.8B lease obligations / $650B contractual commitments against a 2027–28 GPU delivery. Also missing from the packet on both sides: AWS segment growth rate, advertising growth rate, and any forward consensus — both analysts asserted "AWS profit surge" and "advertising growth" without a number.
+
+Why Overweight rather than Hold or Buy: the bear's case is about price, entry timing and earnings composition, not deterioration of the operating engine, and the bear itself ends at "buy the business at 251 with confirmation, or at 235 after the fill." That is a staging instruction, not a short thesis. The bull's directional evidence is verified, accelerating and medium-term in nature; the bear's is short-lived momentum plus a valuation premium that is real but not disqualifying for a business compounding core earnings +26% with 0.37x leverage. So the direction goes to the bull — but the size and the entry go to the bear. Not Buy, because 33x core EPS with negative TTM FCF, a $122B self-marked book, a confirmed bearish momentum cross, and an 8% air pocket to the 200 SMA mean we should not chase the middle of the range at 256.
+
+**Strategic Actions**: Instrument: AMZN. Target position: ~1.25x a standard allocation, built in three tranches — do not take it all at once at 256.26.
+
+1) Tranche 1 — 40% of the target overweight now, at market (~256). The direction is underwritten by verified operating momentum; the bear's entry-timing case is why this is a partial starter, not a full position.
+
+2) Tranche 2 — 30% in the 248.5–252 confluence (50 SMA 251.08, lower Bollinger 251.68, 61.8% retracement 248.57). Condition: a reversal candle on volume below ~30M (the bear's condition, and it is a sound one). If price gets there on rising volume with the MACD already through zero, skip this tranche and stand aside — do not catch it.
+
+3) Tranche 3 — final 30% on a daily close above 260.93 (10 EMA) with volume above 40M, which is the confirmation that the VWMA overhead at 264.11 is being absorbed.
+
+Risk controls:
+- Hard risk line: a daily close below 251.08 that turns the 50 SMA into resistance. Stop adding immediately and cut the position back to a half-size core. Do not average down through 248.57.
+- The 248.57→235.50 zone is an air pocket, not a buy zone. No new capital inside it; re-underwrite only on a formed base, with the 200 SMA at 238.59 as the reference for a full gap fill.
+- ATR is 6.709 and compressing; re-derive stop distances weekly and size so the initial stop (~246.50, roughly 1.5 ATR) risks no more than the pre-agreed per-position budget.
+- Upside references for trimming/rolling: 260.93 → 264.11 → 267.14 → 271.58, with 284/287 as the strategic target zone.
+
+Monitoring / re-underwrite triggers before the Q3 print:
+- Watch the depreciation trajectory (D&A now 10.0% of revenue, +42% YoY) against revenue growth; the fundamental report's own break condition is revenue decelerating below ~15% while depreciation compounds 30%+ — if that appears, take the position to Hold/Underweight regardless of price.
+- Any markdown or impairment in the $122.3B non-marketable equity book is the single largest unhedged risk in this thesis; treat a reversal as a size-reduction event, not a dip to buy.
+- Verifiable evidence on the AWS-vs-Nscale/Anthropic share-of-wallet question, and on whether the federal AI cloud line converts into an actual award with dollar terms. The bear's $45B Nscale claim and the 100k-GPU government line both arrived without contract detail — get documentation or discount them.
+- Do not build the position on NVDA sympathy moves; the 08-27 session already showed AMZN failing to follow a blowout NVDA print.

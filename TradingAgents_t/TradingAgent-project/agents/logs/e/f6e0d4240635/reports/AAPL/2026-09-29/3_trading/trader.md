@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan's Overweight is a Buy, but it is explicitly a staged buy, not a chase: both the bull and bear converge on accumulating in the $318–$322 zone (50 SMA $321.98) with $315–$317 (lower Bollinger $315.65 + 2-ATR $315.33) as the higher-conviction add, and the technical report calls $329.40 a "no-man's land" sitting below the 10 EMA ($334.77), VWMA ($333.99) and Bollinger mid ($330.96) with a fresh negative MACD histogram (-0.283) and no RSI cushion at 50.9. So I am working a limit bid into the pullback rather than paying spot, with the long-term structure (+14.2% above a rising 200 SMA, 50>200 by 11.7%) and the fundamental case (9M revenue +16.1%, EPS +22.4%, ~108% FCF conversion, $62.2B net cash) providing the reason to own it at all, and the below-average 0.9x volume on the selloff supporting that this is a reset, not a reversal. If AAPL instead reclaims $335 on above-average volume (>~42.5M) before giving us $322, the first tranche is taken on that confirmation instead. Risk is defined by the plan's own invalidation: a weekly close below $309.90 with $308 as the execution trigger to avoid wick-outs, which is roughly 2 ATR ($7.04) of room from the $322 entry.
+
+**Entry Price**: 322.0
+
+**Stop Loss**: 308.0
+
+**Position Sizing**: Build a standard allocation in three tranches, total capped at 100% of standard allocation: 40% at $322 (50 SMA, working down to $320), 35% at $315–$317 (lower Bollinger/2-ATR confluence, only if RSI is resetting into the low-to-mid 40s rather than breaking down), 25% on a volume-backed reclaim of $335 with volume above ~42.5M. If the $322 tranche never fills, take that 40% on the $335 reclaim instead — never at $329.40. With a $14 stop ($322 to $308 = ~4.3%), 1% account risk implies roughly 20–23% of equity in notional at full build; halve that for the two -6% to -7% single-session gaps in the last four months (6/25, 7/31). Cap total new exposure until the late-October Q4 FY2026 print and/or the $315–$317 retest clarifies the gross-margin, inventory (+94%) and intangibles (+91%) questions.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The research plan resolves to Underweight on AMZN — a trim, not an exit — and the technical tape agrees: price closed at 262.65, below the 10 EMA (266.05) for a third session, below VWMA (263.41), with the MACD histogram collapsing from +3.904 to +0.392 in four sessions (bearish crossover imminent) and the 07-31 gap-day low at 262.01 being tested (08-14 low 262.42). That leaves roughly 1.3% to overhead resistance (VWMA/10 EMA) versus 5.4–5.6% of air down to the 50 SMA at 248.17, so there is no favorable asymmetry at 262.65; the asymmetry is at 248–257, which is also where the plan's re-entry ladder sits (250.25 = 50% gap retrace, 256.52 = Bollinger mid, 248.17 = rising 50 SMA). The fundamental case for the bear leg is the margin bridge (expansion from opex self-help, not capex conversion) plus a derived ~31–32x core earnings multiple against negative FCF — but the trend structure (price +10.5% above a rising 200 SMA, golden-cross spread widening to +10.46, VWMA rising 240.82→263.41) rules out a full liquidation, so I sell into strength to reduce, not exit. Note the plan's own caveats: no tool-sourced valuation multiple and no AWS segment revenue, so the multiple is derived and the capex-justification leg is unverified.
+
+**Entry Price**: 263.41
+
+**Stop Loss**: 237.7
+
+**Position Sizing**: Trim ~40–50% of the current AMZN position, taking exposure to ~50–60% of standard weight. Execute the first half of the trim at 263.41 (VWMA) and the second half at 266.05 (10 EMA) rather than at the bid; a high-volume (≥50M share) close below 262.01 completes the trim to minimum position. Stop/invalidation for the retained stub is a close below the 200 SMA at 237.70 (exit remainder there). Rebuild only on price or proof: ~20% of standard weight at 250.25–256.52 (50% gap retrace / Bollinger mid), another ~20% at 248.17 (50 SMA), and the final third only after Q3 disclosure of capex guidance below ~$110B, D&A decelerating as a % of revenue, or AWS growth above ~30%. Do not exceed standard weight without one of those.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

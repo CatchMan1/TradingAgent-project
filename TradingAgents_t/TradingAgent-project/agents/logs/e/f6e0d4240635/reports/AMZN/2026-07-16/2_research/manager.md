@@ -1,0 +1,25 @@
+**Recommendation**: Overweight
+
+**Rationale**: Here's how I scored the round. The debate really splits into two axes, and each side won one.
+
+On the decisive axis — is AMZN's underlying business deteriorating? — the bull wins clearly, and the bear essentially concedes it. Revenue +16.6%, operating income +29.6%, operating margin +130bps, gross margin +120bps in Q1 FY2026 is operating leverage, not decay. The bear never actually disputes those numbers; it reframes them. That reframing is sharp but it doesn't overturn the core: the profit engine is expanding faster than the top line.
+
+On the entry-timing and cash-flow-quality axis, the bear wins, and won it cleanly. Two points land hardest and I'm carrying both forward. First, capital intensity: normalized EPS came in around $1.69 vs $1.59 (+6.3%) while operating income grew +29.6% — the delta went to D&A (+33%), interest (+48%), and a 300bps higher tax rate. With capex +77% YoY and ~$27.0B incurred-but-unpaid, that depreciation wave intensifies into future quarters, and $12.3B of Q1 net income was a non-cash mark-up sitting inside a $48.1B illiquid bucket that grew $31.9B in a quarter. Second, technicals: price is pinned under a declining 50-SMA ($252.66, peaked $257.10 on 6/18), the 7/16 outside-day reversal closed in the bottom 19% of range, the +14.4% bounce happened on ~25% lighter volume, and the MACD histogram contracted for the first time in nine sessions. The bear's "0.7:1 to first resistance" math is credible.
+
+So why not Hold or Underweight? Because the bear explicitly is "a bear on this price, not on the business," and its own flip conditions (a volume-confirmed break above $258.08 or an FCF inflection) confirm this is a timing call, not a thesis call. The bull is arguing the operating P&L and the multi-quarter trend — both of which are intact (rising 200-SMA $233.94 at +6.8%, four consecutive higher lows, documented MACD zero-cross, RSI 54 with headroom, ~$144B liquidity and ~0.29x debt/equity against any solvency worry) — while the bear is arguing that today's 2-3% entry is bad. The structural case is stronger than the tactical case, but not so decisively that I'd chase. That's an increase-exposure rating executed on structure, not at market. Hence Overweight, not Buy.
+
+Important caveats I'm flagging: both sides agreed not to chase $249.89, and the evidence base is incomplete (no insider data, no sentiment report this run, and 150 of 170 news records missing), so I'm sizing this moderately rather than swinging big.
+
+**Strategic Actions**: Build toward an Overweight position in AMZN via a staged, structure-based accumulation — do NOT add at the current ~$249.89.
+
+1) Sizing/sequencing (vs. a standard allocation): target Overweight, but add in tranches. Deploy ~1/3 of the intended incremental weight on minor weakness while price holds above the 10-EMA ($247.03). Reserve ~2/3 for the primary accumulation zone of $241.5–$247.0 (VWMA $240.52 / Bollinger mid $241.57 / 10-EMA cluster). Only if that zone is filled does the added exposure reach full Overweight.
+
+2) Invalidation / risk control: do not add on a daily close below $240.52 accompanied by a negative MACD histogram — that flips the short-term bias and re-targets $233.94 (200-SMA) and the June shelf ($232.79 / $227.01 / $225.55). Size each tranche so that a stop beneath $239.5 caps the loss on the incremental exposure to a defined, modest fraction of the portfolio; use the current ATR (~$7.66) to set stop distance (~1.5x ATR ≈ $11.5 for breakout entries).
+
+3) Breakout reinforcement: on a daily close above $258.08 with volume ≥50M (clearly above July's ~40M norm), add the final tranche, stop ~1.5x ATR, and run the core toward $266, then $273–278.
+
+4) Upside management on the core: first target $262–266. Trail the core; do not treat the declining 50-SMA ($255–258) as a reason to trim the strategic position — it's near-term supply, not a trend break.
+
+5) Fundamental tripwires to downgrade toward Hold/Underweight: (a) Q2 normalized EPS growth failing to track high-teens/20s-percent operating-income growth while D&A accelerates; (b) FCF remaining negative with no visible capex-growth deceleration (bear's key tell); (c) further debt-funded capex expansion beyond the current $122.6B LT debt; (d) any reversal/writedown of the $48.1B equity-securities-without-ready-FV bucket; (e) adverse developments in the AWS leadership transition or continued competitive losses (e.g., sovereign/classified cloud).
+
+6) Evidence gaps to respect: no insider/sentiment data and most weekly news records unavailable this run — keep conviction moderate, stay reactive to the Q2 print, and re-weight the position once cleaner cash-flow (Q2 FCF/D&A) and volume data arrive. Use light-volume rallies into $255–258 as a place to stage (not chase) entries per the plan above rather than as a reason to trim the strategic core.

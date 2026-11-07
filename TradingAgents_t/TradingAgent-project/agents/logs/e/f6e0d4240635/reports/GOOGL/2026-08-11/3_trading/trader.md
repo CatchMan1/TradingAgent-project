@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The research plan lands on Underweight, and the tape supports the trim rather than a hold: the 8/11 bearish engulfing at 343.80 closed in the bottom 3% of its range on +53% volume and simultaneously lost the 10EMA (353.05), 50SMA (355.12, falling ~0.73/session from 372.80), VWMA (345.59) and Bollinger middle (348.23), while the MACD histogram has decayed five straight sessions from 4.451 to 1.331 and volume is heavy on declines (69.42M, 46.93M, 29.08M) and light on advances — distribution, not capitulation, with RSI 45.85 leaving ~15 points before the 31–33 zone that marked prior lows. The fundamental edge (FCF $4,261M H1 with −$5,855M in Q2, capex 35.1% of revenue, $29.1B accrued but unpaid capex, margin off the 36.1% Q1 peak to 34.0%, tax rate +520bp, legal accruals to $17.4B) reinforces trimming into strength rather than adding, but the still-rising 200SMA at 330.11, ~$139B net cash and 34% operating margin argue against an outright exit — hence Sell/trim, not a full liquidation. Risk/reward at 343.80 is roughly symmetric (200SMA invalidation 4.0% below vs. re-engagement above 353–355 about 3% up), so I want the exit executed on a bounce toward VWMA/Bollinger-middle rather than chasing the print lower.
+
+**Entry Price**: 345.59
+
+**Stop Loss**: 356.81
+
+**Position Sizing**: Sell one-third to two-fifths of the existing GOOGL position, targeting 55–65% of standard allocation; if already below a full allocation, trim proportionally; if at zero, do not initiate. Exit in tranches into the 345.59 VWMA / 348.23 Bollinger-middle supply zone, with a hard invalidation on the sell thesis at a daily close above 356.81 (≈1×ATR of 12.42 above entry). Hold the residual 55–65% with a separate pre-committed rule: a daily close below the 200SMA at 330.11 on above-average volume cuts it by half again to ~25–30% of standard. Re-risk toward full only on a reclaim of the 353.05–355.12 cluster held more than two sessions on above-average volume, or on evidence of positive quarterly FCF / resumed buyback. Size so a full move to the Bollinger lower band at 314.57 is a pre-approved portfolio drawdown.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

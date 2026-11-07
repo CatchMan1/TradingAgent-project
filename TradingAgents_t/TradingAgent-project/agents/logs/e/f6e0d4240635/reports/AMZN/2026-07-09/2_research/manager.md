@@ -1,0 +1,23 @@
+**Recommendation**: Underweight
+
+**Rationale**: Both sides agreed AMZN's operating business is genuinely strong — +16.6% revenue, +29.6% operating income, margin expanding to 13.1%. So the debate came down to the three factors that actually set the risk/reward at $247: earnings quality, cash generation, and the setup at resistance. The bear won those, so I'm leaning cautious rather than staying neutral.
+
+On earnings quality, the bear's point is decisive: ~40% of Q1's $2.78 EPS came from a $12.3B non-operating stake revaluation, leaving core EPS near $1.69 — which puts AMZN at roughly 36x on core earnings, not the ~22x the headline implies. The bull's rebuttal ("it proves the operating business is strong" / "the marks are a cushion") doesn't resolve the valuation problem; it concedes the quality issue and then asks us to pay a premium multiple anyway. Extrapolating company-wide margin to the profit engine is also unproven — the prompt gives no AWS segment revenue or segment margin, so the bull cannot actually show the engine is accelerating. I'll note that gap explicitly rather than let either side fill it.
+
+On cash, the trajectory favors the bear: FCF went +$32.2B (FY23) → +$32.9B (FY24) → +$7.7B (FY25) → about −$2.5B TTM, and capex ($151B) now exceeds operating cash flow ($139.5B). The bull reframes this as a deliberate AI buildout, which is fair as motive, but motive isn't a return — and rising leverage (+$53B long-term debt in a single quarter, interest expense +51%, D&A +33%) is already taxing the P&L while the payoff is still unproven. The bull's optionality additions (Amazon Leo, the speculative $6T Anthropic read-through) are long-dated and already embedded in the very marks that flattered EPS, so they're circular rather than additive.
+
+On the tape, the bull's "screaming bottom" didn't survive the bear's framing. Price is ~2.9% below a declining 50 SMA (254.32), MACD is below zero, and the July 9 candle closed at 247.04 — right beneath the 250.8–254.3 wall. The risk/reward of buying into that resistance with a stop near 238 is roughly 2-to-1 against you. That's the strongest single argument in the debate and the bull never really answered it.
+
+Where the bull still deserves credit and keeps me from a full Sell: the 200 SMA is rising (233.24), the golden cross is intact, the 200 SMA is still ~5.9% below price, and the operating cash engine is real. This is a balance-sheet/valuation/setup problem, not a broken-business problem — which is why I'm trimming, not exiting, and not endorsing a naked short into a rising 200-day. Net: the bear carried the swing factors (core multiple, negative FCF, leverage creep, adverse entry at resistance), so Underweight with a defined trigger to re-upgrade is the right posture.
+
+**Strategic Actions**: Against a standard AMZN allocation, reduce rather than exit: trim the position to roughly 50–75% of the standard weight (i.e., size down to a modest underweight versus benchmark), keeping a core holding to respect the intact long-term uptrend (rising 200 SMA at 233.24, golden cross). Do not add into the 250.8–254.3 resistance band — that's where the bear's risk/reward argument bites.
+
+1) Trim now at market rather than waiting for a bounce into 250.8–254.3. If price does rally into that zone and stalls (fails to close above the 50 SMA at 254.32), trim a further tranche — that rejection is the confirmation the medium-term trend is still down.
+
+2) Define the re-upgrade trigger carefully: only on a decisive daily close above 254.32 on strong volume would the tactical picture flip enough to rebuild exposure; if that happens, step back up toward standard weight and reassess. Until then, keep the underweight.
+
+3) Downside map for managing the remaining core: 239.8 (middle band) → 236.95 (VWMA) → 233.24 (200 SMA). A loss of 233.24 would break the last major trend support and justify cutting the core toward the low end of the allocation; a break of 227.01 would validate the bear's "June low wasn't a bottom" case and favor a deeper underweight.
+
+4) Do not initiate an outright short as a standard step — shorting a name with +30% operating income growth and a rising 200-day is a high-risk tactical trade only. If a discretionary trader wants the downside expression, cap it small, enter only into 250.8–254.3, and stop above the 50 SMA (254.32), consistent with the bear's own risk definition.
+
+5) Watch items that would change the call: actual AWS segment revenue and operating margin (not provided here — a gap that currently cuts against the bull), TTM FCF turning positive, and long-term debt/interest trajectory stabilizing. Any of these improving materially would argue for upgrading toward Hold/Overweight.

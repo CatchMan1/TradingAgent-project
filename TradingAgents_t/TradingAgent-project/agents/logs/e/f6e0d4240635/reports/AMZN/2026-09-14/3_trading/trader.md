@@ -1,0 +1,11 @@
+**Action**: Hold
+
+**Reasoning**: The research plan lands on a market-weight Hold, and the price structure independently forbids a fresh full-size entry: AMZN closed 253.54, sitting exactly on the 50% retracement of the 235.50→271.58 earnings impulse, which is a genuine coin-flip level with roughly 1:1 risk/reward to either edge of the 249.3–250.7 support / 255.5–258.5 resistance range. The primary trend is intact (rising 200-SMA at 239.93, price +5.67% above it; 50-SMA still rising at 255.47), so Sell/Underweight is not warranted, but the short-term tape is bearish (below 10-EMA 256.04, VWMA 257.37, Bollinger mid 258.50; MACD −1.05 below zero; RSI 45.84 not washed out; the 08-28 close of 266.43 on 49.55M was a failed high-volume breakout that left real overhead supply) and the fundamental offset is unproven FCF (−$11.6B TTM), $54.2B quarterly capex, and a 93% six-month jump in long-term debt. Bollinger bandwidth at 6.08% versus 30.2% on 08-17 with ATR 6.21 (2.45% of price) means the coil resolves within 1–3 weeks, so the correct action is to hold standard exposure and let the 249.28 / 258.50 boundaries pick the direction rather than pay mid-range for directionless risk.
+
+**Entry Price**: not provided
+
+**Stop Loss**: not provided
+
+**Position Sizing**: Treat 100% as the standard AMZN allocation and hold existing core exposure there; if flat, stay flat at 253.54. Conditional adds, not current action: (1) confirmation add of 25–33% of standard allocation only on a daily close above 258.50 that holds above 257.37 on volume above 35M, stop 253.40, targets 266.36 / 273.20 / 284.02; (2) pullback starter of only 20–25% of standard allocation if price stabilizes inside the 249.3–250.7 confluence (needs an actual higher low, not just a touch), stop 246.30, targets 258.50 / 266.36. On the downside, a daily close below 249.28 on volume above 35M trims 25–50% of the existing position or hedges below standard weight, with 246.00 then 239.93 as targets, and core is restored only on a close back above 253.50. Do not exceed standard allocation until capex converts to cash and debt/contractual obligations stabilize. Stop placement note: with ATR at 6.21, the 09-10 low at 249.58 implies a 0.64-ATR stop that is a liquidity trap — use 246.30, which sits outside 1 ATR, for any long.
+
+FINAL TRANSACTION PROPOSAL: **HOLD**

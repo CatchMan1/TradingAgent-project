@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan's Underweight call is backed by both the fundamental and the technical evidence, so this is a Sell sized as a reduction toward roughly half of a standard allocation, not an outright short. Fundamentally, the $650B commitment is a purchase obligation AMZN owes ($78B due within 12 months against $161.4B TTM OCF), TTM FCF has flipped from +$13.5B to −$11.6B, LT debt has gone from $68.8B to $133.0B in six months, and at ~32x core TTM EPS with negative FCF the margin of safety is thin. Technically the near-term tape confirms it: AMZN lost the 07-31 gap low at 262.01, trades 1.57% below the 10-EMA at 262.75 and 4.07% below the VWMA at 269.19 where the gap cohort is trapped, the MACD histogram is negative and still expanding (−1.538), and RSI at 49.74 shows no positive divergence — so the plan's own asymmetry math (266.40 first target vs the 247.8 stop ≈ 0.66:1) argues against holding full weight. The reason not to go to zero or short is equally clear from the structure: price is still 3.57% above a rising 50-SMA (249.73) and 8.52% above a rising 200-SMA (238.33), the golden cross is intact, and the two ATR-bounded triggers (close >266.40 on >50M volume bull / close <256.93 bear) are both unresolved inside the current 257.04–266.40 flag.
+
+**Entry Price**: 262.75
+
+**Stop Loss**: 269.19
+
+**Position Sizing**: Trim 30–50% of the existing AMZN position, taking a benchmark-weight holding (100 units) down to roughly 50–70 units; sell into strength at 258.63–262.75 (10-EMA), with 266.40 and 269.19 as secondary reduction levels. Stop selling / re-engage if AMZN closes above 269.19 (VWMA) on >50M volume with the MACD histogram turning positive — that invalidation would justify adding back about one-third of the trimmed position. Secondary risk point for the remaining core: a daily close below 256.93 on expanding volume triggers another trim, and a decisive break of 249.73 reduces AMZN to a minimal underweight (do not buy the 239.82–238.33 gap-fill/200-SMA zone until it stabilizes). Do not add at 258.63.
+
+FINAL TRANSACTION PROPOSAL: **SELL**

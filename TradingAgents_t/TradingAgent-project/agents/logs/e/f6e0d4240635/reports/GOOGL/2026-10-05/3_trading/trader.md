@@ -1,0 +1,11 @@
+**Action**: Sell
+
+**Reasoning**: The plan's Underweight verdict maps to a Sell, but a partial one: trim 35–45% of a standard GOOGL allocation and retain a 55–65% core, because the intermediate tape offers no edge at $346.47 while the franchise evidence (revenue +24.2%, 34.0% operating margin, OCF +32.8%, $141.4B net cash, rising 200-SMA at $339.12) remains intact. The technical structure supports trimming rather than adding: price sits 1.0% below the $349.94 April pre-gap close, capped by a three-source confluence at $353.22–$355.79 (10/1 high, upper Bollinger $355.05, 4/29 high $355.79), with lower highs at $384.48 → $364.17 → $353.22, a fresh but sub-zero MACD cross (line −0.223), a neutral RSI of 52.4, and a coiled 7.01% Bollinger bandwidth plus ATR of 8.77 that together signal an unresolved range, not a launch pad. The breakout math confirms the poor payoff — entry near $354 against $364.17 with a $344.50 stop is only ~1.2:1 — so the correct expression is to sell strength into the $351–$355.79 shelf or on a close below the $339.12 200-SMA, never to chase. Negative free cash flow, zero H1 buybacks, gross debt doubled to $101.1B and a ~31x core multiple put the burden of proof on management's capex plateau, which is unobservable in this evidence set (no Q3/Q4 capex guidance, no social-sentiment report, no full-text news).
+
+**Entry Price**: 351.5
+
+**Stop Loss**: 335.5
+
+**Position Sizing**: Trim 35–45% of a standard GOOGL unit (sell one-third of the reduction at 351.50 and the balance at 353.50–355.50 if reached); retain a 55–65% core. The 335.50 level is not a stop on the sale but the discipline trigger for the retained core — a daily close below $335.50 on volume >30M cuts it to 25–30% of standard weight, and a close below $327.74 takes it to minimum tactical weight. Re-risk only on a close above $355.79 with volume ≥30M and MACD >0 (stop $344.50, targets $364.17 then $375.27), or on a 200-SMA hold in the $335.50–339 zone (stop $334.50).
+
+FINAL TRANSACTION PROPOSAL: **SELL**

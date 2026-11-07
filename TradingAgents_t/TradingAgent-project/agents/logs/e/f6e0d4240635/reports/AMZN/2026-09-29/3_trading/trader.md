@@ -1,0 +1,19 @@
+**Action**: Buy
+
+**Reasoning**
+
+The plan's Overweight maps to Buy, and the technical structure supports initiating rather than waiting — but only in staged size, because the mid-range entry is the weak part of the setup.
+
+What agrees: the long-term trend is intact. AMZN at $246.67 sits 2.35% above a rising 200-SMA at $241.01, with the 50-SMA still 15 points above the 200. The plan's invalidation at $239.80 lines up almost exactly with the chart's highest-quality structural support — the confluence of the $239.82 gap top, the $238.93 78.6% retracement, and the $241.01 200-SMA all within ~2 points. That is a clean, pre-definable risk level, which is exactly what a constructive-but-not-high-conviction call needs. The fundamental case (Q2 revenue +19.6%, operating income +43.2%, margin to 13.7%, H1 margin 13.4%) justifies accepting that risk; negative FCF is a capex-story risk, not a solvency one, with $161.4B TTM operating cash flow and $176.1B cash/securities against ~0.91x gross debt/OCF.
+
+What I am discounting: the plan's Tranche 1 at market is the weakest of the three tranches on the technical evidence. AMZN is below the 10-EMA ($250.17), the 50-SMA ($256.09) and the VWMA ($251.34); MACD re-widened to −0.657 after nearly crossing up on Sep 22; RSI at 41.9 has no oversold cushion; volume is dead average (33.7M vs ~33.9M) with no capitulation bar. ATR ($5.60) and Bollinger bandwidth (6.65%, down ~78% in six weeks) mark a coil, and the trend-aligned resolution risk is lower. So the first tranche is a starter position taken inside a 1.06-ATR coil, not a full commitment — 246.67 is within 1% of the top of the coil and 1.4% under the 250.2–252.6 resistance shelf, so R:R on this specific tranche is only fair. The trade is paid for by Tranche 2 at the confluence and by sizing so the $239.80 invalidation is survivable, which is what the plan already does.
+
+Why not Hold: the plan's thesis is constructive, not neutral, and the structural stop is close enough (3.3% below spot) that waiting for the $241–244.3 flush risks missing the position entirely on an unconfirmed higher-low base (244.30 / 244.73 / 245.14) that still holds above the 200-SMA. Conflict with the technical note's "poor R:R mid-range" is resolved by size, not by inaction.
+
+Caveats stated explicitly: no earnings date, no valuation multiples, no 2027 capex guidance, and no portfolio context were available. Any position carried through Q3 is a volatility bet — the last two reports gapped −5.55% and +15.32% on 3–5x volume — so do not reach full Overweight size ahead of the print; leave Tranche 3 for post-earnings confirmation or a volume-confirmed close above $252.64.
+
+**Entry Price**: 246.67 (Tranche 1 starter, ~35 of 120 units). Secondary add at 242.50, inside the 241.01–244.24 confluence and only valid while AMZN holds above 239.80 on a daily close. Final add requires a daily close above 252.64 on volume >40M.
+
+**Stop Loss**: 238.50 — below the 239.80 invalidation close, the 239.82 gap top, and the 238.93 78.6% retracement, so it is a structural stop rather than a noise stop (8.17 points, ~1.46 ATR from entry). If Tranche 2 fills at 242.50 under the same 238.50 stop, blended risk drops to roughly 3.00 points per share on the combined 70 units.
+
+**Position Sizing**: A standard AMZN allocation is 100 units; target 120 units for this Overweight. Tranche 1 = 35 units (~29% of target), Tranche 2 = 35 units into 242.50, Tranche 3 = 50 units only on a close above 252.64 with volume confirmation. With risk per share of 8.17 to the 238.50 stop, size the full 120 units so total risk is at most 1% of equity: shares ≈ (0.01 × equity) / 8.17, i.e. roughly equity/817. For a $100,000 account that is ~122 shares (~$30,100) at full size and ~36 shares (~$8,900) for Tranche 1. A close below 239.80 cuts tactical adds back to ~50 units; below 235.50 reduce to 25 units. Do not add to exposure above 125 units, and trim excess into the 250.17–252.64 shelf.

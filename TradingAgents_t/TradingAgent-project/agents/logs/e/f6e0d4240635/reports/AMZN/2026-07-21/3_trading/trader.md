@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The research plan is Overweight, which maps to a staged Buy rather than a full-size entry: the operating evidence (Q1 FY2026 revenue +16.6% to $181.5B, operating margin to 13.1%, operating income +29.6%, $148.5B TTM OCF, −53 day cash cycle) is strong enough to own the name, but negative TTM FCF (~−$2.5B), $151B TTM capex and ~30x annualized adjusted EPS (~$1.92 vs $2.78 reported after the $12.3B non-cash revaluation) mean the risk is concentrated in the investment cycle, not the demand base. The price structure agrees with staging: AMZN closed 247.55, above a rising 200-SMA at 234.35 but below a still-falling 50-SMA at 251.16, with MACD histogram contracting four straight sessions (2.124 → 1.139), lower highs from 258.08, and July volume decaying to 27.73M (~59% of the ~47M pace) — so the bull's own 258.1 / >55M trigger has not fired and buying the middle of the 246–258 coil is the wrong entry. The rising-low sequence (225.55 → 238.25 → 243.59 → 246.42) and a rising VWMA at 246.49 put volume-weighted buyers in profit, which justifies a starter now at the 246.4–248.0 limit zone with the rest of the line held for level confirmation. Sizing is deliberately below standard until Q2 capex/FCF evidence or a volume-confirmed close above 258.1 arrives.
+
+**Entry Price**: 247.55
+
+**Stop Loss**: 236.75
+
+**Position Sizing**: Starter 2.0% of portfolio (40% of a 5% standard single-name allocation), worked with limit orders at 247.55 (246.4–248.0 zone, VWMA 246.49 / Jul 21 low 246.42); do not chase above 248.0. Add 1.0% on a daily close above 251.16 (50-SMA) with volume near the ~47M average, another 1.0% on a daily close above 258.1 on >55M shares, and reserve the final 1.0% for post-Q2 confirmation (capex guidance flattening plus adjusted EPS at least $1.92), for a maximum of 6.0% against the 5% baseline. Stop at 236.75 (1.5×ATR of 7.18 below entry, just under the 238.25 Jul 9 low and above the rising 200-SMA at 234.35); halve the starter on a close below 243.07 (Bollinger middle/base break) and halt all adds until the level-triggered plan re-engages.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

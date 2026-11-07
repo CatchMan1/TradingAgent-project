@@ -1,0 +1,9 @@
+**Action**: Buy
+
+**Reasoning**: The plan’s Overweight recommendation maps to Buy. The technical structure supports constructive exposure: AAPL at 313.39 is above the 10-EMA at 302.05, 50-SMA at 295.90, and 200-SMA at 271.80; MACD at 2.96 is above its 0.53 signal with a +2.43 histogram; RSI at 62.23 has recovered without becoming overbought; and VWMA at 292.05 confirms the volume-weighted trend. However, price is pressing a real ceiling: June closing high 315.20, June intraday high 316.94, and upper Bollinger 315.56. Today’s high of 314.82 stalled just below that zone on 41.3M shares, below the report’s >50M quality-breakout threshold, with ATR elevated at 8.35. So the right expression is Buy via staged accumulation, not a full chase at the ceiling. Use a starter at current levels, reserve capital for 302.05 and 295.90 pullbacks, and only complete the Overweight on a volume-backed close above 317.00. The binary ~July 30 earnings print also argues for staging and optional hedging.
+
+**Entry Price**: 313.39 for the starter tranche only. Staged adds at 302.05 and 295.90; complete the Overweight only on a close above 317.00 with >50M shares.
+
+**Stop Loss**: 291.90, below the VWMA at 292.05 and below the 50-SMA/Bollinger-mid cluster. This is about 2.6 ATR below the 313.39 starter, avoiding a noise-level stop.
+
+**Position Sizing**: Use a standard AAPL allocation as the unit; plan target is 125–150% of standard. Do not move to full Overweight at 313.39. Deploy 40–50% of the incremental add as the starter; keep 50–60% dry for 302.05 and 295.90 adds, and only complete the position on a >50M-share close above 317.00. If already at or above target Overweight, do not add at the ceiling. Size the starter so the $21.49/share risk to the 291.90 stop is tolerable; because the stop is wide, keep the starter smaller and add more only at lower levels. If unwilling to hold the binary July 30 print, trim or hedge the tactical tranche ahead of it.

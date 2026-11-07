@@ -1,0 +1,13 @@
+**Recommendation**: Overweight
+
+**Rationale**: The bull case carries the decision because AMZN’s FY2023 evidence is a genuine fundamental inflection, not just a narrative: operating income rose ~200.9% to $36.85B, operating margin expanded +403 bps to 6.41%, OCF rose +81.7% to $84.95B, FCF swung from –$16.9B to +$32.2B, and the balance sheet moved into a net-cash position. The technical trend also remains constructive: a high-volume earnings gap, higher lows in the post-gap flag, price above a rising 10-EMA/50-SMA/200-SMA stack, positive MACD, and RSI cooling from 73.78 to 68.11 without meaningful price damage.
+
+The bear’s arguments are valid risk controls but do not win the overall call. Q4-heavy FCF, Q1/Q2 seasonal compression risk, SBC/dilution, the deferred-tax benefit, large contractual obligations, and the extended entry near $172.50–$173.12 all argue against chasing AMZN at $169.84 or rating it Buy. They do not establish a broken thesis or justify avoiding/trimming a core position while the trend and fundamentals remain intact. The dataset also lacks valuation multiples and verified AWS segment margin, so I cannot underwrite a “cheap” argument or precise AWS margin—but that missing data does not disprove the bull thesis. Net: constructive on AMZN, but with staged execution rather than immediate full-size buying.
+
+**Strategic Actions**: Treat 100% as the full standard AMZN allocation for the mandate. At $169.84, do not chase. If already long, maintain the core position; if underweight, wait for the triggers below.
+
+- **First add**: Deploy ~25% of the intended AMZN allocation on a pullback to **$165.44** if price stabilizes and does not close below $162.75.
+- **Second add**: Deploy another ~25% at **$162.75** only if momentum stabilizes. Do not add if AMZN closes below the **$159.28–$159.72** gap-fill zone.
+- **Breakout add**: Deploy the remaining ~50% only on a daily close above **$172.50 on >60M shares**; do not chase a low-volume push into $173.12.
+- **Risk controls**: A daily close below **$167.65** is the first warning; below **$165.44** is a momentum break; below **$162.75** is a value break. If AMZN closes below **$159.28–$159.72**, cut tactical adds/hedge back to core. If it closes below **$153.46** (50-SMA), reduce exposure and reassess the thesis.
+- **Existing holders**: Maintain core exposure; trim only any position above target into **$172.50–$173.12** if risk limits require. Do not short AMZN on the bear’s entry-timing argument alone.

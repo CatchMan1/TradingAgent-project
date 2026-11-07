@@ -1,0 +1,17 @@
+**Recommendation**: Overweight
+
+**Rationale**:  
+The bull wins the fundamental weighing, but not by enough for **Buy**. The decisive evidence is AMZN’s Q2 operating momentum: revenue +19.6% YoY versus +16.6% in Q1, operating income +43.2%, operating margin 13.7% (+225 bps), gross margin 52.3% (+45 bps), with marketing +3.9%, G&A −3.9%, and SBC −1.5% against 18% revenue growth. That is real operating leverage, and the bear did not disprove it.
+
+The bear is right that headline EPS is distorted: $50.5B of Q2 net income is a non-cash equity mark, and core EPS is roughly $1.95, implying about 34x annualized core earnings at ~$265. That is a valuation caution, not a collapse signal, especially with operating income +43.2% and core EPS still up ~16% despite a tax-rate step-up. The bear’s negative FCF point is material—TTM FCF −$11.6B, H1 −$27.0B—but AMZN’s net debt is ~$66.7B against TTM OCF of $161.4B, roughly 0.41x, with ~24x interest coverage. This is investment-driven capex, not evident solvency stress. The bear’s D&A-lag argument is a valid forward risk—TTM capex of $173.0B versus D&A of $75.2B—but it is not yet evidence that returns are deteriorating.
+
+The technical tape supports the bear tactically: AMZN has four consecutive lower lows, closed below the 10 EMA, closed below the 38.2% retracement at 265.48, and MACD momentum is decaying. That argues against chasing and against a full **Buy**. Net: the bull wins on operating trajectory and balance-sheet capacity; the bear wins on near-term tape and cash-flow/valuation caution. That combination supports **Overweight**, with staged accumulation rather than aggressive buying. Missing evidence: no segment-level data, no Q3 guidance, and no clean valuation dataset, so sizing should be conservative.
+
+**Strategic Actions**:  
+- Treat a standard full AMZN allocation as roughly 5% of portfolio. Build in tranches.
+- Initiate a 2.0% tranche only in the 262–265 zone and only on stabilization, such as a close/hold above the 262.01 VWMA/gap-floor confluence. Do not chase the 266.81–272.27 resistance band.
+- Add 1.5% on a close above 272.27 with volume expansion above the recent 20-session average, or on a successful retest of 262–265 that holds.
+- Add the final 1.5% on a close above 284.0, or if Q3 evidence shows capex flattening while operating margin holds ≥13% and OCF growth re-accelerates. Cap the position at 5%.
+- Risk controls: ATR is 8.54, so use smaller size. For the trading tranche, use a hard stop below 254 and size so the ~10–11 point risk is ≤0.5–0.75% of portfolio. For the core tranche, trim half on a close below 262.01, no adds below 255.75, and exit/reassess on a close below 247.91. The bear is correct that the bull’s 254 stop is tight relative to ATR; do not pair that stop with full size.
+- Targets: trim partial at 272.3, trim again at 284.0, and trail the remainder with the 50 SMA/247.91 invalidation.
+- Monitor: reduce if Q3 capex steps up again with OCF growth flat; reduce if D&A growth crosses above operating-income growth; reduce if receivables continue to outrun revenue with declining allowance coverage; reduce if the $122.3B non-marketable equity book marks down alongside deteriorating operating trends. A close above 272.27 on expanding volume justifies moving toward full allocation; a close below 247.91 invalidates the medium-term thesis.

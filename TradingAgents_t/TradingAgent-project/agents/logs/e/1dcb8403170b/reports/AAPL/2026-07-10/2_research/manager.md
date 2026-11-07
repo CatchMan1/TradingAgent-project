@@ -1,0 +1,15 @@
+**Recommendation**: Overweight
+
+**Rationale**: The bull case carries the structural argument for AAPL. The evidence shows a confirmed multi-timeframe uptrend—AAPL at $315.32 is above the 10 EMA ($306.57), 50 SMA ($297.77), and 200 SMA ($272.45), with the June low ($275.15) holding above the 200 SMA. The recovery was volume-backed, MACD is positive, and RSI at 62.93 is strong but not overbought. Fundamentally, H1 FY2026 revenue grew 16.1%, diluted EPS grew 19.8%, margins expanded despite R&D rising 32.6%, FCF was ~$78.3B, and net cash was ~$53.6B. The bear’s “peak-cycle” argument is a legitimate risk, but it is not supported by evidence of deceleration in the provided data.
+
+That said, the bear wins the near-term entry-point argument. AAPL is near the upper Bollinger band (%B ~0.87), ATR is elevated at $8.09 (~2.57%), buybacks slowed 25% YoY, OCF included a favorable working-capital swing, the Broadcom deal terms are unknown, and the evidence base has gaps—no sentiment report, no insider Form 4 data, and no news coverage for July 3–8. These do not overturn the bull thesis, but they argue against chasing full size at the current price. Therefore, AAPL is **Overweight**, not Buy: constructive and gradually add, but only with staged entries and risk controls.
+
+**Strategic Actions**:  
+- Use the standard AAPL sleeve as the unit. Target a modest overweight of **1.15x–1.25x** the normal policy weight over time; do not move to full overweight immediately at $315.32.  
+- If already at benchmark weight, maintain the core position. If initiating incremental exposure, split it into three tranches.  
+- **Tranche 1**: Add 1/3 of the intended incremental exposure on a pullback into the **$306.57–$297.77** zone, preferably with stabilization and volume support. Do not chase at the upper band.  
+- **Tranche 2**: Add 1/3 only on a confirmed breakout above **$317.40** with post-news volume and follow-through, addressing the bear’s “priced in” concern.  
+- **Tranche 3**: Add the final 1/3 on a successful retest of $317.40 as support, or on a pullback holding the 50 SMA with improving volume.  
+- Risk control: for incremental tranches, use an ATR-based stop of roughly **1.5–2.0x ATR** and a hard risk trigger on a sustained close below the **50 SMA (~$297.77)**. If AAPL closes below $297.77 and fails to reclaim it, reduce exposure back to benchmark or below. A close below the June low of **$275.15** would justify reassessing toward Underweight/Sell.  
+- Do not add if AAPL pushes above the upper band with RSI >70 without volume confirmation. If the position exceeds 1.25x the standard sleeve on a speculative extension, trim back toward target.  
+- Monitor the missing evidence explicitly: Broadcom deal terms and margin impact, post-July 10 volume follow-through, and any sentiment/insider data not provided in this round. If Broadcom is confirmed as a net cost headwind or core revenue/EPS growth decelerates, lower AAPL to Hold/Underweight.

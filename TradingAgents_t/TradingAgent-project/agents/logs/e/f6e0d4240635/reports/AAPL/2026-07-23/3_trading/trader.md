@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan's Overweight recommendation maps to a staged Buy: the primary trend is evidenced and intact (price +5.3% above a rising 50 SMA at 305.47 and +16.9% above a rising 200 SMA at 275.60, 50/200 spread widening to +29.87, MACD 8.107 still above its 7.312 signal), while the short-term impulse has faded (close 321.66 below the flattening 10 EMA at 322.66, MACD histogram −76% in four sessions to +0.795, RSI reset 71.65 → 58.11). Critically, the −3.62% pullback from the 2026-07-17 cycle closing high of 333.74 has come on contracting volume (63.4M → 40.8M), and the close sits $0.29 above the VWMA at 321.38 — that is a digestion, not distribution, so the correct action is to build exposure into weakness rather than chase. I am deliberately not sizing to the full target in one clip: the near-term fragility (a MACD-histogram zero cross is 1–2 sessions away and a close below 319.35 opens 314.86–311.49), the binary early-August FQ3 print, the ~12-week-old 10-Q (accepted 2026-05-01), the unquantified intangibles signal (+$12.5B net / +$12.8B gross) and the completely metric-free valuation debate all argue for tranching. Tranche 1 only at market; the remaining increments are conditioned on either the 319.35–314.86 gap zone holding on contracting volume with RSI above ~45, or a decisive close above 327.74.
+
+**Entry Price**: 321.66
+
+**Stop Loss**: 309.78
+
+**Position Sizing**: Target 1.25x standard AAPL allocation (Overweight ~+25% vs benchmark), but deploy only ~50–60% of that increment now via Tranche 1 at $321.66; hold the rest for the 319.35–314.86 gap zone / 311.49 Bollinger midline (converging with the rising 50 SMA) or a close above 327.74. Cap total exposure at ~60–70% of the target increment ahead of the early-August FQ3 print; trim back to that cap or collar if the position runs to 333.74–334.99 into the event. Per-share stop of 309.78 (= 1.5x ATR of 7.918 below entry) applies to trading-sized adds; structural invalidation and full cut of the overweight increment is a close below 305.47 on expanding volume. Size so a normal ±$8 ATR day is routine P&L, not a risk breach.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

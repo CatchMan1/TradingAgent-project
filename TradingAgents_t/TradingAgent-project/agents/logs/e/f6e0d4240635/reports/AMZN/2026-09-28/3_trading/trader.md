@@ -1,0 +1,9 @@
+**Action**: Sell
+
+**Reasoning**: The plan’s **Underweight** recommendation maps to **Sell** for AMZN. The technical structure supports reducing exposure: AMZN closed at **246.15**, below the **10-EMA at 250.94**, **VWMA at 251.72**, **20-SMA/Bollinger mid at 253.29**, and **50-SMA at 256.15**. The sequence of lower highs, negative MACD at **−2.35**, RSI at **41.24** (not oversold), and the plan’s negative FCF/capex/leverage concerns outweigh the still-valid long-term uptrend. However, this is not a full liquidation call: price is only **0.55% above** the **244.30–244.81** support cluster, the **200-SMA at 240.94** is rising, and the **50-SMA > 200-SMA** golden-cross structure remains intact. Therefore, sell/trim AMZN rather than aggressively shorting into support; use bounces toward **250.94–253.29** to reduce further, and only press the underweight on a daily close below **244.30** with volume above **45M**. Downside levels are **240.94/241.60**, then **235.50**, then **226–234**. Re-risk only above **253.29**, with confirmation above **256.15**.
+
+**Entry Price**: **246.15** for an initial partial sale; preferred additional trim limit at **251.72**
+
+**Stop Loss**: **253.29** — a daily close above the 20-SMA/Bollinger mid invalidates the underweight tactical stance; this is about **1.24× ATR** above spot
+
+**Position Sizing**: Assuming a 5% standard single-name allocation, reduce AMZN to roughly **3%** of portfolio. If flat, remain at **0%** and do not initiate a new short at support. On a daily close below **244.30** with volume above **45M**, cut residual exposure to about **1%**. Portfolio context was not provided; adjust these weights to the caller’s actual book.

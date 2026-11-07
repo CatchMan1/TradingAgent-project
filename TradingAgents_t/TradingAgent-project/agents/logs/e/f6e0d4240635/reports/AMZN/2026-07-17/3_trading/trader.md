@@ -1,0 +1,11 @@
+**Action**: Hold
+
+**Reasoning**: The plan's Hold is the correct execution because the primary trend and the intermediate tape genuinely point in opposite directions: AMZN closed at 247.23, still 5.6% above a rising 200 SMA at 234.06 with the golden cross intact since 2026-05-06, but it sits 1.9% below a declining 50 SMA at 252.13 after two rejections at 255.95–258.08 (7/16 high 258.08, close back inside the upper band at 249.89) and a red 7/17 close on above-average 43.6M volume. With ATR at 7.59 (~3.1% of price) and the operating range 228–256, current risk/reward is symmetric — roughly −5.6% to the 200 SMA versus +7% to 265 — and the 242–245 mid-band/VWMA confluence has not been proven to hold, so this is a maintain-position moment, not a chase and not a trim. New capital stays sidelined until either a daily close above 252.5 on above-average volume with an expanding MACD histogram (25% of standard allocation, with a second 25% only above 258) or a two-session stabilization in 234–237 that does not break VWMA, because buying 242–245 blind, as the bull suggested, front-runs the exact shelf that failed on 7/17. Downside is governed by close-based invalidation — below 240 cut to 50% of standard, below 228 with the golden cross breaking down go to minimum exposure — and position size is hard-capped at 1.25x standard given TTM capex (151.0B) now exceeds TTM OCF (148.5B) and the $225B Trainium figure remains unverifiable from disclosure.
+
+**Entry Price**: 252.5
+
+**Stop Loss**: 239.5
+
+**Position Sizing**: Core position held at standard benchmark allocation — no adds above 250, no trims into the base. New capital in 25% tranches of standard only on a daily close above 252.5 and then 258 on above-average volume (alternate: up to 50% of standard on a stabilized two-session retest of 234–237). Hard cap 1.25x standard; scale absolute share count down ~25–30% versus a calm-vol regime given ATR 7.59 (~3.1% of price). Risk-control trims: daily close below 240 → 50% of standard; daily close below 228 with golden-cross breakdown → minimum/zero.
+
+FINAL TRANSACTION PROPOSAL: **HOLD**

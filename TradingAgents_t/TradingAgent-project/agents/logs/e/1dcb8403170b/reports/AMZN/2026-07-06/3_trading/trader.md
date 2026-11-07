@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The research plan is Overweight, and its bear case is an entry-timing argument rather than a thesis argument: the operating engine is conceded clean (Q1 FY2026 operating income +29.6% to $23.85B, margin +130bps to 13.1%) with a flexible balance sheet ($144B cash/securities vs ~$136B debt) funding a deliberate capex trough. On the tape, AMZN at 244.16 sits above the rising 200 SMA (233.03), the 10 EMA (240.00) and VWMA (237.00) with a confirmed bullish MACD histogram (+1.291) and RSI reset to 50.05, so the short-term recovery is intact even though the falling 50 SMA (255.19) caps it. Because overhead is dense (~+2.6% to the upper band 250.60, +4.5% to the 50 SMA) and ATR is ~$8 (3.3% of price), I will not take a full position at 244.16 — I buy a staged, under-sized first tranche now and reserve adds for a volume-backed reclaim of 255.19 or a two-close hold of the 233–237 zone. The invalidation is the June low: a break of 227 (intraday low 225.55) kills the recovery structure and the rising-200-SMA thesis.
+
+**Entry Price**: 244.16
+
+**Stop Loss**: 225.0
+
+**Position Sizing**: Stage 1 now: ~40% of a standard AMZN allocation (roughly 10% of portfolio equity if a full allocation is ~25%). Stage 2: add ~30% on a daily close above 255.19 on volume materially above 45M, OR on two consecutive closes holding the 233–237 (200 SMA / VWMA) zone — whichever comes first. Stage 3: final ~30% only on evidence of AWS reacceleration plus operating margin ≥13%, or a documented FCF inflection (capex growth plateauing with OCF near $148.5B) — none of that segment/insider data was in the supplied materials, so it must be sourced first. Size so that a stop at 225 (~7.8% below entry, ≈2.4 ATR) risks no more than 1.5–2% of total portfolio equity; do not add on leverage, and consider a protective put near the 233–237 zone given the debt inflection (+$53.4B LT debt, interest expense +48% YoY). Cut to a token position or exit on a decisive close below 227.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

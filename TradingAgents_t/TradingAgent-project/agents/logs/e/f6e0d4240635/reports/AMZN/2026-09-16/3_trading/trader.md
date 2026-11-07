@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The research plan is Overweight, which maps to Buy, but the plan itself is explicit that the entry must be staged rather than taken at full size: the tape is still deteriorating (MACD -2.242 vs signal -0.703 with the histogram widening three sessions running to -1.539, RSI 39.45 with no bullish divergence, price closing 0.35% below a falling lower Bollinger Band at 246.83, and the 50 SMA slope collapsed to +0.0004/day). Against that, the structural facts are unbroken — the 200 SMA at 240.11 is rising, the 50 SMA sits 6.43% above it, and price at 245.96 is holding the 50% retracement (246.05) of the 204.90→287.20 leg — so this is a correction inside an uptrend, not a trend break, and the fundamental engine (43% operating income growth, net cash positive, $176B liquidity) argues for building a position rather than standing aside. The asymmetry between the 253–257 overhead supply/VWMA (255.62) and the 239.80–241.00 confluence is the whole trade: I take the 25% starter tranche near spot at 245.96 to avoid being gapped out by a catalyst (the 7/31 gap was 22.19 points on 129M shares), keep the hard stop at 235.00 (below the 7/30 pre-gap close at 235.50 and roughly 1.8× ATR of 6.13), and hold the remaining 75% for the 239.80–241.00 reversal-day fill and the 257.19 close-confirmation tranche. No adds above spot until 253.07 is reclaimed, and no averaging down if 239.80 breaks on >40M volume — that is the invalidation that takes the position to zero.
+
+**Entry Price**: 245.96
+
+**Stop Loss**: 235.0
+
+**Position Sizing**: 25% of a standard AMZN allocation now (~0.6x normal, sized so a full stop to 235.00 costs ~1.5% of equity at risk on this tranche); next 40% only on a green reversal day closing above 243 on >40M shares in the 239.80–241.00 zone; 25% only on a daily close above 257.19; final 10% reserved for a reclaim of 267.56. If a book already holds AMZN at or above standard allocation, do not add — hedge the 253.07–255.76 supply zone instead.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

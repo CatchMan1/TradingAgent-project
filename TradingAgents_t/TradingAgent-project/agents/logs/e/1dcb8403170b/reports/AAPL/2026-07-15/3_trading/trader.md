@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The research plan's Overweight rating maps to a Buy, but explicitly as gradual accumulation and explicitly NOT at the current 327.50 print — the bull conceded and the bear won the entry-point argument, and the technical report corroborates: price is only 0.71% under the upper Bollinger (329.83), 10.48% above VWMA (296.42), RSI 68.77, ATR 8.33 (2.54%). The direction, however, is not in dispute: 327.50 > 10 EMA 312.92 > 50 SMA 300.53 > 200 SMA 273.43, MACD 6.60 vs 3.84 signal with the histogram re-accelerating (2.33→2.77), a new dataset high at 328.73 on volume ~19% above the ~51M normalized average, and no bearish price/momentum divergence. With reported revenue +16.6% YoY, gross margin 49.3% and FCF +63.5% against one sell-side note with no disclosed magnitudes, a constructive stance is warranted — the only open question is price. So the trade is to buy the retest of the 315–317 breakout shelf rather than the extension, holding the structural invalidation at ~301 as the line where the plan says to revisit the rating.
+
+**Entry Price**: 316.0
+
+**Stop Loss**: 306.5
+
+**Position Sizing**: Build in three tranches toward 115–125% of a benchmark AAPL weight, subject to PM concentration limits. Tranche 1 (≈1/3) at the 316.00 shelf retest; Tranche 2 (≈1/3) at the 10 EMA near 312.90 or a held 311.90–313.00 flush; Tranche 3 (final 1/3) only on either a held 301–303 retest closing back above 305, or a confirmed breakout through 330.00 on volume meaningfully above ~51M. Given ATR of 8.33 (2.54% of price), size each tranche at ~55–60% of the dollar amount you would deploy in a calm-volatility (ATR ~5.5–6.0) regime — same risk budget, smaller share count. Risk per share on Tranche 1 ≈ 9.50 pts (~1.14× ATR, ~3.0% of entry). A close below 311.91 pauses new adds but keeps the core; a decisive close below 301 (50 SMA 300.53 / Bollinger mid 301.93) cuts back to benchmark weight. Do not deploy into the 318–326 mid-range chop, and do not short.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

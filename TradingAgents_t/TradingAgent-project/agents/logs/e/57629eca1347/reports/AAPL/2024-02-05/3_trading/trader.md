@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan is an Overweight, and the evidence supports translating it into a staged Buy rather than a chase: the fundamental case (FQ1 FY2024 gross profit +9.0%, operating income +12.1%, diluted EPS +16.0%, FCF +24.1% on +2.1% revenue, $64.5B net cash) was never rebutted, while the bear's "already priced" objection rests on valuation data that is explicitly absent from this dataset. But the tape argues for buying weakness, not strength: at 187.68 AAPL sits below the 10-EMA (188.38), VWMA (189.18), Bollinger mid (188.48) and a falling 50-SMA (190.59), with MACD at −0.4478 and RSI 47.30 offering no oversold cushion — so reward/risk at spot is under 1:1 to the 50-SMA gate. I therefore anchor the first tranche near the 185.84–185.85 Feb-5 low / 184.35 Jan-31 support shelf, keep the stop beyond 1.5×ATR (3.57→5.36 pts) at the 180.50 confluence (Jan lows + Bollinger lower band) and above the 179.25 flush low that invalidates the absorption thesis, and hold the remaining tranches conditional on two closes above 189.18 then 190.59 with volume, or a defended retest of the 200-SMA at 182.59.
+
+**Entry Price**: 186.0
+
+**Stop Loss**: 180.5
+
+**Position Sizing**: Stage the Buy in three tranches against the intended full AAPL weight, never exceeding it (no valuation data to justify going above target). Tranche 1 = 40% of the intended position at ~186.00 (do not chase above 188.40). Tranche 2 = 30% only on two consecutive closes above 189.18 then 190.59 with volume at/above the ~57.5M 20-session average. Tranche 3 = 30% on either a defended close above the 182.59 200-SMA or a close above 194.50 on ≥57.5M volume. Keep gross exposure below normal/half size while ATR is 3.57 (+39% since late Dec) and the MA stack is tangled. A close below 182.59 halts accumulation and cuts deployed size by half; a close below 179.25 exits the position outright. Trim into 191.70–192.00 and 194.50–196.40 only if full target size is reached before valuation multiples are obtained.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

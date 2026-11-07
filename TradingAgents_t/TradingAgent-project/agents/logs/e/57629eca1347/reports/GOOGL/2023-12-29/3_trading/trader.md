@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan is Overweight, which maps to Buy, and the technicals support owning GOOGL rather than standing aside: price (139.69) sits above the 10 EMA (138.77), 50 SMA (133.60) and 200 SMA (124.91), the 200 SMA is rising ~0.22/session, the golden cross is widening, and the close is above a rising VWMA (136.19) — buyers, not sellers, set the marginal price. But the short-term impulse is maturing (MACD histogram contracting four sessions 0.93→0.57, RSI cooled from 65.7 without ever reaching 70, ATR compressed to 2.70 and the 142.68 high printed on holiday-thin 18–27M volume), so a full-size chase at 139.69 is the wrong trade and the fund's own quality caveats (tax-aided EPS, flat nine-month margin, capex inflecting higher) argue for entry discipline. I therefore buy, but stage the entry at the 136.20/133.60 VWMA–Bollinger-mid–50-SMA confluence where risk is structurally defined under 131.36, with a volume-confirmed breakout tranche reserved above 142.68.
+
+**Entry Price**: 136.2
+
+**Stop Loss**: 131.36
+
+**Position Sizing**: Treat a standard GOOGL allocation as 1.0 unit and build toward 1.15–1.25 units only in tranches. Tranche 1: ~0.10 unit as a limit order at 136.20 (only if price stabilizes and does not close below 131.36). Tranche 2: ~0.08 unit near 133.60 at the 50-SMA/VWMA/Bollinger confluence. Tranche 3: ~0.06 unit only on a daily close above 142.68 with volume >30M and the upper band (143.75) expanding. Retain ~0.05 unit contingent on Q4 evidence (≈28%+ operating margin, OCF without the tax-timing boost). Risk per tranche sized so a 2-ATR adverse move (~5.40 pts, ≈4.0%) fits the per-trade budget; at ~3.50 pts from 136.20 to the 131.36 stop each tranche risks ~2.6% of notional, so at a 1% portfolio risk budget keep total GOOGL exposure near 5–7% of portfolio until the structure confirms. Cut incremental exposure back toward the standard 1.0 unit on a close below 136.19 with the VWMA rolling over; a close below 138.77 is a warning only. Do not chase a thin-volume push into 142.68–143.75 — harvest only weight above target, keep the core. Holdings/cash are unknown to me, so map these unit sizes to the actual book and any mandated caps.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

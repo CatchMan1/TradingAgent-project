@@ -1,0 +1,24 @@
+**Action**: Sell
+
+**Reasoning**
+
+The research plan is an Underweight, and per the mandate an Underweight maps to Sell rather than Hold — so GOOGL is a reduction, not a neutral stance. The plan's fundamental case is not a growth-is-broken call but a *quality-of-funding* call: H1 FCF of $4.26B against $80.6B of capex (with $29.1B incurred-but-unpaid still to hit cash flow), buybacks at $0 versus $28.3B, $30.5B of common and $19.1B of convertible preferred issued, Q2 operating margin down 210bp QoQ, and D&A of only $13.6B meaning the depreciation headwind on the $80.6B has barely started. That is a cash-conversion and margin-trajectory problem, and the technical tape corroborates it rather than contradicting it.
+
+Where the plan and the technical report genuinely intersect, the evidence points the same way:
+
+- GOOGL has not closed above its declining 50 SMA (360.63, rolled over from 372.80 on 7/13) in 27 sessions and sits 6.63% below it.
+- Price (336.71) is below VWMA (341.31) — the marginal buyer is underwater — and the four-day, +5.99% bounce has run on ~29.3M shares versus a ~28.8M 20-session average, against a 69.4M-share breakdown on 7/23. Volume confirms the distribution and fails to confirm the recovery.
+- MACD at −8.335 made a *lower* momentum low than the June selloff (−8.83 on 7/27 vs −7.35 on 6/26) and remains below signal. The histogram improvement (−3.80 → −1.94) is deceleration, which is a reason to stop pressing shorts, not a reason to own the stock.
+- Structure is unbroken lower highs (408.61 → 376.00 → 375.27) and lower lows (386.11 → 346.36 → 314.90), a −21.1% drawdown from the 402.62 close.
+
+The technical report's own risk arithmetic is the tiebreaker. From 336.71 the near-term upside is capped by a stack of supply at 341.31 (VWMA), 342.09 (full gap fill), 349.62 (declining mid-band) and 360.63 (50 SMA) — four separate levels to clear — while the downside path to 318.35 (lower Bollinger band, coincident with the 7/23–24 closes of 317.69/319.74) is comparatively open. The report itself computed ~0.7:1 reward:risk for a fresh *long* here; inverted, that is a favorable skew for reducing exposure. The plan's asserted 3:1 bull case requires the stock to chew through all four resistance levels first.
+
+Why Sell and not a maximum-conviction exit: the supports the plan itself honors are real — 200 SMA at 325.23 is still rising (+8.1% since 6/1), price reclaimed it after a two-session undercut, the 50/200 spread is still positive at +35.41, RSI never broke 30, price re-entered the lower band after a two-day breach, and there has been no daily close below 314.90. This is a derisking, not a capitulation call — hence a partial trim rather than a full liquidation, and hence the size below.
+
+**Entry Price**: 336.71 (verified 2026-07-29 close) — trim the first tranche here. A second tranche at 341.31 (VWMA) into strength, provided price rejects there rather than closing above 342.09 on >40M shares.
+
+**Stop Loss**: 349.62 — the declining Bollinger mid-band, which is ~1.1× ATR above the 336.71 entry (12.91 points, 3.8%). A decisive close above the mid-band would mean the counter-trend bounce has become a repair of the trend and would invalidate the reduction thesis. If you want a tighter, discretionary re-risk marker instead of a hard stop, use a daily close above 342.09 on >40M shares with the MACD histogram positive — that is the report's Trigger A and the plan's own re-risk condition. Do not use 342.09 as the hard stop for a short: at 1.6% it sits inside 3.47% daily ATR and is pure stop-hunt noise.
+
+**Position Sizing**: Reduce to 50–75% of standard GOOGL allocation — i.e., cut 25–50% of a full-weight position. The specific arithmetic: with the 349.62 stop, per-unit risk is 12.91 points (3.8% of price) against 3.47% ATR. For identical dollar risk, size this at roughly 55–60% of the share count you would carry in a 2%-ATR name. Downside reference levels for managing the remaining position: trim further below 318.35, reduce materially or exit on a daily close below 314.90, with 305.46 as the next visible shelf. Do not average down above 325.23.
+
+**What is missing from my inputs, and how it limits this call**: no portfolio context was supplied, so I cannot state share counts or dollar allocation — apply the 50–75% band to your own book. I also have no earnings/catalyst calendar, no borrow or options data, and no fundamental filing data of my own; the capex, FCF, buyback and margin figures above are taken from the research plan on faith, not verified. The 7/23 and 4/30 gaps both carry the signature of information-driven repricing, and ATR (11.67) severely understated the 7/23 move (an ~24-point gap), so size assuming overnight gap risk well beyond the stated stop.

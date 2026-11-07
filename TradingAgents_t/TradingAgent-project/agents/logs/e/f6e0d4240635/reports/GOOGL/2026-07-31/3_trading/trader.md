@@ -1,0 +1,19 @@
+**Action**: Sell
+
+**Reasoning**
+
+The plan's verdict is Underweight, which maps to Sell — and specifically a *partial* liquidation sized to the strength of the case, not a full exit. The bear argument won on timing, cash-flow reality, valuation and event risk; the bull only won on business quality and the intact long-term trend, and that alone argues against shorting rather than for continuing to hold a full weight.
+
+The technical report is the tie-breaker and it supports the plan's "do not add here" conclusion. Price at 356.13 sits 0.73% *below* a 50-SMA (358.74) that has fallen 14 consecutive sessions, while sitting +4.6% above the 10-EMA (340.32) and +4.5% above VWMA (340.83). That is the worst rung of the range: nearest resistance is essentially at the price, nearest meaningful support is 4–6% lower. The MACD histogram crossover (+0.482) and RSI recovery (31.02 → 54.30) are real but explicitly low-quality — the MACD line is still −6.143, and the last identical setup (7/2–7/16) produced a $15 rally then failed hard. Critically, the volume asymmetry is unresolved: 69.4M shares on the 7/23 down day versus 46.5M on the 7/31 up day. One high-close session is not accumulation.
+
+The plan's fundamental points that the technical tape corroborates: the market already read the Q2 10-Q (accepted evening of 7/22) and gapped GOOGL 342.09 → 321.13, closing −7.1% on 2.3x volume — the re-rate thesis has already been tested and rejected once. And the bull's own invalidation triggers are the current state: capex $44.9B (at the line), incurred-but-unpaid accrual $29.1B (above the line), Q2 FCF −$5.9B. The $29.1B committed accrual means Q3 capex cannot fall below Q2 even if new orders stop, pushing the earliest thesis test to Q4 — but the late-October print is still ahead with a documented capex-heavy setup.
+
+Risk management seals it. ATR is 12.27 (3.45% of price), elevated and expanding. The 7/23 session gapped −6.1% straight through any resting stop in the 330s — exactly where a 336.5 "defined risk" stop would sit. A 5–6% stated downside realized 10–12% eight days ago. In a name that moves on discrete AI-sentiment catalysts, that asymmetry argues for reducing exposure into strength rather than waiting for confirmation.
+
+I would flag that the plan's newsflow evidence (20-of-148 record selection, the undefined "514 Billion" figure, the "reportedly" Anthropic guarantee) is not load-bearing, and no portfolio context was supplied — so sizing below is expressed in standard-allocation multiples, not dollars.
+
+**Entry Price**: 356.13 — trim into strength at the last verified close, working orders across the plan's 352–360 zone. Do not initiate a new position here; if flat, the action is 0.0x.
+
+**Stop Loss**: 340.00 (close-based) on the residual half. A close below 340 breaks the 10-EMA (340.32), VWMA (340.83) and the 7/31 open (340.83) simultaneously — that is the invalidation of the 7/31 bounce. Note the distance from 356.13 to 340.00 is only $16.13 (4.5%); because the 7/23 session gapped through stops, assume realized slippage of up to 10–12% from the trim price and size accordingly rather than treating 340 as a hard floor.
+
+**Position Sizing**: Reduce from 1.0x standard single-name allocation to approximately 0.5x — cut the position by roughly half, in the 352–360 zone rather than into a down-print. Size the residual half so that a 10–12% gap loss (the 7/23 precedent) is survivable, not a 5–6% one. Rebuild only in 0.25x increments and only on one of two triggers: (a) a daily close above 361 on >50M shares held above the 50-SMA for 2–3 sessions, or (b) a retest of the 341–348 confluence that holds on declining volume and closes back above the 10-EMA/VWMA cluster. Cap the rebuild at 1.0x, and hold ~0.5x through the late-October Q3 print — no adds ahead of it. Upgrade to full weight only if Q3 shows capex at or below Q2 with free cash flow turning positive.

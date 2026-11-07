@@ -1,0 +1,23 @@
+**Action**: Sell
+
+**Reasoning**
+
+The plan's Underweight rating maps to a Sell, and the technical report's price structure supports it — but only as a *partial* de-risking, not a liquidation. I am sizing the sell to the strength of the case, and the case is moderate, not extreme.
+
+What I accept and what drives the sell:
+
+1. **The tape is broken on the timeframe that governs deployment today.** GOOGL closed at 137.57 on 2024-02-26, −4.44% and −6.39 points (≈2.0× ATR of 3.185), on 53.6M shares (~1.65× average), closing 3.6% off the low. That single session broke the 10 EMA (142.65), the 50 SMA (142.31) and the VWMA (143.50) at once, and put price below the 2024-01-31 earnings-shakeout low (139.87). MACD is at −0.4945, below signal for 18 sessions, has crossed below zero, and the histogram re-expanded from −0.5173 to −0.8200 — a failed stabilization, not an exhaustion. RSI at 38.63 is weak but has ~8.6 points of room to 30, with no bullish divergence in the data. Nothing here is a buy signal.
+
+2. **The entry math is the decisive argument, and it is arithmetic, not opinion.** From 137.57, first support (136.35–136.69) is under 1% away, first resistance (142.31–144.40) is +3.4% to +4.3% away, and the structural line (200 SMA, 132.31) is −3.8%. Buying weakness here means risking roughly as much as you can make — a ~1:1 proposition into a distribution tape with price sitting 0.88 points (0.65%) above the lower Bollinger band and %B ≈ 5.7%. In a wide-band regime at 2.31% ATR, price rides the lower rail; the band touch is not the trade.
+
+3. **The fundamental cushion caps how far I will sell, and it argues against the bear's short.** Price is still +3.97% above a *rising* 200 SMA (128.71 → 132.31 in four weeks) and the 50 SMA remains +7.6% above the 200 — no death cross. The FCF trajectory (Q4 FCF halved to $7.9B, capex +45.1%, 2024 capex guided "notably larger") and the quality flags (DSO 51.9 → 56.9 days, receivables +19.1% vs revenue +8.7%) are watch items that argue against *adding*, not against *owning*. The bear's own short has the same asymmetry problem in reverse: escalation trigger under 1% away, invalidation ~4.3% away.
+
+So: stop adding, lighten by roughly a third, hedge the core, permit a small tactical short only into the 142.3–143.5 shelf, and let 136.35 and 132.31 decide the rest. I will not chase a short at 137.57 — with entry at market and a stop at 144.40, risk is 6.83 points against 0.88 points to first support. That trade is not permitted.
+
+What I cannot verify, and am not pretending to: the report contains no news or fundamental feed, so the cause of the 2024-02-26 decline is unknown and could be a genuine fundamental shock that would change this read materially. Indicator history is truncated to 2024-01-29. No segment-level data exists, so AI/cloud capex returns cannot be validated. Portfolio context was not provided — I do not know the caller's holdings or cash, so all sizing below is expressed relative to a standard full GOOGL allocation.
+
+**Entry Price**: 142.65 (sell/trim into strength at the 10 EMA / 50 SMA shelf; the VWMA at 143.50 caps the shelf). Do not execute the discretionary trim at 137.57 — if no bounce materializes and GOOGL closes below 136.35, execute the remaining trim at market rather than waiting for 142.65.
+
+**Stop Loss**: 144.40 for the tactical short (a daily close above the Bollinger middle / 20 SMA neutralizes the breakdown; 143.50 is the first warning as the VWMA reclaim). For the retained core the analogous levels are re-engagement triggers rather than stops: add back on a daily close above 143.50, add again above 144.40, and treat a daily close below 132.31 as formal invalidation of the structural bull case requiring a full re-underwrite.
+
+**Position Sizing**: Relative to a 100-unit full standard allocation — trim ~1/3, taking a full position down to 65–70 units, executed into the 142.3–143.5 shelf. Retained core: defined-risk put spread or collar on roughly half the remaining position, near strike 136.5 and far strike 132.3, tenor 60–90 days, premium under ~1% of position notional. Optional tactical short capped at 25 units (1/4 of standard allocation): entry 142.65, stop 144.40, risk 1.75 points ≈ 1.23% of the short's notional ≈ 0.31% of portfolio value at that 25-unit cap — targets 136.69 then 132.31, a ~3.4:1 reward-to-risk. Escalation: on a daily close below 136.35 with volume >40M, trim a further 1/3 of what remains.

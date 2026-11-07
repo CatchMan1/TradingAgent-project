@@ -1,0 +1,19 @@
+**Recommendation**: Overweight
+
+**Rationale**: Here's how I weigh it. Both sides agree AMZN is a high-quality business — the fight is over whether the FY2023 inflection is durable and whether $159.28 is the right entry. The bull carries the direction of the argument: operating income tripled to $36.9B, FCF swung +$49.1B to +$32.2B, gross margin expanded 317bp, operating margin jumped 403bp to 6.41%, and contract liabilities grew 28% (2.4x revenue) with the non-current portion up 96.6%. That's a genuine structural re-rating, backed by cash — OCF at 2.79x net income — not accounting flattery. The balance sheet is strong even after the bear's fair lease-inclusive adjustment, which nets to roughly breakeven rather than a fortress but leaves the company comfortably financed. The bull also wins the technical framing: price is above a rising 10/50/200 stack on 1.7x volume.
+
+But the bear scores real, thesis-relevant points that keep me from going to full Buy. First, the FCF story is partly a capex holiday — the 17.2% capex cut (~9.2% of revenue vs 12.4%) contributed roughly $10.9B of the improvement, and every $10B of capex re-acceleration erodes ~31% of FY2023 FCF. Second, Q4 alone produced 87% of full-year FCF, so the run-rate is seasonally concentrated. Third, cash taxes ran at 29.8% vs an 18.96% book rate with NOLs depleting — a structural headwind that will make FCF growth lag EPS. Fourth, SBC is $24B with ~3% dilution and zero buyback — the capital-return "coiled spring" is unannounced hope, not cash. Fifth, at ~55x trailing EPS and a sub-2% FCF yield the market is already pricing durable forward compounding. And the bear is correct that the bull overreaches on AWS — the dataset has no segment detail, so the AWS moat is narrative, not verifiable, and contract liabilities at 3.6% of revenue are a helpful but modest forward indicator.
+
+Net: the bull wins the fundamental and directional case decisively enough to recommend increasing exposure, but the bear's valuation and entry-timing concerns are legitimate enough to cap conviction below a full Buy and to demand disciplined, staged entry rather than a single full-size commitment at resistance. Hence Overweight, not Buy.
+
+**Strategic Actions**: Build AMZN toward a modest overweight — target roughly 1.25–1.5x a standard allocation once triggers fill, entered in tranches rather than all at once given the bear's valid resistance/entry concerns:
+
+1) Initial tranche (~40% of target): buy the 10 EMA/VWMA confluence at $156.42–$157.22 on confirmation (hold of the level with expanding volume). Do not chase at $159.28 into the $161.29–$163.10 resistance band.
+
+2) Second tranche (~30%): add on a volume-backed breakout above $161.29 with volume >50M shares and a re-expanding MACD histogram; scale toward the $163.10 upper band.
+
+3) Final tranche (~30%): add on a stabilization/bounce in the $154.34–$151.05 zone if the trend structure holds (higher low, 50 SMA intact).
+
+Risk management: place stops at 1.5–2x ATR (~$4.75–$6.30). Treat a closing break below $151.05 (50 SMA) with MACD below signal and RSI under 45 as invalidation — cut back to market-weight or below and reassess.
+
+Monitoring checklist for the next 1–2 quarters: (a) FY2024 capex trajectory vs the 9.2% of revenue trough — re-acceleration is the key FCF risk; (b) cash tax rate vs book rate and NOL depletion; (c) SBC/dilution and any buyback announcement (the single biggest accretive catalyst); (d) sustainability of ~6.4% operating margin — specifically whether G&A/advertising restraint reverses and whether SBC, D&A, and lease costs keep outgrowing revenue; (e) Q4 seasonal FCF concentration and receivables/AR days for any working-capital deterioration. Note the data gap: no AWS segment detail is available in this dataset — track segment margins/backlog from filings separately before leaning further into the AWS-moat argument.

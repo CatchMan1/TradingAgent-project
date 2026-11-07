@@ -1,0 +1,9 @@
+**Action**: Hold
+
+**Reasoning**: The plan’s Hold is the right call against the price structure. AAPL at **$315.32** is still in a firmly bullish stack — price above the 10 EMA **$306.57**, 50 SMA **$297.77**, and 200 SMA **$272.45** — with MACD **4.615** above signal **1.894**, histogram **+2.721**, and RSI **62.93** not overbought. There is no technical breakdown and no reason to sell a primary uptrend. But adding here is poor risk/reward: price is pressing a real **$315–$317 resistance shelf** on light **34.13M** volume versus a **50–75M** norm, only about **1.8%** below the upper Bollinger band **$321.20**, while ATR is **$8.09** (~2.6% daily range). The stock is also stretched **+15.7%** above the 200 SMA and **+7.6%** above VWMA **$293.13**. Valuation multiples are not provided, so I cannot verify how much growth is already priced after the run. Hold existing exposure, do not chase at $315–$317, and let either a confirmed breakout or a constructive pullback provide the next entry.
+
+**Entry Price**: No new entry at **$315.32**. Conditional entries: **$298.00** on a constructive pullback that holds the 50-SMA/Bollinger-mid confluence; or **$318.00** only after a daily close above **$317** with volume >**65M** shares.
+
+**Stop Loss**: Core/structural risk line at **$295.00** on a closing basis, just below the **$297.77/$298.10** confluence. For a breakout add at **$318.00**, use **$298.00** as the structural stop.
+
+**Position Sizing**: Maintain the current AAPL position at its standard allocation; do not add at **$315.32**. If the breakout confirms above **$317** on >**65M** volume, add in two tranches up to a modest overweight of roughly **+10–20% above standard allocation**. If price pulls back to **$298.00** and holds on declining volume, add up to a full standard allocation there. If there is no position, wait for one of those triggers rather than initiating at resistance.

@@ -1,0 +1,11 @@
+**Action**: Hold
+
+**Reasoning**: AAPL at 310.66 is in a confirmed multi-timeframe uptrend (price > 10 EMA 299.53 > 50 SMA 295.06 > 200 SMA 271.42, rising 200 SMA, fresh positive MACD crossover at histogram +2.014, RSI 60.66 with room), supported by quality fundamentals (49.3% gross margin, ~$78.3B H1 FCF, net cash) — none of which argues for selling or trimming. But the immediate risk/reward is poor: price just ran ~13.6% in seven sessions into the well-defined 315.2–315.5 resistance shelf and was rejected on the 07-07 close (opened 315.29, closed 310.66), so upside to the breakout trigger is only ~1.5% while the 10 EMA (~299.5, ~3.6% down) and 50 SMA/Bollinger-mid cluster (~295, ~5% down) are the first real support, with the 273.75 June low ~11–12% away if 295 fails. This asymmetry at resistance, plus forward margin uncertainty (memory-cost lag, slowing buybacks, higher tax rate, unexplained $12.8B intangibles jump, and no valuation data to establish a margin of safety), is exactly the balance that makes Hold the synthesis rather than a hedge — own the franchise, don't chase it into resistance, and let a level either confirm the breakout or hand over a better entry.
+
+**Entry Price**: 299.5
+
+**Stop Loss**: 290.0
+
+**Position Sizing**: Hold current exposure at roughly standard-allocation weight; no market-on-open adds into the 310.66/315.5 resistance zone. Conditional adds only: split ~1/3 of a standard add-size on a decisive daily close above ~315.5 on above-average volume (well above the 42.5M rejection print), and ~1/3 into the ~299.5 (10 EMA) to ~295 (50 SMA/Bollinger mid/VWMA) zone only if it stabilizes, reserving the last ~1/3 for a held retest of ~295. Size to the elevated ATR (8.39, ~2.7% of price). A decisive close below ~295 invalidates the bull thesis (trim toward defensive weight); a break of the 273.75 June low is the hard line to exit remaining tactical exposure. Verify the $12.8B intangibles increase and obtain valuation/consensus data before sizing up.
+
+FINAL TRANSACTION PROPOSAL: **HOLD**

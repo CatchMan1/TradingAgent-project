@@ -1,0 +1,25 @@
+**Recommendation**: Overweight
+
+**Rationale**: Both sides fought well, but they won different arguments, and I need to rename which ones actually decide the call on AMZN.
+
+The bear clearly wins the tape. That's not close. Four consecutive lower closes (153.38 → 144.57), price 3.6% below the 10-EMA (149.96) and 4.25% below VWMA (150.98), MACD histogram -1.055 and widening, RSI 40.23 and still falling, rising volume on the decline (56.0M vs. 49.4M/47.3M), and an intraday break of the 50-SMA. The bull's "burden of proof is on the bear" framing was the weakest line of his constructive case — sitting 0.19% above the 50-SMA with no hook, divergence, or histogram turn is not a buy trigger, it's a knife-edge. I also give the bear the valuation point, because the bull never squarely rebutted it: ~76x TTM EPS and ~1.1% FCF yield leave little cushion, and the bear is right that the capex-cut lever is mostly spent (9M capex $38.14B, -19% YoY) while D&A compounds (+19% YoY). Those are real risks.
+
+But here's why the bear does not win the investment call. The bear's case is fundamentally a timing-and-multiple argument, not a refutation of the business trajectory. It concedes the long-term chart is up and concedes Q3 was a genuinely good print — then argues we should wait. The bull, by contrast, brought hard, broad-based evidence of a genuine inflection: operating income $11.19B at a 7.82% margin vs. $2.53B at 1.99% (+343% YoY on +12.6% revenue), 9M operating income up 149%, revenue reaccelerating to +12.6%, inventory +2.9% against +11% revenue, a ~$34B FCF swing of which ~$24.9B came from operating cash flow rather than capex cuts, ~$20B net cash, and a rising 200-SMA at 128.47 with the 50-SMA above it. The bear's "cost-led, not mix-led" critique is a fair caveat but an inference, not proof — and it doesn't overturn revenue acceleration or the cash-generation turn. On the balance sheet, the bull wins: $99.5B of liquidity against ~$18.2B of near-term debt/lease maturities and net cash is not a fragile setup, and the 0.98 current ratio is the payables-funded model, not distress; the $284.4B purchase obligations are operational commitments, not debt.
+
+So the bear owns the next two weeks; the bull owns the next two years. When the fundamental direction is clearly improving, the primary trend is intact, and the bear's case is essentially "wait for a better entry," the stronger case is the bull's — but the contested support level and the binary early-February Q4 print argue against an all-in Buy. That lands on Overweight: constructive on AMZN, build exposure, but stage it rather than chase strength that the tape doesn't yet confirm. Key caveat: the data extract does not break out AWS vs. retail segment margins, so margin durability is inferred, not proven — that's the monitorable that could shift this to a firmer Buy or back to Hold.
+
+**Strategic Actions**: Size against a standard allocation with staged entry, not a single full-size buy.
+
+1) Existing holders: maintain core AMZN exposure; do not trim into strength-less weakness. This is an add-to, not an exit.
+
+2) New money / building position: deploy only an initial tranche of ~40% of the target allocation now at ~144.5, near the 143.4–144.3 confluence (50-SMA 144.30, lower Bollinger 143.40). Keep ~60% dry powder — the tape is negative and offers no reversal signal yet.
+
+3) Trigger-based adds:
+   - Add a second tranche (~30% of target) on a confirmed reclaim of ~150 — the 10-EMA / Bollinger mid-band / VWMA cluster — which neutralizes the short-term bear case.
+   - Add a third tranche (~30%) on either (a) a decisive close above the December close of 154.07 (confirms the dip was bought), or (b) a flush toward the 200-SMA at ~128.47 with a bullish reversal signal (RSI hook/divergence, MACD histogram turn). Do not average blindly into a falling knife between 143 and 128.
+
+4) Risk control / stops: treat a decisive close below 143.4 as the bear's line in the sand confirmed — stop adding, and trim back toward benchmark/neutral weight rather than hold full size into the Q4 print. Do not let this become an undisciplined bag-holder trade.
+
+5) Event risk: the Q4/FY2023 print in early February is binary and unconfirmed in the data. If running the full target allocation into it feels aggressive, hedge the position with a protective put or collar sized to the near-term tranche rather than reducing the strategic thesis.
+
+6) Monitorables that would upgrade to Buy: Q4 operating margin holding at/above ~6.5–7% (confirming the 7.82% was structural, not a one-quarter fluke), capex guidance that does not re-accelerate enough to crush FCF, and segment disclosure clarifying AWS/retail mix durability. Monitorables that would downgrade toward Hold/Underweight: Q4 margin giving back below ~6.5%, 2024 capex re-acceleration that consumes a large share of TTM FCF ($16.92B), or a decisive break of 143.4 that holds. Caveat to flag up front: the provided data lacks AWS/retail segment margins, so margin durability is an inference — surface this gap to the trader rather than treating it as resolved.

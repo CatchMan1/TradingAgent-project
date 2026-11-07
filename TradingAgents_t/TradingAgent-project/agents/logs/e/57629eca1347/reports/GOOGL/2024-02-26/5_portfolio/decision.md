@@ -1,0 +1,23 @@
+**Rating**: Underweight
+
+**Executive Summary**: Underweight GOOGL as a staged partial de-risking, not a liquidation. Cut roughly a third of a standard allocation (100 -> 65-70 units) into any bounce into the 142.31-143.50 shelf (50 SMA / 10 EMA / VWMA), and if no bounce comes, trim tranche two on a daily close below 136.35 with volume >40M or on a 5-7 session time stop if 143.50 is not reclaimed. Hedge about half the retained core with a 60-90 day 136.5/132.3 put spread or collar (premium under ~1% of position notional); permit only a 10-15 unit tactical short and only on demonstrated rejection at 142.65-143.50 with a daily-close stop above 144.40. Escalation: close below 136.35 on >40M trims another third of what remains; close below 132.31 (200 SMA) cuts to token size and forces a full re-underwrite. Horizon 1-3 months, all triggers close-based.
+
+**Investment Thesis**: All three risk seats agreed the tape justifies partial de-risking; they split only on trim magnitude and whether a short belongs at all — and that split resolves toward Underweight, not Sell or Hold.
+
+The tape: GOOGL closed 137.57 on 2024-02-26, -4.44% / -6.39 points (~2.0x the 3.185 ATR), on 53.6M shares (~1.65x average), near the low, breaking the 10 EMA (142.65), 50 SMA (142.31) and VWMA (143.50) in one session and losing the 139.87 January shakeout low. MACD -0.4945 has been below signal 18 sessions, crossed zero, and the histogram re-expanded -0.5173 to -0.8200; RSI 38.63 is weak, not oversold, with no bullish divergence. The 50 SMA slope has decayed from ~0.337/day to ~0.101/day.
+
+The arithmetic: from 137.57, first support (136.35-136.69) is under 1% away, first resistance (142.31-144.40) is +3.4% to +4.3%, and the 200 SMA (132.31) is -3.8%. Buying here is ~1:1 into distribution; shorting at market with a 144.40 stop risks 6.83 points for 0.88 to first support. Neither is permitted — hence trim into strength or on a confirmed break, never at the 137.57 print (consistent with the 2024-02-05/02-06 and 2024-02-16 lessons that pre-positioning ahead of a close-based trigger costs alpha).
+
+The fundamentals: Q4 FCF halved to $7.9B from $16.0B, Q4 capex +45.1% to $11.019B (≈$44B annualized) with 2024 capex guided "notably larger," and Q4 buybacks of $16.2B at >2x Q4 FCF (FY at 88.5% of FCF) — the shareholder-return bid shrinks when support is needed. DSO 51.9 to 56.9 days, receivables +19.1% vs revenue +8.7%, payables +46.1%, cash taxes $19.2B vs book $11.9B and 4.6pp of FDII (~$0.30/share) are quality monitors that block adding, not reasons to abandon.
+
+Why not Sell: +3.97% above a rising 200 SMA (128.71 to 132.31 in four weeks), 50 SMA +7.6% above the 200, FY23 revenue $307.4B (+8.7%), 56.6% gross margin, $101.7B OCF, $69.5B FCF, ~$94B net cash vs ~$1.3B 2024 maturities, and a 3.0% share-count reduction. A naked short into that with only ~3.8% to structural support is low expectancy.
+
+I overrule the aggressive seat on short size: a 25-unit probe on a 1.75-point (~0.55 ATR) stop sits inside noise, assumes the bounce prints, and adds directional risk against an unknown catalyst — cap it at 10-15 units, demand demonstrated rejection, and prefer the put spread where gap risk is intolerable. I overrule the conservative seat on banning every defined-risk bearish expression and on 60-65 units without portfolio context; 65-70 is the defensible size, with above-average concentration justifying 60. His vague "reasonable window" is made concrete as a 5-7 session time stop on tranche two.
+
+Rebuild only on confirmation: add ~1/3 of the trimmed amount on a close above 143.50, next tranche above 144.40, and restore full allocation only after a higher low above 136.3-136.7 with a positive MACD histogram; do not chase 149-153.8 without a fresh fundamental update. Upgrade on a 143.50 then 144.40 reclaim or on stabilizing 2024 capex/FCF with DSO moderating and buybacks back under quarterly FCF; move to Sell on a close below 132.31 or a confirmed ~$45-50B capex year with flat-to-down FCF plus a second quarter of receivables outgrowing revenue while buybacks exceed FCF.
+
+Data gaps: no segment revenue/margin data, so AI/cloud capex returns cannot be validated; no news/flow/sentiment feed, so the 2024-02-26 catalyst is unknown; indicator history truncated to 2024-01-29; no insider data; no portfolio context, so all sizing is relative to the caller's own standard GOOGL allocation and assumes nothing about current holdings or cash.
+
+**Price Target**: 133.0
+
+**Time Horizon**: 1-3 months (close-based re-engagement gates; extend only on a 143.50/144.40 reclaim with stabilizing capex/FCF)

@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The research plan's Overweight verdict resolves to a Buy, but a staged one: the fundamental case (revenue +21.8% to $109.90B, operating income +29.7% with a 36.1% margin, $467.6B RPO against ~$46.5B net cash) is intact while the technical read is an unconfirmed reversal — price at $367.03 is still 1.4% below the 50-SMA ($372.08) with MACD at -2.22 below zero, even though the histogram flipped positive on 2026-07-02, RSI recovered to 54.0, and price holds above the 10-EMA ($359.31) and VWMA ($351.96). The bear's own remedy (wait for a close above $377 plus MACD zero reclaim) is the same thesis at a 2.7% higher price, so scaling in at the current level and reserving most capital for confirmation captures the asymmetry without paying up. Risk is capped structurally: the June 26 low at $330.20 invalidates the recovery, ATR of $11.18 means a ~$37 stop from here is roughly 3.3x ATR and must be treated on a closing basis — not with a tight $358 stop that normal noise would trigger.
+
+**Entry Price**: 367.03
+
+**Stop Loss**: 329.5
+
+**Position Sizing**: Build in thirds, not all at once. Tranche 1: deploy ~40% of the intended overweight delta at ~$367.03 (do not chase above $372.50 intraday). Tranche 2: ~30% on a daily close above $372.08 (50-SMA) on above-average volume. Tranche 3: ~30% on a daily close above $377.40 (upper Bollinger) with the MACD line reclaiming zero; if price stalls and rejects in the $372-$377 zone, hold the unspent tranches in cash rather than averaging down. Size total exposure so a full stop-out — a daily close below $329.50, roughly -10% from entry — costs no more than 1.0-1.25% of portfolio value (implying a full overweight position on the order of 10-12% of portfolio, assuming a standard benchmark weight in that neighborhood). Alternative path: if GOOGL resets into $339-$346, only deploy unspent tranches if the next print shows FCF stabilizing or capex guidance moderating; a close below $339 cancels the add-plan and trims back to benchmark weight. Use closing-basis stops; avoid tight stops at $358, where daily noise (ATR $11.18, ~3% of price) will shake out a valid thesis.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

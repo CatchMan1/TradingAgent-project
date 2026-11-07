@@ -1,0 +1,22 @@
+**Action**: Sell
+
+**Reasoning**
+
+The research plan lands on Underweight, and under the mapping I am required to apply, Underweight is a Sell — sized, not liquidated. I am executing it as a reduction to roughly half of a standard AAPL allocation, not as an exit, because the plan's own evidence cuts against a full Sell: the 200 SMA at 179.91 is still rising ~0.12/day, every close since 2023-11-06 has held above it, the golden-cross spread (50 SMA 187.24 vs 200 SMA 179.91) actually widened over the past week to 7.33 points, and the franchise fundamentals cited (44.13% gross margin, ~$18B net cash, 2.9% capex/revenue) are not in dispute.
+
+What drives the selling is the entry-quality and direction argument, and it is supported cleanly by the price structure:
+
+- **The long case is compensation-poor right where it would have to be bought.** The proposed long trigger at 187.24 (50 SMA) sits immediately under the unfilled 2024-01-02 gap of 188.44–191.73 and a VWMA of 192.552 — two independent measures of trapped supply, with price currently 10.64 points (−5.53%) below VWMA. Only ~5.7 points to the first target (20 SMA/middle band 193.19) against ~6.0 points of risk is worse than 1:1 into a wall.
+- **The nearer-term risk line is noise-width, not structure-width.** With ATR at 2.997 (up 17% in four sessions from 2.567), a 179.50 stop from 181.91 is 2.41 points ≈ 0.8 ATR — inside a single normal daily range. One wick through the 200 SMA and a buyer is out before the thesis is tested. Price is only 0.67 ATR above the 200 SMA.
+- **Momentum regime has flipped, and it is early, not exhausted.** MACD crossed below zero for the first time in the series (−0.702 vs signal +1.210, histogram −1.912); RSI 29.78 is a 60-session low with a *lower low* on price (180.88 vs 183.43 on 01-03) and no bullish divergence; the close is 2.48 points (1.35%) below the lower band at 184.393, a configuration the report explicitly characterizes as walking-the-band trend behaviour. "Oversold is a location, not a signal" — and the plan concedes the next ~two weeks belong to the bear as the 50 SMA slope rolls over.
+- **Participation confirms distribution.** 2024-01-02 volume of 82.49M was 1.60× the 30-session average, and 01-04's 71.98M was 1.39× on a −1.27% day. That is supply being distributed into strength, not drift.
+
+I am explicitly *not* acting on the optional tactical short from the plan beyond a capped allowance, and I am *not* buying the 200 SMA test with no confirmation. Buying the last support line with a sub-1-ATR stop and no reclaim is the wrong side of the asymmetry the plan describes.
+
+**Entry Price**: 187.24 — limit sell into the 50 SMA / lower edge of the gap+VWMA supply band (the plan's 187.2–189.3 distribution zone). If no bounce materializes, the trim is not abandoned: it converts to a forced reduction at the hard risk line (see below), which is 179.91.
+
+**Stop Loss**: 191.73 — a daily close above the top of the unfilled gap invalidates the bearish tactical stance and is the plan's explicit re-upgrade trigger (rebuild to standard weight in two tranches on that close). That is ~4.5 points / ~1.5 ATR above the sale level. The trade's own downside invalidation, which triggers the deeper cut rather than a stop, is a daily close below 179.91 (200 SMA).
+
+**Position Sizing**: Reduce to ~50% of a standard AAPL allocation (e.g., ~2.5% of portfolio if standard weight is 5%); do not go to zero. On a daily close below 179.91, cut the remainder to a token/monitoring size of ~1/4 standard (~1.25%), with next supports 176.65 and then 173.97. Scale share count down ~15–17% versus early-January sizing to hold dollar risk constant at the higher ATR, and size at or below the Underweight target into the unreported FQ1 FY24 print. An optional tactical short is capped at no more than one-third of a standard allocation, entered only on rejection from 187.24, invalidated above 191.73, targeting 180.88 then 176.65.
+
+**Evidence gaps to flag**: no news/sentiment report and no FY24 consensus revenue figures were available in this package; the FQ1 FY24 result did not exist as of 2024-01-04 and its prior-year comp was a 14-week quarter. If any of those arrive and contradict the deceleration read (revenue −2.8% to $383.285B, operating income −4.3%, opex +6.8%, SBC +19.9%, FCF −10.6%, buybacks −13.3%, payout 98.4% of FCF, inventory +28%), the re-upgrade triggers should be revisited immediately rather than waited on.

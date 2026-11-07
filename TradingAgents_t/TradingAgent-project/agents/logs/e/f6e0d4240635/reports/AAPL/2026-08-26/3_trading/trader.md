@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan's Overweight case is backed by both the fundamentals (9M FY26 revenue +16.1%, EPS +22.4%, gross margin 50.06%, normalized FCF +37.5%, $62.17B net cash) and the primary trend structure in AAPL — price is 11.1% above a rising 200-SMA at 282.12, the 50-SMA has re-inflected upward six straight sessions to 311.22, the MACD histogram just printed its first positive reading in 18 sessions, and the Bollinger bandwidth squeeze (22.6% → 8.46%, narrowest in the window) is a coiled setup with price in the upper half (%B 62.1). The bear's points are legitimate risk controls — a record-but-unproven gross margin, memory-cost pressure of 80–180 bps, a 320.28 rejection candle on 8/20, and down-day volume heavier than up-day volume (41.0M/46.9M vs 34.0M today) — so this is a scale-in, not a chase; a ~35x trailing multiple and a 0.72% cushion above the 50-SMA leave no margin for buying the full size at 313.45. I would buy the first tranche only into the 309.11–311.22 triple confluence (VWMA 309.11 / Bollinger mid 310.26 / 50-SMA 311.22) and reserve further adds for a confirmed close above 320.28 on real volume, with a hard risk line at 306.00 (below the 8/21 low of 307.01 and roughly 1.5× the 7.19 ATR), sizing so that 2×ATR (~14.4 pts) never exceeds the intended per-position loss.
+
+**Entry Price**: 311.0
+
+**Stop Loss**: 306.0
+
+**Position Sizing**: Scale toward 125–150 bps of portfolio in three tranches, not all at once. Tranche 1: 25–50 bps via limit at 311.00 (inside the 309.11–311.22 confluence; do not chase above 315). Tranche 2: 25–50 bps only on a daily close above 320.28 with volume >55M (half-size if volume is 45–55M). Tranche 3: 25–50 bps only above 323.40 with a held retest of 320.28. Cap total exposure at 150 bps and total portfolio risk at 0.25–0.50%; keep tranche 1 below full size into NVDA earnings and the inflation print. A daily close below 308.80 reduces the position; a close below 300.00 moves AAPL to Underweight.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

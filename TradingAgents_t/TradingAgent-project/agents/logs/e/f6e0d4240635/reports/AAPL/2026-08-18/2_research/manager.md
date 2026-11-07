@@ -1,0 +1,18 @@
+**Recommendation**: Hold
+
+**Rationale**: The bear case wins the near-term entry and risk-control debate, but it does not defeat the AAPL franchise case. The bull is right on business quality: 9M FY26 revenue +16.2%, diluted EPS +22.4%, Q3 gross margin 50.06%, net cash $62.2B, and a rising 200-day SMA at 280.87. That prevents a Sell or Underweight call on the core business.
+
+But the bull’s actionable trade is not confirmed. AAPL closed at 310.03, still below the July 31 gap floor at 310.69 and below the bull’s own trigger of 311.49. The supposed moving-average reclaim is too marginal: roughly 0.04 ATR above VWMA, 0.12 ATR above the 50-SMA, and 0.14 ATR above the 10-EMA. Volume at 53.4M was only ~40% of the 132.5M capitulation day. The bear is also correct that the bull’s published risk/reward is poor: entry 311.50, stop 298.50, first target 316.49 implies only ~0.38:1 reward/risk, with the stop inside the roughly 16.8-point five-day ATR envelope.
+
+The bear’s valuation and mechanical-headwind points are material: ~34x implied P/E, rising effective tax rate, buybacks down 12% YoY, Q3 opex +22.9% versus revenue +16.4%, and unresolved memory-cost/inventory ambiguity. However, these are risks and headwinds, not proof of franchise deterioration. The 200-SMA remains intact, net cash is strong, and FCF quality, while needing 10-K clarification on the $13.3B intangible/$13.5B liability, is not demonstrably broken. Data gaps remain: no segment/product/geographic split, no independent valuation cross-check, no insider/sentiment archive, and the Aug 11–15 news window is missing. Given that, AAPL is a Hold: maintain core exposure, do not add at the current unconfirmed level, and require confirmation before upgrading.
+
+**Strategic Actions**: Assume AAPL has a standard single-name target allocation of 4–5% of portfolio NAV; scale proportionally if the mandate differs.
+
+- **Core position**: Maintain existing AAPL exposure at the standard target weight. Do not initiate or add new long exposure at 310.03.
+- **No-trade zone**: Do nothing between 302.25 and 311.49. This is noise inside the unresolved range.
+- **Tactical add trigger**: Add only on a daily close above 311.49, preferably above 313.33, on volume >55M shares. Size the first add at 1.0–1.5% NAV, roughly 25–30% of the target allocation.
+- **Second add**: Add another 1.0–1.5% NAV only if AAPL holds above 310 and MACD confirms a crossover/signal improvement. Cap total AAPL exposure at the standard 4–5% target.
+- **Risk stops**: For tactical adds, use 298.50 as the hard stop, consistent with the bull’s level below the 300.00/300.57 shelf. For the core position, a daily close below 300.00 should trigger a trim of the tactical sleeve and a 20–25% reduction in core exposure; a close below 298.50 should remove tactical exposure entirely and prompt a hedge/reassessment. A break below 280.87 would question the primary trend and justify a further core reduction.
+- **Downside watch levels**: 290.30, then 280.87, then 273.75. Do not pre-emptively short AAPL unless the mandate permits; the bear’s short trigger is a daily close below 300.00, not the current level.
+- **Upside management**: Trim tactical adds into 316.49, then 321.66–323.45, then 329.59. Keep the core position unless valuation or technical conditions deteriorate.
+- **Upgrade condition**: Move AAPL to Overweight only after confirmed breakout above 311.49/313.33 on strong volume and/or 10-K clarity on the $13.3B intangible asset, $13.5B liability, Q4 gross margin, and inventory composition. Move to Underweight if AAPL closes below 300.00 and the 50-SMA rolls above price.

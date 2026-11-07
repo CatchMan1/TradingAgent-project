@@ -1,0 +1,11 @@
+**Action**: Hold
+
+**Reasoning**: The plan's Hold is confirmed by the tape: GOOGL closed 337.83 (−3.80%) essentially on the session low on 35.58M shares (1.33× the 20-day average), sitting 0.04% below a rising 200-SMA at 337.95 while 2.10% below a falling 50-SMA/10-EMA shelf at 345.07, with VWMA at 343.93 above price (average holder underwater), MACD histogram halved from 2.002 to 0.977 in one session, and RSI down from 58.80 to 45.06 — that is distribution into a live, unproven test of the long-term trend line, not a capitulation low. Neither trigger has fired: 337.39 (200-SMA test plus June/September shelf) has not broken decisively, and 345.10 (VWMA/10-EMA/50-SMA confluence) has not been reclaimed with volume >27M, so there is no asymmetric entry in either direction at 337.83. The fundamental case (Q2 revenue $119.8B +24.2%, operating margin 34.0%, ~$139B net cash) rules out shorting a name with ~32× interest coverage, but the unresolved cash-conversion question (Q2 FCF −$5.9B, capex ~37.5% of revenue, buybacks at zero) plus ~32× annualized core EPS explains why multiple compression risk caps upside. Hence: keep standard exposure, add nothing at the knife-edge, and let 337.39/345.10 resolve the direction.
+
+**Entry Price**: not provided
+
+**Stop Loss**: 327.7
+
+**Position Sizing**: Hold existing exposure at standard size (100% of the single-name target weight); 0% new capital at 337.83. Downside: on a daily close below 337.39 with volume >30M, trim one-third to ~65–70% of standard and place a closing-basis stop at 327.70 on the remainder (below the 327.74 range floor; ~1.1 ATR, so use a close-basis stop, not intraday). Below 327.74, reduce to 50% of standard (next shelf 317.69; 317–320 is the preferred re-add zone for a 1/3-standard tranche absent fundamental deterioration). Upside: only restore to full standard on a daily close above 345.10 with volume >27M, MACD histogram re-expanding and RSI back above 50; scale to no more than 1.25× standard (Overweight) only after the Q3 2026 print confirms an FCF inflection, buyback resumption, or quantified 2027 capex with an ROI framework. Because ATR is 9.155 and rising (2.71% of price), reduce size rather than widening stops if volatility keeps expanding. Do not short GOOGL.
+
+FINAL TRANSACTION PROPOSAL: **HOLD**

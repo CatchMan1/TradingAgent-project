@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan lands at Overweight, which maps to a Buy sized as a modest overweight rather than a full-conviction add, because the bull wins the long-term thesis (rising 200-SMA at $233.60 with price 5.9% above it, revenue +16.6% YoY, operating income +29.6%, ~$144B cash/securities, P/E near a multi-year low) while the bear wins the near-term setup (price capped under a falling 50-SMA at $253.37, MACD still negative at −0.654, a July bounce on light 30–40M share volume, and a visible 17% drawdown template toward $227). The technical structure is a volatility squeeze between the $240.93 mid-band and the $252.97 upper-band/$253.37 50-SMA confluence, with price at $247.49 sitting only ~2% below resistance and ~2.7% above the 10-EMA — poor immediate reward-to-risk, which is exactly why the plan stages entries rather than buying $247 outright. I therefore treat this as a Buy expressed through a limit entry on a pullback into the $240.9 mid-band → $237.9 VWMA shelf, with a breakout tranche only on a volume-confirmed close above $253, and an ATR-based stop below the rising 200-SMA so normal daily range (~$7.36 ATR) does not shake the position out. Gaps I cannot fill from the provided evidence: no Q2 earnings date/data inside this window and no confirmed AI-capex ROI evidence, so triggers stay technical.
+
+**Entry Price**: 241.0
+
+**Stop Loss**: 232.5
+
+**Position Sizing**: Build to ~1.2–1.3x a standard allocation in three equal tranches: Tranche 1 (~1/3) at $241 limit (mid-band $240.93, with add room toward the $237.87 VWMA/$236–237 shelf); Tranche 2 (~1/3) only on a daily close above $253.50 on expanding volume; Tranche 3 (~1/3) held in reserve for a Q2 earnings reaction confirming FCF stabilization and margin hold. If neither the $241 pullback nor a volume-confirmed $253 breakout occurs, stay near market-weight (low end of the band) and do not press. Hard invalidation: high-volume break of $227.01 ($225.55 intraday) closes the tactical thesis — cut the trade-sized add, not the core.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

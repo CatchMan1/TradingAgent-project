@@ -1,0 +1,9 @@
+**Action**: Sell
+
+**Reasoning**: The Underweight plan wins on price paid versus payoff. At **319.70**, AAPL is at the top of its valuation band (~34.9x FY26E EPS), and the technical upside is capped by the untraded **322.37–333.43** gap band—only ~4.3% to the full gap fill—while a break of **300.86/300.00** opens **273.75** (~14.4% lower). The breakout is also unconfirmed: the close is above the upper Bollinger band at **318.858** (%B 1.047), but volume was **38.65M** versus a ~47M post-gap average, MACD is still negative at **-0.028**, RSI is **57.37**—below the 62–65 confirmation zone—and VWMA is **309.99**, not yet curling toward 315+. The **309.86–312.00** support knot is the clean invalidation line. The report’s preferred retest-buy at 309.9–312 is not actionable under this plan: it sits only cents above the 309.86 invalidation level, and the plan explicitly says not to initiate at current prices. With two >6% single-day shocks in nine weeks, the correct expression is trim/underweight, not a fresh long and not an outright short.
+
+**Entry Price**: 319.70
+
+**Stop Loss**: 333.43
+
+**Position Sizing**: Trim **40–50%** of an existing AAPL position now at **319.70**, bringing an at/above-standard position to roughly **50–60% of standard allocation**. Stage additional sales at **327.90** and **333.43**, with the bulk of the trim concentrated in **327.90–333.43**. If already below standard weight, hold the residual and make no adds. Cut another third on a daily close below **309.86**; exit the remainder on a close below **300.86**. No new long, no leverage, and no options overlay that increases net long delta; keep sizing halved versus normal-volatility sizing for gap risk. If flat, stay flat—do not initiate a short.

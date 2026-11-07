@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan's Overweight maps to a staged Buy: the bear case is a multiple-compression and entry-timing argument, not a business-deterioration one (bear conceded the Q2 2026 operating inflection — +43% EBIT, +226bp margin — and disclaimed any solvency event), while the technical tape confirms early-stage bullish repair — close 262.43 above the 50-SMA at 259.10 and 200-SMA at 242.15, a fresh MACD zero+signal cross (0.375 vs −1.059, histogram +1.434), RSI 59 with headroom, and a Bollinger squeeze resolving upward (ATR compressed 41% to 5.90). But the entry is objectively poor at 262.43: +1.95% to the 267.56 gate versus −3.36% to the 253.6 invalidation, breakout on only 96% of average volume (34.71M vs ~36.1M), 10-EMA (254.81) still below the 50-SMA, and price extended above the upper band (261.26) — so I buy direction now with a token tranche only and keep dry powder for the 252–256 confluence or a volume-confirmed close above 267.56. A single hard stop at 253.6 (1.5x ATR, coinciding with the 10-EMA and prior breakout zone) defines the risk for the trading portion; below 252 the thesis is neutralized and no further averaging is permitted.
+
+**Entry Price**: 262.43
+
+**Stop Loss**: 253.6
+
+**Position Sizing**: Stage into a target of ~1.25–1.5x a standard AMZN benchmark weight. Tranche 1 = one-third of target at market near 262.43 (risk of 8.83 pts / 3.36% to the 253.6 stop; sizing for 1% of equity at risk implies ~30% notional exposure at this entry, so size the token tranche accordingly). Tranche 2 = one-third on either a pullback into 252–256 (20-SMA 252.02 / VWMA 252.05 / 10-EMA 254.81) where risk to the same stop is ~1%, or a close above 267.56 on ≥40M shares. Tranche 3 (final third) held for the late-October Q3 print, funded only on visible capex deceleration from +60.7% with OCF still compounding 30%+. Cap the trading portion at 253.6; a sustained close below 252 stops all adds; below 242.15 (200-SMA) cut to a half-weight core. Hedge with puts/collars into 272–278 rather than shorting.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

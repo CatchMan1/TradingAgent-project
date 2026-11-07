@@ -1,0 +1,74 @@
+# AMZN — Company News Review
+**Evidence window:** 2026-09-09 through 2026-09-15 (America/New_York), inclusive
+**Snapshot:** d512b82f…b79b | **Eligible records:** 167 | **Supplied:** 20
+
+## 1. Scope and evidence quality
+
+The supplied set is **headline + summary only — no full-article text**, and it is neither exhaustive nor evenly distributed. All 20 supplied records carry publication timestamps on **2026-09-15 ET** (several are UTC stamps of 2026-09-16T01:00–03:50Z, which convert to the evening of 9/15 New York time). **There is no supplied evidence for 2026-09-09 through 2026-09-14.** Any claim about earlier-week news would be unsupported, so I make none. With 20 of 167 eligible records supplied, the sample is skewed toward one session and toward syndicated market-recap content.
+
+## 2. Bottom line
+
+The single most decision-relevant company-specific item is **negative and idiosyncratic**: AWS reportedly cannot recover customer data from its Bahrain and UAE facilities affected by the Iran conflict (Yahoo, 2026-09-15 20:09:48Z / 16:09 ET). That story coincides with AMZN closing **$248.24, −2.09%** on 9/15 (Yahoo, 21:45:04Z / 17:45 ET). Against that, the company-specific narrative is constructive — an AI chip deal with Qualcomm, Kuiper commercial traction, and a retrospective "best quarter in years" piece — but these are either supplier-side read-throughs, long-dated optionality, or backward-looking sentiment. The **dominant near-term swing factor is macro**: traders were pricing a **92% probability of a Fed rate hike on Wednesday** (Yahoo, 22:04:55Z / 18:04 ET), with yields and oil spiking. Net: **mildly negative skew into the 9/16 session, driven by macro plus an unresolved AWS trust/remediation issue, partly offset by a still-intact AI/mega-cap narrative.**
+
+## 3. Company-specific events
+
+**a) AWS Middle East data-loss disclosure — most material negative.**
+"AMZN Stock Slips 2%: Amazon Unable To Recover Data Lost From Middle East Centers Affected By Iran War." Summary states AWS said it cannot recover specific customer data from its Bahrain and UAE server facilities. Source: Yahoo, published 2026-09-15T20:09:48Z (16:09 ET). URL: https://finnhub.io/api/news?id=f2bd1f0695d683e92d35cc60fe6f1d433f544d34870a265045ab49ae4eb1ed4c
+*Impact:* Negative. Likely channels are (i) customer remediation/SLA credits, (ii) litigation and contractual exposure, (iii) reputational damage to AWS's reliability and disaster-recovery proposition in a region already repriced for geopolitical risk, and (iv) possible acceleration of multi-cloud/region-diversification discussions among enterprise customers. *Horizon:* sentiment over days; contractual/legal over weeks to quarters. *Uncertainty:* high — the summary gives no dollar figure, no customer count, and no statement of whether this is a novel disclosure or a reiteration. The "Iran war" framing comes from the headline only.
+
+**b) Qualcomm–Amazon AI chip deal — moderate positive read-through, ambiguous for AMZN economics.**
+"Qualcomm Stock Jumps. Amazon AI Chip Deal Opens New Growth Avenue," citing a bullish $270 QCOM target on the deal. Yahoo, 2026-09-15T19:35:04Z (15:35 ET). URL: https://finnhub.io/api/news?id=a09085e1224b7d222fe74b90a81b30fc3fdcde863033b121dbdac60706468a9a
+Related: "QCOM Stock Climbs To 2-Month High As AI Data Center Push Gains Momentum" (Yahoo, 2026-09-16T03:18:41Z / 23:18 ET 9/15), noting Qualcomm's potential role in hyperscaler AI infrastructure. URL: https://finnhub.io/api/news?id=f78d34dbf87d1dcea315771ac79466660955119a71bb26aaa0aa9a8c59f4675b
+*Impact:* Positive for the AI-capex narrative around AMZN and evidence of a broadening silicon supply base (reducing single-vendor dependence). For AMZN's own P&L it is a **cost/capex line, not a revenue line** — so the direction is only mildly positive and could be read as margin-negative. *Horizon:* quarters. *Uncertainty:* high — no scope, value, or duration disclosed in the supplied text.
+
+**c) Kuiper commercial momentum — minor positive, long-dated.**
+"Amazon Just Ordered Six More Rockets. Why Starlink Should Not Be Worried Yet." Yahoo, 2026-09-15T18:44:35Z (14:44 ET). Summary: six additional launch contracts plus enterprise deals with **Delta, JetBlue, and Vodafone**. URL: https://finnhub.io/api/news?id=d1e67caaf65dd96961f64d92e8936dc520ba3d350fa2b9582bfe7e92954222d1
+*Impact:* Positive for long-term optionality and validates commercial demand, but capex-heavy and explicitly framed as still behind Starlink. *Horizon:* 2027+. *Uncertainty:* moderate; contract values undisclosed.
+
+**d) Chicago labor/regulatory pressure — minor negative.**
+"AMAZON TEAMSTERS RALLY IN SUPPORT OF CHICAGO DELIVERY PROTECTION ACT." Yahoo, 2026-09-15T18:54:00Z (14:54 ET). Rally outside Chicago City Hall to force a Council vote before a subject-matter hearing. URL: https://finnhub.io/api/news?id=2d4b8d1d9b202b7da6d2446226835486b7d8020a6dd403eacba5be9593583c75
+*Impact:* Slightly negative if the ordinance passes and becomes a template for other municipalities (delivery-cost and classification risk). *Horizon:* months. *Uncertainty:* high — no vote outcome, no ordinance text, no cost estimate.
+
+**e) Supportive but backward-looking sentiment.**
+"Is Amazon Stock a Buy After Its Best Quarter in Years?" Yahoo, 2026-09-16T03:50:00Z (23:50 ET 9/15). Summary: "Amazon just delivered its fastest growth since the pandemic." URL: https://finnhub.io/api/news?id=d756212715ef6b462422eb16de85ef1e1ecedeebf59cb6c8f5ac4a1a34d351bf
+*Impact:* Positive framing, but the "best quarter" is already reported and therefore largely priced; the stock fell 2.09% the same session, which argues the market is weighting forward risk over trailing results. Note the tension: the piece calls it a top buy candidate while the tape sold off. *Uncertainty:* high — no figures supplied.
+
+**f) Non-material items.** Amazon selling luxury solar-powered watches from $210 (Yahoo, 20:45:00Z) — merchandising filler; Stockbridge Capital acquiring an Amazon warehouse in Romeoville, IL (Yahoo, 19:24:57Z) — a real-estate transaction involving a tenant facility, not an AMZN cash-flow event; Buywander's $21M raise (Yahoo, 19:17:59Z) — no clear AMZN linkage.
+
+## 4. Sector and macro backdrop (the larger near-term driver)
+
+- **Rate risk:** "S&P 500, Nasdaq, Dow End Lower As Investors Price In Rate Hike Ahead Of Fed Meeting." Yahoo, 2026-09-15T22:04:55Z (18:04 ET). Summary: traders expect a **92% chance the Fed hikes Wednesday**. URL: https://finnhub.io/api/news?id=937b1548531416896a208cab353bef25747baa53e6bb5913f23c7bfa721f6d8a — Negative for long-duration growth equities including AMZN; the 9/16 decision is the key binary.
+- **Yields and oil spiking:** "Stock Market Today: Dow Dives With Fed Seen Doing This; Senate Vote Hits These Crypto Stocks." Yahoo, 2026-09-15T20:38:10Z (16:38 ET). URL: https://finnhub.io/api/news?id=a95b23d9616d1f85988b1597674f2c01d32653ec2a16a42c86f1b8ec2f49cec7 — *Inference:* higher fuel costs pressure Amazon's delivery economics and consumer discretionary spend. This is my inference, not stated in the evidence.
+- **Bubble/valuation skepticism:** "S&P 500 Warning Signs: 3 Top-Performing ETFs Caught in a $1 Trillion AI Tug-of-War" (Benzinga, 2026-09-16T03:24:11Z / 23:24 ET), https://finnhub.io/api/news?id=a529c48164819d7efd8dbc3c05d7f9da836501eebbe6d7acd0f5876031d06ba9 ; "'Big Short' Investor Michael Burry Blasts Economic 'Bubbles'…" (Benzinga, 2026-09-16T01:02:26Z / 21:02 ET), https://finnhub.io/api/news?id=f18745c611237e87736bfc764eb04dfd581435979d16fa51f15c47f5f77fc1e3 ; "AI Slowdown Fears Rise…" (Yahoo, 2026-09-15T19:00:00Z / 15:00 ET), https://finnhub.io/api/news?id=6ab9827c04d064f8f601443d581cf29d696c6bd51e3c3028bdf270d1edfd93e2 — Negative sentiment overhang for mega-cap AI-linked names, AMZN included.
+- **Countervailing:** "Magnificent Seven Stocks Eye Breakout After Sideways 2026." Yahoo, 2026-09-15T20:13:27Z (16:13 ET). URL: https://finnhub.io/api/news?id=8f0e7e0444665517404a63f82eb6b66a13f6e613940eec278de1606c190932eb — Positive technical/momentum framing, but headline-level only.
+- **AI power demand:** "US data centers could consume more natural gas than Germany and Japan combined by 2035." Yahoo, 2026-09-15T18:29:20Z (14:29 ET). URL: https://finnhub.io/api/news?id=243fbddb2874734e194399200443b45817e7df18343f568a96bc34af0e91dd33 — Structurally relevant to AWS's energy cost and permitting path; no AMZN-specific quantification.
+
+## 5. Conflicting evidence and uncertainty
+
+1. **Trailing strength vs. forward risk.** The "best quarter in years" and Mag7 breakout narratives sit directly against a −2.09% session, a 92%-priced Fed hike, and bubble warnings. The market on 9/15 was trading the forward macro path, not the reported results.
+2. **AI deal ambiguity.** The Qualcomm story is unambiguously good for QCOM; for AMZN it is capex/opex with unquantified strategic benefit. Directionally positive for narrative, not clearly positive for margins.
+3. **Data-loss materiality is unknown.** It could be a contained regional incident or a genuine AWS trust event. The evidence provides no scope, no customer count, no remediation cost, and no confirmation of when the disclosure was made.
+4. **Coverage gaps.** 147 eligible records were not supplied, and 9/9–9/14 is entirely unrepresented. A material event from that stretch (or a fuller version of the AWS story) would change the read.
+5. **Headline vs. article.** Every claim here is summary-level. Headline language ("Iran War," "best quarter in years," "$1 trillion AI tug-of-war") is not corroborated by detail in the supplied text.
+
+**What would change the call:** confirmation of customer litigation or SLA-credit scale tied to the Gulf data loss; deal terms on the Qualcomm arrangement; the actual Fed outcome and vote split; any evidence from 9/9–9/14.
+
+## 6. Event table
+
+| # | Event | Evidence (source, time, URL) | Expected impact on AMZN | Horizon | Uncertainty |
+|---|---|---|---|---|---|
+| 1 | AWS cannot recover customer data from Bahrain/UAE facilities affected by Iran conflict; AMZN slips 2% | Yahoo, 2026-09-15T20:09:48Z (16:09 ET) — https://finnhub.io/api/news?id=f2bd1f0695d683e92d35cc60fe6f1d433f544d34870a265045ab49ae4eb1ed4c | **Negative** — litigation/SLA/trust risk to AWS; headline already associated with the −2% move | Days–quarters | High: no cost, customer count, or timing given |
+| 2 | AMZN closes $248.24, −2.09%, underperforming broader market | Yahoo, 2026-09-15T21:45:04Z (17:45 ET) — https://finnhub.io/api/news?id=e2c40f2d2a69a8ff231d2ef64bd1a44afebd750f007011ca9119bb44abc7191e | **Confirmed negative price action** (fact, not forecast) | Realized 9/15 | Low (price is factual) |
+| 3 | Qualcomm–Amazon AI chip deal; QCOM target $270 | Yahoo, 2026-09-15T19:35:04Z (15:35 ET) — https://finnhub.io/api/news?id=a09085e1224b7d222fe74b90a81b30fc3fdcde863033b121dbdac60706468a9a | **Mildly positive narrative / neutral-to-negative margins** — supplier diversification, added AI capex | Quarters | High: no deal size, scope, or duration |
+| 4 | QCOM hits 2-month high on hyperscaler AI infrastructure role | Yahoo, 2026-09-16T03:18:41Z (23:18 ET 9/15) — https://finnhub.io/api/news?id=f78d34dbf87d1dcea315771ac79466660955119a71bb26aaa0aa9a8c59f4675b | Slight positive read-through to AI demand | Weeks–quarters | Medium |
+| 5 | Kuiper orders six more rockets; enterprise deals with Delta, JetBlue, Vodafone | Yahoo, 2026-09-15T18:44:35Z (14:44 ET) — https://finnhub.io/api/news?id=d1e67caaf65dd96961f64d92e8936dc520ba3d350fa2b9582bfe7e92954222d1 | **Minor positive** — commercial validation, capex-heavy, still behind Starlink | 2027+ | Medium: values undisclosed |
+| 6 | Teamsters rally for Chicago Delivery Protection Act vote | Yahoo, 2026-09-15T18:54:00Z (14:54 ET) — https://finnhub.io/api/news?id=2d4b8d1d9b202b7da6d2446226835486b7d8020a6dd403eacba5be9593583c75 | **Minor negative** if ordinance passes and spreads | Months | High: no vote or cost detail |
+| 7 | "Best quarter in years / fastest growth since pandemic" buy case | Yahoo, 2026-09-16T03:50:00Z (23:50 ET 9/15) — https://finnhub.io/api/news?id=d756212715ef6b462422eb16de85ef1e1ecedeebf59cb6c8f5ac4a1a34d351bf | **Mild positive sentiment**, largely already priced | Days | High: no figures; backward-looking |
+| 8 | 92% probability of Fed rate hike Wednesday; indices lower | Yahoo, 2026-09-15T22:04:55Z (18:04 ET) — https://finnhub.io/api/news?id=937b1548531416896a208cab353bef25747baa53e6bb5913f23c7bfa721f6d8a | **Negative** — multiple compression risk for long-duration growth | 9/16 decision, days–weeks | Low on expectation, high on outcome |
+| 9 | Yields and oil spike; Dow dives | Yahoo, 2026-09-15T20:38:10Z (16:38 ET) — https://finnhub.io/api/news?id=a95b23d9616d1f85988b1597674f2c01d32653ec2a16a42c86f1b8ec2f49cec7 | **Negative** — fuel/logistics cost and consumer-spend pressure (inference) | Weeks | Medium |
+| 10 | AI bubble warnings; Burry comments; AI slowdown fears | Benzinga 2026-09-16T03:24:11Z — https://finnhub.io/api/news?id=a529c48164819d7efd8dbc3c05d7f9da836501eebbe6d7acd0f5876031d06ba9 ; Benzinga 2026-09-16T01:02:26Z — https://finnhub.io/api/news?id=f18745c611237e87736bfc764eb04dfd581435979d16fa51f15c47f5f77fc1e3 ; Yahoo 2026-09-15T19:00:00Z — https://finnhub.io/api/news?id=6ab9827c04d064f8f601443d581cf29d696c6bd51e3c3028bdf270d1edfd93e2 | **Negative sentiment overhang** on AI-linked mega-caps | Days–weeks | High (opinion/commentary) |
+| 11 | Magnificent Seven eye breakout after sideways 2026 | Yahoo, 2026-09-15T20:13:27Z (16:13 ET) — https://finnhub.io/api/news?id=8f0e7e0444665517404a63f82eb6b66a13f6e613940eec278de1606c190932eb | **Mild positive** technical framing | Weeks | High: headline-level only |
+| 12 | US data-center gas demand could exceed Germany + Japan by 2035 | Yahoo, 2026-09-15T18:29:20Z (14:29 ET) — https://finnhub.io/api/news?id=243fbddb2874734e194399200443b45817e7df18343f568a96bc34af0e91dd33 | **Mixed** — validates AI demand, flags energy cost/permitting constraints | Years | High: no AMZN specifics |
+| 13 | Amazon warehouse sale (Stockbridge, Romeoville IL); solar watches merchandising; Buywander funding | Yahoo 2026-09-15T19:24:57Z — https://finnhub.io/api/news?id=f5b44386b50d93720a33fca8af80463e52734391294be91c96db6d942893621e ; Yahoo 20:45:00Z — https://finnhub.io/api/news?id=20b8abb945f1bc160f11fd987c7bc0f2ac4780df292f667a7d01dd82440d7f93 ; Yahoo 19:17:59Z — https://finnhub.io/api/news?id=483f170cc697f24900b8dca7de6109b46af7e00e6fc2cbcbe4d47fa0fe43ee29 | **Negligible** | — | Low relevance |
+
+**Overall stance into 2026-09-16:** modestly negative risk skew for AMZN, weighted ~60/40 toward macro (Fed) and the AWS Gulf data-loss overhang versus the constructive AI/Kuiper/trailing-results narrative. Confidence is **low-to-moderate** given that 147 eligible records were not supplied, no evidence covers 9/9–9/14, and all items are headline/summary rather than full article text.

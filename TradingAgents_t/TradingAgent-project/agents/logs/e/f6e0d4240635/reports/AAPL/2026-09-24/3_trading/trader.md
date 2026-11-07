@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan's Overweight rating is a Buy, but the price structure demands a staged entry rather than a purchase at spot: at 335.92 the upside to the decisive 345.34 high is only 2.80% against a 2-ATR stop at 321.99, or ~0.67:1 reward-to-risk, while the 328.07–330.00 cluster (20 SMA + VWMA 329.86 + –1 ATR 328.96) offers ~1.7:1 to a 345 target with a 319.50 stop below the 50 SMA at 321.68. Nothing in the tape contradicts that: price sits above the 10 EMA (334.16), 50 SMA (321.68) and 200 SMA (287.45) in correct bullish sequence, VWMA has risen 21 straight sessions, and the 9/24 drop to 335.92 came on 24.7M shares — the lowest volume in 147 sessions, i.e. a pullback that cannot attract sellers. The decaying momentum signals (MACD histogram 1.69 → 0.81, 10 EMA increments +1.49 → +0.39, RSI rolling 66.9 → 61.3, with RSI never reaching 70) argue for consolidation before continuation, not reversal, which is exactly the environment for buying the first tranche into support rather than chasing.
+
+**Entry Price**: 329.0
+
+**Stop Loss**: 319.5
+
+**Position Sizing**: Build toward 1.15–1.25x a standard allocation in three tranches, not all at spot. Tranche 1: one third of the incremental overweight on limit orders at 328.00–330.00 (entry ~329.00, stop 319.50, targets 345.00 then 352.30). Tranche 2: one third only on a daily close above 345.34 with volume ≥64M shares (stop 338.50) or on a successful retest/hold of 328–330 after a breakout attempt. Tranche 3: held in reserve. Existing core exposure may be kept with a trail at 321.50, tightening to 327.50 if MACD crosses below its signal while price holds above 328. Halt all new buying on a close below 328.07 on above-average volume; reduce the core if 315.34 breaks. Given ATR of 6.96 and two single-session air pockets in the window (–7.36% on 7/31, –6.12% on 6/25), size on gap risk rather than ATR alone and consider protective puts or a collar instead of relying solely on stops.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

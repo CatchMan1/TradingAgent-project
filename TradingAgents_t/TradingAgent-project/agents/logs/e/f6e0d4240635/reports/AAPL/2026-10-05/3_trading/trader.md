@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The plan's Overweight rating maps to a Buy, but the technical report is explicit that there is no positive-expectancy entry at $332.89 — price is dead-center of the Bollinger bands (51.3% %B), 0.20% below the 10-EMA at $333.55 and 0.77% below the VWMA at $335.47, with a negative MACD histogram (−1.069) and volume at just 0.82x average. The primary trend, however, is intact and stacked (price > 50-SMA $322.41 > 200-SMA $289.45, both rising; MACD still above zero; rising lows from $325.81 to $331.65; RSI neutral at 53.79 with no overbought print), so the correct execution is to own/accumulate rather than sell — but only via the plan's trigger. I am therefore buying the resolution, not the mid-range: the first tranche is contingent on a daily close above $336.21 that reclaims VWMA $335.47 on volume >50M with an improving MACD histogram, with a second tranche above $342.99 on >50M volume (contingent measured move to ~$360, capped near the $346.16 upper band on the first attempt). This honors the bull's franchise/earnings case and the price structure simultaneously, and the double rejection at $344.57–$345.34 plus the empirical −7.36% gap risk (2026-07-31) is why the exposure is built in tranches and sized below ATR-implied maximum.
+
+**Entry Price**: 336.5
+
+**Stop Loss**: 325.3
+
+**Position Sizing**: Phase in, don't chase at $332.89. Treat a standard AAPL weight as 1.0x and target 1.10–1.25x; add only 25–33% of the overweight increment on the trigger (i.e., roughly 3–6% of portfolio for a typical 12–20% core allocation), with the second tranche of similar size above $342.99 on >50M volume. Risk per tranche ~3.3% (11.2 points from $336.50 to the $325.30 stop); keep total risk on the adds at ~1% of portfolio, and at roughly one-third of ATR-implied size if the position would be carried through the pending Supreme Court headline. Reserve remaining capital for a defended retest of $328.70–$326, with adds allowed only down to $325.81–$322.41 if support holds. Structural invalidation: daily close below $322.41 with MACD below zero → cut back to standard/neutral weight.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

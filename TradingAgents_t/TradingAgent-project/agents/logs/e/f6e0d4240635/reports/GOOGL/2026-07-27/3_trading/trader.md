@@ -1,0 +1,11 @@
+**Action**: Buy
+
+**Reasoning**: The research plan lands on Overweight (a Buy), and the price structure lets me implement it without chasing: GOOGL closed at 326.56, essentially on top of the rising 200 SMA at 324.31, with the Bollinger lower band at 321.85 just beneath. I take Tranche 1 (~35% of the target position) here in the 320–327 zone and keep the rest conditional, because the tape the technical report describes is still bearish — price below the falling 10 EMA (338.56), the rolled-over 50 SMA (363.18), VWMA (344.34) and the Bollinger middle (351.65), MACD at its window low (−8.83), and the 2026-07-23 gap (321.13–342.09) unfilled on distributionary volume (69.4M down vs 28.5M on the reclaim). With ATR at 11.76 (3.60% of price), a 1.5×ATR stop beneath the 314.90 July 23 low is the only honest invalidation, and the elevated volatility regime argues for sizing roughly 20–25% below a normal-weight name. Tranche 2 (~35%) is reserved for either a volume-backed (50M+) reclaim of 338.56/344.34 with MACD histogram turning positive, or a flush into 305–307 / 295–302 that reverses — I will not add in the 338–344 overhead-supply band on light volume. Tranche 3 (~30%) waits on the fundamental proof points (FCF inflection / buyback re-authorization); a negative-FCF print with capex guided higher means it never gets deployed.
+
+**Entry Price**: 326.5
+
+**Stop Loss**: 308.5
+
+**Position Sizing**: Tranche 1 now ≈ 2% of portfolio (~35% of a full ~6% target weight), sized ~20–25% below a normal-volatility position to hold dollar risk constant at a 3.60% ATR. Cut Tranche 1 by half on a daily close below 314.90 (Jul 23 low); exit the tranche at 308.5 (~1.5×ATR). Tranche 2 (~35%) only on a >50M-volume reclaim of 338.56/344.34 with MACD histogram turning positive, or on a reversing flush into 305–307 / 295–302. Tranche 3 (~30%) held for an FCF inflection or buyback re-authorization; not deployed if capex guidance rises again with FCF still negative.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

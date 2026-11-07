@@ -1,0 +1,11 @@
+**Action**: Hold
+
+**Reasoning**: The plan's own evidence splits cleanly: the primary trend is intact (close $256.78 above a rising 50-day $255.25 above a rising 200-day $239.80, +6.44% golden-cross spread), but the short-term tape is unresolved and the decisive evidence is absent. Price is pinned directly under the dense $257.95–$259.50 resistance cluster (VWMA, Bollinger mid-band, 09-03 high, filled 09-01 gap) with MACD negative and below its signal for 19 sessions, six consecutive lower lows to $249.58, and the 09-11 +1.94% bounce on only 26.72M shares versus a ~31.9M average while distribution days printed 31.70M and 33.06M. Neither side's plan is executable at $256.78: the confirmed breakout is only ~0.96:1 (entry ~$259.10, stop $251.26, target $266.66), and the better ~2.2:1 setup requires a retest of $252–$254 that hasn't happened. So the correct transaction is maintenance at benchmark weight with both triggers resting — not a chase, and not a short against the primary uptrend.
+
+**Entry Price**: 253.5
+
+**Stop Loss**: 247.45
+
+**Position Sizing**: Maintain AMZN at standard/benchmark weight (100%); do not add at $256.78. Two conditional adds of +25% each, hard cap 125% of benchmark: (1) pullback limit at $253.50 in a $252–$254 band, stop $247.45 (just under the 09-10 low $249.58 / 61.8% retrace $249.48), target $266.66 — void if a daily close below $251.26 has already printed; (2) breakout add only on a daily close above $258.96–$259.50 with volume >=32M shares AND a MACD cross back above its signal, stop $251.26, trim the tranche if $258 fails to hold for two sessions. Risk controls: close below $251.26 trim 25–30%; close below $249.48 reduce to half of benchmark; close below $239.80–$239.82 exit the long and move to Underweight. Size off core EPS ~$8.18–$8.64, not the reported $5.75 quarterly figure, and keep a full stop-out at $247.45 on the added tranche inside the standard single-name loss budget (with ATR $6.22, a 1.5-ATR stop is ~$9.33, so risk 1% of equity per tranche buys roughly 107 shares per $100,000).
+
+FINAL TRANSACTION PROPOSAL: **HOLD**
