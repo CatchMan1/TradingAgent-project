@@ -74,14 +74,14 @@ def load_manifest(path: str | Path = DEFAULT_MANIFEST) -> list[dict[str, str]]:
     return enabled
 
 
-def _completed(path: Path, strategy: str) -> set[tuple[str, str]]:
+def _completed(path: Path, strategy: str, source="portfolio_manager") -> set[tuple[str, str]]:
     if not path.exists() or path.stat().st_size == 0:
         return set()
     with path.open(newline="", encoding="utf-8") as handle:
         return {
             (row["ticker"].strip().upper(), row["information_cutoff"][:10])
             for row in csv.DictReader(handle)
-            if row.get("strategy_version") == strategy and row.get("source") == "portfolio_manager"
+            if row.get("strategy_version") == strategy and row.get("source") == source
         }
 
 
@@ -179,15 +179,27 @@ def rebuild_audit_tables(logs_root: Path = ROOT / "agents" / "logs") -> tuple[in
     return len(run_rows), len(cost_rows)
 
 
-def run_manifest(
+def _run_manifest(
     path: str | Path = DEFAULT_MANIFEST,
     *,
     dry_run: bool = False,
     limit: int | None = None,
     round_number: int | None = None,
     total_rounds: int = 6,
+    mode: str = "multi_agent",
+    reference_logs: str | Path | None = None,
+    cutoff_policy: str = "end_of_day",
 ) -> dict[str, Any]:
+    if mode not in {"multi_agent", "single_agent"}:
+        raise ValueError("Unknown experiment mode")
+    runner = run_one
+    source = "portfolio_manager"
+    if mode == "single_agent":
+        from agents.single_agent import run_one as single_run
+        runner, source = single_run, "single_agent"
     rows = load_manifest(path)
+    if any((mode == "single_agent") != (r["analysts"] == "single_agent") for r in rows):
+        raise ValueError("Manifest analyst selection does not match experiment mode")
     if limit is not None and round_number is not None:
         raise ValueError("Use either limit or round_number, not both")
     if round_number is not None:
@@ -204,7 +216,7 @@ def run_manifest(
     for position, row in enumerate(rows, start=1):
         strategy = row["strategy_version"]
         output = DATA_DIR / "decisions" / f"{strategy}.csv"
-        done = completed_by_strategy.setdefault(strategy, _completed(output, strategy))
+        done = completed_by_strategy.setdefault(strategy, _completed(output, strategy, source=source))
         key = (row["ticker"], row["trade_date"])
         if not dry_run and key in done:
             summary["skipped"] += 1
@@ -224,9 +236,12 @@ def run_manifest(
         # roots therefore need this directory created explicitly.
         (logs_dir / "cache" / "finnhub").mkdir(parents=True, exist_ok=True)
         try:
-            result = run_one(
+            extra = {"analysts": row["analysts"]} if mode == "multi_agent" else {"cutoff_policy": cutoff_policy}
+            if mode == "single_agent" and reference_logs is not None:
+                extra["reference_logs"] = reference_logs
+            result = runner(
                 row["ticker"], row["trade_date"], strategy_version=strategy,
-                analysts=row["analysts"], logs_dir=logs_dir, dry_run=dry_run,
+                logs_dir=logs_dir, dry_run=dry_run, **extra,
                 progress_label=f"{position}/{len(rows)}",
             )
             if not dry_run:
@@ -267,10 +282,23 @@ def run_manifest(
     return summary
 
 
+def run_manifest(path=DEFAULT_MANIFEST, **options):
+    """Serialize control batches; single-cell CLI uses this same lock."""
+    if options.get("mode") == "single_agent":
+        from tradingagents.dataflows.files import locked
+        (ROOT / "experiments").mkdir(parents=True, exist_ok=True)
+        with locked(ROOT / "experiments/.single_agent_batch"):
+            return _run_manifest(path, **options)
+    return _run_manifest(path, **options)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", default=str(DEFAULT_MANIFEST))
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--mode", choices=["multi_agent", "single_agent"], default="multi_agent")
+    parser.add_argument("--reference-logs")
+    parser.add_argument("--cutoff-policy", choices=["end_of_day", "market_close"], default="end_of_day")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--round", dest="round_number", type=int)
     parser.add_argument("--rounds", dest="total_rounds", type=int, default=6)
@@ -282,6 +310,7 @@ def main(argv: list[str] | None = None) -> int:
             limit=args.limit,
             round_number=args.round_number,
             total_rounds=args.total_rounds,
+            mode=args.mode, reference_logs=args.reference_logs, cutoff_policy=args.cutoff_policy,
         )
     except Exception as exc:
         print(f"Experiment setup failed: {type(exc).__name__}: {exc}", file=sys.stderr)
@@ -291,4 +320,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

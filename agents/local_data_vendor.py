@@ -8,6 +8,8 @@ This prevents an historical run from silently fetching today's Yahoo/SEC view.
 from __future__ import annotations
 
 from pathlib import Path
+from contextlib import contextmanager
+from contextvars import ContextVar
 
 import pandas as pd
 
@@ -15,6 +17,19 @@ from data import DATA_DIR, data_asof, schedule
 
 
 _DATA_DIR = DATA_DIR
+_SCOPE = ContextVar("course_data_scope", default=None)
+
+
+@contextmanager
+def evidence_scope(data_dir=DATA_DIR, cutoff_policy="market_close"):
+    """Scope deterministic reads without changing another run's vendors."""
+    if cutoff_policy not in {"market_close", "end_of_day"}:
+        raise ValueError("Unknown cutoff policy")
+    token = _SCOPE.set((Path(data_dir), cutoff_policy))
+    try:
+        yield
+    finally:
+        _SCOPE.reset(token)
 
 
 def _cutoff(date: str) -> str:
@@ -23,11 +38,14 @@ def _cutoff(date: str) -> str:
     sessions = schedule(date, date)
     if sessions.empty:
         raise ValueError(f"{date} is not an NYSE trading session")
+    if _SCOPE.get() and _SCOPE.get()[1] == "end_of_day":
+        return pd.Timestamp(date + "T23:59:59", tz="America/New_York").isoformat()
     return sessions.iloc[0]["close"].tz_convert("America/New_York").isoformat()
 
 
 def _prices(ticker: str, end_date: str) -> pd.DataFrame:
-    return data_asof(ticker, "prices", _cutoff(end_date), data_dir=_DATA_DIR)
+    folder = _SCOPE.get()[0] if _SCOPE.get() else _DATA_DIR
+    return data_asof(ticker, "prices", _cutoff(end_date), data_dir=folder)
 
 
 def get_stock_data(ticker: str, start_date: str, end_date: str) -> str:
@@ -111,7 +129,8 @@ def get_verified_market_snapshot(
 
 
 def _facts(ticker: str, date: str) -> pd.DataFrame:
-    frame = data_asof(ticker, "financials", _cutoff(date), data_dir=_DATA_DIR)
+    folder = _SCOPE.get()[0] if _SCOPE.get() else _DATA_DIR
+    frame = data_asof(ticker, "financials", _cutoff(date), data_dir=folder)
     if frame.empty:
         raise ValueError(f"No B-project financial facts visible for {ticker} by {date}")
     return frame

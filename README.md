@@ -21,7 +21,7 @@ flowchart TD
     V --> C[逐股票比较收益、风险、持仓与推理成本]
 ```
 
-单 Agent 分支在本文中定义对照方法与接入约定，运行命令部分仅列仓库现有入口，不以多 Agent 的分析师开关替代单 Agent。
+单Agent入口为`agents/single_agent.py`，通过同一实验调度器选择`--mode single_agent`运行；不以多Agent的分析师开关替代单Agent。
 
 ## 2. 数据与信息时间
 
@@ -85,7 +85,11 @@ flowchart TD
 
 经理评级映射为：Buy / Overweight → BUY，Hold → HOLD，Underweight / Sell → SELL。原始评级和理由保存在完整状态及报告中。11 指决策角色数量，不等于固定 11 次模型调用；工具查询、重试及反思可能增加调用。
 
-框架还包含 Memory Log 与反思机制，既有多 Agent 运行启用了该机制；它不计入上述 11 个决策角色。纯粹比较当日证据上的协作流程时，两种方法应统一隔离跨日期记忆。若保留既有带记忆结果，则需披露这一差异，不能将比较解释为仅有角色组织方式不同。
+框架还包含Memory Log与反思机制，既有多Agent运行启用了该机制；它不计入上述11个决策角色。2026-11-09由周晓杨确认：单/多Agent主比较保留长期记忆、使用完整期间，不排除7月30日—8月3日。输入对齐协议见[单Agent实验配置](experiments/single_agent_protocol.json)。
+
+为对齐记忆输入，单Agent读取参考实验归档中的同一组历史经验，沿用`TradingMemoryLog.get_past_context`规则：最多同股票5条、跨股票3条，只允许`resolved`日期不晚于当前信号日的已结算记录，排除pending及未知结算日期。参考记忆只读，单Agent输出独立保存；不读取当前日期或之后的多Agent决策。初期尚无已结算经验时上下文为空，仍属于启用记忆的正常情况。
+
+此项定义是“共享历史记忆条件下的工作流对照”，不是两个系统分别从自身交易生成不同经验。归档可用于重建当日合格记忆，但原实验未逐次保存实际注入的记忆文本，历史提示词逐字一致尚未证明。行情/财报工具按需查询及盘后财报截止差异仍须核对，不能仅因记忆规则相同就宣称全部输入已严格对齐。若需要补做成对验证，两种方法应记录各自实际收到的证据和记忆哈希。
 
 ## 4. 单 Agent 方法：一次读取证据、直接决策
 
@@ -104,6 +108,12 @@ flowchart LR
 
 单 Agent 不经过多空辩论、研究经理、交易员、风险讨论或投资组合经理，不读取多 Agent 报告，也不在模型调用后额外调用其他 Agent 修改动作。数据准备由程序完成，不计作模型分析角色。每个股票—日期以一次成功请求为目标，失败和重试另行记录。
 
+当前实现使用同一DeepSeek Flash客户端、归档新闻以及按日期过滤的长期记忆。行情/财报先校验原始文件SHA256与参考截面行数，再复用本地vendor计算确定性的工具证据。旧工具调用全文未归档，因此输入是固定工具集合的重建，不等同于旧提示词逐字回放；派生行情序列的序列化哈希也可能受原Windows环境/数值计算影响，这些核对结果逐次写入alignment字段，不隐藏为“完全一致”。新闻缺失、哈希变化和原始数据变化均停止该cell，不在线刷新或补造。
+
+默认`end_of_day`财报口径匹配既有实验的盘后解释，并将新CSV时间如实写为当日23:59:59截止、其后1微秒决策；显式`market_close`模式可用于新的收盘截止条件。两种口径使用不同策略版本，不混合输出。原多Agent的旧时间标签保留；此兼容设置没有消除历史输入记录不完整的限制。
+
+每个cell保存`evidence.json`、`response.json`、`decision.json`及runs.jsonl。成功响应先落盘，CSV适配或写入失败后可离线恢复，恢复的新增调用/token为0；无效JSON保留失败，不自动HOLD，不追加一次修正模型调用。不同策略使用独立路径，单Agent命令与批量入口共用进程锁。SDK内部HTTP重试由框架管理，逻辑LLM调用数不代表逐次HTTP尝试数。
+
 动作要求与多 Agent 一致：BUY 表示目标全仓做多，SELL 表示目标空仓，HOLD 表示延续已有仓位。理由应说明主要依据、风险与不确定性；动作和理由分开保存，回测只使用动作。无效或缺失输出应记录失败，不自动替换为 HOLD。
 
 ## 5. 决策 CSV 与统一回测
@@ -116,7 +126,7 @@ flowchart LR
 ticker,decision_time,information_cutoff,action,strategy_version,source
 ```
 
-`strategy_version` 区分实验条件和版本；`source` 区分最终经理、单 Agent 与规则基线。多 Agent 现有来源为 `portfolio_manager`；单 Agent 对照约定使用独立来源 `single_agent`，理由放入对应运行记录。当前校验默认只接收经理来源，单 Agent 接入需显式指定来源，并同步调度器续跑识别。
+`strategy_version`区分实验条件和版本；`source`区分最终经理、单Agent与规则基线。多Agent来源为`portfolio_manager`；单Agent使用`single_agent`，理由保存在运行记录。Notebook已显式指定单Agent来源及盘后截止策略，调度器续跑按来源识别。
 
 每股每日一条最终动作，包含评价前一个交易日的种子信号及评价末日。重复、缺失、非法动作和不符合时间约定的记录应报错，不用 HOLD 补齐。
 
@@ -163,8 +173,8 @@ SMA 与 MACD 基线在含公司行动的总收益指数上计算指标；基线�
 Notebook 开头的 `EXCLUDE_PERIODS` 控制事后观察窗口，例如：
 
 ```python
-EXCLUDE_PERIODS = [("2026-07-30", "2026-08-03")]
-# EXCLUDE_PERIODS = []  # 完整期间
+EXCLUDE_PERIODS = []  # 主比较使用完整期间，保留7/30—8/3
+# EXCLUDE_PERIODS = [("2026-07-30", "2026-08-03")]  # 仅用于另存的敏感性分析
 ```
 
 先计算完整仓位、收益与费用，再排除与指定日期范围相交的收益区间，重算净值和回撤；所有股票及策略使用相同筛选。不会删除行情后拼接价格，也不会跨筛选缺口重新计算换手。被剔除期的收益和费用一起剔除，保留期费用不变。这属于事后敏感性分析，不能解释为策略事先知道应避开事件。
@@ -216,7 +226,28 @@ python -m pip install -r requirements.txt
 data/decisions/ta-v0.6.0-deepseek-flash-market-news-fundamentals-main-2026jul-oct-v1.csv
 ```
 
-读取已有 CSV 回测无需 API Key，不调用模型。Notebook 中的 `AGENT_CSV`、`AGENT_NAME`、`RETURN_TYPE`、`NAV_MODE` 和 `EXCLUDE_PERIODS` 控制输入及展示；它目前是单个 Agent 策略输入，单／多 Agent 同表比较按本文接口扩展，不另写收益公式。
+读取已有CSV回测无需API Key，不调用模型。Notebook保留AGENT_CSV多Agent输入，并新增SINGLE_AGENT_CSV；单Agent文件存在时必须覆盖全部三股216个信号位置，再加入相同函数计算，缺失不补HOLD。完整对比输出到`results/single_vs_multi/`，不覆盖既有`results/agent_period/`。主比较默认`EXCLUDE_PERIODS=[]`，不排除7/30—8/3。
+
+### 单Agent运行
+
+先安装根目录requirements.txt。以下命令只读取归档，不请求新闻API或模型，不需要Finnhub Key：
+
+```bash
+python -m agents.single_agent --ticker AAPL --date 2026-08-03 --dry-run
+python -m experiments.run_experiments --mode single_agent \
+  --manifest experiments/manifests/single_2026jul_oct_v1.csv --dry-run --limit 3
+```
+
+以下命令会调用付费DeepSeek API；先填写本地DEEPSEEK_API_KEY并核对预算。单次入口默认dry-run，必须显式给出`--execute`才调用模型；批量入口沿用原调度器约定，未加`--dry-run`即真实运行：
+
+```bash
+python -m agents.single_agent --ticker AAPL --date 2026-06-30 --execute
+python -m experiments.run_experiments --mode single_agent \
+  --manifest experiments/manifests/single_2026jul_oct_v1.csv --limit 3
+# 完成小规模核验后去掉 --limit 3；相同命令续跑跳过已完成cell。
+```
+
+默认信号文件为`data/decisions/deepseek-flash-single-shared-memory-2026jul-oct-v1.csv`。未完成全覆盖前，Notebook会拒绝这份部分CSV；验证时可先使用单次命令的`--output`另存pilot文件。证据或配置变更须使用新策略版本。新机器需要完整的参考日志目录`agents/logs/e/f6e0d4240635/`；其余路径与读取规则见实验协议JSON。
 
 生成新多 Agent 信号前，复制 `.env.example` 为 `.env`，填写 `DEEPSEEK_API_KEY` 和 `FINNHUB_API_KEY`；保持 `TRADINGAGENTS_ANALYSTS=market,news,fundamentals`、`TRADINGAGENTS_NEWS_VENDOR=finnhub`。密钥及 `.sec_user_agent` 不提交 Git。
 

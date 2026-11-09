@@ -28,7 +28,8 @@ def decision_sessions(start,end):
     return pd.concat([prev,s])
 
 
-def validate_decisions(d,ticker,start,end,source="portfolio_manager"):
+def validate_decisions(d,ticker,start,end,source="portfolio_manager",cutoff_policy="market_close"):
+    if cutoff_policy not in {"market_close", "end_of_day"}: raise ValueError("Unknown cutoff policy")
     if not set(REQUIRED).issubset(d.columns): raise ValueError(f"Missing decision columns: {set(REQUIRED)-set(d.columns)}")
     d=d.copy()
     if d.empty: raise ValueError("Missing decisions")
@@ -36,7 +37,7 @@ def validate_decisions(d,ticker,start,end,source="portfolio_manager"):
     for k in REQUIRED:
         if d[k].isna().any() or d[k].astype(str).str.strip().eq("").any(): raise ValueError(f"Missing {k}")
     if not d.action.isin(["BUY","SELL","HOLD"]).all(): raise ValueError("Invalid action; only BUY/SELL/HOLD accepted")
-    if not d.source.eq(source).all(): raise ValueError("Only final Portfolio Manager output accepted")
+    if not d.source.eq(source).all(): raise ValueError(f"Expected decision source {source}")
     if d.strategy_version.nunique()!=1: raise ValueError("Mixed strategy versions")
     times=d.decision_time.map(aware)
     cutoff=d.information_cutoff.map(aware)
@@ -46,7 +47,9 @@ def validate_decisions(d,ticker,start,end,source="portfolio_manager"):
         raise ValueError("Duplicate/missing/extra decision sessions; seed and final session required")
     for idx,row in d.iterrows():
         close=expected.loc[row.session,"close"]
-        if not close < times.loc[idx] or cutoff.loc[idx]>close or cutoff.loc[idx]>times.loc[idx]:
+        boundary = (pd.Timestamp(row.session + "T23:59:59", tz="America/New_York")
+                    if cutoff_policy == "end_of_day" else close)
+        if not close < times.loc[idx] or cutoff.loc[idx]>boundary or cutoff.loc[idx]>times.loc[idx]:
             raise ValueError("Decision before close or future information after exchange close")
     return d.sort_values("session").reset_index(drop=True)
 

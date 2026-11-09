@@ -1,0 +1,69 @@
+{
+  "protocol_version": "single-vs-multi-aligned-memory-v1",
+  "status": "implemented_offline_verified_not_paid_run",
+  "reference_strategy": "ta-v0.6.0-deepseek-flash-market-news-fundamentals-main-2026jul-oct-v1",
+  "tickers": [
+    "AAPL",
+    "GOOGL",
+    "AMZN"
+  ],
+  "seed_signal_date": "2026-06-30",
+  "evaluation_start": "2026-07-01",
+  "evaluation_end": "2026-10-09",
+  "decision_rows_per_ticker": 72,
+  "total_decision_rows": 216,
+  "exclude_periods": [],
+  "model": {
+    "provider": "deepseek",
+    "quick_model": "deepseek-flash",
+    "deep_model": "deepseek-flash",
+    "settings": "match reference provider and reasoning settings; record served model ID"
+  },
+  "evidence": {
+    "mode": "same original data and deterministic tool outputs; not analyst reports",
+    "news": "reuse frozen reference Finnhub snapshots; do not refresh",
+    "point_in_time": "end_of_day for archived reference compatibility; explicit market_close mode also available",
+    "strict_alignment_verified": false,
+    "source_file_verification": "SHA256 against archived sources.json plus reference as-of row counts; serialized derived snapshots can differ across platforms"
+  },
+  "memory": {
+    "enabled": true,
+    "mode": "shared_frozen_reference_history",
+    "source": "agents/logs/e/f6e0d4240635/memory/trading_memory.md",
+    "retrieval": "TradingMemoryLog.get_past_context(ticker, n_same=5, n_cross=3, as_of=trade_date)",
+    "include_pending": false,
+    "include_unresolved_date": false,
+    "read_only_reference": true,
+    "save_single_agent_outputs_separately": true,
+    "provenance": "reconstruct eligible context from archived reference memory; original per-decision memory prompt snapshots were not saved, so historical prompt identity is not yet proven"
+  },
+  "backtest": {
+    "execution": "next session open",
+    "initial_position": 0,
+    "actions": {
+      "BUY": 1,
+      "SELL": 0,
+      "HOLD": "previous target"
+    },
+    "turnover_cost": 0.001,
+    "return_type": "simple",
+    "nav_mode": "additive",
+    "shared_implementation": "analysis.ipynb",
+    "single_agent_cutoff_policy": "end_of_day"
+  },
+  "generation": {
+    "one_direct_decision_agent": true,
+    "failures_not_replaced_by_hold": true,
+    "paid_batch_started": false
+  },
+  "runner": "agents/single_agent.py",
+  "manifest": "experiments/manifests/single_2026jul_oct_v1.csv",
+  "validation": {
+    "pytest_passed": 86,
+    "offline_reference_cells_checked": 216,
+    "mature_memory_cells": 201,
+    "early_cells_without_mature_memory": 15,
+    "notebook_end_to_end": "three stocks, five strategies, 70 return intervals; identical TEST_ONLY actions produce identical metrics",
+    "paid_api_calls": 0
+  }
+}
