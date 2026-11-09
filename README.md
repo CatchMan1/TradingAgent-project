@@ -183,6 +183,12 @@ EXCLUDE_PERIODS = []  # 主比较使用完整期间，保留7/30—8/3
 
 ## 6. 比较与结果解释
 
+2026-11-09已完成第一只股票AAPL的72个真实单Agent决策，与既有多Agent在完整期间对比：单Agent累计净收益11.11%、最大回撤11.25%；多Agent为22.63%、3.01%；买入持有为13.50%、9.72%。使用既有simple/additive口径和10bps换手费用，未排除7/30—8/3，API费用单独记录，不扣进该收益率。结果见[AAPL指标](results/single_vs_multi_AAPL/metrics.csv)与[净值/回撤图](results/single_vs_multi_AAPL/AAPL/agent_period_equity_drawdown.png)。这只是单只股票的共享历史记忆对照，不能推广为普遍优劣或纯协作因果效应。
+
+本次单Agent输入4,869,612 token、输出370,569 token（已含推理，不能再次相加），按实际usage和官方人民币空闲价计价约6.34元；费用明细、官方余额观测和价格来源见[费用汇总](experiments/aapl_single_live_20261109/cost_summary.json)。余额接口存在延迟，token计价与某次余额读数分别保存。长期记忆来自已归档参考实验，因此这只是本次新增决策费用，不包含先前创建记忆和多Agent的费用。
+
+实测SDK发送max_completion_tokens，部分输出超过所请求的8192，不能把请求配置当作可靠的费用硬上限；本次未中途改变模型设置，全部实际usage计入费用。执行时同时按官方余额和保守token估价控制人民币预算，模型请求现已结束。其他两股的单Agent尚未运行。
+
 逐股票并列比较单 Agent、多 Agent 及规则基线：累计净收益、最大回撤、年化 Sharpe、年化波动率、换手次数和费用。Sharpe 使用 252 日年化、无风险利率 0、总体标准差；收益按区间终点归属日期。另比较持仓比例、平均持仓时长和事件窗口附近仓位，以检验“更谨慎地参与行情”的行为解释。
 
 推理成本分别记录模型调用、输入／输出 token、耗时、失败／重试和实际 API 费用；交易成本与推理成本分开报告。多 Agent 与单 Agent 的调用预算不同，因此结果解释为两种工作流的收益—风险—成本比较，不能仅凭收益差将效果完全归因于协作机制。
@@ -248,6 +254,14 @@ python -m experiments.run_experiments --mode single_agent \
 ```
 
 默认信号文件为`data/decisions/deepseek-flash-single-shared-memory-2026jul-oct-v1.csv`。未完成全覆盖前，Notebook会拒绝这份部分CSV；验证时可先使用单次命令的`--output`另存pilot文件。证据或配置变更须使用新策略版本。新机器需要完整的参考日志目录`agents/logs/e/f6e0d4240635/`；其余路径与读取规则见实验协议JSON。
+
+仅完成一只股票时，可在其72条信号齐全后独立比较，不必等待另外两股：
+
+```bash
+python -m experiments.compare_single_agent --tickers AAPL
+```
+
+该命令执行原Notebook代码，选择AAPL且不改动共享config.json，不请求模型；输出到`results/single_vs_multi_AAPL/`，仍包含多Agent、单Agent、买入持有、SMA、MACD五种策略，保留完整期间。
 
 生成新多 Agent 信号前，复制 `.env.example` 为 `.env`，填写 `DEEPSEEK_API_KEY` 和 `FINNHUB_API_KEY`；保持 `TRADINGAGENTS_ANALYSTS=market,news,fundamentals`、`TRADINGAGENTS_NEWS_VENDOR=finnhub`。密钥及 `.sec_user_agent` 不提交 Git。
 

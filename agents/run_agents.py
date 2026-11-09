@@ -36,6 +36,7 @@ from data import DATA_DIR, ROOT, data_asof, schedule
 NY_TZ = "America/New_York"
 DEFAULT_ANALYSTS = ("market", "news", "fundamentals")
 DEFAULT_STRATEGY = "ta-v0.6.0-deepseek-flash-market-news-fundamentals-v1"
+_APPEND_LOCK = threading.Lock()
 
 
 class ConsoleProgressCallbackHandler(BaseCallbackHandler):
@@ -211,8 +212,9 @@ def _snapshot_manifest(ticker: str, cutoff, data_dir: Path = DATA_DIR) -> dict[s
 
 def _append_jsonl(path: Path, record: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a", encoding="utf-8") as handle:
-        handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+    with _APPEND_LOCK:
+        with path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
 
 
 def _record_stats(record: dict[str, Any], stats: Any) -> None:

@@ -177,3 +177,25 @@ def test_notebook_imports_both_strategies_with_same_formula(tmp_path):
     exec("".join(cell["source"]),scope)
     assert {s for _,s in scope["decision_tables"]}=={"agent","single_agent"}
     assert all(len(r)==72 for r in scope["decision_tables"].values())
+
+
+def test_notebook_can_select_one_stock_without_changing_shared_config():
+    from settings import load_config
+    nb=json.loads((ROOT/"analysis.ipynb").read_text())
+    cell=next(c for c in nb["cells"] if "parameters" in c.get("metadata",{}).get("tags",[]))
+    scope=dict(pd=pd,load_config=load_config,ROOT=ROOT,EVALUATION_TICKERS=["AAPL"])
+    exec("".join(cell["source"]),scope)
+    assert scope["TICKERS"]==["AAPL"]
+    assert scope["EXCLUDE_PERIODS"]==[]
+    assert load_config()["tickers"]==["AAPL","GOOGL","AMZN"]
+
+
+def test_parallel_cells_do_not_interleave_jsonl_records(tmp_path):
+    from concurrent.futures import ThreadPoolExecutor
+    from agents.run_agents import _append_jsonl
+    target=tmp_path/"runs.jsonl"
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        list(pool.map(lambda n:_append_jsonl(target,{"n":n,"body":"x"*12000}),range(40)))
+    rows=[json.loads(s) for s in target.read_text().splitlines()]
+    assert {r["n"] for r in rows}==set(range(40))
+    assert all(len(r["body"])==12000 for r in rows)
