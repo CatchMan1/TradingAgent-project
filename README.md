@@ -1,6 +1,6 @@
 # TradingAgents：单 Agent 与多 Agent 交易决策对比
 
-本项目研究：在相同历史行情、技术指标、财报和新闻证据下，单个大语言模型直接决策，与分角色、多阶段讨论的多 Agent 工作流，在交易收益、风险及推理成本上有何差异。
+本项目研究：在尽量对齐历史行情、技术指标、财报、新闻和历史记忆的条件下，单个大语言模型直接决策，与分角色、多阶段讨论的多 Agent 工作流，在交易收益、风险及推理成本上有何差异。当前单 Agent 输入由参考实验归档重建，原始工具查询全文未保存，因此不声称两者实际收到的输入已逐字一致。
 
 多 Agent 使用技术、基本面、新闻三类分析师，共 11 个决策角色；单 Agent 则一次性读取相同的原始证据，直接输出交易动作及理由。两种方法均先保存决策 CSV，再通过同一套回测逻辑评价。Buy and Hold、SMA、MACD 提供规则基线。
 
@@ -48,7 +48,7 @@ flowchart TD
 
 交易在下一交易日开盘执行，因此 D 当晚已公开的财报属于成交前可用信息；这不表示覆盖了次日盘前或周末新增的全部消息。既有决策 CSV/日志中的收盘信息截止与收盘后半小时决策时间属于旧标签，不能准确代表当时盘后财报的实际输入范围，原始记录保持不变。
 
-代码接入边界：当前新运行的 vendor、运行器和信号校验仍采用实际收盘截止。按上述盘后口径生成新的单／多 Agent 对照时，须同时统一这三处时间处理，不能只修改声明或 CSV 标签。历史输入解释与当前代码默认值在这里分别说明。
+代码接入边界：既有多 Agent 运行器和 vendor 默认仍采用实际收盘截止；单 Agent 已通过显式 `end_of_day` 配置统一 vendor 证据范围、决策时间字段和信号校验，匹配本次历史实验的盘后解释。其他运行不会隐式继承该选项；原多 Agent 时间标签保留。历史输入解释与当前代码默认值在这里分别说明。
 
 ## 3. 多 Agent 方法：三分析师、11 个角色
 
@@ -102,6 +102,7 @@ flowchart LR
     F[公开财务事实] --> E
     N[冻结新闻集合] --> E
     E --> S[单 Agent 综合判断：一次模型调用]
+    M[参考归档中当时已结算的长期记忆] --> S
     S --> A[BUY / SELL / HOLD 及理由]
     A --> CSV[单 Agent 决策 CSV 与理由记录]
 ```
@@ -115,6 +116,16 @@ flowchart LR
 每个cell保存`evidence.json`、`response.json`、`decision.json`及runs.jsonl。成功响应先落盘，CSV适配或写入失败后可离线恢复，恢复的新增调用/token为0；无效JSON保留失败，不自动HOLD，不追加一次修正模型调用。不同策略使用独立路径，单Agent命令与批量入口共用进程锁。SDK内部HTTP重试由框架管理，逻辑LLM调用数不代表逐次HTTP尝试数。
 
 动作要求与多 Agent 一致：BUY 表示目标全仓做多，SELL 表示目标空仓，HOLD 表示延续已有仓位。理由应说明主要依据、风险与不确定性；动作和理由分开保存，回测只使用动作。无效或缺失输出应记录失败，不自动替换为 HOLD。
+
+### 单 Agent 交付摘要（2026-11-12）
+
+周晓杨负责单 Agent 对照的方案、预算、实施统筹和结果整合，由 Codex 辅助实现与执行。当前完成 DeepSeek Flash 版本，三股共 216 条有效决策、216 次已记录逻辑模型调用；215 条首次通过严格格式校验，1 条保留原始失败后离线修复，未解决失败为 0。GPT‑6.1 Sol 仅讨论了补充试验方案，尚未运行，也没有计入当前结果。
+
+- 工程：独立单 Agent 入口、冻结证据与来源校验、共享只读记忆、响应先保存、断点续跑及与多 Agent 共用的信号接口。
+- 实验：AAPL、GOOGL、AMZN 各 72 条信号，覆盖 2026-06-30 种子日及 07-01—10-09；每股 70 个收益区间，保留 7/30—8/3。
+- 交付：原始输入、模型响应、动作及理由、修复证据、逐请求 token 台账、15 组股票—策略指标和三股收益/回撤图；[实验协议](experiments/single_agent_protocol.json)与[结果校验](experiments/googl_amzn_single_live_20261109/validation.json)可追溯。
+
+该对照使用多 Agent 归档中的历史经验，不是单 Agent 从自身交易独立积累的记忆。它衡量共享历史经验条件下的两种工作流表现；不同调用预算、输入重建边界及仅一个短历史窗口限制了因果解释。
 
 ## 5. 决策 CSV 与统一回测
 
@@ -185,9 +196,9 @@ EXCLUDE_PERIODS = []  # 主比较使用完整期间，保留7/30—8/3
 
 2026-11-09已完成三只股票全部216个单Agent决策，每股72行，使用相同DeepSeek Flash设置、冻结数据与共享历史记忆。完整期间、simple/additive净值、10bps换手费用，保留7/30—8/3；API费用单独统计。
 
-- AAPL：单Agent收益11.11%、最大回撤11.25%；多Agent22.63%、3.01%；买入持有13.50%、9.72%。
-- GOOGL：单Agent收益-20.94%、最大回撤28.41%；多Agent-9.96%、14.69%；买入持有-0.11%、14.62%。
-- AMZN：单Agent收益-10.49%、最大回撤19.77%；多Agent1.62%、9.04%；买入持有8.50%、11.20%。
+- AAPL：单Agent收益11.11%、最大回撤11.25%；多Agent22.63%、3.01%；买入持有13.50%、9.72%。[收益与回撤图](results/single_vs_multi_AAPL_GOOGL_AMZN/AAPL/agent_period_equity_drawdown.png)
+- GOOGL：单Agent收益-20.94%、最大回撤28.41%；多Agent-9.96%、14.69%；买入持有-0.11%、14.62%。[收益与回撤图](results/single_vs_multi_AAPL_GOOGL_AMZN/GOOGL/agent_period_equity_drawdown.png)
+- AMZN：单Agent收益-10.49%、最大回撤19.77%；多Agent1.62%、9.04%；买入持有8.50%、11.20%。[收益与回撤图](results/single_vs_multi_AAPL_GOOGL_AMZN/AMZN/agent_period_equity_drawdown.png)
 
 本窗口内多Agent在三股上的收益和回撤均优于单Agent，但GOOGL和AMZN的多Agent收益仍低于买入持有。三只股票、一个已查看的短窗口不能证明普遍优劣或纯协作因果效应。历史输入为固定工具集合的归档重建，原始提示词逐字一致尚未验证。完整指标和逐期数据见[三股统一结果](results/single_vs_multi_AAPL_GOOGL_AMZN/metrics.csv)。
 
@@ -195,7 +206,7 @@ EXCLUDE_PERIODS = []  # 主比较使用完整期间，保留7/30—8/3
 
 AMZN 9/30的原始响应明确输出HOLD，但risks数组缺一个闭括号。该条原始格式失败已保留；仅离线补入一个]，严格校验后恢复同一动作，没有追加模型请求或用默认HOLD替代。原响应、精确修复文本与零调用恢复记录均保留在对应cell。另有一次余额查询断连，恢复3条已成功响应后续跑；没有主动重发已成功请求，SDK内部HTTP尝试次数未逐次归档。全部216行现已校验，未解决失败为0。
 
-最新账户观测累计扣费19.47元、余额10.53元，较返回usage计价高约0.23元；差额原因未核实，缺少逐请求账单和SDK内部HTTP尝试记录，不强行归零或断言由重试引起。
+2026-11-09 19:18（上海时间）的账户观测累计扣费19.47元、余额10.53元，较返回usage计价高约0.23元；这不是当前账户余额。差额原因未核实，缺少逐请求账单和SDK内部HTTP尝试记录，不强行归零或断言由重试引起。
 
 实测SDK发送max_completion_tokens，输出最大达到24568，超过所请求的8192，不能把请求配置当作可靠的费用硬上限；本次未中途改变模型设置，全部实际usage均计入费用。执行时同时按官方余额和token估价控制原30元人民币总预算，模型请求现已结束。
 
@@ -272,6 +283,14 @@ python -m experiments.compare_single_agent --tickers AAPL
 ```
 
 该命令执行原Notebook代码，选择AAPL且不改动共享config.json，不请求模型；输出到`results/single_vs_multi_AAPL/`，仍包含多Agent、单Agent、买入持有、SMA、MACD五种策略，保留完整期间。
+
+复现本次三股已完成结果，不需要 API Key，也不会重新生成模型决策：
+
+```bash
+python -m experiments.compare_single_agent --tickers AAPL,GOOGL,AMZN
+```
+
+输出到 `results/single_vs_multi_AAPL_GOOGL_AMZN/`，包含 `metrics.csv`、月度收益、运行参数、逐日净值/费用/仓位、交易变化记录及三张图。使用 `--output-dir` 可另存；源码、输入、信号或评价规则改变后应使用不同输出目录，不覆盖已归档实验。
 
 生成新多 Agent 信号前，复制 `.env.example` 为 `.env`，填写 `DEEPSEEK_API_KEY` 和 `FINNHUB_API_KEY`；保持 `TRADINGAGENTS_ANALYSTS=market,news,fundamentals`、`TRADINGAGENTS_NEWS_VENDOR=finnhub`。密钥及 `.sec_user_agent` 不提交 Git。
 
