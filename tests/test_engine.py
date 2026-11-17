@@ -31,8 +31,8 @@ def test_compound_and_log_input_use_same_long_only_cost_formula():
                                return_type="log", nav_mode="compound")
     np.testing.assert_allclose(log_nav, nav)
     np.testing.assert_allclose(log_ret, ret)
-    with pytest.raises(ValueError, match="0/1"):
-        function([1, -1], [.1, .2])
+    _, signed_ret = function([1.5, -.35, -.35], [.1, .2, -.1], fee=.01)
+    np.testing.assert_allclose(signed_ret, [.09, -.0835, .035])
 
 
 def test_initial_position_avoids_duplicate_boundary_entry_cost():

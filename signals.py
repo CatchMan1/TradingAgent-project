@@ -1,6 +1,7 @@
 """CSV/JSONL final Portfolio Manager decisions; never parse analyst opinions."""
 import re
 from pathlib import Path
+import numpy as np
 import pandas as pd
 from data import aware, schedule
 
@@ -19,6 +20,27 @@ def load_decisions(path):
     if p.suffix==".csv": return pd.read_csv(p,keep_default_na=False)
     if p.suffix==".jsonl": return pd.read_json(p,lines=True,convert_dates=False)
     raise ValueError("Decision input must be CSV or JSONL")
+
+
+def validate_weights(frame, ticker):
+    """Read numeric targets; a blank target on an existing row means cash."""
+    columns = ["ticker", "signal_date", "target_weight"]
+    result = frame.loc[:, columns].copy()
+    if result.empty or not result.ticker.eq(ticker).all():
+        raise ValueError(f"Missing or mixed signals for {ticker}")
+    dates = pd.to_datetime(result.signal_date, format="%Y-%m-%d", errors="raise")
+    if dates.isna().any() or dates.duplicated().any():
+        raise ValueError(f"Missing or duplicate signal dates for {ticker}")
+    result["signal_date"] = dates.dt.strftime("%Y-%m-%d")
+    raw = result.target_weight
+    if raw.map(lambda value: isinstance(value, (bool, np.bool_))).any():
+        raise ValueError("target_weight must be numeric")
+    empty = raw.isna() | raw.astype(str).str.strip().str.lower().isin(["", "nan"])
+    weights = pd.to_numeric(raw.mask(empty, 0), errors="raise")
+    if not np.isfinite(weights).all():
+        raise ValueError("target_weight must be finite")
+    result["target_weight"] = weights.astype(float)
+    return result.sort_values("signal_date").reset_index(drop=True)
 
 
 def decision_sessions(start,end):

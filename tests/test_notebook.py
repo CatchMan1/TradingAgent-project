@@ -3,6 +3,8 @@ from pathlib import Path
 
 import pytest
 
+from backtest import load_baselines, save_baselines
+
 from data import ROOT
 from settings import check_evaluation, code_hash, load_config
 
@@ -24,7 +26,7 @@ def test_notebook_uses_complete_agent_signal_period():
 def test_runtime_parameters_can_change_without_invalidating_code_hash(monkeypatch, tmp_path):
     import settings
     notebook = json.loads((ROOT / "analysis.ipynb").read_text())
-    for name in ["data.py", "signals.py", "settings.py"]:
+    for name in ["data.py", "signals.py", "settings.py", "backtest.py", "experiment_analysis.ipynb"]:
         (tmp_path / name).write_bytes((ROOT / name).read_bytes())
     (tmp_path / "analysis.ipynb").write_text(json.dumps(notebook))
     monkeypatch.setattr(settings, "ROOT", tmp_path)
@@ -38,21 +40,19 @@ def test_runtime_parameters_can_change_without_invalidating_code_hash(monkeypatc
 def test_formula_change_invalidates_code_hash(monkeypatch, tmp_path):
     import settings
     notebook = json.loads((ROOT / "analysis.ipynb").read_text())
-    for name in ["data.py", "signals.py", "settings.py"]:
+    for name in ["data.py", "signals.py", "settings.py", "backtest.py", "experiment_analysis.ipynb"]:
         (tmp_path / name).write_bytes((ROOT / name).read_bytes())
     (tmp_path / "analysis.ipynb").write_text(json.dumps(notebook))
     monkeypatch.setattr(settings, "ROOT", tmp_path)
     original = code_hash()
-    definition = next(c for c in notebook["cells"] if "definitions" in c.get("metadata", {}).get("tags", []))
-    definition["source"] += ["\n# Formula revision\n"]
-    (tmp_path / "analysis.ipynb").write_text(json.dumps(notebook))
+    backtest = tmp_path / "backtest.py"
+    backtest.write_text(backtest.read_text() + "\n# Formula revision\n")
     assert code_hash() != original
 
 
 def test_baseline_csv_is_the_input_to_backtest(tmp_path):
     """落盘后修改 CSV，回测应读到修改后的信号，而不是沿用内存表。"""
     import pandas as pd
-    from signals import load_decisions, validate_decisions, decision_sessions
 
     notebook = json.loads((ROOT / "analysis.ipynb").read_text())
     decision = pd.DataFrame([
@@ -62,8 +62,7 @@ def test_baseline_csv_is_the_input_to_backtest(tmp_path):
         for day in ["2023-12-29", "2024-01-02"]
     ])
     namespace = dict(ROOT=tmp_path, backtest_start="2024-01-02", backtest_end="2024-01-02",
-                     pd=pd, load_decisions=load_decisions,
-                     validate_decisions=validate_decisions, decision_sessions=decision_sessions,
+                     pd=pd, save_baselines=save_baselines, load_baselines=load_baselines,
                      df_eval=pd.DataFrame(index=pd.DatetimeIndex(["2024-01-02T09:30:00-05:00"])),
                      cfg={"tickers": ["AAPL"], "timezone": "America/New_York"},
                      baseline_tables={"AAPL": {strategy: decision.copy()
@@ -84,7 +83,6 @@ def test_baseline_csv_is_the_input_to_backtest(tmp_path):
 
 def test_baseline_csv_requires_every_stock_strategy_account(tmp_path):
     import pandas as pd
-    from signals import load_decisions, validate_decisions, decision_sessions
 
     path = tmp_path / "baseline.csv"
     pd.DataFrame([
@@ -95,7 +93,7 @@ def test_baseline_csv_requires_every_stock_strategy_account(tmp_path):
         for day in ["2023-12-29", "2024-01-02"]
     ]).to_csv(path, index=False)
     notebook = json.loads((ROOT / "analysis.ipynb").read_text())
-    namespace = dict(pd=pd, load_decisions=load_decisions, validate_decisions=validate_decisions,
+    namespace = dict(load_baselines=load_baselines,
                      baseline_paths={"AAPL": path}, backtest_start="2024-01-02", backtest_end="2024-01-02")
     with pytest.raises(ValueError, match="strategies"):
         for cell in notebook["cells"]:

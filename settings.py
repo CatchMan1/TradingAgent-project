@@ -31,13 +31,16 @@ def load_config(path=None):
 
 
 def code_hash():
-    # 只哈希 Notebook 源码，不包含输出和 execution_count。
-    notebook = json.loads((ROOT / "analysis.ipynb").read_text())
-    # 区间、输入路径、显式测试开关是运行参数；交易参数另由 config_hash 锁定。
-    cells = ["".join(c["source"]) for c in notebook["cells"]
-             if c["cell_type"] == "code" and "parameters" not in c.get("metadata", {}).get("tags", [])]
-    sources = b"".join((ROOT / name).read_bytes() for name in ["data.py", "signals.py", "settings.py"])
-    return digest(sources + json_bytes(cells))
+    # 运行参数及输出独立于 Notebook 和共享回测源码的哈希。
+    notebooks = {}
+    for name in ("analysis.ipynb", "experiment_analysis.ipynb"):
+        notebook = json.loads((ROOT / name).read_text())
+        notebooks[name] = ["".join(cell["source"]) for cell in notebook["cells"]
+                           if cell["cell_type"] == "code"
+                           and "parameters" not in cell.get("metadata", {}).get("tags", [])]
+    sources = b"".join((ROOT / name).read_bytes()
+                       for name in ("data.py", "signals.py", "settings.py", "backtest.py"))
+    return digest(sources + json_bytes(notebooks))
 
 
 def freeze(cfg, path="frozen.json", agent_strategy_version=None):

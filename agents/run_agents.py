@@ -248,6 +248,9 @@ def run_one(
     data_dir: str | Path = DATA_DIR,
     dry_run: bool = False,
     progress_label: str | None = None,
+    variant: str | None = None,
+    previous_weight: float = 0.,
+    debate_rounds: int = 3,
 ) -> dict[str, Any]:
     """Run one `(ticker, trade_date)` cell and return its B-compatible row.
 
@@ -279,6 +282,8 @@ def run_one(
         "tool_calls": 0,
         "course_project_git": _git_state(ROOT),
     }
+    if variant is not None:
+        record.update(variant=variant, previous_weight=previous_weight)
     stats = None
     progress = None
     try:
@@ -301,6 +306,22 @@ def run_one(
         tradingagents, StatsCallbackHandler, is_review, TradingAgentsGraph, default_config = _import_official()
         config = _build_runtime_config(default_config, selected, logs)
         config["news_trade_date"] = trade_date
+        graph_options = {}
+        if variant is not None:
+            from agents.numeric_manager import manager_factory
+            from agents_debate.options import DebateOptions
+
+            if variant not in {"baseline", "position", "sentiment", "short", "debate"}:
+                raise ValueError(f"Unknown agent variant: {variant}")
+            if variant == "debate":
+                config = DebateOptions(rounds=debate_rounds).apply(config)
+            config.update(agent_variant=variant, previous_target_weight=previous_weight)
+            if variant == "position":
+                config["target_position_context"] = (
+                    f"Previous target weight: {previous_weight:g}. Consider numeric total "
+                    "exposure, the downside of holding stock and the opportunity cost of cash."
+                )
+            graph_options["portfolio_manager_factory"] = manager_factory(variant, previous_weight)
         if "news" in selected:
             from tradingagents.dataflows.config import run_config
             from tradingagents.dataflows.vendors.finnhub.news import prepare_news_snapshot
@@ -311,6 +332,10 @@ def run_one(
                 snapshot = prepare_news_snapshot(ticker, trade_date)
             config["finnhub_news_snapshot"] = snapshot
             record["data_snapshot"]["sources"]["news"] = snapshot
+            if variant == "sentiment":
+                from agents_sentiment.historical_news import sentiment_factory
+
+                graph_options["sentiment_factory"] = sentiment_factory(snapshot, trade_date)
         official_root = Path(tradingagents.__file__).resolve().parents[1]
         record.update(
             tradingagents_version=tradingagents.__version__,
@@ -329,36 +354,41 @@ def run_one(
 
         install_local_data_vendor(Path(data_dir))
         callbacks = [stats] + ([progress] if progress is not None else [])
-        graph = TradingAgentsGraph(selected, config=config, debug=False, callbacks=callbacks)
+        graph = TradingAgentsGraph(selected, config=config, debug=False, callbacks=callbacks, **graph_options)
         final_state, signal = graph.propagate(ticker, trade_date, asset_type="stock")
         _record_stats(record, stats)
         if is_review(signal):
             raise ValueError("Final Portfolio Manager rating is REVIEW/unparseable")
 
-        # Only the final manager rating crosses into B's binary-position backtest.
+        # Preserve the rating in the audit log. Numeric variants export the manager's target.
         from signals import final_rating, from_final_state
 
-        action = from_final_state(final_state)
         rating = final_rating(final_state)
         reports = logs / "reports" / ticker / trade_date
         reports.mkdir(parents=True, exist_ok=True)
         graph.save_reports(final_state, ticker, save_path=reports, html=True)
         record.update(
             status="success",
-            action=action,
             final_rating=rating,
             report_dir=str(reports.relative_to(ROOT)),
             decision_time=decision_time.isoformat(),
             information_cutoff=cutoff.isoformat(),
         )
-        row = {
-            "ticker": ticker,
-            "decision_time": decision_time.isoformat(),
-            "information_cutoff": cutoff.isoformat(),
-            "action": action,
-            "strategy_version": strategy_version,
-            "source": "portfolio_manager",
-        }
+        if variant is not None:
+            row = {"ticker": ticker, "signal_date": trade_date,
+                   "target_weight": final_state["target_weight"]}
+            record["target_weight"] = row["target_weight"]
+        else:
+            action = from_final_state(final_state)
+            record["action"] = action
+            row = {
+                "ticker": ticker,
+                "decision_time": decision_time.isoformat(),
+                "information_cutoff": cutoff.isoformat(),
+                "action": action,
+                "strategy_version": strategy_version,
+                "source": "portfolio_manager",
+            }
         record["decision_row"] = row
         record["elapsed_seconds"] = round(time.monotonic() - started, 3)
         _append_jsonl(logs / "runs.jsonl", record)

@@ -57,6 +57,8 @@ class TradingAgentsGraph:
         debug=False,
         config: dict[str, Any] = None,
         callbacks: list | None = None,
+        sentiment_factory=None,
+        portfolio_manager_factory=None,
     ):
         """Initialize the trading agents graph and components.
 
@@ -109,7 +111,12 @@ class TradingAgentsGraph:
         self.selected_analysts = tuple(selected_analysts)
 
         # Set up the graph: keep the workflow for recompilation with a checkpointer.
-        self.workflow = self.graph_setup.setup_graph(selected_analysts, memory_node=self._memory_step)
+        graph_options = {}
+        if sentiment_factory is not None:
+            graph_options["sentiment_node"] = sentiment_factory(self.quick_thinking_llm)
+        if portfolio_manager_factory is not None:
+            graph_options["portfolio_manager_factory"] = portfolio_manager_factory
+        self.workflow = self.graph_setup.setup_graph(selected_analysts, memory_node=self._memory_step, **graph_options)
         self.graph = self.workflow.compile()
         self._checkpointer_ctx = None
         self._resuming = False
@@ -302,7 +309,8 @@ class TradingAgentsGraph:
             trade_date,
             asset_type=asset_type,
             instrument_context=self.resolve_instrument_context(company_name, asset_type, trade_date),
-            portfolio_context=portfolio.render(company_name) if portfolio is not None else "",
+            portfolio_context=(portfolio.render(company_name) if portfolio is not None else
+                               self.config.get("target_position_context", "")),
         )
 
     def _memory_step(self, state):

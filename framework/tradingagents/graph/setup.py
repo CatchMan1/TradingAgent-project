@@ -107,7 +107,8 @@ class GraphSetup:
         self.max_tool_rounds = max_tool_rounds
 
     def setup_graph(
-        self, selected_analysts=("market", "social", "news", "fundamentals"), memory_node=None
+        self, selected_analysts=("market", "social", "news", "fundamentals"), memory_node=None,
+        sentiment_node=None, portfolio_manager_factory=create_portfolio_manager,
     ):
         """Set up and compile the agent workflow graph.
 
@@ -137,7 +138,7 @@ class GraphSetup:
         aggressive_analyst = create_aggressive_debator(self.quick_thinking_llm)
         neutral_analyst = create_neutral_debator(self.quick_thinking_llm)
         conservative_analyst = create_conservative_debator(self.quick_thinking_llm)
-        portfolio_manager_node = create_portfolio_manager(self.deep_thinking_llm)
+        portfolio_manager_node = portfolio_manager_factory(self.deep_thinking_llm)
 
         workflow = StateGraph(AgentState)
 
@@ -158,6 +159,11 @@ class GraphSetup:
         # every one of them has filed its report. The memory log settles past
         # decisions alongside them: only the Portfolio Manager reads its lessons.
         first_steps = [spec.agent_node for spec in plan.specs]
+        if sentiment_node is not None:
+            if "social" in selected_analysts:
+                raise ValueError("Choose either historical news sentiment or the social analyst")
+            workflow.add_node("Historical News Sentiment", sentiment_node)
+            first_steps.append("Historical News Sentiment")
         if memory_node is not None:
             workflow.add_node("Memory Log", memory_node)
             first_steps.append("Memory Log")
