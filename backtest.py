@@ -185,7 +185,7 @@ def evaluate_backtest(df, nav_mode="additive", annualization=252, risk_free_rate
     })
 
 
-def plot_backtest(backtests, strategy_names, metrics_table, title, nav_mode="additive"):
+def plot_backtest(backtests, strategy_names, metrics_table, title, nav_mode="additive", *, axes=None):
     first = next(iter(backtests.values()))
     index = pd.DatetimeIndex([first.index[0], *first.return_end])
     curves = pd.DataFrame({
@@ -194,46 +194,70 @@ def plot_backtest(backtests, strategy_names, metrics_table, title, nav_mode="add
     }, index=index)
     order = [s for s in ["agent", "buy_hold", "sma", "macd"] if s in curves]
     curves = curves[order + [s for s in curves if s not in order]]
-    drawdowns = (curves / curves.cummax() - 1) * 100
+
+    # Break the display across excluded intervals and resume at the next included open.
+    gap = first.index[1:] != index[1:-1]
+    gap_left, gap_right = index[1:-1][gap], first.index[1:][gap]
+    plot_curves = curves
+    if len(gap_right):
+        gap_mid = gap_left + (gap_right - gap_left) / 2
+        plot_curves = curves.reindex(index.union(gap_right).union(gap_mid))
+        plot_curves.loc[gap_right] = curves.loc[gap_left].to_numpy()
+    drawdowns = (plot_curves / plot_curves.cummax() - 1) * 100
     styles = {
-        "agent": ("#1f77b4", "-", 2.0),
-        "buy_hold": ("#808080", "-", 1.6),
-        "sma": ("#ff7f0e", ":", 1.5),
-        "macd": ("#2ca02c", "--", 1.4),
+        "agent": ("#1f77b4", "-", 2.1),
+        "buy_hold": ("#808080", "-", 1.5),
+        "sma": ("#a65b27", "-.", 1.15),
+        "macd": ("#7152a0", ":", 1.35),
     }
 
-    fig, (ax_nav, ax_dd) = plt.subplots(
-        2, 1, figsize=(14, 8), sharex=True, constrained_layout=True)
-    fig.suptitle(f"{title} | {index[0]:%Y-%m-%d} to {index[-1]:%Y-%m-%d}", fontsize=14)
+    if axes is None:
+        fig, (ax_nav, ax_dd) = plt.subplots(
+            2, 1, figsize=(14, 8), sharex=True, constrained_layout=True)
+        fig.suptitle(f"{title} | {index[0]:%Y-%m-%d} to {index[-1]:%Y-%m-%d}", fontsize=14)
+    else:
+        ax_nav, ax_dd = axes
+        fig = ax_nav.figure
+
+    filled = [strategy for strategy in ("buy_hold", "agent") if strategy in curves]
+    for strategy in filled:
+        ax_dd.fill_between(
+            plot_curves.index, drawdowns[strategy], 0, color=styles[strategy][0],
+            alpha=.26, linewidth=0, label=strategy_names[strategy])
+
     variant_colors = cycle(plt.get_cmap("tab10").colors[3:])
     for strategy in curves:
         color, linestyle, width = (styles[strategy] if strategy in styles
                                   else (next(variant_colors), "-", 1.6))
         label = strategy_names[strategy]
-        ax_nav.plot(index, curves[strategy], color=color,
-                    linestyle=linestyle, linewidth=width, label=label)
-        ax_dd.plot(index, drawdowns[strategy], color=color,
-                   linestyle="-", linewidth=.3, alpha=.35)
-        ax_dd.fill_between(index, drawdowns[strategy], 0, color=color, alpha=.12,
-                           linewidth=0, label=label)
+        ax_nav.plot(plot_curves.index, plot_curves[strategy], color=color,
+                    linestyle=linestyle, linewidth=width, label=label,
+                    zorder=4 if strategy == "agent" else 3)
+        ax_dd.plot(plot_curves.index, drawdowns[strategy], color=color,
+                   linestyle=linestyle, linewidth=.85, alpha=.85,
+                   label=label if not filled else None)
 
-    sharpe_text = " | ".join(
-        f"{strategy_names[s]} Sharpe {metrics_table.loc[s, 'sharpe']:+.2f}"
+    sharpe_names = strategy_names if axes is None else {"agent": "Strategy", "buy_hold": "Buy and Hold"}
+    sharpe_text = " vs ".join(
+        f"{sharpe_names[s]} {metrics_table.loc[s, 'sharpe']:+.2f}"
         for s in ["agent", "buy_hold"] if s in curves)
-    ax_nav.set_title(sharpe_text, fontsize=11)
+    sharpe_title = f"Sharpe {sharpe_text}" if sharpe_text else ""
+    ax_nav.set_title(sharpe_title if axes is None else f"{title}\n{sharpe_title}", fontsize=10)
     ax_nav.set_ylabel(f"NAV ({nav_mode}, start = 1)")
     ax_nav.axhline(1, color="black", linewidth=.7)
     ax_nav.legend(loc="upper left", fontsize=9)
     ax_nav.tick_params(axis="x", labelbottom=True)
-    ax_dd.set_title("Drawdown", fontsize=11)
+    ax_dd.set_title("Drawdown" if axes is None else f"{title} drawdown", fontsize=11)
     ax_dd.set_ylabel("Drawdown (%)")
     ax_dd.axhline(0, color="black", linewidth=.7)
     ax_dd.legend(loc="lower left", fontsize=9)
     for ax in (ax_nav, ax_dd):
         ax.set_facecolor("white")
+        ax.set_axisbelow(True)
         ax.grid(True, color="#d0d0d0", linewidth=.8, alpha=.55)
         ax.margins(x=.02)
-    ax_dd.xaxis.set_major_locator(mdates.AutoDateLocator(tz=index.tz, minticks=4, maxticks=7))
+        ax.tick_params(axis="x", labelrotation=25)
+    ax_dd.xaxis.set_major_locator(mdates.AutoDateLocator(tz=index.tz, minticks=3, maxticks=5))
     ax_dd.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d", tz=index.tz))
     return fig, curves
 
