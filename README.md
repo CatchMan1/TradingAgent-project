@@ -62,15 +62,15 @@ ticker,signal_date,target_weight
 
 ### 单 Agent 对照
 
-单 Agent 沿用 `side` 的实验设计。每个股票和交易日用同一基础模型一次性读取历史行情、技术指标、可用财报和历史新闻，直接输出 BUY／SELL／HOLD 和理由。对照时使用同一批原始证据，不经过分析师分工、辩论或经理复核。理由可以随运行记录保存。
+单 Agent 沿用 `side` 的一次调用设计。每个股票和交易日用同一基础模型一次性读取历史行情、技术指标、可用财报和历史新闻，直接给出目标仓位 0 或 1。对照时使用同一批原始证据，不经过分析师分工、辩论或经理复核。理由可以随运行记录保存。
 
-将外部生成的信号保存到 `data/decisions/single/single_agent.csv`。CSV 至少包含以下六列，`source` 统一填 `single_agent`。
+将外部生成的信号保存到 `data/decisions/single/single_agent.csv`，使用和其他变体相同的三列。
 
 ```text
-ticker,decision_time,information_cutoff,action,strategy_version,source
+ticker,signal_date,target_weight
 ```
 
-每股在同一文件内使用一个 `strategy_version`，按交易日提交一条动作，包含评价前一交易日的种子信号和评价末日的信号。两个时间字段均须带时区。决策在纽约时间当日收盘后作出，证据截止时间不晚于该次收盘。BUY 在下一开盘做多，SELL 在下一开盘空仓，HOLD 延续原仓位，初始 HOLD 为空仓。回测会检查交易日覆盖，缺失动作不补填。
+`signal_date` 是纽约市场的决策交易日，决策在当日收盘后作出，证据截止时间不晚于当日收盘。每股从评价前一交易日的种子信号开始，按交易日给出一条目标仓位。1 表示下一开盘满仓做多，0 表示下一开盘空仓。维持仓位时重复前一日的值。单 Agent 的权重必须明确填 0 或 1，空值和缺失交易日会报错。
 
 文件到位后，从头运行 [experiment_analysis.ipynb](experiment_analysis.ipynb)，它会将单 Agent 与同股票、同期的原版、Buy and Hold、SMA 和 MACD 比较，并写入 `results/single/full/` 或 `results/single/filtered/`。目前目录预留给后续真实信号和回测输出。
 
@@ -129,7 +129,7 @@ agents_position/         比例仓位
 agents_sentiment/        历史新闻情绪
 agents_short/            做空
 agents_debate/           多轮辩论
-agents_single/           单 Agent 外部动作信号校验
+agents_single/           单 Agent 外部 0／1 仓位信号校验
 experiments/              历史运行清单、调度、费用和修复记录
 data/                     本地行情、财报及信号
 results/                  按实验和筛选方式归档的回测结果

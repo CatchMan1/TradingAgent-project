@@ -51,24 +51,23 @@ def test_early_close_cutoff_is_13_not_regular_16():
     with pytest.raises(ValueError): validate_decisions(d,"AAPL","2024-07-03","2024-07-05")
 
 
-def test_single_agent_uses_new_york_sessions_in_chronological_order():
+def test_single_agent_preserves_binary_targets_in_chronological_order():
     from agents_single import validate_single_agent
 
-    decisions = rows().assign(source="single_agent", action=["BUY", "HOLD", "SELL"], target_weight=0)
-    decisions["decision_time"] = pd.to_datetime(decisions.decision_time, utc=True).dt.tz_convert("Asia/Hong_Kong")
+    decisions = pd.DataFrame({
+        "ticker": "AAPL",
+        "signal_date": ["2023-12-29", "2024-01-02", "2024-01-03"],
+        "target_weight": [1, 1, 0],
+    })
     validated = validate_single_agent(decisions.iloc[::-1], "AAPL")
-    assert validated.session.tolist() == ["2023-12-29", "2024-01-02", "2024-01-03"]
-    assert validated.action.tolist() == ["BUY", "HOLD", "SELL"]
-    assert "target_weight" not in validated
+    assert validated.signal_date.tolist() == ["2023-12-29", "2024-01-02", "2024-01-03"]
+    assert validated.target_weight.tolist() == [1, 1, 0]
 
 
-def test_single_agent_rejects_wrong_source_and_missing_session():
+@pytest.mark.parametrize("weight", [-1, 0.5, 2, "", "NaN", "HOLD"])
+def test_single_agent_rejects_nonbinary_and_missing_weights(weight):
     from agents_single import validate_single_agent
 
-    decisions = rows()
-    with pytest.raises(ValueError, match="single_agent"):
-        validate_single_agent(decisions, "AAPL")
-    decisions["source"] = "single_agent"
-    decisions.loc[2, "decision_time"] = "2024-01-04T16:30:00-05:00"
-    with pytest.raises(ValueError, match="missing"):
+    decisions = pd.DataFrame({"ticker": ["AAPL"], "signal_date": ["2024-01-02"], "target_weight": [weight]})
+    with pytest.raises(ValueError, match="target_weight"):
         validate_single_agent(decisions, "AAPL")
