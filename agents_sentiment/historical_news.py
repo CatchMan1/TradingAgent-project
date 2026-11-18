@@ -35,6 +35,8 @@ def prepare_articles(snapshot,day,limit=20):
     start=end-timedelta(days=7)
     if snapshot.get('start_date'):
         start=max(start,datetime.fromisoformat(snapshot['start_date']).replace(tzinfo=tz))
+    if snapshot.get("information_cutoff"):
+        end=min(end,datetime.fromisoformat(snapshot["information_cutoff"])+timedelta(microseconds=1))
     candidates=[];excluded={'outside_window':0,'invalid':0,'duplicate':0}
     for a in snapshot.get('articles',[]):
         stamp=a.get('datetime');title=str(a.get('headline','')).strip()
@@ -102,5 +104,7 @@ def sentiment_factory(snapshot, signal_date):
     raw = Path(snapshot["path"]).read_bytes()
     if sha256(raw).hexdigest() != snapshot["sha256"]:
         raise ValueError("Frozen Finnhub snapshot changed")
-    bundle = prepare_articles(json.loads(raw), signal_date, limit=snapshot["article_limit"])
+    payload = json.loads(raw)
+    payload["information_cutoff"] = snapshot.get("information_cutoff")
+    bundle = prepare_articles(payload, signal_date, limit=snapshot["article_limit"])
     return lambda llm: create_historical_sentiment_node(llm, bundle)

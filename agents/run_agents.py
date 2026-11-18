@@ -24,7 +24,6 @@ import subprocess
 import sys
 import threading
 import time
-from datetime import timedelta
 from pathlib import Path
 from typing import Any
 
@@ -165,7 +164,7 @@ def _build_runtime_config(default_config: dict[str, Any], analysts: list[str], l
         results_dir=str(logs_dir / "results"),
         data_cache_dir=str(logs_dir / "cache"),
         memory_log_path=str(logs_dir / "memory" / "trading_memory.md"),
-        news_previous_days_only=True,
+        news_previous_days_only=False,
         news_company_only=True,
         news_timezone=NY_TZ,
     )
@@ -192,8 +191,7 @@ def _session_cutoff(trade_date: str):
         raise ValueError(f"{trade_date} is not an NYSE trading session")
     close = sessions.iloc[0]["close"]
     cutoff = close.tz_convert(NY_TZ)
-    decision_time = cutoff + timedelta(minutes=30)
-    return cutoff, decision_time
+    return cutoff, cutoff
 
 
 def _snapshot_manifest(ticker: str, cutoff, data_dir: Path = DATA_DIR) -> dict[str, Any]:
@@ -306,6 +304,7 @@ def run_one(
         tradingagents, StatsCallbackHandler, is_review, TradingAgentsGraph, default_config = _import_official()
         config = _build_runtime_config(default_config, selected, logs)
         config["news_trade_date"] = trade_date
+        config["news_close_cutoff"] = cutoff.isoformat()
         graph_options = {}
         if variant is not None:
             from agents.numeric_manager import manager_factory

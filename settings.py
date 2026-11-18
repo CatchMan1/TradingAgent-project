@@ -24,9 +24,7 @@ def load_config(path=None):
     for k in ["sma","macd"]:
         if any(type(v) is not int or v<=0 for v in c[k].values()) or c[k]["fast"]>=c[k]["slow"]:
             raise ValueError("Invalid indicator windows")
-    import datetime
-    datetime.time.fromisoformat(c["decision_clock"])
-    if c["decision_clock"] <= "16:00": raise ValueError("Decision clock must be after regular close")
+    if c["decision_clock"] != "exchange_close": raise ValueError("Use the exchange closing time")
     return c
 
 

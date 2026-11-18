@@ -52,7 +52,7 @@ def baseline_signals(indicators, ticker, strategy, start, end, cfg):
         raise ValueError("未知基线")
     frame = pd.DataFrame({
         "ticker": ticker,
-        "decision_time": [pd.Timestamp(day + " " + cfg["decision_clock"], tz=cfg["timezone"]).isoformat() for day in days],
+        "decision_time": [close.isoformat() for close in sessions.close],
         "information_cutoff": [close.isoformat() for close in sessions.close],
         "action": actions, "strategy_version": f"{strategy}-v1",
         "source": "baseline",
@@ -80,21 +80,24 @@ def prepare_backtest(prices, decisions, return_type="simple"):
         d["signal_session"] = d.signal_date
         d["signal"] = d.target_weight.astype(float)
         executed = d.iloc[:len(p)-1][["signal_session", "signal"]].copy()
-        executed["date"] = expected[1:len(p)]
+        executed["date"] = executed.signal_session
     else:
         if d.session.tolist() != expected or not d.action.isin(["BUY", "SELL", "HOLD"]).all():
             raise ValueError("Missing/duplicate/unsorted/invalid decisions")
         columns = ["session", "action", "decision_time", "information_cutoff", "strategy_version", "source"]
         d = d.filter(items=columns)
         d["signal"] = d.action.map({"BUY": 1., "SELL": 0., "HOLD": np.nan}).ffill().fillna(0.)
-        d["date"] = d.session.shift(-1)
+        d["date"] = d.session
         executed = d.iloc[:-1].rename(columns={"session": "signal_session"}).copy()
     executed["target_position"] = executed.signal.clip(-1., 1.)
     frame = p.merge(executed, on="date", how="left", validate="one_to_one")
     sessions = schedule(p.date.iloc[0], p.date.iloc[-1])
-    frame.index = pd.DatetimeIndex(sessions.open.dt.tz_convert("America/New_York"), name="DateTime")
+    frame.index = pd.DatetimeIndex(sessions.close.dt.tz_convert("America/New_York"), name="DateTime")
+    if "decision_time" in frame:
+        frame.rename(columns={"decision_time": "archived_decision_time"}, inplace=True)
+    frame["decision_time"] = frame.index
     frame["return_end"] = pd.Series(frame.index, index=frame.index).shift(-1)
-    frame["asset_ret"] = ((frame.open.shift(-1) + frame.dividend.shift(-1)) * frame.split.shift(-1) / frame.open - 1)
+    frame["asset_ret"] = (frame.close.shift(-1) - frame.close) / frame.close
     if return_type not in ["simple", "log"]:
         raise ValueError("未知收益率类型")
     frame["pct"] = frame.asset_ret if return_type == "simple" else np.log1p(frame.asset_ret)
@@ -174,7 +177,7 @@ def evaluate_backtest(df, nav_mode="additive", annualization=252, risk_free_rate
     else:
         daily_ret = df.strategy_ret.groupby(dates).sum()
     max_drawdown, _ = calculate_mdd(df.net_values)
-    return pd.Series({
+    metrics = pd.Series({
         "cumulative_return": df.net_values.iloc[-1] - 1,
         "max_drawdown": max_drawdown,
         "sharpe": calculate_sharpe(daily_ret, rf=risk_free_rate, periods=annualization),
@@ -183,6 +186,12 @@ def evaluate_backtest(df, nav_mode="additive", annualization=252, risk_free_rate
         "turnover_sum": df.turnover.sum(), "cost_sum": df.cost.sum(),
         "return_intervals": len(df), "return_days": len(daily_ret),
     })
+    if "action" in df:
+        direction = df.action.map({"BUY": 1, "SELL": -1})
+        calls = direction.notna()
+        metrics["directional_calls"] = calls.sum()
+        metrics["directional_accuracy"] = (direction[calls] * df.pct[calls] > 0).mean()
+    return metrics
 
 
 def plot_backtest(backtests, strategy_names, metrics_table, title, nav_mode="additive", *, axes=None):
@@ -195,7 +204,7 @@ def plot_backtest(backtests, strategy_names, metrics_table, title, nav_mode="add
     order = [s for s in ["agent", "buy_hold", "sma", "macd"] if s in curves]
     curves = curves[order + [s for s in curves if s not in order]]
 
-    # Break the display across excluded intervals and resume at the next included open.
+    # Break the display across excluded intervals and resume at the next included close.
     gap = first.index[1:] != index[1:-1]
     gap_left, gap_right = index[1:-1][gap], first.index[1:][gap]
     plot_curves = curves
@@ -219,12 +228,6 @@ def plot_backtest(backtests, strategy_names, metrics_table, title, nav_mode="add
         ax_nav, ax_dd = axes
         fig = ax_nav.figure
 
-    filled = [strategy for strategy in ("buy_hold", "agent") if strategy in curves]
-    for strategy in filled:
-        ax_dd.fill_between(
-            plot_curves.index, drawdowns[strategy], 0, color=styles[strategy][0],
-            alpha=.26, linewidth=0, label=strategy_names[strategy])
-
     variant_colors = cycle(plt.get_cmap("tab10").colors[3:])
     for strategy in curves:
         color, linestyle, width = (styles[strategy] if strategy in styles
@@ -233,9 +236,11 @@ def plot_backtest(backtests, strategy_names, metrics_table, title, nav_mode="add
         ax_nav.plot(plot_curves.index, plot_curves[strategy], color=color,
                     linestyle=linestyle, linewidth=width, label=label,
                     zorder=4 if strategy == "agent" else 3)
+        ax_dd.fill_between(plot_curves.index, drawdowns[strategy], 0, color=color,
+                           alpha=.15, linewidth=0, zorder=1)
         ax_dd.plot(plot_curves.index, drawdowns[strategy], color=color,
                    linestyle=linestyle, linewidth=.85, alpha=.85,
-                   label=label if not filled else None)
+                   label=label)
 
     sharpe_names = strategy_names if axes is None else {"agent": "Strategy", "buy_hold": "Buy and Hold"}
     sharpe_text = " vs ".join(
@@ -281,7 +286,7 @@ def save_baselines(baseline_tables, root, backtest_start, backtest_end, cfg):
         exported = pd.concat([rows.assign(strategy=strategy) for strategy, rows in tables.items()], ignore_index=True)
         sessions = decision_sessions(backtest_start, backtest_end)
         execution_dates = dict(zip(sessions.index.strftime("%Y-%m-%d"),
-                                  [*sessions.open.iloc[1:].dt.tz_convert(cfg["timezone"]), pd.NaT]))
+                                  sessions.close.dt.tz_convert(cfg["timezone"])))
         exported["DateTime"] = exported.session.map(execution_dates)
         exported.to_csv(path, index=False)
         baseline_paths[ticker] = path
@@ -356,7 +361,7 @@ def save_results(output_dir, cases, metrics_table, monthly_returns, figures, rec
             folder.mkdir(parents=True, exist_ok=True)
             frame.to_csv(folder / "daily.csv")
             trades = frame.loc[frame.turnover > 0,
-                               ["signal_session", "date", "open", "position_changes", "position", "cost"]]
+                               ["signal_session", "date", "close", "position_changes", "position", "cost"]]
             trades.to_csv(folder / "position_changes.csv")
         figures[ticker, period].savefig(output_dir / ticker / f"{period}_equity_drawdown.png",
                                        dpi=120, bbox_inches="tight")

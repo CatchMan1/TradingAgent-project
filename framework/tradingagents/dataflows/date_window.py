@@ -15,8 +15,8 @@ from __future__ import annotations
 from datetime import UTC, date, datetime, timedelta
 
 
-def previous_news_window(start_date: str | None, end_date: str | None, trade_date: str) -> tuple[str, str]:
-    """Intersect a requested window with D-7..D-1; never shift future requests."""
+def previous_news_window(start_date: str | None, end_date: str | None, trade_date: str, include_session: bool = False) -> tuple[str, str]:
+    """Intersect with seven calendar dates ending on or before the signal day."""
     def parse(value, field):
         try:
             parsed = date.fromisoformat(value)
@@ -28,6 +28,8 @@ def previous_news_window(start_date: str | None, end_date: str | None, trade_dat
 
     run_day = parse(trade_date, "trade_date")
     earliest, latest = run_day - timedelta(days=7), run_day - timedelta(days=1)
+    if include_session:
+        earliest, latest = run_day - timedelta(days=6), run_day
     start = earliest if start_date is None else parse(start_date, "start_date")
     end = latest if end_date is None else parse(end_date, "end_date")
     if start > end:

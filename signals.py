@@ -46,8 +46,7 @@ def validate_weights(frame, ticker):
 def decision_sessions(start,end):
     s=schedule(start,end)
     if s.empty: raise ValueError("Empty evaluation interval")
-    prev=schedule((s.index[0]-pd.Timedelta(days=14)).strftime("%Y-%m-%d"),(s.index[0]-pd.Timedelta(days=1)).strftime("%Y-%m-%d")).iloc[[-1]]
-    return pd.concat([prev,s])
+    return s
 
 
 def validate_decisions(d,ticker,start,end,source="portfolio_manager"):
@@ -65,10 +64,10 @@ def validate_decisions(d,ticker,start,end,source="portfolio_manager"):
     d["session"]=[t.tz_convert("America/New_York").strftime("%Y-%m-%d") for t in times]
     expected=decision_sessions(start,end)
     if d.session.duplicated().any() or set(d.session)!=set(expected.index.strftime("%Y-%m-%d")):
-        raise ValueError("Duplicate/missing/extra decision sessions; seed and final session required")
+        raise ValueError("Duplicate/missing/extra decision sessions; all evaluation sessions required")
     for idx,row in d.iterrows():
         close=expected.loc[row.session,"close"]
-        if not close < times.loc[idx] or cutoff.loc[idx]>close or cutoff.loc[idx]>times.loc[idx]:
+        if times.loc[idx] < close or cutoff.loc[idx]>close or cutoff.loc[idx]>times.loc[idx]:
             raise ValueError("Decision before close or future information after exchange close")
     return d.sort_values("session").reset_index(drop=True)
 

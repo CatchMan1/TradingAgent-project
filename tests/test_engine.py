@@ -12,7 +12,7 @@ def prices(opens, splits=None, dividends=None):
 
 
 def decisions(actions):
-    days = ["2023-12-29"] + list(pd.bdate_range("2024-01-02", periods=len(actions)-1).strftime("%Y-%m-%d"))
+    days = list(pd.bdate_range("2024-01-02", periods=len(actions)).strftime("%Y-%m-%d"))
     return pd.DataFrame(dict(session=days, action=actions))
 
 
@@ -40,24 +40,24 @@ def test_initial_position_avoids_duplicate_boundary_entry_cost():
     np.testing.assert_allclose(ret, [0, -.01])
 
 
-def test_signal_maps_to_next_open_and_unknown_last_return_is_dropped():
+def test_signal_maps_to_same_close_and_unknown_last_return_is_dropped():
     function = namespace.get("prepare_backtest")
     assert callable(function)
-    df = function(prices([100., 200., 220.]), decisions(["HOLD", "BUY", "HOLD", "SELL"]))
+    df = function(prices([100., 200., 220.]), decisions(["HOLD", "BUY", "SELL"]))
     assert df.position.tolist() == [0, 1]
-    assert df.signal_session.tolist() == ["2023-12-29", "2024-01-02"]
+    assert df.signal_session.tolist() == ["2024-01-02", "2024-01-03"]
     np.testing.assert_allclose(df.pct, [1., .1])
-    assert df.return_end.iloc[-1] == pd.Timestamp("2024-01-04T09:30:00-05:00")
+    assert df.return_end.iloc[-1] == pd.Timestamp("2024-01-04T16:00:00-05:00")
     _, ret = namespace["cal_net_values"](df.position, df.pct, fee=0)
     np.testing.assert_allclose(ret, [0, .1])
 
 
-def test_split_and_dividend_are_in_forward_asset_return():
+def test_forward_price_return_uses_unadjusted_closes():
     function = namespace.get("prepare_backtest")
     assert callable(function)
     df = function(prices([100., 49., 50.], splits=[1, 2, 1], dividends=[0, 1, 0]),
-                  decisions(["BUY", "HOLD", "HOLD", "HOLD"]))
-    np.testing.assert_allclose(df.pct, [0., 50/49-1])
+                  decisions(["BUY", "HOLD", "HOLD"]))
+    np.testing.assert_allclose(df.pct, [-.51, 50/49-1])
 
 
 def test_first_loss_is_in_drawdown_and_population_sharpe():

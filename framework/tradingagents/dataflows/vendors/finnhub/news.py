@@ -146,6 +146,9 @@ def _window(ticker: str, start_date: str, end_date: str) -> tuple[dict, dict]:
     symbol = ticker.strip().upper()
     timezone = config.get("news_timezone", "America/New_York")
     lower, upper = _bounds(start_date, end_date, timezone)
+    cutoff = config.get("news_close_cutoff")
+    if cutoff:
+        upper = min(upper, datetime.fromisoformat(cutoff) + timedelta(microseconds=1))
     if upper > datetime.now(UTC):
         raise ValueError("Finnhub historical news requires completed calendar days")
     frozen = config.get("finnhub_news_snapshot")
@@ -207,9 +210,13 @@ def _select(articles: list[dict], lower: datetime, upper: datetime) -> list[dict
 def prepare_news_snapshot(ticker: str, trade_date: str) -> dict:
     """Fetch/validate once before any LLM call, returning an auditable manifest."""
     get_api_key()
-    start, end = previous_news_window(None, None, trade_date)
+    start, end = previous_news_window(None, None, trade_date, bool(get_config().get("news_close_cutoff")))
     data, metadata = _window(ticker, start, end)
     lower, upper = _bounds(start, end, metadata["timezone"])
+    cutoff = get_config().get("news_close_cutoff")
+    if cutoff:
+        metadata["information_cutoff"] = cutoff
+        upper = min(upper, datetime.fromisoformat(cutoff) + timedelta(microseconds=1))
     metadata["eligible_records"] = len(_select(data["articles"], lower, upper))
     metadata["article_limit"] = max(1, int(get_config().get("news_article_limit", 20)))
     metadata["invalid_timestamp_records"] = sum(_published(a) is None for a in data["articles"])
@@ -218,10 +225,13 @@ def prepare_news_snapshot(ticker: str, trade_date: str) -> dict:
 
 def get_news(ticker: str, start_date: str, end_date: str) -> str:
     config = get_config()
-    if config.get("news_previous_days_only"):
-        start_date, end_date = previous_news_window(start_date, end_date, config.get("news_trade_date", ""))
+    cutoff = config.get("news_close_cutoff")
+    if cutoff or config.get("news_previous_days_only"):
+        start_date, end_date = previous_news_window(start_date, end_date, config.get("news_trade_date", ""), bool(cutoff))
     data, metadata = _window(ticker, start_date, end_date)
     lower, upper = _bounds(start_date, end_date, metadata["timezone"])
+    if cutoff:
+        upper = min(upper, datetime.fromisoformat(cutoff) + timedelta(microseconds=1))
     selected = _select(data["articles"], lower, upper)
     limit = max(1, int(config.get("news_article_limit", 20)))
     header = (
