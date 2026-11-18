@@ -1,11 +1,13 @@
-# TradingAgents：多 Agent 交易回测
+# TradingAgents：单 Agent 与多 Agent 交易回测
 
-项目用 AAPL、GOOGL、AMZN 的历史行情、SEC 财务事实和 Finnhub 公司新闻生成日频决策，再以次日开盘成交假设回测。原版使用三类分析师和 11 个决策角色。四个变体分别改变仓位表达、新闻情绪、做空权限和多空辩论轮数。
+项目用 AAPL、GOOGL、AMZN 的历史行情、SEC 财务事实和 Finnhub 公司新闻生成日频决策，再以次日开盘成交假设回测。原版使用三类分析师和 11 个决策角色。四个变体分别改变仓位表达、新闻情绪、做空权限和多空辩论轮数。单 Agent 对照实验通过导入独立生成的信号接入。
 
 ```mermaid
 flowchart LR
     Data[历史行情、财报与新闻] --> Agent[原版或变体 Agent]
+    Data --> Single[单 Agent：一次模型调用]
     Agent --> CSV[data/decisions 下的信号 CSV]
+    Single --> CSV
     CSV --> Original[analysis.ipynb 原版回测]
     CSV --> Experiments[experiment_analysis.ipynb 变体回测]
     Original --> Core[backtest.py]
@@ -25,7 +27,7 @@ python -m pip install -r requirements.txt
 | 入口 | 使用的信号 | 输出目录 |
 |---|---|---|
 | [analysis.ipynb](analysis.ipynb) | `AGENT_CSV` 指定的原版信号，以及同期 Buy and Hold、SMA、MACD | `results/original/` |
-| [experiment_analysis.ipynb](experiment_analysis.ipynb) | `VARIANT_CSVS` 选中的变体，以及各变体同期的原版和规则基线 | `results/position/`、`results/sentiment/`、`results/short/`、`results/debate/` |
+| [experiment_analysis.ipynb](experiment_analysis.ipynb) | `VARIANT_CSVS` 选中的实验，以及各实验同期的原版和规则基线 | `results/position/`、`results/sentiment/`、`results/short/`、`results/debate/`、`results/single/` |
 
 两本 Notebook 都可独立从头运行，读已有信号无需 API Key。它们共用 [backtest.py](backtest.py) 中的信号对齐、收益、费用、指标、绘图和导出函数。
 
@@ -57,6 +59,20 @@ ticker,signal_date,target_weight
 新增实验时，将数值信号放到 `data/decisions/<实验>/`，再把路径和图例加入 `experiment_analysis.ipynb` 的 `VARIANT_CSVS`。Notebook 用该变体的信号覆盖期选择同期原版和规则基线。早期探索信号单独存于各实验的 `exploratory/`，其中部分日期覆盖不全。
 
 历史做空审批与评级映射是两种独立信号。评级映射使用既有评级模拟放开做空后的结果。历史保持股数指令在导入时按本项目回测定义转换为延续前一目标权重，因此和按持股数量记账的历史实验会有差异。
+
+### 单 Agent 对照
+
+单 Agent 沿用 `side` 的实验设计。每个股票和交易日用同一基础模型一次性读取历史行情、技术指标、可用财报和历史新闻，直接输出 BUY／SELL／HOLD 和理由。对照时使用同一批原始证据，不经过分析师分工、辩论或经理复核。理由可以随运行记录保存。
+
+将外部生成的信号保存到 `data/decisions/single/single_agent.csv`。CSV 至少包含以下六列，`source` 统一填 `single_agent`。
+
+```text
+ticker,decision_time,information_cutoff,action,strategy_version,source
+```
+
+每股在同一文件内使用一个 `strategy_version`，按交易日提交一条动作，包含评价前一交易日的种子信号和评价末日的信号。两个时间字段均须带时区。决策在纽约时间当日收盘后作出，证据截止时间不晚于该次收盘。BUY 在下一开盘做多，SELL 在下一开盘空仓，HOLD 延续原仓位，初始 HOLD 为空仓。回测会检查交易日覆盖，缺失动作不补填。
+
+文件到位后，从头运行 [experiment_analysis.ipynb](experiment_analysis.ipynb)，它会将单 Agent 与同股票、同期的原版、Buy and Hold、SMA 和 MACD 比较，并写入 `results/single/full/` 或 `results/single/filtered/`。目前目录预留给后续真实信号和回测输出。
 
 ## 回测口径
 
@@ -104,7 +120,7 @@ python -m pytest -q framework/tests/test_finnhub_news.py framework/tests/test_re
 
 ```text
 analysis.ipynb            原版回测
-experiment_analysis.ipynb 四种变体的回测
+experiment_analysis.ipynb 变体和单 Agent 的回测
 backtest.py               两本 Notebook 共用的公式、指标和导出
 data.py / signals.py      读取与校验数据、决策
 config.json / settings.py 回测参数及可选实验冻结
@@ -113,6 +129,7 @@ agents_position/         比例仓位
 agents_sentiment/        历史新闻情绪
 agents_short/            做空
 agents_debate/           多轮辩论
+agents_single/           单 Agent 外部动作信号校验
 experiments/              历史运行清单、调度、费用和修复记录
 data/                     本地行情、财报及信号
 results/                  按实验和筛选方式归档的回测结果

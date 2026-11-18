@@ -49,3 +49,26 @@ def test_early_close_cutoff_is_13_not_regular_16():
     assert len(validate_decisions(d,"AAPL","2024-07-03","2024-07-05"))==3
     d.loc[1,"information_cutoff"]="2024-07-03T16:00:00-04:00"
     with pytest.raises(ValueError): validate_decisions(d,"AAPL","2024-07-03","2024-07-05")
+
+
+def test_single_agent_uses_new_york_sessions_in_chronological_order():
+    from agents_single import validate_single_agent
+
+    decisions = rows().assign(source="single_agent", action=["BUY", "HOLD", "SELL"], target_weight=0)
+    decisions["decision_time"] = pd.to_datetime(decisions.decision_time, utc=True).dt.tz_convert("Asia/Hong_Kong")
+    validated = validate_single_agent(decisions.iloc[::-1], "AAPL")
+    assert validated.session.tolist() == ["2023-12-29", "2024-01-02", "2024-01-03"]
+    assert validated.action.tolist() == ["BUY", "HOLD", "SELL"]
+    assert "target_weight" not in validated
+
+
+def test_single_agent_rejects_wrong_source_and_missing_session():
+    from agents_single import validate_single_agent
+
+    decisions = rows()
+    with pytest.raises(ValueError, match="single_agent"):
+        validate_single_agent(decisions, "AAPL")
+    decisions["source"] = "single_agent"
+    decisions.loc[2, "decision_time"] = "2024-01-04T16:30:00-05:00"
+    with pytest.raises(ValueError, match="missing"):
+        validate_single_agent(decisions, "AAPL")

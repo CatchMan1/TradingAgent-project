@@ -58,7 +58,7 @@ def validate_decisions(d,ticker,start,end,source="portfolio_manager"):
     for k in REQUIRED:
         if d[k].isna().any() or d[k].astype(str).str.strip().eq("").any(): raise ValueError(f"Missing {k}")
     if not d.action.isin(["BUY","SELL","HOLD"]).all(): raise ValueError("Invalid action; only BUY/SELL/HOLD accepted")
-    if not d.source.eq(source).all(): raise ValueError("Only final Portfolio Manager output accepted")
+    if not d.source.eq(source).all(): raise ValueError(f"Expected decision source: {source}")
     if d.strategy_version.nunique()!=1: raise ValueError("Mixed strategy versions")
     times=d.decision_time.map(aware)
     cutoff=d.information_cutoff.map(aware)
