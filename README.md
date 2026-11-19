@@ -53,6 +53,18 @@ python -m pip install -r requirements.txt
 
 完整表格列出全量和筛选后的六个变体，包含新闻情绪、做空审批以及单轮和三轮辩论。[多实验回测结果汇总](results/multi_experiment_summary.md)
 
+### 单 Agent 实验结果
+
+信号覆盖 2026-06-30 至 2026-10-09，每只股票有 72 条决策。收盘至下一收盘评分每股有 71 个收益区间。剔除与 7 月 30 日至 8 月 3 日相交的区间后，每股保留 67 个。
+
+| 股票 | 全量净收益 | 全量最大回撤 | 筛选后净收益 | 筛选后最大回撤 |
+|---|---:|---:|---:|---:|
+| AAPL | +13.92% | −11.68% | +24.56% | −3.25% |
+| AMZN | −7.39% | −19.49% | −9.55% | −21.52% |
+| GOOGL | −17.43% | −24.33% | −23.32% | −30.01% |
+
+[全量指标](results/single/full/metrics.csv) · [筛选后指标](results/single/filtered/metrics.csv)
+
 ## Agent 决策与信号
 
 多 Agent 主流程中，技术、基本面、新闻分析师分别产出报告。多头与空头研究员依据报告辩论，研究经理形成建议，交易员制定方案。激进、中性、保守三位风险分析师审查后，由投资组合经理作出最终决策。记忆节点会提供当时可用的历史经验，它单独计入调用成本。
@@ -61,7 +73,7 @@ python -m pip install -r requirements.txt
 
 ## 五项实验
 
-[experiment_analysis.ipynb](experiment_analysis.ipynb) 从 `data/decisions/` 读取下表中的信号。比例仓位、新闻情绪、做空和多轮辩论已有归档信号。单 Agent 的 CSV 由外部运行生成，文件到位后自动纳入回测。
+[experiment_analysis.ipynb](experiment_analysis.ipynb) 从 `data/decisions/` 读取五项实验的归档信号。
 
 | 实验 | 决策方式 | 信号路径（相对于 `data/decisions/`） |
 |---|---|---|
@@ -69,7 +81,7 @@ python -m pip install -r requirements.txt
 | 新闻情绪 | 从历史新闻快照提取情绪证据 | `sentiment/sentiment_aug.csv` |
 | 做空 | 允许经理批准做空，另有历史评级映射版本 | `short/short_approval_aug.csv`、`short/short_mapping.csv` |
 | 多轮辩论 | 设置一轮或三轮多空辩论 | `debate/debate_r1_sep.csv`、`debate/debate_r3_sep.csv` |
-| 单 Agent | 每股每天调用模型一次，读取行情、技术指标、可用财报和历史新闻，直接给出 0 或 1 | `single/single_agent.csv` |
+| 单 Agent | 每股每个交易日调用模型一次，综合行情、技术指标、财报和历史新闻 | [`single/single_agent.csv`](data/decisions/single/single_agent.csv) |
 
 五项实验使用同一 CSV 格式。
 
@@ -78,6 +90,8 @@ ticker,signal_date,target_weight
 ```
 
 `signal_date` 是纽约市场的决策交易日。每股从第一个信号日开始，按交易日给出目标仓位。按信号日收盘建立模拟仓位，−1 为满仓做空，0 为空仓，1 为满仓做多，小数代表部分仓位。维持仓位时重复前一日的值。单 Agent 只接受明确填入的 0 或 1，其余实验的空权重填 0。回测检查交易日覆盖，并将一般数值权重截断至 [−1, 1]。
+
+本次单 Agent 信号来自 `deepseek-flash-single-shared-memory-2026jul-oct-v1.csv`。转换时按纽约交易日逐股排序，BUY 映射为 1，SELL 映射为 0，HOLD 延续上一笔仓位，初始仓位为 0。
 
 如需选择其他归档信号，在 Notebook 的 `VARIANT_CSVS` 中填写相对路径和图例。路径首层目录为实验名，输出写入对应的 `results/<实验>/`。各实验的 `exploratory/` 存放早期探索信号，其中部分日期覆盖不全。
 
@@ -102,7 +116,7 @@ drawdown = net_values / running_peak - 1
 
 ## 信息时间与新信号生成
 
-行情和技术指标使用信号日及以前的数据。新运行以交易所实际收盘时刻（含提前收市）为界，读取当日收盘行情、届时已公开的 SEC 财务数据，以及最近七个日历日内截至该时刻发布的公司新闻和其中有依据的宏观消息。原新闻条数上限保持不变。已归档实验的 Finnhub 新闻窗口为纽约时间信号日前 7 个日历日至前一日，去重后最多 20 条。新闻快照随运行记录保存。已归档主实验的财报可用范围按信号日纽约时间 23:59:59 解释。当前新生成决策按交易日实际收盘时间过滤 SEC 财务事实。单 Agent 的生成流程使用当日收盘前已可用的信息。
+行情和技术指标使用信号日及以前的数据。新运行以交易所实际收盘时刻（含提前收市）为界，读取当日收盘行情、届时已公开的 SEC 财务数据，以及最近七个日历日内截至该时刻发布的公司新闻和其中有依据的宏观消息。原新闻条数上限保持不变。已归档实验的 Finnhub 新闻窗口为纽约时间信号日前 7 个日历日至前一日，去重后最多 20 条。新闻快照随运行记录保存。已归档主实验的财报可用范围按信号日纽约时间 23:59:59 解释。当前新生成决策按交易日实际收盘时间过滤 SEC 财务事实。本次单 Agent 源文件也将信息截止标记为信号日纽约时间 23:59:59，晚于实际收盘。其指标沿用归档信号的历史评分口径。
 
 将 `.env.example` 复制为 `.env` 并设置 DeepSeek 和 Finnhub Key 后，可运行多 Agent 主流程。先做离线检查：
 
