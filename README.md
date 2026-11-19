@@ -194,6 +194,8 @@ EXCLUDE_PERIODS = []  # 主比较使用完整期间，保留7/30—8/3
 
 ## 6. 比较与结果解释
 
+**单Agent实验图表与代码汇总：**[查看完整报告](results/single_agent_comparison/README.md) · [收益与最大回撤总览](results/single_agent_comparison/returns_drawdown_comparison.png) · [三股净值与回撤走势](results/single_agent_comparison/equity_drawdown_three_stocks.png) · [绘图复现代码](experiments/plot_single_agent_comparison.py)。报告包含单Agent、多Agent、买入持有三种主要方法的直接比较，全部五种策略的原始结果仍保留。
+
 2026-11-09已完成三只股票全部216个单Agent决策，每股72行，使用相同DeepSeek Flash设置、冻结数据与共享历史记忆。完整期间、simple/additive净值、10bps换手费用，保留7/30—8/3；API费用单独统计。
 
 - AAPL：单Agent收益11.11%、最大回撤11.25%；多Agent22.63%、3.01%；买入持有13.50%、9.72%。[收益与回撤图](results/single_vs_multi_AAPL_GOOGL_AMZN/AAPL/agent_period_equity_drawdown.png)
