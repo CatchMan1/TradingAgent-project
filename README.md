@@ -163,3 +163,10 @@ tests/                    课程项目的离线检查
 框架基于 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) v0.6.0，采用 [Apache-2.0 许可证](framework/LICENSE)。行情及财报来源记录在 [data/sources.json](data/sources.json)。归档变体信号来自组员交接分支 [fc54379](https://github.com/CatchMan1/TradingAgent-project/tree/fc54379/handoff)。
 
 项目贡献：周晓杨负责统筹与整合，Zhou Runyu 负责 Agent 工程接入，Li Ziqi 负责工程架构、数据和回测，Zhao Tianyu 负责实验运行及成本记录。
+
+
+### 新闻情绪 + EODHD 增强实验
+
+新增 AAPL、AMZN 的 2026 年 8 月同口径结果，每股 21 个收盘收益区间。增强方案净收益分别为 +2.24%、+7.40%，最大回撤幅度为 0.86%、2.61%。这是含新增解释步骤的回顾性组合改动，不代表已单独识别 EODHD 因果效果。
+
+[完整实验、局限及离线复现](results/sentiment_eodhd/aug2026/README.md) · [指标汇总](results/sentiment_eodhd/aug2026/summary.json) · [实际信号](data/decisions/sentiment_eodhd/news_plus_eodhd_aug.csv)
